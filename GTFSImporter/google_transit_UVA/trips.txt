@@ -1,0 +1,775 @@
+﻿route_id,service_id,trip_id,trip_headsign,direction_id,block_id,shape_id
+1,5,548,Central Grounds via U-Hall,0,20,209
+1,5,549,Central Grounds via Copeley Hill,0,20,189
+1,5,550,Central Grounds via Copeley Hill,0,20,189
+1,5,551,Central Grounds via Copeley Hill,0,20,189
+1,5,552,Central Grounds via Copeley Hill,0,20,189
+1,5,553,Central Grounds via Copeley Hill,0,20,189
+1,5,554,Central Grounds via Copeley Hill,0,20,189
+1,5,555,Central Grounds via Copeley Hill,0,20,189
+1,5,556,Central Grounds via Copeley Hill,0,20,189
+1,5,557,Central Grounds via Copeley Hill,0,20,189
+1,5,558,Central Grounds via Copeley Hill,0,20,189
+1,5,559,Central Grounds via Copeley Hill,0,20,189
+1,5,560,Central Grounds via Copeley Hill,0,20,189
+1,5,561,Central Grounds via Copeley Hill,0,20,189
+1,5,562,Central Grounds via Copeley Hill,0,20,189
+1,5,563,Central Grounds via Copeley Hill,0,20,189
+1,5,564,Central Grounds via Copeley Hill,0,20,189
+1,5,565,Central Grounds via Copeley Hill,0,20,189
+1,5,566,Central Grounds via Copeley Hill,0,20,189
+1,5,567,Central Grounds via Copeley Hill,0,20,189
+1,5,568,Central Grounds via Copeley Hill,0,20,189
+1,5,569,Central Grounds via Copeley Hill,0,20,189
+1,5,570,Central Grounds via Copeley Hill,0,20,189
+1,5,571,Central Grounds via Copeley Hill,0,20,189
+1,5,572,Central Grounds via Copeley Hill,0,20,189
+1,5,573,Central Grounds via Copeley Hill,0,20,189
+1,5,574,Central Grounds via Copeley Hill,0,20,189
+1,5,575,Central Grounds via Copeley Hill,0,20,189
+1,5,576,Central Grounds via U-Hall,0,21,209
+1,5,577,Central Grounds via Copeley Hill,0,21,189
+1,5,578,Central Grounds via Copeley Hill,0,21,189
+1,5,579,Central Grounds via Copeley Hill,0,21,189
+1,5,580,Central Grounds via Copeley Hill,0,21,189
+1,5,581,Central Grounds via Copeley Hill,0,21,189
+1,5,582,Copeley Hill via U-Hall,1,21,224
+1,5,583,Central Grounds via U-Hall,0,21,209
+1,5,584,Central Grounds via Copeley Hill,0,21,189
+1,5,585,Central Grounds via Copeley Hill,0,21,189
+1,5,586,Central Grounds via Copeley Hill,0,21,189
+1,5,587,Central Grounds via Copeley Hill,0,21,189
+1,5,588,Central Grounds via Copeley Hill,0,21,189
+1,5,589,Central Grounds via Copeley Hill,0,21,189
+1,5,590,Copeley Hill via U-Hall,1,21,224
+2,5,741,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,742,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,743,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,744,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,745,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,746,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,747,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,748,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,749,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,750,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,751,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,752,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,753,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,754,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,755,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,756,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,757,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,758,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,759,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,760,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,761,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,762,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,763,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,764,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,765,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,766,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,767,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,768,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,769,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,770,Colonnade Shuttle via Alderman Library,0,25,48
+2,5,771,Colonnade Shuttle via Alderman Library,0,25,48
+3,1,453,Green via UVA Hospital,0,15,191
+3,1,454,Green via UVA Hospital,0,15,191
+3,1,455,Green via UVA Hospital,0,15,191
+3,1,456,Green via UVA Hospital,0,15,191
+3,1,457,Green via UVA Hospital,0,15,191
+3,1,458,Green via UVA Hospital,0,15,191
+3,1,459,Green via UVA Hospital,0,15,191
+3,1,460,Green via UVA Hospital,0,15,191
+3,1,484,Green via UVA Hospital,0,16,191
+3,1,485,Green via UVA Hospital,0,16,191
+3,1,486,Green via UVA Hospital,0,16,191
+3,1,487,Green via UVA Hospital,0,16,191
+3,1,488,Green via UVA Hospital,0,16,191
+3,1,489,UVA Hospital,0,16,193
+3,1,506,Green,0,17,192
+3,1,507,Green via UVA Hospital,0,17,191
+3,1,508,Green via UVA Hospital,0,17,191
+3,1,509,Green via UVA Hospital,0,17,191
+3,1,510,Green via UVA Hospital,0,17,191
+3,1,511,Green via UVA Hospital,0,17,191
+3,1,512,Green via UVA Hospital,0,17,191
+3,1,513,Green via UVA Hospital,0,17,191
+3,1,514,UVA Hospital,0,17,193
+3,1,543,Green via UVA Hospital,0,18,191
+3,1,544,Green via UVA Hospital,0,18,191
+3,1,545,Green via UVA Hospital,0,18,191
+3,1,546,Green via UVA Hospital,0,18,191
+3,1,547,Green via UVA Hospital,0,18,191
+3,2,476,Green via UVA Hospital,0,16,191
+3,2,477,Green via UVA Hospital,0,16,191
+3,2,478,Green via UVA Hospital,0,16,191
+3,2,479,Green via UVA Hospital,0,16,191
+3,2,480,Green via UVA Hospital,0,16,191
+3,2,481,Green via UVA Hospital,0,16,191
+3,2,482,Green via UVA Hospital,0,16,191
+3,2,483,UVA Hospital,0,16,193
+3,2,496,Green,0,17,192
+3,2,497,Green via UVA Hospital,0,17,191
+3,2,498,Green via UVA Hospital,0,17,191
+3,2,499,Green via UVA Hospital,0,17,191
+3,2,500,Green via UVA Hospital,0,17,191
+3,2,501,Green via UVA Hospital,0,17,191
+3,2,502,Green via UVA Hospital,0,17,191
+3,2,503,Green via UVA Hospital,0,17,191
+3,2,504,Green via UVA Hospital,0,17,191
+3,2,505,Green via UVA Hospital,0,17,191
+3,2,533,Green via UVA Hospital,0,18,191
+3,2,534,Green via UVA Hospital,0,18,191
+3,2,535,Green via UVA Hospital,0,18,191
+3,2,536,Green via UVA Hospital,0,18,191
+3,2,537,Green via UVA Hospital,0,18,191
+3,2,538,Green via UVA Hospital,0,18,191
+3,2,539,Green via UVA Hospital,0,18,191
+3,2,540,Green via UVA Hospital,0,18,191
+3,2,541,Green via UVA Hospital,0,18,191
+3,2,542,Green via UVA Hospital,0,18,191
+3,5,447,Green via UVA Hospital,0,15,237
+3,5,448,Green via UVA Hospital,0,15,237
+3,5,449,Green via UVA Hospital,0,15,237
+3,5,450,Green via UVA Hospital,0,15,237
+3,5,451,Green via UVA Hospital,0,15,237
+3,5,452,Green via UVA Hospital,0,15,237
+3,5,461,Green via UVA Hospital,0,16,237
+3,5,462,Green via UVA Hospital,0,16,237
+3,5,463,Green via UVA Hospital,0,16,237
+3,5,464,Green via UVA Hospital,0,16,237
+3,5,465,Green via UVA Hospital,0,16,191
+3,5,466,Green via UVA Hospital,0,16,191
+3,5,467,Green via UVA Hospital,0,16,191
+3,5,468,Green via UVA Hospital,0,16,191
+3,5,469,Green via UVA Hospital,0,16,191
+3,5,470,Green via UVA Hospital,0,16,191
+3,5,471,Green via UVA Hospital,0,16,191
+3,5,472,Green via UVA Hospital,0,16,191
+3,5,473,Green via UVA Hospital,0,16,191
+3,5,474,Green via UVA Hospital,0,16,191
+3,5,475,Green via UVA Hospital,0,16,191
+3,5,490,Green via UVA Hospital,0,17,237
+3,5,491,Green via UVA Hospital,0,17,237
+3,5,492,Green via UVA Hospital,0,17,237
+3,5,493,Green via UVA Hospital,0,17,237
+3,5,494,Green via UVA Hospital,0,17,237
+3,5,495,Green via UVA Hospital,0,17,237
+3,5,515,Green,0,18,238
+3,5,516,Green via UVA Hospital,0,18,237
+3,5,517,Green via UVA Hospital,0,18,237
+3,5,518,Green via UVA Hospital,0,18,237
+3,5,519,Green via UVA Hospital,0,18,237
+3,5,520,Green via UVA Hospital,0,18,237
+3,5,521,Green via UVA Hospital,0,18,191
+3,5,522,Green via UVA Hospital,0,18,191
+3,5,523,Green via UVA Hospital,0,18,191
+3,5,524,Green via UVA Hospital,0,18,191
+3,5,525,Green via UVA Hospital,0,18,191
+3,5,526,Green via UVA Hospital,0,18,191
+3,5,527,Green via UVA Hospital,0,18,191
+3,5,528,Green via UVA Hospital,0,18,191
+3,5,529,Green via UVA Hospital,0,18,191
+3,5,530,Green via UVA Hospital,0,18,191
+3,5,531,Green via UVA Hospital,0,18,191
+3,5,532,Green via UVA Hospital,0,18,191
+4,5,736,Grounds Loop via Central Grounds,0,19,47
+4,5,737,Grounds Loop via Central Grounds,0,19,47
+4,5,738,Grounds Loop via Central Grounds,0,19,47
+4,5,739,Grounds Loop via Central Grounds,0,19,47
+4,5,740,Central Grounds,0,19,46
+4,5,772,Grounds Loop via Central Grounds,0,19,47
+4,5,773,Grounds Loop via Central Grounds,0,19,47
+4,5,774,Grounds Loop via Central Grounds,0,19,47
+5,1,388,Northline via U-Hall,0,11,225
+5,1,389,Northline via UVA Chapel,0,11,222
+5,1,390,Northline via UVA Chapel,0,11,222
+5,1,391,Northline,0,11,216
+5,1,430,Northline,0,13,56
+5,1,431,Northline via UVA Chapel,0,13,222
+5,1,432,Northline via UVA Chapel,0,13,222
+5,1,433,Northline via UVA Chapel,0,13,223
+5,3,30,Northline via U-Hall,0,9,225
+5,3,31,Northline via UVA Chapel,0,9,222
+5,3,32,Northline via UVA Chapel,0,9,222
+5,3,33,Northline,0,9,216
+5,3,697,Northline,0,10,218
+5,3,698,Northline via UVA Chapel,0,10,222
+5,3,699,Northline via UVA Chapel,0,10,222
+5,3,700,Northline via UVA Chapel,0,10,223
+5,4,384,Northline via U-Hall,0,11,225
+5,4,385,Northline via UVA Chapel,0,11,222
+5,4,386,Northline via UVA Chapel,0,11,222
+5,4,387,Northline,0,11,216
+5,4,426,Northline,0,13,56
+5,4,427,Northline via UVA Chapel,0,13,222
+5,4,428,Northline via UVA Chapel,0,13,222
+5,4,429,Northline via UVA Chapel,0,13,223
+5,5,6,Northline via UVA Chapel,0,9,210
+5,5,7,Northline via UVA Chapel,0,9,210
+5,5,8,Northline via UVA Chapel,0,9,210
+5,5,9,Northline via UVA Chapel,0,9,24
+5,5,10,Northline via UVA Chapel,0,9,24
+5,5,11,Northline via UVA Chapel,0,9,24
+5,5,12,Northline via UVA Chapel,0,9,24
+5,5,13,Northline via UVA Chapel,0,9,24
+5,5,14,Northline via UVA Chapel,0,9,20
+5,5,34,Northline,0,10,218
+5,5,35,Northline via UVA Chapel,0,10,210
+5,5,36,Northline via UVA Chapel,0,10,215
+5,5,37,Northline via Alderman Library,0,10,221
+5,5,38,Northline via UVA Chapel,0,10,210
+5,5,39,Northline via UVA Chapel,0,10,210
+5,5,40,Northline via UVA Chapel,0,10,210
+5,5,41,Northline,0,10,216
+5,5,42,Northline via U-Hall,0,10,211
+5,5,43,Northline via UVA Chapel,0,10,210
+5,5,44,Northline via UVA Chapel,0,10,210
+5,5,45,Northline via UVA Chapel,0,10,210
+5,5,46,Northline via UVA Chapel,0,10,210
+5,5,47,Northline via UVA Chapel,0,10,210
+5,5,48,Northline via UVA Chapel,0,10,210
+5,5,49,Northline via UVA Chapel,0,10,217
+5,5,356,Northline via UVA Chapel,0,9,210
+5,5,357,Northline via UVA Chapel,0,9,210
+5,5,358,Northline via UVA Chapel,0,9,210
+5,5,359,Northline via UVA Chapel,0,9,210
+5,5,360,Northline via UVA Chapel,0,9,210
+5,5,361,Northline via UVA Chapel,0,9,212
+5,5,362,Northline,0,9,218
+5,5,363,Northline via UVA Chapel,0,9,210
+5,5,364,Northline via UVA Chapel,0,9,210
+5,5,365,Northline via UVA Chapel,0,9,210
+5,5,366,Northline via UVA Chapel,0,9,210
+5,5,392,Northline via U-Hall,0,12,219
+5,5,393,Northline via UVA Chapel,0,12,210
+5,5,394,Northline via UVA Chapel,0,12,210
+5,5,395,Northline via UVA Chapel,0,12,210
+5,5,396,Northline via UVA Chapel,0,12,210
+5,5,397,Northline via UVA Chapel,0,12,210
+5,5,398,Northline via UVA Chapel,0,12,210
+5,5,399,Northline via UVA Chapel,0,12,210
+5,5,400,Northline via UVA Chapel,0,12,210
+5,5,401,Northline via UVA Chapel,0,12,210
+5,5,402,Northline via UVA Chapel,0,12,210
+5,5,403,Northline via UVA Chapel,0,12,210
+5,5,404,Northline via UVA Chapel,0,12,210
+5,5,405,Northline via McDonalds,0,13,220
+5,5,406,Northline via UVA Chapel,0,13,210
+5,5,407,Northline,0,13,216
+5,5,408,Northline via U-Hall,0,13,211
+5,5,409,Northline via UVA Chapel,0,13,210
+5,5,410,Northline via UVA Chapel,0,13,210
+5,5,411,Northline via UVA Chapel,0,13,213
+5,5,412,Northline via U-Hall,0,13,219
+5,5,413,Northline via UVA Chapel,0,13,210
+5,5,414,Northline via UVA Chapel,0,13,210
+5,5,415,Northline via UVA Chapel,0,13,210
+5,5,416,Northline via UVA Chapel,0,13,210
+5,5,417,Northline via UVA Chapel,0,13,210
+5,5,418,Northline via UVA Chapel,0,13,210
+5,5,419,Northline via UVA Chapel,0,13,210
+5,5,420,Northline via UVA Chapel,0,13,24
+5,5,421,Northline via UVA Chapel,0,13,24
+5,5,422,Northline via UVA Chapel,0,13,24
+5,5,423,Northline via UVA Chapel,0,13,24
+5,5,424,Northline via UVA Chapel,0,13,24
+5,5,425,Northline via UVA Chapel,0,13,21
+5,5,434,Northline via U-Hall,0,14,211
+5,5,435,Northline via UVA Chapel,0,14,210
+5,5,436,Northline via UVA Chapel,0,14,210
+5,5,437,Northline via UVA Chapel,0,14,210
+5,5,438,Northline via UVA Chapel,0,14,210
+5,5,439,Northline via UVA Chapel,0,14,210
+5,5,440,Northline via UVA Chapel,0,14,210
+5,5,441,Northline via UVA Chapel,0,14,210
+5,5,442,Northline via UVA Chapel,0,14,210
+5,5,443,Northline via UVA Chapel,0,14,210
+5,5,444,Northline via UVA Chapel,0,14,210
+5,5,445,Northline via UVA Chapel,0,14,210
+5,5,446,Northline via UVA Chapel,0,14,215
+5,5,701,Northline via Alderman Library,0,11,221
+5,5,702,Northline via UVA Chapel,0,11,210
+5,5,703,Northline via UVA Chapel,0,11,210
+5,5,704,Northline via UVA Chapel,0,11,210
+5,5,705,Northline via UVA Chapel,0,11,210
+5,5,706,Northline via UVA Chapel,0,11,210
+5,5,707,Northline via UVA Chapel,0,11,210
+5,5,708,Northline via UVA Chapel,0,11,210
+5,5,709,Northline via UVA Chapel,0,11,210
+5,5,710,Northline via UVA Chapel,0,11,210
+5,5,711,Northline,0,11,216
+5,5,712,Northline via U-Hall,0,11,211
+5,5,713,Northline via UVA Chapel,0,11,210
+5,5,714,Northline via UVA Chapel,0,11,210
+5,5,715,Northline via UVA Chapel,0,11,210
+5,5,716,Northline via UVA Chapel,0,11,24
+5,5,717,Northline via UVA Chapel,0,11,24
+5,5,718,Northline via UVA Chapel,0,11,24
+5,5,719,Northline via UVA Chapel,0,11,24
+5,5,720,Northline via UVA Chapel,0,11,24
+5,5,721,Northline,0,11,22
+5,6,15,Northline via U-Hall,0,9,23
+5,6,16,Northline via UVA Chapel,0,9,24
+5,6,17,Northline via UVA Chapel,0,9,24
+5,6,18,Northline via UVA Chapel,0,9,24
+5,6,19,Northline via UVA Chapel,0,9,24
+5,6,20,Northline via UVA Chapel,0,9,24
+5,6,21,Northline via UVA Chapel,0,9,24
+5,6,22,Northline via UVA Chapel,0,9,24
+5,6,23,Northline via UVA Chapel,0,9,24
+5,6,24,Northline via UVA Chapel,0,9,24
+5,6,25,Northline via UVA Chapel,0,9,24
+5,6,26,Northline via UVA Chapel,0,9,24
+5,6,27,Northline via UVA Chapel,0,9,24
+5,6,28,Northline via UVA Chapel,0,9,24
+5,6,29,Northline,0,9,22
+5,6,50,Northline,0,10,56
+5,6,51,Northline via UVA Chapel,0,10,24
+5,6,367,Northline via UVA Chapel,0,10,24
+5,6,381,Northline via UVA Chapel,0,11,24
+5,6,382,Northline via UVA Chapel,0,11,24
+5,6,383,Northline via UVA Chapel,0,11,213
+5,6,685,Northline via UVA Chapel,0,10,24
+5,6,686,Northline via UVA Chapel,0,10,24
+5,6,687,Northline via UVA Chapel,0,10,24
+5,6,688,Northline via UVA Chapel,0,10,24
+5,6,689,Northline via UVA Chapel,0,10,24
+5,6,690,Northline via UVA Chapel,0,10,24
+5,6,691,Northline via UVA Chapel,0,10,24
+5,6,692,Northline via UVA Chapel,0,10,24
+5,6,693,Northline via UVA Chapel,0,10,24
+5,6,694,Northline via UVA Chapel,0,10,24
+5,6,695,Northline via UVA Chapel,0,10,24
+5,6,696,Northline via UVA Chapel,0,10,212
+5,6,722,Northline via U-Hall,0,11,219
+5,6,723,Northline via UVA Chapel,0,11,24
+5,6,724,Northline via UVA Chapel,0,11,24
+5,6,725,Northline via UVA Chapel,0,11,24
+5,6,726,Northline via UVA Chapel,0,11,24
+5,6,727,Northline via UVA Chapel,0,11,24
+5,6,728,Northline via UVA Chapel,0,11,24
+5,6,729,Northline via UVA Chapel,0,11,24
+5,6,730,Northline via UVA Chapel,0,11,24
+5,6,731,Northline via UVA Chapel,0,11,24
+5,6,732,Northline via UVA Chapel,0,11,24
+5,6,733,Northline via UVA Chapel,0,11,24
+6,1,368,Stadium via UVA Hospital,0,24,137
+6,1,369,Stadium via UVA Hospital,0,24,137
+6,1,370,Stadium via UVA Hospital,0,24,137
+6,1,371,Stadium via UVA Hospital,0,24,137
+6,1,372,Stadium via UVA Hospital,0,24,137
+6,1,373,Stadium via UVA Hospital,0,24,137
+6,1,374,Stadium via UVA Hospital,0,24,137
+6,1,375,Stadium via UVA Hospital,0,24,137
+6,1,376,Stadium via UVA Hospital,0,24,137
+6,1,377,Stadium via UVA Hospital,0,24,137
+6,1,378,Stadium via UVA Hospital,0,24,137
+6,1,379,Stadium via UVA Hospital,0,24,137
+6,1,380,Stadium via UVA Hospital,0,24,137
+6,1,617,Stadium,0,22,138
+6,1,618,Stadium via UVA Hospital,0,22,137
+6,1,619,Stadium via UVA Hospital,0,22,137
+6,1,620,Stadium via UVA Hospital,0,22,137
+6,1,621,Stadium via UVA Hospital,0,22,137
+6,1,622,Stadium via UVA Hospital,0,22,137
+6,1,623,Stadium via UVA Hospital,0,22,137
+6,1,624,Stadium via UVA Hospital,0,22,137
+6,1,625,Stadium via UVA Hospital,0,22,137
+6,1,626,Stadium via UVA Hospital,0,22,137
+6,1,627,Stadium via UVA Hospital,0,22,137
+6,1,628,Stadium via UVA Hospital,0,22,137
+6,1,629,Stadium via UVA Hospital,0,22,137
+6,1,630,UVA Hospital,0,22,139
+6,1,658,Stadium via UVA Hospital,0,23,137
+6,1,659,Stadium via UVA Hospital,0,23,137
+6,1,660,Stadium via UVA Hospital,0,23,137
+6,1,661,Stadium via UVA Hospital,0,23,137
+6,1,662,Stadium via UVA Hospital,0,23,137
+6,1,663,Stadium via UVA Hospital,0,23,137
+6,1,664,Stadium via UVA Hospital,0,23,137
+6,1,665,Stadium via UVA Hospital,0,23,137
+6,1,666,Stadium via UVA Hospital,0,23,137
+6,1,667,Stadium via UVA Hospital,0,23,137
+6,1,668,Stadium via UVA Hospital,0,23,137
+6,1,669,Stadium via UVA Hospital,0,23,137
+6,1,670,Stadium via UVA Hospital,0,23,137
+6,1,671,UVA Hospital,0,23,139
+6,1,684,Stadium,0,24,138
+6,2,598,Stadium,0,22,138
+6,2,599,Stadium via UVA Hospital,0,22,137
+6,2,600,Stadium via UVA Hospital,0,22,137
+6,2,601,Stadium via UVA Hospital,0,22,137
+6,2,602,Stadium via UVA Hospital,0,22,137
+6,2,603,Stadium via UVA Hospital,0,22,137
+6,2,604,Stadium via UVA Hospital,0,22,137
+6,2,605,Stadium via UVA Hospital,0,22,137
+6,2,606,Stadium via UVA Hospital,0,22,137
+6,2,607,Stadium via UVA Hospital,0,22,137
+6,2,608,Stadium via UVA Hospital,0,22,137
+6,2,609,Stadium via UVA Hospital,0,22,137
+6,2,610,Stadium via UVA Hospital,0,22,137
+6,2,611,Stadium via UVA Hospital,0,22,137
+6,2,612,Stadium via UVA Hospital,0,22,137
+6,2,613,Stadium via UVA Hospital,0,22,137
+6,2,614,Stadium via UVA Hospital,0,22,137
+6,2,615,Stadium via UVA Hospital,0,22,137
+6,2,616,Stadium via UVA Hospital,0,22,137
+6,2,639,Stadium via UVA Hospital,0,23,137
+6,2,640,Stadium via UVA Hospital,0,23,137
+6,2,641,Stadium via UVA Hospital,0,23,137
+6,2,642,Stadium via UVA Hospital,0,23,137
+6,2,643,Stadium via UVA Hospital,0,23,137
+6,2,644,Stadium via UVA Hospital,0,23,137
+6,2,645,Stadium via UVA Hospital,0,23,137
+6,2,646,Stadium via UVA Hospital,0,23,137
+6,2,647,Stadium via UVA Hospital,0,23,137
+6,2,648,Stadium via UVA Hospital,0,23,137
+6,2,649,Stadium via UVA Hospital,0,23,137
+6,2,650,Stadium via UVA Hospital,0,23,137
+6,2,651,Stadium via UVA Hospital,0,23,137
+6,2,652,Stadium via UVA Hospital,0,23,137
+6,2,653,Stadium via UVA Hospital,0,23,137
+6,2,654,Stadium via UVA Hospital,0,23,137
+6,2,655,Stadium via UVA Hospital,0,23,137
+6,2,656,Stadium via UVA Hospital,0,23,137
+6,2,657,UVA Hospital,0,23,139
+6,2,680,Stadium,0,24,138
+6,2,681,Stadium via UVA Hospital,0,24,137
+6,2,682,Stadium via UVA Hospital,0,24,137
+6,2,683,Stadium via UVA Hospital,0,24,137
+6,5,591,Stadium via UVA Hospital,0,22,136
+6,5,592,Stadium via UVA Hospital,0,22,136
+6,5,593,Stadium via UVA Hospital,0,22,136
+6,5,594,Stadium via UVA Hospital,0,22,136
+6,5,595,Stadium via UVA Hospital,0,22,137
+6,5,596,Stadium via UVA Hospital,0,22,137
+6,5,597,Stadium via UVA Hospital,0,22,137
+6,5,631,Stadium,0,23,138
+6,5,632,Stadium via UVA Hospital,0,23,136
+6,5,633,Stadium via UVA Hospital,0,23,136
+6,5,634,Stadium via UVA Hospital,0,23,136
+6,5,635,Stadium via UVA Hospital,0,23,137
+6,5,636,Stadium via UVA Hospital,0,23,137
+6,5,637,Stadium via UVA Hospital,0,23,137
+6,5,638,Stadium via UVA Hospital,0,23,137
+6,5,672,Stadium via UVA Hospital,0,24,136
+6,5,673,Stadium via UVA Hospital,0,24,136
+6,5,674,Stadium via UVA Hospital,0,24,136
+6,5,675,Stadium via UVA Hospital,0,24,136
+6,5,676,Stadium via UVA Hospital,0,24,137
+6,5,677,Stadium via UVA Hospital,0,24,137
+6,5,678,Stadium via UVA Hospital,0,24,137
+6,5,679,UVA Hospital,0,24,139
+7,5,1,University Loop via UVA Hospital,0,2,135
+7,5,2,University Loop via UVA Hospital,0,3,135
+7,5,52,University Loop via UVA Hospital,0,1,135
+7,5,53,University Loop via UVA Hospital,0,1,135
+7,5,54,University Loop via UVA Hospital,0,1,135
+7,5,55,University Loop via UVA Hospital,0,1,135
+7,5,56,University Loop via UVA Hospital,0,1,135
+7,5,57,University Loop via UVA Hospital,0,1,135
+7,5,58,University Loop via UVA Hospital,0,1,135
+7,5,59,University Loop via UVA Hospital,0,1,135
+7,5,60,University Loop via UVA Hospital,0,1,135
+7,5,61,University Loop via UVA Hospital,0,1,135
+7,5,62,University Loop via UVA Hospital,0,1,135
+7,5,63,University Loop via UVA Hospital,0,1,135
+7,5,64,University Loop via UVA Hospital,0,1,135
+7,5,65,University Loop via UVA Hospital,0,1,135
+7,5,66,University Loop via UVA Hospital,0,1,135
+7,5,67,University Loop via UVA Hospital,0,1,135
+7,5,68,University Loop via UVA Hospital,0,1,135
+7,5,69,University Loop via UVA Hospital,0,1,135
+7,5,70,University Loop via UVA Hospital,0,1,135
+7,5,71,University Loop via UVA Hospital,0,1,1
+7,5,72,University Loop via UVA Hospital,0,1,1
+7,5,73,University Loop via UVA Hospital,0,1,1
+7,5,74,University Loop via UVA Hospital,0,1,1
+7,5,75,University Loop via UVA Hospital,0,1,1
+7,5,76,University Loop via UVA Hospital,0,1,1
+7,5,77,University Loop via UVA Hospital,0,1,1
+7,5,78,University Loop via UVA Hospital,0,1,1
+7,5,79,University Loop,0,1,174
+7,5,102,University Loop via Stadium,0,2,151
+7,5,103,University Loop via UVA Hospital,0,2,135
+7,5,104,University Loop via UVA Hospital,0,3,135
+7,5,105,University Loop via UVA Hospital,0,3,135
+7,5,106,University Loop via UVA Hospital,0,3,135
+7,5,107,University Loop via UVA Hospital,0,3,1
+7,5,108,University Loop via UVA Hospital,0,3,1
+7,5,109,University Loop via UVA Hospital,0,3,1
+7,5,110,University Loop via UVA Hospital,0,3,1
+7,5,111,University Loop via UVA Hospital,0,3,1
+7,5,112,University Loop via UVA Hospital,0,3,1
+7,5,113,University Loop via UVA Hospital,0,3,1
+7,5,114,University Loop via UVA Hospital,0,3,1
+7,5,115,University Loop via UVA Hospital,0,3,166
+7,5,116,University Loop,0,4,153
+7,5,117,University Loop via UVA Hospital,0,4,135
+7,5,118,University Loop via UVA Hospital,0,4,135
+7,5,119,University Loop via UVA Hospital,0,4,135
+7,5,120,University Loop via UVA Hospital,0,4,135
+7,5,121,University Loop via UVA Hospital,0,4,135
+7,5,122,University Loop via UVA Hospital,0,4,135
+7,5,123,University Loop via UVA Hospital,0,4,135
+7,5,124,University Loop via UVA Hospital,0,4,135
+7,5,125,University Loop via UVA Hospital,0,4,135
+7,5,126,University Loop via UVA Hospital,0,4,135
+7,5,127,University Loop via UVA Hospital,0,4,135
+7,5,128,University Loop via UVA Hospital,0,4,135
+7,5,129,University Loop via UVA Hospital,0,4,135
+7,5,130,University Loop via UVA Hospital,0,4,135
+7,5,131,University Loop via UVA Hospital,0,4,135
+7,5,132,University Loop via UVA Hospital,0,4,135
+7,5,133,University Loop via UVA Hospital,0,4,135
+7,5,134,University Loop via UVA Hospital,0,4,135
+7,5,135,University Loop via UVA Hospital,0,4,167
+7,5,210,University Loop via UVA Hospital,0,2,135
+7,5,211,University Loop via UVA Hospital,0,2,135
+7,5,212,University Loop via UVA Hospital,0,2,135
+7,5,213,University Loop via UVA Hospital,0,2,135
+7,5,214,University Loop via UVA Hospital,0,2,135
+7,5,215,University Loop via UVA Hospital,0,2,135
+7,5,216,University Loop via UVA Hospital,0,2,135
+7,5,217,University Loop via UVA Hospital,0,2,135
+7,5,218,University Loop via UVA Hospital,0,2,135
+7,5,219,University Loop via UVA Hospital,0,2,135
+7,5,220,University Loop via UVA Hospital,0,2,135
+7,5,221,University Loop via UVA Hospital,0,2,135
+7,5,222,University Loop via UVA Hospital,0,2,135
+7,5,223,University Loop via UVA Hospital,0,2,135
+7,5,224,University Loop via UVA Hospital,0,2,135
+7,5,225,University Loop via UVA Hospital,0,2,135
+7,5,248,University Loop via UVA Hospital,0,3,135
+7,5,249,University Loop via UVA Hospital,0,3,135
+7,5,250,University Loop via UVA Hospital,0,3,135
+7,5,251,University Loop via UVA Hospital,0,3,135
+7,5,252,University Loop via UVA Hospital,0,3,135
+7,5,253,University Loop via UVA Hospital,0,3,135
+7,5,254,University Loop via UVA Hospital,0,3,135
+7,5,255,University Loop via UVA Hospital,0,3,135
+7,5,256,University Loop via UVA Hospital,0,3,135
+7,5,257,University Loop via UVA Hospital,0,3,135
+7,5,258,University Loop via UVA Hospital,0,3,135
+7,5,259,University Loop via UVA Hospital,0,3,135
+7,5,260,University Loop via UVA Hospital,0,3,135
+7,5,261,University Loop via UVA Hospital,0,3,135
+7,5,262,University Loop via UVA Hospital,0,3,135
+7,5,734,University Loop,0,12,228
+7,5,735,University Loop via UVA Hospital,0,12,166
+7,6,80,University Loop,0,1,153
+7,6,81,University Loop via UVA Hospital,0,1,1
+7,6,82,University Loop via UVA Hospital,0,1,1
+7,6,83,University Loop via UVA Hospital,0,1,1
+7,6,84,University Loop via UVA Hospital,0,1,1
+7,6,85,University Loop via UVA Hospital,0,1,1
+7,6,86,University Loop via UVA Hospital,0,1,1
+7,6,87,University Loop via UVA Hospital,0,1,1
+7,6,88,University Loop via UVA Hospital,0,1,1
+7,6,89,University Loop via UVA Hospital,0,1,1
+7,6,90,University Loop via UVA Hospital,0,1,1
+7,6,91,University Loop via UVA Hospital,0,1,1
+7,6,92,University Loop via UVA Hospital,0,1,1
+7,6,93,University Loop via UVA Hospital,0,1,1
+7,6,94,University Loop via UVA Hospital,0,1,1
+7,6,95,University Loop via UVA Hospital,0,1,1
+7,6,96,University Loop via UVA Hospital,0,1,1
+7,6,97,University Loop via UVA Hospital,0,1,1
+7,6,98,University Loop via UVA Hospital,0,1,1
+7,6,99,University Loop via UVA Hospital,0,1,1
+7,6,100,University Loop via UVA Hospital,0,1,1
+7,6,101,University Loop via UVA Hospital,0,1,8
+7,6,226,University Loop via Stadium,0,2,4
+7,6,227,University Loop via UVA Hospital,0,2,1
+7,6,228,University Loop via UVA Hospital,0,2,1
+7,6,229,University Loop via UVA Hospital,0,2,1
+7,6,230,University Loop via UVA Hospital,0,2,1
+7,6,231,University Loop via UVA Hospital,0,2,1
+7,6,232,University Loop via UVA Hospital,0,2,1
+7,6,233,University Loop via UVA Hospital,0,2,1
+7,6,234,University Loop via UVA Hospital,0,2,1
+7,6,235,University Loop via UVA Hospital,0,2,1
+7,6,236,University Loop via UVA Hospital,0,2,1
+7,6,237,University Loop via UVA Hospital,0,2,1
+7,6,238,University Loop via UVA Hospital,0,2,1
+7,6,239,University Loop via UVA Hospital,0,2,1
+7,6,240,University Loop via UVA Hospital,0,2,1
+7,6,241,University Loop via UVA Hospital,0,2,1
+7,6,242,University Loop via UVA Hospital,0,2,1
+7,6,243,University Loop via UVA Hospital,0,2,1
+7,6,244,University Loop via UVA Hospital,0,2,1
+7,6,245,University Loop via UVA Hospital,0,2,1
+7,6,246,University Loop via UVA Hospital,0,2,1
+7,6,247,University Loop,0,2,174
+8,1,296,University Loop,0,5,171
+8,1,297,University Loop via Alderman Library,0,5,10
+8,1,298,University Loop via Alderman Library,0,5,10
+8,1,299,University Loop via Alderman Library,0,5,10
+8,1,300,University Loop via Alderman Library,0,5,202
+8,1,332,University Loop via Stadium,0,7,12
+8,1,333,University Loop via Alderman Library,0,7,10
+8,1,334,University Loop via Alderman Library,0,7,10
+8,1,335,University Loop via Alderman Library,0,7,10
+8,1,336,University Loop,0,7,178
+8,3,188,University Loop,0,6,171
+8,3,189,University Loop via Alderman Library,0,6,10
+8,3,190,University Loop via Alderman Library,0,6,10
+8,3,191,University Loop via Alderman Library,0,6,10
+8,3,192,University Loop via Alderman Library,0,6,26
+8,3,301,University Loop via Stadium,0,5,12
+8,3,302,University Loop via Alderman Library,0,5,10
+8,3,303,University Loop via Alderman Library,0,5,10
+8,3,304,University Loop via Alderman Library,0,5,10
+8,3,305,University Loop,0,5,178
+8,4,291,University Loop,0,5,171
+8,4,292,University Loop via Alderman Library,0,5,10
+8,4,293,University Loop via Alderman Library,0,5,10
+8,4,294,University Loop via Alderman Library,0,5,10
+8,4,295,University Loop via Alderman Library,0,5,26
+8,4,327,University Loop via Stadium,0,7,12
+8,4,328,University Loop via Alderman Library,0,7,10
+8,4,329,University Loop via Alderman Library,0,7,10
+8,4,330,University Loop via Alderman Library,0,7,10
+8,4,331,University Loop,0,7,178
+8,5,3,University Loop via Alderman Library,0,5,10
+8,5,4,University Loop via Alderman Library,0,6,168
+8,5,5,University Loop via Alderman Library,0,7,168
+8,5,136,University Loop via Alderman Library,0,5,175
+8,5,137,University Loop via Alderman Library,0,5,175
+8,5,138,University Loop via Alderman Library,0,5,168
+8,5,139,University Loop via Alderman Library,0,5,168
+8,5,140,University Loop via Alderman Library,0,5,168
+8,5,141,University Loop via Alderman Library,0,5,168
+8,5,142,University Loop via Alderman Library,0,5,168
+8,5,143,University Loop via Alderman Library,0,5,168
+8,5,144,University Loop via Alderman Library,0,5,168
+8,5,145,University Loop via Alderman Library,0,5,168
+8,5,146,University Loop via Alderman Library,0,5,168
+8,5,147,University Loop via Alderman Library,0,5,168
+8,5,148,University Loop via Alderman Library,0,5,168
+8,5,149,University Loop via Alderman Library,0,5,168
+8,5,150,University Loop via Alderman Library,0,5,168
+8,5,151,University Loop via Alderman Library,0,5,168
+8,5,152,University Loop via Alderman Library,0,5,168
+8,5,153,University Loop via Alderman Library,0,5,168
+8,5,154,University Loop via Alderman Library,0,5,168
+8,5,155,University Loop via Alderman Library,0,5,10
+8,5,156,University Loop via Alderman Library,0,5,10
+8,5,157,University Loop via Alderman Library,0,6,168
+8,5,158,University Loop via Alderman Library,0,6,168
+8,5,159,University Loop via Alderman Library,0,6,168
+8,5,160,University Loop via Alderman Library,0,6,168
+8,5,161,University Loop via Alderman Library,0,6,168
+8,5,162,University Loop via Alderman Library,0,6,168
+8,5,163,University Loop via Alderman Library,0,6,168
+8,5,164,University Loop via Alderman Library,0,6,168
+8,5,165,University Loop via Alderman Library,0,6,177
+8,5,193,University Loop via UVA Hospital,0,7,188
+8,5,194,University Loop via Alderman Library,0,7,175
+8,5,195,University Loop via Alderman Library,0,7,168
+8,5,196,University Loop via Alderman Library,0,7,168
+8,5,197,University Loop via Alderman Library,0,7,168
+8,5,198,University Loop via Alderman Library,0,7,168
+8,5,199,University Loop via Alderman Library,0,7,168
+8,5,200,University Loop via Alderman Library,0,7,168
+8,5,201,University Loop via Alderman Library,0,7,168
+8,5,202,University Loop via Alderman Library,0,7,168
+8,5,203,University Loop via Alderman Library,0,7,168
+8,5,204,University Loop via Alderman Library,0,7,168
+8,5,205,University Loop via Alderman Library,0,7,168
+8,5,206,University Loop via Alderman Library,0,7,168
+8,5,207,University Loop via Alderman Library,0,7,168
+8,5,208,University Loop via Alderman Library,0,7,168
+8,5,209,University Loop via Alderman Library,0,7,168
+8,5,263,University Loop via Alderman Library,0,5,10
+8,5,264,University Loop via Alderman Library,0,5,10
+8,5,265,University Loop via Alderman Library,0,5,10
+8,5,266,University Loop via Alderman Library,0,5,10
+8,5,267,University Loop via Alderman Library,0,5,10
+8,5,268,University Loop via Alderman Library,0,5,26
+8,5,306,University Loop,0,6,171
+8,5,307,University Loop via Alderman Library,0,6,175
+8,5,308,University Loop via Alderman Library,0,6,168
+8,5,309,University Loop via Alderman Library,0,6,168
+8,5,310,University Loop via Alderman Library,0,6,168
+8,5,311,University Loop via Alderman Library,0,6,168
+8,5,312,University Loop via Alderman Library,0,6,168
+8,5,313,University Loop via Alderman Library,0,6,168
+8,5,314,University Loop via Alderman Library,0,6,168
+8,5,315,University Loop via Alderman Library,0,6,168
+8,5,316,University Loop via Alderman Library,0,7,168
+8,5,317,University Loop via Alderman Library,0,7,168
+8,5,318,University Loop via Alderman Library,0,7,10
+8,5,319,University Loop via Alderman Library,0,7,10
+8,5,320,University Loop via Alderman Library,0,7,10
+8,5,321,University Loop via Alderman Library,0,7,10
+8,5,322,University Loop via Alderman Library,0,7,10
+8,5,323,University Loop via Alderman Library,0,7,10
+8,5,324,University Loop via Alderman Library,0,7,10
+8,5,325,University Loop via Alderman Library,0,7,10
+8,5,326,University Loop,0,7,178
+8,5,337,University Loop via Stadium,0,8,179
+8,5,338,University Loop via Alderman Library,0,8,175
+8,5,339,University Loop via Alderman Library,0,8,168
+8,5,340,University Loop via Alderman Library,0,8,168
+8,5,341,University Loop via Alderman Library,0,8,168
+8,5,342,University Loop via Alderman Library,0,8,168
+8,5,343,University Loop via Alderman Library,0,8,168
+8,5,344,University Loop via Alderman Library,0,8,168
+8,5,345,University Loop via Alderman Library,0,8,168
+8,5,346,University Loop via Alderman Library,0,8,168
+8,5,347,University Loop via Alderman Library,0,8,168
+8,5,348,University Loop via Alderman Library,0,8,168
+8,5,349,University Loop via Alderman Library,0,8,168
+8,5,350,University Loop via Alderman Library,0,8,168
+8,5,351,University Loop via Alderman Library,0,8,168
+8,5,352,University Loop via Alderman Library,0,8,168
+8,5,353,University Loop via Alderman Library,0,8,168
+8,5,354,University Loop via Alderman Library,0,8,168
+8,5,355,University Loop via Alderman Library,0,8,168
+8,6,166,University Loop,0,6,171
+8,6,167,University Loop via Alderman Library,0,6,10
+8,6,168,University Loop via Alderman Library,0,6,10
+8,6,169,University Loop via Alderman Library,0,6,10
+8,6,170,University Loop via Alderman Library,0,6,10
+8,6,171,University Loop via Alderman Library,0,6,10
+8,6,172,University Loop via Alderman Library,0,6,10
+8,6,173,University Loop via Alderman Library,0,6,10
+8,6,174,University Loop via Alderman Library,0,6,10
+8,6,175,University Loop via Alderman Library,0,6,10
+8,6,176,University Loop via Alderman Library,0,6,10
+8,6,177,University Loop via Alderman Library,0,6,10
+8,6,178,University Loop via Alderman Library,0,6,10
+8,6,179,University Loop via Alderman Library,0,6,10
+8,6,180,University Loop via Alderman Library,0,6,10
+8,6,181,University Loop via Alderman Library,0,6,10
+8,6,182,University Loop via Alderman Library,0,6,10
+8,6,183,University Loop via Alderman Library,0,6,10
+8,6,184,University Loop via Alderman Library,0,6,10
+8,6,185,University Loop via Alderman Library,0,6,10
+8,6,186,University Loop via Alderman Library,0,6,10
+8,6,187,University Loop via Alderman Library,0,6,26
+8,6,269,University Loop via Stadium,0,5,12
+8,6,270,University Loop via Alderman Library,0,5,10
+8,6,271,University Loop via Alderman Library,0,5,10
+8,6,272,University Loop via Alderman Library,0,5,10
+8,6,273,University Loop via Alderman Library,0,5,10
+8,6,274,University Loop via Alderman Library,0,5,10
+8,6,275,University Loop via Alderman Library,0,5,10
+8,6,276,University Loop via Alderman Library,0,5,10
+8,6,277,University Loop via Alderman Library,0,5,10
+8,6,278,University Loop via Alderman Library,0,5,10
+8,6,279,University Loop via Alderman Library,0,5,10
+8,6,280,University Loop via Alderman Library,0,5,10
+8,6,281,University Loop via Alderman Library,0,5,10
+8,6,282,University Loop via Alderman Library,0,5,10
+8,6,283,University Loop via Alderman Library,0,5,10
+8,6,284,University Loop via Alderman Library,0,5,10
+8,6,285,University Loop via Alderman Library,0,5,10
+8,6,286,University Loop via Alderman Library,0,5,10
+8,6,287,University Loop via Alderman Library,0,5,10
+8,6,288,University Loop via Alderman Library,0,5,10
+8,6,289,University Loop via Alderman Library,0,5,10
+8,6,290,University Loop,0,5,178

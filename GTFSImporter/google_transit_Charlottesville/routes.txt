@@ -1,0 +1,20 @@
+﻿route_id,agency_id,route_short_name,route_long_name,route_type,route_url
+1,CTS,1A,"East Market",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=1A
+2,CTS,1B,"Piedmont Virginia Community College",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=1B
+3,CTS,2A,"Locust Avenue",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=2A
+4,CTS,2B,"Southwood",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=2B
+5,CTS,3,"Belmont",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=3
+6,CTS,4,"Cherry Ave Frys Spring ",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=4
+7,CTS,4,"Downtown to Hospital",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=4
+8,CTS,4,"Hospital to Downtown",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=4
+9,CTS,5,"Walmart/Barracks Rd",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=5
+10,CTS,6,"Ridge St UVA",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=6
+11,CTS,7,"Downtown/Fashion Square",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=7
+12,CTS,8,"Barracks Rd / Seminole Sq",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=8
+13,CTS,9,"Downtown/High School",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=9
+14,CTS,10,"Pantops",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=10
+15,CTS,21,"Belmont",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=21
+16,CTS,22,"Prospect Avenue",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=22
+17,CTS,23,"Piedmont Virginia Community College",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=23
+18,CTS,24,"Pantops",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=24
+19,CTS,T,"Free Trolley",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?RouteNo=T
