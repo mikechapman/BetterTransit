@@ -24,7 +24,7 @@
 @property double distance;
 @property BOOL favorite;
 
-// stop has a selected route when invoked from RailView
+// stop has a selected route when invoked from the Trip View
 @property (nonatomic, retain) BTRoute *selectedRoute;
 
 @end

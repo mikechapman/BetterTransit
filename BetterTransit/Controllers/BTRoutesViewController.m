@@ -7,7 +7,7 @@
 //
 
 #import "BTRoutesViewController.h"
-#import "BTRailViewController.h"
+#import "BTTripViewController.h"
 #import "BTTransitDelegate.h"
 #import "BTRouteCell.h"
 
@@ -149,7 +149,7 @@
 	NSString *routeId = [routesInSection objectAtIndex:indexPath.row];
 	BTRoute *selectedRoute = [transit routeWithId:routeId];
 	
-	BTRailViewController *controller = [AppDelegate createRailViewController];
+	BTTripViewController *controller = [AppDelegate createTripViewController];
 	controller.route = selectedRoute;
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];

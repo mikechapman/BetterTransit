@@ -11,7 +11,7 @@
 #import "BTFeedLoader.h"
 #import "BTScheduleViewController.h"
 #import "BTPredictionViewController.h"
-#import "BTRailViewController.h"
+#import "BTTripViewController.h"
 #import "BTRouteCell.h"
 
 @interface BTTransitDelegate : NSObject
@@ -32,7 +32,7 @@
 // Create view controllers
 - (BTPredictionViewController *)createPredictionViewController;
 - (BTScheduleViewController *)createScheduleViewController;
-- (BTRailViewController *)createRailViewController;
+- (BTTripViewController *)createTripViewController;
 - (BTRouteCell *)createRouteCellWithIdentifier:(NSString *)CellIdentifier;
 
 @end

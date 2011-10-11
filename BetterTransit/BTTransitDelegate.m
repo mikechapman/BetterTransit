@@ -37,9 +37,9 @@ void uncaughtExceptionHandler(NSException *exception) {
 	return nil;
 }
 
-- (BTRailViewController *)createRailViewController
+- (BTTripViewController *)createTripViewController
 {
-	return [[BTRailViewController alloc] init];
+	return [[BTTripViewController alloc] init];
 }	
 
 - (BTRouteCell *)createRouteCellWithIdentifier:(NSString *)CellIdentifier
