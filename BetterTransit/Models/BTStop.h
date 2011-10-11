@@ -12,7 +12,7 @@
 
 @interface BTStop : NSObject
 {
-	NSString *stationId;
+	NSString *stopId;
 	int owner;
 	NSString *desc;
 	double latitude;
@@ -20,10 +20,10 @@
 	NSUInteger tileNumber;
 	double distance;
 	BOOL favorite;
-	BTRoute *selectedRoute; // station has a selected route when invoked from RailView
+	BTRoute *selectedRoute; // stop has a selected route when invoked from RailView
 }
 
-@property (nonatomic, copy) NSString *stationId;
+@property (nonatomic, copy) NSString *stopId;
 @property (nonatomic, assign) int owner;
 @property (nonatomic, copy) NSString *desc;
 @property double latitude;

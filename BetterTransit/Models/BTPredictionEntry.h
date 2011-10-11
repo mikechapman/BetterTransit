@@ -13,7 +13,7 @@
 @interface BTPredictionEntry : NSObject
 {
 	BTRoute *route;
-	BTStop *station;
+	BTStop *stop;
 	
 	NSString *routeId;
 	NSString *subrouteId;
@@ -26,7 +26,7 @@
 }
 
 @property (nonatomic, retain) BTRoute *route;
-@property (nonatomic, retain) BTStop *station;
+@property (nonatomic, retain) BTStop *stop;
 @property (nonatomic, copy) NSString *routeId;
 @property (nonatomic, copy) NSString *subrouteId;
 @property (nonatomic, copy) NSString *destination;

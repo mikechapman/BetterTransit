@@ -17,7 +17,7 @@
 
 @implementation BTMapViewController
 
-@synthesize stations;
+@synthesize stops;
 @synthesize mapView, annotations, lastVisibleTiles;
 @synthesize locationUpdateButton, activityIndicator, activityIndicatorView;
 
@@ -33,7 +33,7 @@
 	
 	transit = [AppDelegate transit];
 	
-	self.stations = transit.stations;
+	self.stops = transit.stops;
 	self.annotations = nil;
 	self.lastVisibleTiles = nil;
 	
@@ -121,7 +121,7 @@
 - (void)dealloc
 {
 	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
-	[stations release];
+	[stops release];
 	[mapView release];
 	[annotations release];
 	[lastVisibleTiles release];
@@ -172,15 +172,15 @@
 - (NSArray *)annotationsInTile:(NSArray *)tile
 {
 	NSMutableArray *anns = [NSMutableArray arrayWithCapacity:20];
-	for (BTStop *station in tile) {
+	for (BTStop *stop in tile) {
 		BTAnnotation *annotation = [[BTAnnotation alloc] init];
-		annotation.title = station.desc;
-		annotation.subtitle = [NSString stringWithFormat:@"Bus stop #%@", station.stationId];
+		annotation.title = stop.desc;
+		annotation.subtitle = [NSString stringWithFormat:@"Bus stop #%@", stop.stopId];
 		CLLocationCoordinate2D coordinate = {0,0};
-		coordinate.latitude = station.latitude;
-		coordinate.longitude = station.longitude;
+		coordinate.latitude = stop.latitude;
+		coordinate.longitude = stop.longitude;
 		annotation.coordinate = coordinate;
-		annotation.station = station;
+		annotation.stop = stop;
 		[anns addObject:annotation];
 		[annotation release];
 	}
@@ -192,7 +192,7 @@
 {
 	if (![[BTLocationManager sharedInstance] locationFound]) return;
 	
-	// filter stations to the current visible region
+	// filter stops to the current visible region
 	MKCoordinateRegion region = mapView.region;
 	if (region.span.longitudeDelta > 0.015) {
 		[self removeAnnotations];
@@ -236,15 +236,15 @@
 {
 	if (self.annotations == nil) {
 		self.annotations = [NSMutableArray arrayWithCapacity:NUM_STOPS];
-		for (BTStop *station in self.stations) {
+		for (BTStop *stop in self.stops) {
 			BTAnnotation *annotation = [[BTAnnotation alloc] init];
-			annotation.title = station.desc;
-			annotation.subtitle = [NSString stringWithFormat:@"Bus stop #%@", station.stationId];
+			annotation.title = stop.desc;
+			annotation.subtitle = [NSString stringWithFormat:@"Bus stop #%@", stop.stopId];
 			CLLocationCoordinate2D coordinate = {0,0};
-			coordinate.latitude = station.latitude;
-			coordinate.longitude = station.longitude;
+			coordinate.latitude = stop.latitude;
+			coordinate.longitude = stop.longitude;
 			annotation.coordinate = coordinate;
-			annotation.station = station;
+			annotation.stop = stop;
 			[self.annotations addObject:annotation];
 			[annotation release];
 		}
@@ -301,10 +301,10 @@
 		
 		annotationView.canShowCallout = YES;
 		BTAnnotation *ann = (BTAnnotation *)annotation;
-		NSString *imageName = [NSString stringWithFormat:@"station_sign_%d.png", ann.station.owner];
+		NSString *imageName = [NSString stringWithFormat:@"stop_sign_%d.png", ann.stop.owner];
 		UIImage *img = [UIImage imageNamed:imageName];
 		if (img == nil) {
-			img = [UIImage imageNamed:@"default_station_sign.png"];
+			img = [UIImage imageNamed:@"default_stop_sign.png"];
 		}
 		[annotationView setImage:img];
 		//pinView.leftCalloutAccessoryView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]] autorelease];
@@ -325,7 +325,7 @@
 	BTAnnotation *annotation = [av annotation];
 	
 	BTPredictionViewController *controller = [AppDelegate createPredictionViewController];
-	controller.station = annotation.station;
+	controller.stop = annotation.stop;
 	controller.prediction = nil;
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];

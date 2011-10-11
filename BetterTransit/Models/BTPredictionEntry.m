@@ -11,7 +11,7 @@
 
 @implementation BTPredictionEntry
 
-@synthesize route, station;
+@synthesize route, stop;
 @synthesize routeId, subrouteId, destination, eta;
 @synthesize shouldDownloadData, isUpdating;
 @synthesize info;
@@ -28,7 +28,7 @@
 - (void)dealloc
 {
 	[route release], route = nil;
-	[station release], station = nil;
+	[stop release], stop = nil;
 	[routeId release], routeId = nil;
 	[subrouteId release], subrouteId = nil;
 	[destination release], destination = nil;

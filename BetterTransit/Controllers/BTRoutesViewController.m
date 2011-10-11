@@ -145,7 +145,7 @@
 	NSArray *routesInSection = [self.routesToDisplay objectForKey:key];
 	NSString *selectedRouteId = [routesInSection objectAtIndex:indexPath.row];
 	BTRoute *selectedRoute = [transit routeWithId:selectedRouteId];
-	if (selectedRoute.stationLists == nil) {
+	if (selectedRoute.stopLists == nil) {
 		[transit loadStopListsForRoute:selectedRoute];
 	}
 	
@@ -153,7 +153,7 @@
 	
 	BTRailViewController *controller = [AppDelegate createRailViewController];
 	controller.route = selectedRoute;
-	controller.stationLists = selectedRoute.stationLists;
+	controller.stopLists = selectedRoute.stopLists;
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];
 }

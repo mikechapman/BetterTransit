@@ -17,9 +17,9 @@
 {
 	BTTransit *transit;
 	BTRoute *route;
-	NSArray *stationLists;
+	NSArray *stopLists;
 	
-	NSArray *stations;
+	NSArray *stops;
 	UITableView *mainTableView;
 	UISegmentedControl *segmentedControl;
 	UIImageView *titleImageView;
@@ -31,8 +31,8 @@
 }
 
 @property (nonatomic, retain) BTRoute *route;
-@property (nonatomic, retain) NSArray *stationLists;
-@property (nonatomic, retain) NSArray *stations;
+@property (nonatomic, retain) NSArray *stopLists;
+@property (nonatomic, retain) NSArray *stops;
 @property (nonatomic, retain) IBOutlet UITableView *mainTableView;
 @property (nonatomic, retain) UISegmentedControl *segmentedControl;
 @property (nonatomic, retain) UIImageView *titleImageView;

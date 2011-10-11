@@ -18,7 +18,7 @@
 
 @implementation BTStopsViewController
  
-@synthesize stations;
+@synthesize stops;
 @synthesize mainTableView, addToFavsView, noNearbyStopsView, segmentedControl;
 @synthesize locationUpdateButton, spinnerBarItem, spinner;
 @synthesize isEditing, editButton, doneButton;
@@ -41,7 +41,7 @@
 	mainTableView.rowHeight = 60;
 	
 	self.viewIsShown = NO;
-	self.stations = [NSArray array];
+	self.stops = [NSArray array];
 	self.isEditing = NO;
 	
 	// Setup segmented control
@@ -178,7 +178,7 @@
 - (void)dealloc
 {
 	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
-	[stations release];
+	[stops release];
 	[mainTableView release];
 	[addToFavsView release];
 	[noNearbyStopsView release];
@@ -215,8 +215,8 @@
 		case 0:
 			if ([[BTLocationManager sharedInstance] locationFound]) {
 				[transit updateNearbyStops];
-				self.stations = transit.nearbyStops; // already filtered
-				if ([self.stations count] == 0) {
+				self.stops = transit.nearbyStops; // already filtered
+				if ([self.stops count] == 0) {
 					noNearbyStopsView.hidden = NO;
 					[self.view bringSubviewToFront:noNearbyStopsView];
 				} else {
@@ -233,8 +233,8 @@
 #endif
 			break;
 		case 1:
-			self.stations = [transit filterStops:transit.favoriteStops];
-			if ([self.stations count] == 0) {
+			self.stops = [transit filterStops:transit.favoriteStops];
+			if ([self.stops count] == 0) {
 				addToFavsView.hidden = NO;
 				[self.view bringSubviewToFront:addToFavsView];
 				addToFavsView.alpha = 0.0;
@@ -282,7 +282,7 @@
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	NSMutableArray *favs = [NSMutableArray array];
 	for (BTStop *s in transit.favoriteStops) {
-		[favs addObject:s.stationId];
+		[favs addObject:s.stopId];
 	}
 	[prefs setObject:favs forKey:@"favorites"];
 	[prefs synchronize];
@@ -313,7 +313,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [self.stations count];
+	return [self.stops count];
 }
 
 // Customize the appearance of table view cells.
@@ -326,16 +326,16 @@
 		cell = [[[BTStopCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 	}
 	
-	BTStop *station = [self.stations objectAtIndex:indexPath.row];
-	cell.station = station;
+	BTStop *stop = [self.stops objectAtIndex:indexPath.row];
+	cell.stop = stop;
 	
-	NSString *imageName = [NSString stringWithFormat:@"station_%d.png", station.owner];
-	UIImage *stationImage = [[UIImage imageNamed:imageName] retain];
-	if (stationImage != nil) {
-		cell.iconImage = stationImage;
-		[stationImage release];
+	NSString *imageName = [NSString stringWithFormat:@"stop_%d.png", stop.owner];
+	UIImage *stopImage = [[UIImage imageNamed:imageName] retain];
+	if (stopImage != nil) {
+		cell.iconImage = stopImage;
+		[stopImage release];
 	} else {
-		cell.iconImage = [UIImage imageNamed:@"default_station.png"];
+		cell.iconImage = [UIImage imageNamed:@"default_stop.png"];
 	}
 	
 	[cell setNeedsDisplay];
@@ -344,11 +344,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	BTStop *selectedStop = [self.stations objectAtIndex:indexPath.row];
+	BTStop *selectedStop = [self.stops objectAtIndex:indexPath.row];
 	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 	
 	BTPredictionViewController *controller = [AppDelegate createPredictionViewController];
-	controller.station = selectedStop;
+	controller.stop = selectedStop;
 	controller.prediction = nil;
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];
@@ -368,9 +368,9 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-		BTStop *station = [stations objectAtIndex:indexPath.row];
-		station.favorite = NO;
-		[transit.favoriteStops removeObject:station];
+		BTStop *stop = [stops objectAtIndex:indexPath.row];
+		stop.favorite = NO;
+		[transit.favoriteStops removeObject:stop];
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
 		
 		if ([transit.favoriteStops count] == 0) {
@@ -390,10 +390,10 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
-	BTStop *station = [[stations objectAtIndex:fromIndexPath.row] retain];
-	[transit.favoriteStops removeObject:station];
-	[transit.favoriteStops insertObject:station atIndex:toIndexPath.row];
-	[station release];
+	BTStop *stop = [[stops objectAtIndex:fromIndexPath.row] retain];
+	[transit.favoriteStops removeObject:stop];
+	[transit.favoriteStops insertObject:stop atIndex:toIndexPath.row];
+	[stop release];
 }
 
 

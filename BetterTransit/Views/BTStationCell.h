@@ -12,11 +12,11 @@
 
 @interface BTStopCell : FastScrollingCell
 {
-	BTStop *station;
+	BTStop *stop;
 	UIImage *iconImage;
 }
 
-@property (nonatomic, retain) BTStop *station;
+@property (nonatomic, retain) BTStop *stop;
 @property (nonatomic, retain) UIImage *iconImage;
 
 - (void)drawCellView:(CGRect)rect;

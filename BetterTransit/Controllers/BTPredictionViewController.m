@@ -21,9 +21,9 @@
 
 @implementation BTPredictionViewController
 
-@synthesize station, prediction, filteredPrediction;
-@synthesize mainTableView, stationInfoView, _refreshHeaderView, mapView;
-@synthesize stationDescLabel, stationIdLabel, stationDistanceLabel, favButton;
+@synthesize stop, prediction, filteredPrediction;
+@synthesize mainTableView, stopInfoView, _refreshHeaderView, mapView;
+@synthesize stopDescLabel, stopIdLabel, stopDistanceLabel, favButton;
 @synthesize timer;
 @synthesize errorMessage;
 
@@ -57,7 +57,7 @@
 	mainTableView.rowHeight = 72;
 	
     // Setup title view
-    TitleViewLabel *label = [[TitleViewLabel alloc] initWithText:station.desc];
+    TitleViewLabel *label = [[TitleViewLabel alloc] initWithText:stop.desc];
     self.navigationItem.titleView = label;
     [label release];
     
@@ -83,15 +83,15 @@
     self.view.frame = CGRectMake(0, 0, 320, 416);
     [super viewWillAppear:animated];
 	
-	stationDescLabel.text = station.desc;
-	stationIdLabel.text = [NSString stringWithFormat:@"Bus stop #%@", station.stationId];
-	if (station.distance > -1.0) {
-		stationDistanceLabel.text = [Utility formattedStringForDistance:station.distance];
+	stopDescLabel.text = stop.desc;
+	stopIdLabel.text = [NSString stringWithFormat:@"Bus stop #%@", stop.stopId];
+	if (stop.distance > -1.0) {
+		stopDistanceLabel.text = [Utility formattedStringForDistance:stop.distance];
 	} else { // don't display distance if user location is not found
-		stationDistanceLabel.text = @"";
+		stopDistanceLabel.text = @"";
 	}
 	
-	if (station.favorite) {
+	if (stop.favorite) {
         [self.favButton setImage:[UIImage imageNamed:@"favorite_icon.png"] forState:UIControlStateNormal];
         [self.favButton setImage:[UIImage imageNamed:@"favorite_icon.png"] forState:UIControlStateHighlighted];
 	} else {
@@ -99,19 +99,19 @@
         [self.favButton setImage:[UIImage imageNamed:@"favorite_icon_gray.png"] forState:UIControlStateHighlighted];
 	}
 	
-	// reset annotation to that of current selected station
+	// reset annotation to that of current selected stop
 	NSArray *annotations = mapView.annotations;
 	if (annotations) {
 		[mapView removeAnnotations:annotations];
 	}
 	BTAnnotation *annotation = [[BTAnnotation alloc] init];
-	annotation.title = station.desc;
-	annotation.subtitle = [NSString stringWithFormat:@"Bus stop #%@", station.stationId];
+	annotation.title = stop.desc;
+	annotation.subtitle = [NSString stringWithFormat:@"Bus stop #%@", stop.stopId];
 	CLLocationCoordinate2D coordinate = {0,0};
-	coordinate.latitude = station.latitude;
-	coordinate.longitude = station.longitude;
+	coordinate.latitude = stop.latitude;
+	coordinate.longitude = stop.longitude;
 	annotation.coordinate = coordinate;
-	annotation.station = station;
+	annotation.stop = stop;
 	[mapView addAnnotation:annotation];
 	[annotation release];
 	
@@ -131,7 +131,7 @@
 	[self startTimer];
 	
 #ifdef FLURRY_KEY
-	NSDictionary *flurryDict = [NSDictionary dictionaryWithObjectsAndKeys:station.stationId, @"stopID", nil];
+	NSDictionary *flurryDict = [NSDictionary dictionaryWithObjectsAndKeys:stop.stopId, @"stopID", nil];
 	[FlurryAPI logEvent:@"DID_SHOW_PREDICTION_VIEW" withParameters:flurryDict];
 #endif
 }
@@ -183,9 +183,9 @@
     [_refreshHeaderView setDelegate:nil];
     self._refreshHeaderView = nil;
 	self.mapView = nil;
-	self.stationDescLabel = nil;
-	self.stationIdLabel = nil;
-	self.stationDistanceLabel = nil;
+	self.stopDescLabel = nil;
+	self.stopIdLabel = nil;
+	self.stopDistanceLabel = nil;
 	self.favButton = nil;
 
 }
@@ -193,16 +193,16 @@
 - (void)dealloc
 {
 	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
-	[station release], station = nil;
+	[stop release], stop = nil;
 	[prediction release], prediction = nil;
 	[filteredPrediction release], filteredPrediction = nil;
 	[mainTableView release], mainTableView = nil;
     [_refreshHeaderView setDelegate:nil];
     [_refreshHeaderView release], _refreshHeaderView = nil;
 	[mapView release], mapView = nil;
-	[stationDescLabel release], stationDescLabel = nil;
-	[stationIdLabel release], stationIdLabel = nil;
-	[stationDistanceLabel release], stationDistanceLabel = nil;
+	[stopDescLabel release], stopDescLabel = nil;
+	[stopIdLabel release], stopIdLabel = nil;
+	[stopDistanceLabel release], stopDistanceLabel = nil;
 	[favButton release], favButton = nil;
 	[timer release], timer = nil;
     [errorMessage release], errorMessage = nil;
@@ -215,22 +215,22 @@
 
 - (IBAction)setFav:(id)sender
 {
-	station.favorite = !station.favorite;
+	stop.favorite = !stop.favorite;
 	
-	if (station.favorite) {
+	if (stop.favorite) {
 		[self.favButton setImage:[UIImage imageNamed:@"favorite_icon.png"] forState:UIControlStateNormal];
 		[self.favButton setImage:[UIImage imageNamed:@"favorite_icon.png"] forState:UIControlStateHighlighted];
-		[transit.favoriteStops addObject:self.station];
+		[transit.favoriteStops addObject:self.stop];
 	} else {
 		[self.favButton setImage:[UIImage imageNamed:@"favorite_icon_gray.png"] forState:UIControlStateNormal];
 		[self.favButton setImage:[UIImage imageNamed:@"favorite_icon_gray.png"] forState:UIControlStateHighlighted];
-		[transit.favoriteStops removeObject:self.station];
+		[transit.favoriteStops removeObject:self.stop];
 	}
 	
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	NSMutableArray *favs = [NSMutableArray array];
 	for (BTStop *s in transit.favoriteStops) {
-		[favs addObject:s.stationId];
+		[favs addObject:s.stopId];
 	}
 	[prefs setObject:favs forKey:@"favorites"];
 	[prefs synchronize];
@@ -242,7 +242,7 @@
     _reloading = YES;
     
 	[[AppDelegate feedLoader] setDelegate:self];
-	[[AppDelegate feedLoader] getPredictionForStop:self.station];
+	[[AppDelegate feedLoader] getPredictionForStop:self.stop];
 }
 
 - (void)moveFavsToTop
@@ -329,7 +329,7 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:StopInfoCellIdentifier];
         if (cell == nil) {
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:StopInfoCellIdentifier] autorelease];
-            [cell.contentView addSubview:stationInfoView];
+            [cell.contentView addSubview:stopInfoView];
             cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"fiber_paper.png"]];
         }
         

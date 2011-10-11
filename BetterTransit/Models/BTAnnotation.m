@@ -11,13 +11,13 @@
 
 @implementation BTAnnotation
 
-@synthesize coordinate, title, subtitle, station;
+@synthesize coordinate, title, subtitle, stop;
 
 - (void)dealloc
 {
 	[title release];
 	[subtitle release];
-	[station release];
+	[stop release];
 	[super dealloc];
 }
 

@@ -31,8 +31,8 @@
 @property (assign) id<BTFeedLoaderDelegate> delegate;
 @property (nonatomic, retain) BTStop *currentStop;
 
-- (NSString *)dataSourceForStop:(BTStop *)station;
-- (void)getPredictionForStop:(BTStop *)station;
+- (NSString *)dataSourceForStop:(BTStop *)stop;
+- (void)getPredictionForStop:(BTStop *)stop;
 - (void)getFeedForEntry:(BTPredictionEntry *)entry;
 
 @end

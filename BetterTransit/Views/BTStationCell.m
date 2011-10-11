@@ -14,14 +14,14 @@
 
 @implementation BTStopCell
 
-@synthesize station, iconImage;
+@synthesize stop, iconImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
 		cellView.backgroundColor = [UIColor clearColor];
-		self.station = nil;
+		self.stop = nil;
 		self.iconImage = nil;
 		
 		self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -70,7 +70,7 @@
 	// Set the color for the main text items.
 	[mainTextColor set];
 	
-	[station.desc drawInRect:CGRectMake(36, 10, 256, 20)
+	[stop.desc drawInRect:CGRectMake(36, 10, 256, 20)
 					withFont:mainFont
 			   lineBreakMode:UILineBreakModeTailTruncation
 				   alignment:UITextAlignmentLeft];
@@ -79,7 +79,7 @@
 	// Set the color for the secondary text items.
 	[secondaryTextColor set];
 	
-	NSString *s = [NSString stringWithFormat:@"Bus stop #%@", station.stationId];
+	NSString *s = [NSString stringWithFormat:@"Bus stop #%@", stop.stopId];
 	[s drawInRect:CGRectMake(36, 38, 150, 18)
 		 withFont:secondaryFont
 	lineBreakMode:UILineBreakModeTailTruncation
@@ -87,8 +87,8 @@
 	
 	if (self.editing) return;
 	
-	if (station.distance > -1.0) {
-		s = [Utility formattedStringForDistance:station.distance];
+	if (stop.distance > -1.0) {
+		s = [Utility formattedStringForDistance:stop.distance];
 		[s drawInRect:CGRectMake(192, 38, 100, 18) 
 			 withFont:secondaryFont
 		lineBreakMode:UILineBreakModeTailTruncation
@@ -102,7 +102,7 @@
 
 - (void)dealloc
 {
-	[station release], station = nil;
+	[stop release], stop = nil;
 	[iconImage release], iconImage = nil;
     [super dealloc];
 }
@@ -113,8 +113,8 @@
 
 - (NSString *)accessibilityLabel
 {
-	NSString *distance = [Utility formattedStringForDistance:station.distance];
-	return [NSString stringWithFormat:@"%@, Bus stop #%@, %@", station.desc, station.stationId, distance];
+	NSString *distance = [Utility formattedStringForDistance:stop.distance];
+	return [NSString stringWithFormat:@"%@, Bus stop #%@, %@", stop.desc, stop.stopId, distance];
 }
 
 @end

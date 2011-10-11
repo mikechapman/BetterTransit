@@ -15,12 +15,12 @@
 	CLLocationCoordinate2D coordinate;
 	NSString *title;
 	NSString *subtitle;
-	BTStop *station;
+	BTStop *stop;
 }
 
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
-@property (nonatomic, retain) BTStop *station;
+@property (nonatomic, retain) BTStop *stop;
 
 @end

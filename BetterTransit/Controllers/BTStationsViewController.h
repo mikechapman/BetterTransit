@@ -16,7 +16,7 @@
 <UITableViewDelegate, UITableViewDataSource>
 {
 	BTTransit *transit;
-	NSArray *stations;
+	NSArray *stops;
 	
 	UITableView *mainTableView;
 	UIImageView *addToFavsView;
@@ -33,7 +33,7 @@
 	BOOL viewIsShown;
 }
 
-@property (nonatomic, retain) NSArray *stations;
+@property (nonatomic, retain) NSArray *stops;
 @property (nonatomic, retain) IBOutlet UITableView *mainTableView;
 @property (nonatomic, retain) UIImageView *addToFavsView;
 @property (nonatomic, retain) UIImageView *noNearbyStopsView;

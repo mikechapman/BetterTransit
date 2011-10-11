@@ -16,7 +16,7 @@
 
 @implementation BTSearchViewController
 
-@synthesize stations;
+@synthesize stops;
 @synthesize searchBar, mainTableView;
 
 
@@ -37,7 +37,7 @@
 	mainTableView.separatorColor = COLOR_TABLE_VIEW_SEPARATOR;
 	mainTableView.rowHeight = 60;
 	
-	self.stations = [NSMutableArray array];
+	self.stops = [NSMutableArray array];
 	
 	CGRect rect = CGRectMake(0, 44, 320, 199);
 	bigCancelButton = [[UIButton alloc] initWithFrame:rect];
@@ -106,7 +106,7 @@
 	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[searchBar release], searchBar = nil;
 	[mainTableView release], mainTableView = nil;
-	[stations release], stations = nil;
+	[stops release], stops = nil;
 	[bigCancelButton release], bigCancelButton = nil;
 	[noResultsLabel release], noResultsLabel = nil;
     [super dealloc];
@@ -123,7 +123,7 @@
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [self.stations count];
+	return [self.stops count];
 }
 
 // Customize the appearance of table view cells.
@@ -136,16 +136,16 @@
 		cell = [[[BTStopCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 	}
 	
-	BTStop *station = [self.stations objectAtIndex:indexPath.row];
-	cell.station = station;
+	BTStop *stop = [self.stops objectAtIndex:indexPath.row];
+	cell.stop = stop;
 	
-	NSString *imageName = [NSString stringWithFormat:@"station_%d.png", station.owner];
-	UIImage *stationImage = [[UIImage imageNamed:imageName] retain];
-	if (stationImage != nil) {
-		cell.iconImage = stationImage;
-		[stationImage release];
+	NSString *imageName = [NSString stringWithFormat:@"stop_%d.png", stop.owner];
+	UIImage *stopImage = [[UIImage imageNamed:imageName] retain];
+	if (stopImage != nil) {
+		cell.iconImage = stopImage;
+		[stopImage release];
 	} else {
-		cell.iconImage = [UIImage imageNamed:@"default_station.png"];
+		cell.iconImage = [UIImage imageNamed:@"default_stop.png"];
 	}
 	
 	[cell setNeedsDisplay];
@@ -154,11 +154,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	BTStop *selectedStop = [self.stations objectAtIndex:indexPath.row];
+	BTStop *selectedStop = [self.stops objectAtIndex:indexPath.row];
 	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 	
 	BTPredictionViewController *controller = [AppDelegate createPredictionViewController];
-	controller.station = selectedStop;
+	controller.stop = selectedStop;
 	controller.prediction = nil;
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];
@@ -179,8 +179,8 @@
 	[self handleSearchForTerm:searchText];
 	[mainTableView reloadData];
 	
-	// Show "No Results" if search text is not empty but station list is empty after search
-	if ([searchText length] > 0 && [self.stations count] == 0) {
+	// Show "No Results" if search text is not empty but stop list is empty after search
+	if ([searchText length] > 0 && [self.stops count] == 0) {
 		if (!noResultsLabelIsShown) {
 			[self.view addSubview:noResultsLabel];
 			noResultsLabelIsShown = YES;
@@ -192,11 +192,11 @@
 		}
 	}
 	
-	// Show the invisible big cancel button as long as station list is empty and keyboard is on
-	if ([self.stations count] == 0  && !bigCancelButtonIsShown) {
+	// Show the invisible big cancel button as long as stop list is empty and keyboard is on
+	if ([self.stops count] == 0  && !bigCancelButtonIsShown) {
 		[self.view addSubview:bigCancelButton];
 		bigCancelButtonIsShown = YES;
-	} else if ([self.stations count] > 0 && bigCancelButtonIsShown) {
+	} else if ([self.stops count] > 0 && bigCancelButtonIsShown) {
 		[bigCancelButton removeFromSuperview];
 		bigCancelButtonIsShown = NO;
 	}
@@ -213,7 +213,7 @@
 - (void)searchBarCancelButtonClicked:(UISearchBar *)sb
 {
 	sb.text = @"";
-	self.stations = nil;
+	self.stops = nil;
 	[mainTableView reloadData];
 	[sb resignFirstResponder];
 }
@@ -222,16 +222,16 @@
 {
 	if ([term length] > 0) {
 		NSMutableArray *foundStops = [NSMutableArray array];
-		for (BTStop *station in transit.stations) {
-			NSRange range1 = [station.desc rangeOfString:term options:NSCaseInsensitiveSearch];
-			NSRange range2 = [station.stationId rangeOfString:term options:NSCaseInsensitiveSearch];
+		for (BTStop *stop in transit.stops) {
+			NSRange range1 = [stop.desc rangeOfString:term options:NSCaseInsensitiveSearch];
+			NSRange range2 = [stop.stopId rangeOfString:term options:NSCaseInsensitiveSearch];
 			if (range1.location != NSNotFound || range2.location != NSNotFound) {
-				[foundStops addObject:station];
+				[foundStops addObject:stop];
 			}
 		}
-		self.stations = foundStops;
+		self.stops = foundStops;
 	} else {
-		self.stations = nil;
+		self.stops = nil;
 	}
 }
 
@@ -252,8 +252,8 @@
 
 - (void)keyboardDidShow:(NSNotification*)aNotification
 {
-	// Show the invisible big cancel button as long as station list is empty and keyboard is on
-	if ([self.stations count] == 0 && !bigCancelButtonIsShown) {
+	// Show the invisible big cancel button as long as stop list is empty and keyboard is on
+	if ([self.stops count] == 0 && !bigCancelButtonIsShown) {
 		[self.view addSubview:bigCancelButton];
 		bigCancelButtonIsShown = YES;
 	}

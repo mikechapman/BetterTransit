@@ -14,7 +14,7 @@
 @interface BTMapViewController : UIViewController <MKMapViewDelegate>
 {
 	BTTransit *transit;
-	NSArray *stations;
+	NSArray *stops;
 	
 	MKMapView *mapView;
 	NSMutableArray *annotations;
@@ -25,7 +25,7 @@
 	UIActivityIndicatorView *activityIndicatorView;
 }
 
-@property (nonatomic, retain) NSArray *stations;
+@property (nonatomic, retain) NSArray *stops;
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) NSMutableArray *annotations;
 @property (nonatomic, retain) NSMutableArray *lastVisibleTiles;

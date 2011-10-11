@@ -30,16 +30,16 @@ BTUIViewController
 BTFeedLoaderDelegate, EGORefreshTableHeaderDelegate>
 {
 	BTTransit *transit;
-	BTStop *station;
+	BTStop *stop;
 	NSMutableArray *prediction;
 	NSMutableArray *filteredPrediction;
 	
 	UITableView *mainTableView;
-    UIView *stationInfoView;
+    UIView *stopInfoView;
 	MKMapView *mapView;
-	UILabel *stationDescLabel;
-	UILabel *stationIdLabel;
-	UILabel *stationDistanceLabel;
+	UILabel *stopDescLabel;
+	UILabel *stopIdLabel;
+	UILabel *stopDistanceLabel;
 	UIButton *favButton;
 	
 	NSTimer *timer;
@@ -50,16 +50,16 @@ BTFeedLoaderDelegate, EGORefreshTableHeaderDelegate>
     NSString *errorMessage;
 }
 
-@property (nonatomic, retain) BTStop *station;
+@property (nonatomic, retain) BTStop *stop;
 @property (nonatomic, retain) NSMutableArray *prediction;
 @property (nonatomic, retain) NSMutableArray *filteredPrediction;
 @property (nonatomic, retain) IBOutlet UITableView *mainTableView;
-@property (nonatomic, retain) IBOutlet UIView *stationInfoView;
+@property (nonatomic, retain) IBOutlet UIView *stopInfoView;
 @property (nonatomic, retain) EGORefreshTableHeaderView *_refreshHeaderView;
 @property (nonatomic, retain) IBOutlet MKMapView *mapView;
-@property (nonatomic, retain) IBOutlet UILabel *stationDescLabel;
-@property (nonatomic, retain) IBOutlet UILabel *stationIdLabel;
-@property (nonatomic, retain) IBOutlet UILabel *stationDistanceLabel;
+@property (nonatomic, retain) IBOutlet UILabel *stopDescLabel;
+@property (nonatomic, retain) IBOutlet UILabel *stopIdLabel;
+@property (nonatomic, retain) IBOutlet UILabel *stopDistanceLabel;
 @property (nonatomic, retain) IBOutlet UIButton *favButton;
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic, retain) NSString *errorMessage;

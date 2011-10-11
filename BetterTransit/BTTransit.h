@@ -17,8 +17,8 @@
 	NSMutableArray *routes;
 	NSMutableDictionary *routesDict; // a dictionary for fast lookup of routes
 	NSDictionary *routesToDisplay; // for RoutesView tab, organized in sections
-	NSMutableArray *stations;
-	NSMutableDictionary *stationsDict; // a dictionary for fast lookup of stations
+	NSMutableArray *stops;
+	NSMutableDictionary *stopsDict; // a dictionary for fast lookup of stops
 	NSMutableArray *tiles; // use tiles to quickly load annotations onto the map
 	NSMutableArray *nearbyStops;
 	NSMutableArray *favoriteStops;
@@ -30,8 +30,8 @@
 @property (nonatomic, retain) NSMutableArray *routes;
 @property (nonatomic, retain) NSMutableDictionary *routesDict;
 @property (nonatomic, retain) NSDictionary *routesToDisplay;
-@property (nonatomic, retain) NSMutableArray *stations;
-@property (nonatomic, retain) NSMutableDictionary *stationsDict;
+@property (nonatomic, retain) NSMutableArray *stops;
+@property (nonatomic, retain) NSMutableDictionary *stopsDict;
 @property (nonatomic, retain) NSMutableArray *tiles;
 @property (nonatomic, retain) NSMutableArray *nearbyStops;
 @property (nonatomic, retain) NSMutableArray *favoriteStops;
@@ -46,7 +46,7 @@
 - (void)loadFavoriteStops;
 - (void)updateNearbyStops;
 - (void)loadScheduleForRoutes;
-- (BTStop *)stationWithId:(NSString *)stationId;
+- (BTStop *)stopWithId:(NSString *)stopId;
 - (BTRoute *)routeWithId:(NSString *)routeId;
 - (void)sortStops:(NSMutableArray *)ss ByDistanceFrom:(CLLocation *)location;
 - (NSArray *)filterStops:(NSArray *)ss;

@@ -16,13 +16,13 @@
 	NSString *listId;
 	NSString *name;
 	NSString *detail;
-	NSMutableArray *stations;
+	NSMutableArray *stops;
 }
 
 @property (nonatomic, retain) BTRoute *route;
 @property (nonatomic, copy) NSString *listId;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *detail;
-@property (nonatomic, retain) NSMutableArray *stations;
+@property (nonatomic, retain) NSMutableArray *stops;
 
 @end

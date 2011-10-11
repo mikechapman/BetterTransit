@@ -11,7 +11,7 @@
 
 @implementation BTStop
 
-@synthesize stationId, owner, desc;
+@synthesize stopId, owner, desc;
 @synthesize latitude, longitude, tileNumber, distance, favorite;
 @synthesize selectedRoute;
 
@@ -28,7 +28,7 @@
 
 - (void)dealloc
 {
-	[stationId release];
+	[stopId release];
 	[desc release];
 	[selectedRoute release];
 	[super dealloc];

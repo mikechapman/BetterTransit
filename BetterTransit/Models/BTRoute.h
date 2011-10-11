@@ -19,7 +19,7 @@
 
 
 @property (nonatomic, copy) NSString *subroutes;
-@property (nonatomic, retain) NSMutableArray *stationLists;
+@property (nonatomic, retain) NSMutableArray *stopLists;
 @property (nonatomic, copy) NSString *schedule;
 
 @end

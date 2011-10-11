@@ -11,7 +11,7 @@
 
 @implementation BTStopList
 
-@synthesize route, listId, name, detail, stations;
+@synthesize route, listId, name, detail, stops;
 
 - (id)init
 {
@@ -19,7 +19,7 @@
 		listId = @"";
 		name = @"";
 		detail = @"";
-		stations = [[NSMutableArray alloc] init];
+		stops = [[NSMutableArray alloc] init];
 	}
 	return self;
 }
@@ -30,7 +30,7 @@
 	[listId release];
 	[name release];
 	[detail release];
-	[stations release];
+	[stops release];
 	[super dealloc];
 }
 

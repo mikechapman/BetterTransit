@@ -31,13 +31,13 @@
 }
 
 // Subclasses should overwrite this
-- (NSString *)dataSourceForStop:(BTStop *)station
+- (NSString *)dataSourceForStop:(BTStop *)stop
 {
 	return @"";
 }
 
 // Subclasses should overwrite this
-- (void)getPredictionForStop:(BTStop *)station
+- (void)getPredictionForStop:(BTStop *)stop
 {
 	// Check Internet connection
 	if (![[Reachability reachabilityForInternetConnection] isReachable]) {
@@ -49,9 +49,9 @@
 	// Cancel previous requests
 	[networkQueue cancelAllOperations];
 	
-	self.currentStop = station;
+	self.currentStop = stop;
 	
-	NSURL *url = [NSURL URLWithString:[self dataSourceForStop:station]];
+	NSURL *url = [NSURL URLWithString:[self dataSourceForStop:stop]];
 	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
 	[request addRequestHeader:@"User-Agent" value:@"Mozilla/5.0"];
 	[request setAllowCompressedResponse:YES];

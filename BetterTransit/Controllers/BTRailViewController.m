@@ -15,7 +15,7 @@
 @implementation BTRailViewController
 
 @synthesize route;
-@synthesize stationLists, stations, mainTableView, segmentedControl;
+@synthesize stopLists, stops, mainTableView, segmentedControl;
 @synthesize titleImageView;
 @synthesize routeDestView, destLabel, destImageView, destIdLabel;
 
@@ -73,12 +73,12 @@
 	segmentedControl.selectedSegmentIndex = 0;
 	[segmentedControl addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
 	
-	BTStopList *list = [self.stationLists objectAtIndex:0];
-	self.stations = list.stations;
+	BTStopList *list = [self.stopLists objectAtIndex:0];
+	self.stops = list.stops;
 	
-	if ([self.stationLists count] > 1) {
+	if ([self.stopLists count] > 1) {
 		for (int i=0; i<2; i++) {
-			BTStopList *list = [self.stationLists objectAtIndex:i];
+			BTStopList *list = [self.stopLists objectAtIndex:i];
 			[segmentedControl setTitle:list.name forSegmentAtIndex:i];
 		}
 		self.navigationItem.titleView = segmentedControl;
@@ -94,7 +94,7 @@
 		}
 		[routeImage release];
 		
-		destLabel.text = [[stationLists objectAtIndex:0] detail];
+		destLabel.text = [[stopLists objectAtIndex:0] detail];
 		[self.view addSubview:routeDestView];
 		
 		CGFloat destViewHeight = routeDestView.frame.size.height;
@@ -137,8 +137,8 @@
 {
 	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[route release];
-	[stationLists release];
-	[stations release];
+	[stopLists release];
+	[stops release];
 	[mainTableView release];
 	[segmentedControl release];
 	[titleImageView release];
@@ -156,9 +156,9 @@
 - (void)segmentAction:(id)sender
 {
 	int i = [sender selectedSegmentIndex];
-	BTStopList *list = [self.stationLists objectAtIndex:i];
-	self.stations = list.stations;
-	destLabel.text = [[stationLists objectAtIndex:i] detail];
+	BTStopList *list = [self.stopLists objectAtIndex:i];
+	self.stops = list.stops;
+	destLabel.text = [[stopLists objectAtIndex:i] detail];
 	[self.mainTableView reloadData];
 }
 
@@ -185,7 +185,7 @@
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [self.stations count];
+	return [self.stops count];
 }
 
 // Customize the appearance of table view cells.
@@ -198,8 +198,8 @@
 		cell = [[[BTStopCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 	}
 	
-	BTStop *station = [self.stations objectAtIndex:indexPath.row];
-	cell.station = station;
+	BTStop *stop = [self.stops objectAtIndex:indexPath.row];
+	cell.stop = stop;
 	
 	NSString *imageName = [NSString stringWithFormat:@"%@_rail.png", route.routeId];
 	UIImage *railImage = [[UIImage imageNamed:imageName] retain];
@@ -216,12 +216,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	BTStop *selectedStop = [self.stations objectAtIndex:indexPath.row];
+	BTStop *selectedStop = [self.stops objectAtIndex:indexPath.row];
 	selectedStop.selectedRoute = self.route;
 	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 	
 	BTPredictionViewController *controller = [AppDelegate createPredictionViewController];
-	controller.station = selectedStop;
+	controller.stop = selectedStop;
 	controller.prediction = nil;
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];
