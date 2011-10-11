@@ -107,14 +107,14 @@ for folder in ("google_transit_UVA", "google_transit_Charlottesville"):
     
     table_columns = "route_id TEXT, direction_id INTEGER, stop_id TEXT, stop_sequence INTEGER"
     #curs.execute('drop table if exists %s' % table_name)
-    curs.execute('create table if not exists %s (%s)' % ("route_stops", table_columns))
+    curs.execute('create table if not exists %s (%s)' % ("distinct_trips", table_columns))
     
-    route_stops = []
+    distinct_trips = []
     for k, trip_id in trips_dict.items():
         for row in curs.execute('select stop_id, stop_sequence from stop_times where trip_id = "%s"'  % trip_id):
-            route_stops.append(list(k) + list(row))
+            distinct_trips.append(list(k) + list(row))
     
-    curs.executemany("insert into route_stops (route_id, direction_id, stop_id, stop_sequence) values (?, ?, ?, ?)", route_stops)
+    curs.executemany("insert into distinct_trips (route_id, direction_id, stop_id, stop_sequence) values (?, ?, ?, ?)", distinct_trips)
     
     # At last we drop the trips and stop_times tables
     curs.execute('drop table if exists %s' % "trips")
