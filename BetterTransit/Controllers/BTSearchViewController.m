@@ -223,8 +223,8 @@
 	if ([term length] > 0) {
 		NSMutableArray *foundStops = [NSMutableArray array];
 		for (BTStop *stop in transit.stops) {
-			NSRange range1 = [stop.desc rangeOfString:term options:NSCaseInsensitiveSearch];
-			NSRange range2 = [stop.stopId rangeOfString:term options:NSCaseInsensitiveSearch];
+			NSRange range1 = [stop.stopname rangeOfString:term options:NSCaseInsensitiveSearch];
+			NSRange range2 = [stop.stopCode rangeOfString:term options:NSCaseInsensitiveSearch];
 			if (range1.location != NSNotFound || range2.location != NSNotFound) {
 				[foundStops addObject:stop];
 			}

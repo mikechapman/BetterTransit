@@ -57,7 +57,7 @@
 	mainTableView.rowHeight = 72;
 	
     // Setup title view
-    TitleViewLabel *label = [[TitleViewLabel alloc] initWithText:stop.desc];
+    TitleViewLabel *label = [[TitleViewLabel alloc] initWithText:stop.stopName];
     self.navigationItem.titleView = label;
     [label release];
     
@@ -83,8 +83,8 @@
     self.view.frame = CGRectMake(0, 0, 320, 416);
     [super viewWillAppear:animated];
 	
-	stopDescLabel.text = stop.desc;
-	stopIdLabel.text = [NSString stringWithFormat:@"Bus stop #%@", stop.stopId];
+	stopDescLabel.text = stop.stopName;
+	stopIdLabel.text = [NSString stringWithFormat:@"Bus stop #%@", stop.stopCode];
 	if (stop.distance > -1.0) {
 		stopDistanceLabel.text = [Utility formattedStringForDistance:stop.distance];
 	} else { // don't display distance if user location is not found
@@ -105,8 +105,8 @@
 		[mapView removeAnnotations:annotations];
 	}
 	BTAnnotation *annotation = [[BTAnnotation alloc] init];
-	annotation.title = stop.desc;
-	annotation.subtitle = [NSString stringWithFormat:@"Bus stop #%@", stop.stopId];
+	annotation.title = stop.stopName;
+	annotation.subtitle = [NSString stringWithFormat:@"Bus stop #%@", stop.stopCode];
 	CLLocationCoordinate2D coordinate = {0,0};
 	coordinate.latitude = stop.latitude;
 	coordinate.longitude = stop.longitude;
@@ -131,7 +131,7 @@
 	[self startTimer];
 	
 #ifdef FLURRY_KEY
-	NSDictionary *flurryDict = [NSDictionary dictionaryWithObjectsAndKeys:stop.stopId, @"stopID", nil];
+	NSDictionary *flurryDict = [NSDictionary dictionaryWithObjectsAndKeys:stop.stopCode, @"stopID", nil];
 	[FlurryAPI logEvent:@"DID_SHOW_PREDICTION_VIEW" withParameters:flurryDict];
 #endif
 }
@@ -230,7 +230,7 @@
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	NSMutableArray *favs = [NSMutableArray array];
 	for (BTStop *s in transit.favoriteStops) {
-		[favs addObject:s.stopId];
+		[favs addObject:s.stopCode];
 	}
 	[prefs setObject:favs forKey:@"favorites"];
 	[prefs synchronize];

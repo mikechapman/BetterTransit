@@ -94,10 +94,10 @@
 	while ([rs next]) {
 		BTStop *stop = [[BTStop alloc] init];
 		stop.stopId = [rs stringForColumn:@"stop_id"];
-		stop.owner = [rs intForColumn:@"owner"];
-		stop.latitude = [rs doubleForColumn:@"latitude"];
-		stop.longitude = [rs doubleForColumn:@"longitude"];
-		stop.desc = [rs stringForColumn:@"desc"];
+        stop.stopCode = [rs stringForColumn:@"stop_code"];
+        stop.stopName = [rs stringForColumn:@"stop_name"];
+        stop.latitude = [rs doubleForColumn:@"stop_lat"];
+        stop.longitude = [rs doubleForColumn:@"stop_lon"];
 		[self.stops addObject:stop];
 		[self.stopsDict setObject:stop forKey:stop.stopId];
 		
@@ -183,14 +183,20 @@
 	return [self.stopsDict objectForKey:stopId];
 }
 
+- (BTStop *)stopWithCode:(NSString *)stopCode
+{
+    // TODO: fetch from db
+    return nil;
+}
+
 - (void)loadFavoriteStops
 {	
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	NSArray *p = [prefs objectForKey:@"favorites"];
     
 	if (p != nil) {
-		for (NSString *stopId in p) {
-			BTStop *stop = [self stopWithId:stopId];
+		for (NSString *stopCode in p) {
+			BTStop *stop = [self stopWithCode:stopCode];
 			stop.favorite = YES;
 			[self.favoriteStops addObject:stop];
 		}

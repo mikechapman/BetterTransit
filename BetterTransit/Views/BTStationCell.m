@@ -70,16 +70,15 @@
 	// Set the color for the main text items.
 	[mainTextColor set];
 	
-	[stop.desc drawInRect:CGRectMake(36, 10, 256, 20)
-					withFont:mainFont
-			   lineBreakMode:UILineBreakModeTailTruncation
-				   alignment:UITextAlignmentLeft];
-	
+	[stop.stopName drawInRect:CGRectMake(36, 10, 256, 20)
+                     withFont:mainFont
+                lineBreakMode:UILineBreakModeTailTruncation
+                    alignment:UITextAlignmentLeft];
 	
 	// Set the color for the secondary text items.
 	[secondaryTextColor set];
 	
-	NSString *s = [NSString stringWithFormat:@"Bus stop #%@", stop.stopId];
+	NSString *s = [NSString stringWithFormat:@"Bus stop #%@", stop.stopCode];
 	[s drawInRect:CGRectMake(36, 38, 150, 18)
 		 withFont:secondaryFont
 	lineBreakMode:UILineBreakModeTailTruncation
@@ -114,7 +113,7 @@
 - (NSString *)accessibilityLabel
 {
 	NSString *distance = [Utility formattedStringForDistance:stop.distance];
-	return [NSString stringWithFormat:@"%@, Bus stop #%@, %@", stop.desc, stop.stopId, distance];
+	return [NSString stringWithFormat:@"%@, Bus stop #%@, %@", stop.stopName, stop.stopCode, distance];
 }
 
 @end

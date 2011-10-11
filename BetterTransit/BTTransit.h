@@ -46,6 +46,7 @@
 - (void)loadFavoriteStops;
 - (void)updateNearbyStops;
 - (void)loadScheduleForRoutes;
+- (BTStop *)stopWithCode:(NSString *)stopCode;
 - (BTStop *)stopWithId:(NSString *)stopId;
 - (BTRoute *)routeWithId:(NSString *)routeId;
 - (void)sortStops:(NSMutableArray *)ss ByDistanceFrom:(CLLocation *)location;

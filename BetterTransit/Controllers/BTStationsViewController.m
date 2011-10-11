@@ -282,7 +282,7 @@
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	NSMutableArray *favs = [NSMutableArray array];
 	for (BTStop *s in transit.favoriteStops) {
-		[favs addObject:s.stopId];
+		[favs addObject:s.stopCode];
 	}
 	[prefs setObject:favs forKey:@"favorites"];
 	[prefs synchronize];

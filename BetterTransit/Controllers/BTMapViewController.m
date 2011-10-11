@@ -174,8 +174,8 @@
 	NSMutableArray *anns = [NSMutableArray arrayWithCapacity:20];
 	for (BTStop *stop in tile) {
 		BTAnnotation *annotation = [[BTAnnotation alloc] init];
-		annotation.title = stop.desc;
-		annotation.subtitle = [NSString stringWithFormat:@"Bus stop #%@", stop.stopId];
+		annotation.title = stop.stopName;
+		annotation.subtitle = [NSString stringWithFormat:@"Bus stop #%@", stop.stopCode];
 		CLLocationCoordinate2D coordinate = {0,0};
 		coordinate.latitude = stop.latitude;
 		coordinate.longitude = stop.longitude;
@@ -238,8 +238,8 @@
 		self.annotations = [NSMutableArray arrayWithCapacity:NUM_STOPS];
 		for (BTStop *stop in self.stops) {
 			BTAnnotation *annotation = [[BTAnnotation alloc] init];
-			annotation.title = stop.desc;
-			annotation.subtitle = [NSString stringWithFormat:@"Bus stop #%@", stop.stopId];
+			annotation.title = stop.stopName;
+			annotation.subtitle = [NSString stringWithFormat:@"Bus stop #%@", stop.stopCode];
 			CLLocationCoordinate2D coordinate = {0,0};
 			coordinate.latitude = stop.latitude;
 			coordinate.longitude = stop.longitude;

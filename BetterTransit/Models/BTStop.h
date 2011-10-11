@@ -10,27 +10,21 @@
 
 @class BTRoute;
 
-@interface BTStop : NSObject
-{
-	NSString *stopId;
-	int owner;
-	NSString *desc;
-	double latitude;
-	double longitude;
-	NSUInteger tileNumber;
-	double distance;
-	BOOL favorite;
-	BTRoute *selectedRoute; // stop has a selected route when invoked from RailView
+@interface BTStop : NSObject {
 }
 
-@property (nonatomic, copy) NSString *stopId;
+@property (nonatomic, retain) NSString * stopId;
+@property (nonatomic, retain) NSString * stopCode;
+@property (nonatomic, retain) NSString * stopName;
+@property (nonatomic, assign) double latitude;
+@property (nonatomic, assign) double longitude;
+
 @property (nonatomic, assign) int owner;
-@property (nonatomic, copy) NSString *desc;
-@property double latitude;
-@property double longitude;
 @property (nonatomic, assign) NSUInteger tileNumber;
 @property double distance;
 @property BOOL favorite;
+
+// stop has a selected route when invoked from RailView
 @property (nonatomic, retain) BTRoute *selectedRoute;
 
 @end
