@@ -7,7 +7,7 @@
 //
 
 #import "BTRouteCell.h"
-#import "UIColor+HexString.h"
+#import "UIColor+Utilities.h"
 
 #define MAIN_FONT_SIZE 14
 #define SECONDARY_FONT_SIZE 13

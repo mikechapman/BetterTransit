@@ -4,22 +4,25 @@
 <dict>
 	<key>CAT</key>
 	<array>
-		<string>1A</string>
-		<string>1B</string>
-		<string>2A</string>
-		<string>2B</string>
-		<string>3</string>
-		<string>4</string>
-		<string>5</string>
-		<string>6</string>
-		<string>7</string>
-		<string>8</string>
-		<string>9</string>
-		<string>10</string>
-		<string>21</string>
-		<string>22</string>
-		<string>23</string>
-		<string>24</string>
+		<string>1#1</string>
+		<string>1#2</string>
+		<string>1#3</string>
+		<string>1#4</string>
+		<string>1#5</string>
+		<string>1#6</string>
+        <string>1#7</string>
+        <string>1#8</string>
+		<string>1#9</string>
+		<string>1#10</string>
+		<string>1#11</string>
+		<string>1#12</string>
+		<string>1#13</string>
+		<string>1#14</string>
+		<string>1#15</string>
+		<string>1#16</string>
+		<string>1#17</string>
+		<string>1#18</string>
+        <string>1#19</string>
 	</array>
 	<key>SectionNames</key>
 	<array>
@@ -28,13 +31,14 @@
 	</array>
 	<key>UTS</key>
 	<array>
-		<string>NL</string>
-		<string>CGS</string>
-		<string>CS</string>
-		<string>G</string>
-		<string>UL</string>
-		<string>SHS</string>
-		<string>T</string>
+		<string>0#1</string>
+		<string>0#2</string>
+		<string>0#3</string>
+		<string>0#4</string>
+		<string>0#5</string>
+		<string>0#6</string>
+        <string>0#7</string>
+        <string>0#8</string>
 	</array>
 </dict>
 </plist>

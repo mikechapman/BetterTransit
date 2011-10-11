@@ -12,6 +12,8 @@
 @implementation HBFeedLoader
 
 @synthesize entry, contentOfCurrentElement;
+@synthesize currentRouteShortName, currentDestination, currentETA;
+
 
 - (id)init
 {
@@ -40,7 +42,7 @@
 		
 		// Return nil if the feed can not be downloaded
 		if (range.location == NSNotFound) {
-			[delegate updatePrediction:nil];
+			[self.delegate updatePrediction:nil];
 			return;
 		}
 		
@@ -53,7 +55,7 @@
 		[self parseXMLData:[request responseData] parseError:&parseError];
 		
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-		[delegate updatePrediction:self.prediction];
+		[self.delegate updatePrediction:self.prediction];
 	}
 }
 
@@ -119,13 +121,13 @@
 	if ([elementName isEqualToString:@"td"]) {
 		switch ((tdCount-1)%3) {
 			case 0:
-				entry.routeId = self.contentOfCurrentElement;
+				self.currentRouteShortName = [contentOfCurrentElement trim];
 				break;
 			case 1:
-				entry.destination = self.contentOfCurrentElement;
+				self.currentDestination = [contentOfCurrentElement trim];
 				break;
 			case 2:
-				entry.eta = self.contentOfCurrentElement;
+				self.currentETA = [contentOfCurrentElement trim];
 				break;
 			default:
 				break;
@@ -133,28 +135,20 @@
 		
 		if (tdCount > 1 && (tdCount-1)%3 == 2) {
 			// Check if the route id is valid
-            NSString *routeId = [entry.routeId trim];
-			if ([routeId isEqualToString:@""]) return;
-            
-            // Change route id "ULA" and "ULB" to "UL"
-            if ([routeId isEqualToString:@"ULA"] || [routeId isEqualToString:@"ULB"]) {
-                entry.routeId = @"UL";
-            }
+			if ([currentRouteShortName isEqualToString:@""]) return;
 			
 			// Check if this route already exists in time table
 			BOOL routeAlreadyExists = NO;
-			NSString *newRoute = entry.routeId;
-			NSString *newDestination = entry.destination;
-			
+            
 			for (BTPredictionEntry *pe in self.prediction) {
-				NSString *existingRoute = pe.routeId;
-				NSString *existingDestination = pe.destination;
+				NSString * routeShortName = pe.route.shortName;
+				NSString * destination = pe.destination;
 				
-				if ([newRoute isEqualToString:existingRoute] && 
-					[newDestination isEqualToString:existingDestination]) {
+				if ([currentRouteShortName isEqualToString:routeShortName] && 
+					[currentDestination isEqualToString:destination]) {
 					routeAlreadyExists = YES;
-					NSString *existingETA = pe.eta;
-					NSString *newETA = [NSString stringWithFormat:@"%@, %@", existingETA, entry.eta];
+					NSString * eta = pe.eta;
+					NSString *newETA = [NSString stringWithFormat:@"%@, %@", eta, currentETA];
 					pe.eta = newETA;
 					break;
 				}
@@ -162,7 +156,7 @@
 			
 			if (!routeAlreadyExists) {
 				BTPredictionEntry *entryCopy = [[BTPredictionEntry alloc] init];
-				entryCopy.routeId = entry.routeId;
+				entryCopy.route = entry.route;
 				entryCopy.destination = entry.destination;
 				entryCopy.eta = entry.eta;
 				[self.prediction addObject:entryCopy];
@@ -175,8 +169,11 @@
 
 - (void)dealloc
 {
-	[entry release];
-	[contentOfCurrentElement release];
+	[entry release], entry = nil;
+	[contentOfCurrentElement release], contentOfCurrentElement = nil;
+    [currentRouteShortName release], currentRouteShortName = nil;
+    [currentDestination release], currentDestination = nil;
+    [currentETA release], currentETA = nil;
 	[super dealloc];
 }
 
