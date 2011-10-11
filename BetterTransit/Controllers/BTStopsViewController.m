@@ -215,7 +215,7 @@
 		case 0:
 			if ([[BTLocationManager sharedInstance] locationFound]) {
 				[transit updateNearbyStops];
-				self.stops = transit.nearbyStops; // already filtered
+				self.stops = transit.nearbyStops;
 				if ([self.stops count] == 0) {
 					noNearbyStopsView.hidden = NO;
 					[self.view bringSubviewToFront:noNearbyStopsView];
@@ -233,7 +233,7 @@
 #endif
 			break;
 		case 1:
-			self.stops = [transit filterStops:transit.favoriteStops];
+			self.stops = transit.favoriteStops;
 			if ([self.stops count] == 0) {
 				addToFavsView.hidden = NO;
 				[self.view bringSubviewToFront:addToFavsView];

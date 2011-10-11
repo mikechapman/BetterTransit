@@ -32,7 +32,6 @@ BTFeedLoaderDelegate, EGORefreshTableHeaderDelegate>
 	BTTransit *transit;
 	BTStop *stop;
 	NSMutableArray *prediction;
-	NSMutableArray *filteredPrediction;
 	
 	UITableView *mainTableView;
     UIView *stopInfoView;
@@ -52,7 +51,6 @@ BTFeedLoaderDelegate, EGORefreshTableHeaderDelegate>
 
 @property (nonatomic, retain) BTStop *stop;
 @property (nonatomic, retain) NSMutableArray *prediction;
-@property (nonatomic, retain) NSMutableArray *filteredPrediction;
 @property (nonatomic, retain) IBOutlet UITableView *mainTableView;
 @property (nonatomic, retain) IBOutlet UIView *stopInfoView;
 @property (nonatomic, retain) EGORefreshTableHeaderView *_refreshHeaderView;

@@ -21,7 +21,7 @@
 
 @implementation BTPredictionViewController
 
-@synthesize stop, prediction, filteredPrediction;
+@synthesize stop, prediction;
 @synthesize mainTableView, stopInfoView, _refreshHeaderView, mapView;
 @synthesize stopDescLabel, stopIdLabel, stopDistanceLabel, favButton;
 @synthesize timer;
@@ -195,7 +195,6 @@
 	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[stop release], stop = nil;
 	[prediction release], prediction = nil;
-	[filteredPrediction release], filteredPrediction = nil;
 	[mainTableView release], mainTableView = nil;
     [_refreshHeaderView setDelegate:nil];
     [_refreshHeaderView release], _refreshHeaderView = nil;
@@ -267,10 +266,9 @@
 	
 	if (info != nil && [info isKindOfClass:[NSArray class]]) {
 		self.prediction = (NSMutableArray *)info;
-		self.filteredPrediction = [transit filterPrediction:self.prediction];
 		[self moveFavsToTop];
         
-		if ([self.filteredPrediction count] > 0) {
+		if ([self.prediction count] > 0) {
             downloadStatus = DOWNLOAD_STATUS_SUCCEEDED;
             self.errorMessage = nil;
 		} else {
@@ -299,7 +297,7 @@
     if (downloadStatus == DOWNLOAD_STATUS_INIT || downloadStatus == DOWNLOAD_STATUS_FAILED) {
         return 2;
     } else {
-        return [self.filteredPrediction count] + 1;
+        return [self.prediction count] + 1;
     }
 }
 
@@ -376,7 +374,7 @@
     
     cell.backgroundColor = [UIColor clearColor];
     
-	BTPredictionEntry *entry = [self.filteredPrediction objectAtIndex:indexPath.row-1];
+	BTPredictionEntry *entry = [self.prediction objectAtIndex:indexPath.row-1];
 	BTRoute *route = [transit routeWithId:entry.routeId];
 	cell.routeLabel.text = route.longName;
 	cell.destinationLabel.text = entry.destination; // TODO fix style [self modifyDestination:entry.destination withStyle:route.style];

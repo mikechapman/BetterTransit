@@ -50,9 +50,5 @@
 - (BTStop *)stopWithId:(NSString *)stopId;
 - (BTRoute *)routeWithId:(NSString *)routeId;
 - (void)sortStops:(NSMutableArray *)ss ByDistanceFrom:(CLLocation *)location;
-- (NSArray *)filterStops:(NSArray *)ss;
-- (BOOL)checkStop:(BTStop *)s;
-- (NSDictionary *)filterRoutes:(NSDictionary *)rs;
-- (NSMutableArray *)filterPrediction:(NSMutableArray *)p;
 
 @end

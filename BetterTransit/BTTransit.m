@@ -233,7 +233,7 @@
 	int count = 0;
 	for (int i=0; i<[self.stops count]; i++) {
 		BTStop *stop = [self.stops objectAtIndex:i];
-		if (stop.distance > -1 && stop.distance < radius && [self checkStop:stop]) {
+		if (stop.distance > -1 && stop.distance < radius) {
 			[self.nearbyStops addObject:stop];
 			count++;
 			if (count >= maxNumberOfNearbyStops) break;
@@ -254,26 +254,6 @@
 	NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
 	[ss sortUsingDescriptors:[NSArray arrayWithObject:sort]];
 	[sort release];
-}
-
-- (NSArray *)filterStops:(NSArray *)ss 
-{	
-	return [[ss retain] autorelease];
-}
-
-- (BOOL)checkStop:(BTStop *)s
-{
-	return YES;
-}
-
-- (NSDictionary *)filterRoutes:(NSDictionary *)rs
-{
-	return [[rs retain] autorelease];
-}
-
-- (NSMutableArray *)filterPrediction:(NSMutableArray *)p 
-{
-	return [[p retain] autorelease];
 }
 
 - (void)dealloc

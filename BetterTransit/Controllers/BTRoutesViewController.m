@@ -40,7 +40,7 @@
 {
     [super viewWillAppear:animated];
 	
-	self.routesToDisplay= [transit filterRoutes:transit.routesToDisplay];
+	self.routesToDisplay= transit.routesToDisplay;
 	self.sectionNames = [self.routesToDisplay objectForKey:@"SectionNames"];
 	[mainTableView reloadData];
 
