@@ -73,7 +73,7 @@
 427,16701,"UVA Hospital on Lee Street",38.031727,-78.498143,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=427
 428,16698,"Lane Rd",38.031560,-78.501450,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=428
 429,16842,"U-Hall (CG)",38.045503,-78.509658,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=429
-431,10354,"Faulkner Housing (outbound)",38.048025,-78.511978,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=431
+431,10354,"Faulkner Housing/Miller Center (outbound)",38.048025,-78.511978,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=431
 443,16857,"UHall & Massie Rd",38.045831,-78.508770,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=443
 445,10543,"Washington Park",38.039089,-78.491316,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=445
 446,16786,"Stadium Ramp",38.029369,-78.514012,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=446
@@ -86,7 +86,7 @@
 457,12301,"Copeley Rd & Seymour Rd (outbound)",38.048298,-78.507962,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=457
 458,12317,"Copeley Rd (outbound)",38.049446,-78.508128,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=458
 459,12109,"Copeley Rd(inbound)",38.049334,-78.508232,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=459
-461,11983,"Faulkner Housing (inbound)",38.048097,-78.512173,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=461
+461,11983,"Faulkner Housing/Miller Center (inbound)",38.048097,-78.512173,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=461
 462,10429,"Upper Darden ",38.052379,-78.513869,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=462
 464,10401,"Stadium Road Garage",38.029342,-78.513418,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=464
 483,10349,"Lower Hereford",38.029349,-78.519545,http://avlweb.charlottesville.org/RTT/Public/RoutePositionET.aspx?PlatformTag=483
