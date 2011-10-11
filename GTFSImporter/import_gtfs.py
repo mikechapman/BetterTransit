@@ -89,7 +89,7 @@ for folder in ("google_transit_UVA", "google_transit_Charlottesville"):
     createTable(curs, 'stops', table_columns, "stops.txt", source_id)
     
     # Create the trips table
-    table_columns = "route_id TEXT, trip_id TEXT, direction_id INTEGER"
+    table_columns = "route_id TEXT, trip_id TEXT, direction_id INTEGER, trip_headsign TEXT"
     createTable(curs, 'trips', table_columns, "trips.txt", source_id)
     
     # Create the stop_times table
@@ -100,21 +100,24 @@ for folder in ("google_transit_UVA", "google_transit_Charlottesville"):
     trips_dict = {}
     
     for row in curs.execute('select * from trips'):
-        (route_id, trip_id, direction_id) = row
+        (route_id, trip_id, direction_id, trip_headsign) = row
         k = (route_id, direction_id)
         if k not in trips_dict:
-            trips_dict[k] = trip_id
+            trips_dict[k] = (trip_id, trip_headsign)
     
-    table_columns = "route_id TEXT, direction_id INTEGER, stop_id TEXT, stop_sequence INTEGER"
+    table_columns = "route_id TEXT, direction_id INTEGER, trip_headsign TEXT, stop_id TEXT, stop_sequence INTEGER"
     #curs.execute('drop table if exists %s' % table_name)
     curs.execute('create table if not exists %s (%s)' % ("distinct_trips", table_columns))
     
     distinct_trips = []
-    for k, trip_id in trips_dict.items():
+    for k, v in trips_dict.items():
+        (route_id, direction_id) = k
+        (trip_id, trip_headsign) = v
         for row in curs.execute('select stop_id, stop_sequence from stop_times where trip_id = "%s"'  % trip_id):
-            distinct_trips.append(list(k) + list(row))
+            (stop_id, stop_sequence) = row
+            distinct_trips.append([route_id, direction_id, trip_headsign, stop_id, stop_sequence])
     
-    curs.executemany("insert into distinct_trips (route_id, direction_id, stop_id, stop_sequence) values (?, ?, ?, ?)", distinct_trips)
+    curs.executemany("insert into distinct_trips (route_id, direction_id, trip_headsign, stop_id, stop_sequence) values (?, ?, ?, ?, ?)", distinct_trips)
     
     # At last we drop the trips and stop_times tables
     curs.execute('drop table if exists %s' % "trips")
