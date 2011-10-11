@@ -83,7 +83,7 @@
         route.shortName = [rs stringForColumn:@"route_short_name"];
 		route.longName = [rs stringForColumn:@"route_long_name"];
 		[self.routes addObject:route];
-		[self.routesDict setObject:route forKey:route.routeId];
+		[self.routesDict setObject:route forKey:route.shortName];
 		[route release];
 	}
 	[rs close];
@@ -100,7 +100,7 @@
         stop.latitude = [rs doubleForColumn:@"stop_lat"];
         stop.longitude = [rs doubleForColumn:@"stop_lon"];
 		[self.stops addObject:stop];
-		[self.stopsDict setObject:stop forKey:stop.stopId];
+		[self.stopsDict setObject:stop forKey:stop.stopCode];
 		
 #if NUM_TILES > 1
 		stop.tileNumber = [rs intForColumn:@"tile"];
@@ -143,7 +143,7 @@
 				stopList.detail = [rs stringForColumn:@"dest"];
 			}
 			NSString *stopId = [rs stringForColumn:@"stop_id"];
-			BTStop *stop = [self stopWithId:stopId];
+			BTStop *stop = [self stopWithCode:stopId]; // TODO
 			[stopList.stops addObject:stop];
 			counter++;
 		}
@@ -151,7 +151,36 @@
 	}
 }
 
-- (NSArray *)routeIdsAtStop:(BTStop *)s
+- (void)loadScheduleForRoutes
+{
+	// implement this method in subclass if necessary
+}
+
+- (void)loadFavoriteStops
+{	
+	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+	NSArray *p = [prefs objectForKey:@"favorites"];
+    
+	if (p != nil) {
+		for (NSString *stopCode in p) {
+			BTStop *stop = [self stopWithCode:stopCode];
+			stop.favorite = YES;
+			[self.favoriteStops addObject:stop];
+		}
+	}
+}
+
+- (BTRoute *)routeWithShortName:(NSString *)shortName
+{
+    return [self.routesDict objectForKey:shortName];
+}
+
+- (BTStop *)stopWithCode:(NSString *)stopCode
+{
+    return [self.stopsDict objectForKey:stopCode];
+}
+
+- (NSArray *)routeShortNamesAtStop:(BTStop *)s
 {
 	NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:10];
 	
@@ -167,41 +196,6 @@
 	}
 	
 	return [[dict allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-}
-
-- (void)loadScheduleForRoutes
-{
-	// implement this method in subclass if necessary
-}
-
-- (BTRoute *)routeWithId:(NSString *)routeId
-{
-	return [self.routesDict objectForKey:routeId];
-}
-
-- (BTStop *)stopWithId:(NSString *)stopId
-{
-	return [self.stopsDict objectForKey:stopId];
-}
-
-- (BTStop *)stopWithCode:(NSString *)stopCode
-{
-    // TODO: fetch from db
-    return nil;
-}
-
-- (void)loadFavoriteStops
-{	
-	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-	NSArray *p = [prefs objectForKey:@"favorites"];
-    
-	if (p != nil) {
-		for (NSString *stopCode in p) {
-			BTStop *stop = [self stopWithCode:stopCode];
-			stop.favorite = YES;
-			[self.favoriteStops addObject:stop];
-		}
-	}
 }
 
 - (void)updateNearbyStops
@@ -258,14 +252,14 @@
 
 - (void)dealloc
 {
-	[routes release];
-	[routesDict release];
-	[routesToDisplay release];
-	[stops release];
-	[stopsDict release];
-	[tiles release];
-	[nearbyStops release];
-	[favoriteStops release];
+	[routes release], routes = nil;
+	[routesDict release], routesDict = nil;
+	[routesToDisplay release], routesToDisplay = nil;
+	[stops release], stops = nil;
+	[stopsDict release], stopsDict = nil;
+	[tiles release], tiles = nil;
+	[nearbyStops release], nearbyStops = nil;
+	[favoriteStops release], favoriteStops = nil;
 	[db close], [db release], db = nil;
 	
 	[[NSNotificationCenter defaultCenter] removeObserver:self];

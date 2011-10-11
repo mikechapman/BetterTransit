@@ -12,43 +12,44 @@
 #import "BTStop.h"
 #import "FMDatabase.h"
 
-@interface BTTransit : NSObject
-{
-	NSMutableArray *routes;
-	NSMutableDictionary *routesDict; // a dictionary for fast lookup of routes
-	NSDictionary *routesToDisplay; // for RoutesView tab, organized in sections
-	NSMutableArray *stops;
-	NSMutableDictionary *stopsDict; // a dictionary for fast lookup of stops
-	NSMutableArray *tiles; // use tiles to quickly load annotations onto the map
-	NSMutableArray *nearbyStops;
-	NSMutableArray *favoriteStops;
-	
-	// Database
-	FMDatabase *db;
+@interface BTTransit : NSObject {
 }
 
+// Database
+@property (nonatomic, retain) FMDatabase *db;
+
 @property (nonatomic, retain) NSMutableArray *routes;
+
+// a dictionary for fast lookup of routes using short names
 @property (nonatomic, retain) NSMutableDictionary *routesDict;
+
+// for RoutesView tab, organized in sections
 @property (nonatomic, retain) NSDictionary *routesToDisplay;
+
 @property (nonatomic, retain) NSMutableArray *stops;
+
+// a dictionary for fast lookup of stops using stopCodes
 @property (nonatomic, retain) NSMutableDictionary *stopsDict;
+
+// use tiles to quickly load annotations onto the map
 @property (nonatomic, retain) NSMutableArray *tiles;
+
 @property (nonatomic, retain) NSMutableArray *nearbyStops;
 @property (nonatomic, retain) NSMutableArray *favoriteStops;
-@property (nonatomic, retain) FMDatabase *db;
 
 - (void)loadData;
 - (void)loadRoutesFromDB;
 - (void)loadStopsFromDB;
 - (void)loadRoutesToDisplayFromPlist:(NSString *)fileName;
 - (void)loadStopListsForRoute:(BTRoute *)route;
-- (NSArray *)routeIdsAtStop:(BTStop *)s;
 - (void)loadFavoriteStops;
-- (void)updateNearbyStops;
 - (void)loadScheduleForRoutes;
+
+- (BTRoute *)routeWithShortName:(NSString *)shortName;
 - (BTStop *)stopWithCode:(NSString *)stopCode;
-- (BTStop *)stopWithId:(NSString *)stopId;
-- (BTRoute *)routeWithId:(NSString *)routeId;
+- (NSArray *)routeShortNamesAtStop:(BTStop *)s;
+
+- (void)updateNearbyStops;
 - (void)sortStops:(NSMutableArray *)ss ByDistanceFrom:(CLLocation *)location;
 
 @end

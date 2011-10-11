@@ -81,20 +81,21 @@
 
 #pragma mark Table view methods
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
 	return [self.sectionNames count];
 }
 
-// Customize the number of rows in the table view.
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
 	NSString *key = [self.sectionNames objectAtIndex:section];
 	NSArray *routesInSection = [self.routesToDisplay objectForKey:key];
 	return [routesInSection count];
 }
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{    
     static NSString *CellIdentifier = @"RouteCellID";
 	
 	BTRouteCell *cell = (BTRouteCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -104,11 +105,11 @@
 	
 	NSString *key = [self.sectionNames objectAtIndex:indexPath.section];
 	NSArray *routesInSection = [self.routesToDisplay objectForKey:key];
-	NSString *routeId = [routesInSection objectAtIndex:indexPath.row];
-	BTRoute *route = [transit routeWithId:routeId];
+	NSString *shortName = [routesInSection objectAtIndex:indexPath.row];
+	BTRoute *route = [transit routeWithShortName:shortName];
 	cell.route = route;
 	
-	cell.iconImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", route.routeId]];
+	cell.iconImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", route.shortName]];
 	[cell setNeedsDisplay];
     
     // Hide the disclosure button if the index titles are shown
@@ -143,8 +144,8 @@
 {
 	NSString *key = [self.sectionNames objectAtIndex:indexPath.section];
 	NSArray *routesInSection = [self.routesToDisplay objectForKey:key];
-	NSString *selectedRouteId = [routesInSection objectAtIndex:indexPath.row];
-	BTRoute *selectedRoute = [transit routeWithId:selectedRouteId];
+	NSString *shortName = [routesInSection objectAtIndex:indexPath.row];
+	BTRoute *selectedRoute = [transit routeWithShortName:shortName];
 	if (selectedRoute.stopLists == nil) {
 		[transit loadStopListsForRoute:selectedRoute];
 	}

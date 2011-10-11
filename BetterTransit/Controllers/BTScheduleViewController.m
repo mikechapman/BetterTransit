@@ -39,7 +39,7 @@
 	[super viewWillAppear:animated];
 	
 #ifdef FLURRY_KEY
-	NSDictionary *flurryDict = [NSDictionary dictionaryWithObjectsAndKeys:route.routeId, @"routeID", nil];
+	NSDictionary *flurryDict = [NSDictionary dictionaryWithObjectsAndKeys:route.shortName, @"routeID", nil];
 	[FlurryAPI logEvent:@"DID_SHOW_SCHEDULE" withParameters:flurryDict];
 #endif
 }

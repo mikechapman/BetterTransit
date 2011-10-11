@@ -56,12 +56,12 @@
 		self.navigationItem.rightBarButtonItem = scheduleBarButton;
 	}
     
-	NSString *imageName = [NSString stringWithFormat:@"%@_white.png", route.routeId];
+	NSString *imageName = [NSString stringWithFormat:@"%@_white.png", route.shortName];
 	UIImage *titleImage = [[UIImage imageNamed:imageName] retain];
 	if (titleImage) {
 		titleImageView = [[UIImageView alloc] initWithImage:titleImage];
 	} else {
-		self.navigationItem.title = [NSString stringWithFormat:@"Route %@", route.routeId];
+		self.navigationItem.title = [NSString stringWithFormat:@"Route %@", route.shortName];
 		titleImageView = nil;
 	}
 	[titleImage release];
@@ -83,14 +83,14 @@
 		}
 		self.navigationItem.titleView = segmentedControl;
 		
-		NSString *imageName = [NSString stringWithFormat:@"%@.png", route.routeId];
+		NSString *imageName = [NSString stringWithFormat:@"%@.png", route.shortName];
 		UIImage *routeImage = [[UIImage imageNamed:imageName] retain];
 		if (routeImage) {
 			[destImageView setImage:routeImage];
 		} else {
 			destImageView = nil;
 			destIdLabel.hidden = NO;
-			destIdLabel.text = route.routeId;
+			destIdLabel.text = route.shortName;
 		}
 		[routeImage release];
 		
@@ -201,7 +201,7 @@
 	BTStop *stop = [self.stops objectAtIndex:indexPath.row];
 	cell.stop = stop;
 	
-	NSString *imageName = [NSString stringWithFormat:@"%@_rail.png", route.routeId];
+	NSString *imageName = [NSString stringWithFormat:@"%@_rail.png", route.shortName];
 	UIImage *railImage = [[UIImage imageNamed:imageName] retain];
 	if (railImage != nil) {
 		cell.iconImage = railImage;

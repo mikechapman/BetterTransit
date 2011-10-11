@@ -375,18 +375,17 @@
     cell.backgroundColor = [UIColor clearColor];
     
 	BTPredictionEntry *entry = [self.prediction objectAtIndex:indexPath.row-1];
-	BTRoute *route = [transit routeWithId:entry.routeId];
-	cell.routeLabel.text = route.longName;
+	cell.routeLabel.text = entry.route.longName;
 	cell.destinationLabel.text = entry.destination; // TODO fix style [self modifyDestination:entry.destination withStyle:route.style];
 	cell.estimateLabel.text = entry.eta;
 	
-	NSString *imageName = [NSString stringWithFormat:@"%@.png", route.shortName];
+	NSString *imageName = [NSString stringWithFormat:@"%@.png", entry.route.shortName];
 	UIImage *routeImage = [[UIImage imageNamed:imageName] retain];
 	if (routeImage) {
 		[cell.imageView setImage:routeImage];
 	} else {
 		cell.idLabel.hidden = NO;
-		cell.idLabel.text = route.routeId;
+		cell.idLabel.text = entry.route.shortName;
 	}
 	[routeImage release];
 	

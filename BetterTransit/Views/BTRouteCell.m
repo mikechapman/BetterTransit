@@ -58,10 +58,10 @@
 		CGContextFillRect(context, CGRectMake(0, 0, 32, 44));
 		
 		[[UIColor whiteColor] set];
-		[route.routeId drawInRect:CGRectMake(0, 12, 32, 20)
-						 withFont:[UIFont boldSystemFontOfSize:SECONDARY_FONT_SIZE]
-					lineBreakMode:UILineBreakModeClip
-						alignment:UITextAlignmentCenter];
+		[route.shortName drawInRect:CGRectMake(0, 12, 32, 20)
+                           withFont:[UIFont boldSystemFontOfSize:SECONDARY_FONT_SIZE]
+                      lineBreakMode:UILineBreakModeClip
+                          alignment:UITextAlignmentCenter];
 	} else {
 		[iconImage drawInRect:CGRectMake(6, 10, 24, 24)];
 	}

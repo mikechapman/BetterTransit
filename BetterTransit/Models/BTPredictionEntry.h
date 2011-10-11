@@ -15,7 +15,7 @@
 	BTRoute *route;
 	BTStop *stop;
 	
-	NSString *routeId;
+	NSString *routeShortName;
 	NSString *subrouteId;
 	NSString *destination;
 	NSString *eta; // estimated time for arrival
@@ -27,7 +27,7 @@
 
 @property (nonatomic, retain) BTRoute *route;
 @property (nonatomic, retain) BTStop *stop;
-@property (nonatomic, copy) NSString *routeId;
+@property (nonatomic, copy) NSString *routeShortName;
 @property (nonatomic, copy) NSString *subrouteId;
 @property (nonatomic, copy) NSString *destination;
 @property (nonatomic, copy) NSString *eta;
