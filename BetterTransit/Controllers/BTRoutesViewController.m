@@ -105,8 +105,8 @@
 	
 	NSString *key = [self.sectionNames objectAtIndex:indexPath.section];
 	NSArray *routesInSection = [self.routesToDisplay objectForKey:key];
-	NSString *shortName = [routesInSection objectAtIndex:indexPath.row];
-	BTRoute *route = [transit routeWithShortName:shortName];
+	NSString *routeId = [routesInSection objectAtIndex:indexPath.row];
+	BTRoute *route = [transit routeWithId:routeId];
 	cell.route = route;
 	
 	cell.iconImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", route.shortName]];
@@ -144,8 +144,8 @@
 {
 	NSString *key = [self.sectionNames objectAtIndex:indexPath.section];
 	NSArray *routesInSection = [self.routesToDisplay objectForKey:key];
-	NSString *shortName = [routesInSection objectAtIndex:indexPath.row];
-	BTRoute *selectedRoute = [transit routeWithShortName:shortName];
+	NSString *routeId = [routesInSection objectAtIndex:indexPath.row];
+	BTRoute *selectedRoute = [transit routeWithId:routeId];
 	if (selectedRoute.stopLists == nil) {
 		[transit loadStopListsForRoute:selectedRoute];
 	}

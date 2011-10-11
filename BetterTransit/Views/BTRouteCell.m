@@ -7,6 +7,7 @@
 //
 
 #import "BTRouteCell.h"
+#import "UIColor+HexString.h"
 
 #define MAIN_FONT_SIZE 14
 #define SECONDARY_FONT_SIZE 13
@@ -51,19 +52,19 @@
 	
 	
 	// Show route number if the route icon doesn't exist
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    UIColor * bgColor = [UIColor colorWithHexString:@"#333333"];
+    [bgColor set];
+    CGContextFillRect(context, CGRectMake(0, 0, 32, 44));
+    
 	if (self.iconImage == nil) {
-		CGContextRef context = UIGraphicsGetCurrentContext();
-		UIColor *bgColor = [UIColor colorWithRed:0.475 green:0.475 blue:0.475 alpha:1.0];
-		[bgColor set];
-		CGContextFillRect(context, CGRectMake(0, 0, 32, 44));
-		
 		[[UIColor whiteColor] set];
 		[route.shortName drawInRect:CGRectMake(0, 12, 32, 20)
                            withFont:[UIFont boldSystemFontOfSize:SECONDARY_FONT_SIZE]
                       lineBreakMode:UILineBreakModeClip
                           alignment:UITextAlignmentCenter];
 	} else {
-		[iconImage drawInRect:CGRectMake(6, 10, 24, 24)];
+		[iconImage drawInRect:CGRectMake(4, 10, 24, 24)];
 	}
 }
 

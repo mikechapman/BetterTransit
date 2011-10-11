@@ -83,7 +83,7 @@
         route.shortName = [rs stringForColumn:@"route_short_name"];
 		route.longName = [rs stringForColumn:@"route_long_name"];
 		[self.routes addObject:route];
-		[self.routesDict setObject:route forKey:route.shortName];
+		[self.routesDict setObject:route forKey:route.routeId];
 		[route release];
 	}
 	[rs close];
@@ -170,9 +170,9 @@
 	}
 }
 
-- (BTRoute *)routeWithShortName:(NSString *)shortName
+- (BTRoute *)routeWithId:(NSString *)routeId
 {
-    return [self.routesDict objectForKey:shortName];
+    return [self.routesDict objectForKey:routeId];
 }
 
 - (BTStop *)stopWithCode:(NSString *)stopCode

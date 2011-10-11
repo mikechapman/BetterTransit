@@ -45,7 +45,7 @@
 - (void)loadFavoriteStops;
 - (void)loadScheduleForRoutes;
 
-- (BTRoute *)routeWithShortName:(NSString *)shortName;
+- (BTRoute *)routeWithId:(NSString *)routeId;
 - (BTStop *)stopWithCode:(NSString *)stopCode;
 - (NSArray *)routeShortNamesAtStop:(BTStop *)s;
 
