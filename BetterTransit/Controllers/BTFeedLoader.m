@@ -11,7 +11,7 @@
 
 @implementation BTFeedLoader
 
-@synthesize prediction, delegate, currentStation;
+@synthesize prediction, delegate, currentStop;
 
 
 #pragma mark -
@@ -31,13 +31,13 @@
 }
 
 // Subclasses should overwrite this
-- (NSString *)dataSourceForStation:(BTStop *)station
+- (NSString *)dataSourceForStop:(BTStop *)station
 {
 	return @"";
 }
 
 // Subclasses should overwrite this
-- (void)getPredictionForStation:(BTStop *)station
+- (void)getPredictionForStop:(BTStop *)station
 {
 	// Check Internet connection
 	if (![[Reachability reachabilityForInternetConnection] isReachable]) {
@@ -49,9 +49,9 @@
 	// Cancel previous requests
 	[networkQueue cancelAllOperations];
 	
-	self.currentStation = station;
+	self.currentStop = station;
 	
-	NSURL *url = [NSURL URLWithString:[self dataSourceForStation:station]];
+	NSURL *url = [NSURL URLWithString:[self dataSourceForStop:station]];
 	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
 	[request addRequestHeader:@"User-Agent" value:@"Mozilla/5.0"];
 	[request setAllowCompressedResponse:YES];
@@ -73,7 +73,7 @@
 - (void)dealloc
 {
 	[prediction release], prediction = nil;
-	[currentStation release], currentStation = nil;
+	[currentStop release], currentStop = nil;
 	
 	[networkQueue cancelAllOperations];
 	[networkQueue setDelegate:nil];

@@ -14,7 +14,7 @@
 @implementation BTTransit
 
 @synthesize routes, routesDict, routesToDisplay;
-@synthesize stations, stationsDict, tiles, nearbyStations, favoriteStations;
+@synthesize stations, stationsDict, tiles, nearbyStops, favoriteStops;
 @synthesize db;
 
 
@@ -42,8 +42,8 @@
 		tiles = nil;
 #endif
 			
-		nearbyStations = [[NSMutableArray alloc] init];
-		favoriteStations = [[NSMutableArray alloc] init];
+		nearbyStops = [[NSMutableArray alloc] init];
+		favoriteStops = [[NSMutableArray alloc] init];
 		
 		[self loadData];
 		
@@ -68,8 +68,8 @@
 	[self loadRoutesFromDB];
 	[self loadRoutesToDisplayFromPlist:@"routesToDisplay"];
 	[self loadScheduleForRoutes];
-	[self loadStationsFromDB];
-	[self loadFavoriteStations];
+	[self loadStopsFromDB];
+	[self loadFavoriteStops];
 }
 
 - (void)loadRoutesFromDB
@@ -88,7 +88,7 @@
 	[rs close];
 }
 
-- (void)loadStationsFromDB
+- (void)loadStopsFromDB
 {
 	FMResultSet *rs = [db executeQuery:@"select * from stations"];
 	while ([rs next]) {
@@ -117,7 +117,7 @@
 	self.routesToDisplay = [[[NSDictionary alloc] initWithContentsOfFile:path] autorelease];
 }
 
-- (void)loadStationListsForRoute:(BTRoute *)route
+- (void)loadStopListsForRoute:(BTRoute *)route
 {
 	if (route.stationLists == nil) {
 		route.stationLists = [NSMutableArray arrayWithCapacity:2];
@@ -150,7 +150,7 @@
 	}
 }
 
-- (NSArray *)routeIdsAtStation:(BTStop *)s
+- (NSArray *)routeIdsAtStop:(BTStop *)s
 {
 	NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:10];
 	
@@ -183,7 +183,7 @@
 	return [self.stationsDict objectForKey:stationId];
 }
 
-- (void)loadFavoriteStations
+- (void)loadFavoriteStops
 {	
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	NSArray *p = [prefs objectForKey:@"favorites"];
@@ -192,14 +192,14 @@
 		for (NSString *stationId in p) {
 			BTStop *station = [self stationWithId:stationId];
 			station.favorite = YES;
-			[self.favoriteStations addObject:station];
+			[self.favoriteStops addObject:station];
 		}
 	}
 }
 
-- (void)updateNearbyStations
+- (void)updateNearbyStops
 {
-	[self.nearbyStations removeAllObjects];
+	[self.nearbyStops removeAllObjects];
 	
 	int maxNumberOfNearbyStops;
 	if ([[BTAppSettings maxNumNearbyStops] isEqualToString:@"No Limit"]) {
@@ -226,15 +226,15 @@
 	int count = 0;
 	for (int i=0; i<[self.stations count]; i++) {
 		BTStop *station = [self.stations objectAtIndex:i];
-		if (station.distance > -1 && station.distance < radius && [self checkStation:station]) {
-			[self.nearbyStations addObject:station];
+		if (station.distance > -1 && station.distance < radius && [self checkStop:station]) {
+			[self.nearbyStops addObject:station];
 			count++;
 			if (count >= maxNumberOfNearbyStops) break;
 		}
 	}
 }
 
-- (void)sortStations:(NSMutableArray *)ss ByDistanceFrom:(CLLocation *)location
+- (void)sortStops:(NSMutableArray *)ss ByDistanceFrom:(CLLocation *)location
 {
 	BTStop *station;
 	CLLocation *stationLocation;
@@ -249,12 +249,12 @@
 	[sort release];
 }
 
-- (NSArray *)filterStations:(NSArray *)ss 
+- (NSArray *)filterStops:(NSArray *)ss 
 {	
 	return [[ss retain] autorelease];
 }
 
-- (BOOL)checkStation:(BTStop *)s
+- (BOOL)checkStop:(BTStop *)s
 {
 	return YES;
 }
@@ -277,8 +277,8 @@
 	[stations release];
 	[stationsDict release];
 	[tiles release];
-	[nearbyStations release];
-	[favoriteStations release];
+	[nearbyStops release];
+	[favoriteStops release];
 	[db close], [db release], db = nil;
 	
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -292,8 +292,8 @@
 - (void)didUpdateToLocation:(NSNotification *)notification
 {
 	CLLocation *newLocation = [[notification userInfo] objectForKey:@"location"];
-	[self sortStations:self.stations ByDistanceFrom:newLocation];
-	[self updateNearbyStations];
+	[self sortStops:self.stations ByDistanceFrom:newLocation];
+	[self updateNearbyStops];
 }
 
 @end

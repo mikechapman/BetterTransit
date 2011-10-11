@@ -214,8 +214,8 @@
 	switch ([segmentedControl selectedSegmentIndex]) {
 		case 0:
 			if ([[BTLocationManager sharedInstance] locationFound]) {
-				[transit updateNearbyStations];
-				self.stations = transit.nearbyStations; // already filtered
+				[transit updateNearbyStops];
+				self.stations = transit.nearbyStops; // already filtered
 				if ([self.stations count] == 0) {
 					noNearbyStopsView.hidden = NO;
 					[self.view bringSubviewToFront:noNearbyStopsView];
@@ -233,7 +233,7 @@
 #endif
 			break;
 		case 1:
-			self.stations = [transit filterStations:transit.favoriteStations];
+			self.stations = [transit filterStops:transit.favoriteStops];
 			if ([self.stations count] == 0) {
 				addToFavsView.hidden = NO;
 				[self.view bringSubviewToFront:addToFavsView];
@@ -281,7 +281,7 @@
 	// Save the favorites
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	NSMutableArray *favs = [NSMutableArray array];
-	for (BTStop *s in transit.favoriteStations) {
+	for (BTStop *s in transit.favoriteStops) {
 		[favs addObject:s.stationId];
 	}
 	[prefs setObject:favs forKey:@"favorites"];
@@ -291,7 +291,7 @@
 - (void)checkNumberOfNearbyStops
 {
 	if (self.viewIsShown && segmentedControl.selectedSegmentIndex == 0 
-		&& [transit.nearbyStations count] == 0) {
+		&& [transit.nearbyStops count] == 0) {
 		noNearbyStopsView.hidden = NO;
 		[self.view bringSubviewToFront:noNearbyStopsView];
 	} else {
@@ -344,11 +344,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	BTStop *selectedStation = [self.stations objectAtIndex:indexPath.row];
+	BTStop *selectedStop = [self.stations objectAtIndex:indexPath.row];
 	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 	
 	BTPredictionViewController *controller = [AppDelegate createPredictionViewController];
-	controller.station = selectedStation;
+	controller.station = selectedStop;
 	controller.prediction = nil;
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];
@@ -370,10 +370,10 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
 		BTStop *station = [stations objectAtIndex:indexPath.row];
 		station.favorite = NO;
-		[transit.favoriteStations removeObject:station];
+		[transit.favoriteStops removeObject:station];
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
 		
-		if ([transit.favoriteStations count] == 0) {
+		if ([transit.favoriteStops count] == 0) {
 			[mainTableView setEditing:NO animated:YES];
 			isEditing = NO;
 			[self saveFavs];
@@ -391,8 +391,8 @@
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
 	BTStop *station = [[stations objectAtIndex:fromIndexPath.row] retain];
-	[transit.favoriteStations removeObject:station];
-	[transit.favoriteStations insertObject:station atIndex:toIndexPath.row];
+	[transit.favoriteStops removeObject:station];
+	[transit.favoriteStops insertObject:station atIndex:toIndexPath.row];
 	[station release];
 }
 

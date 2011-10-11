@@ -216,12 +216,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	BTStop *selectedStation = [self.stations objectAtIndex:indexPath.row];
-	selectedStation.selectedRoute = self.route;
+	BTStop *selectedStop = [self.stations objectAtIndex:indexPath.row];
+	selectedStop.selectedRoute = self.route;
 	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 	
 	BTPredictionViewController *controller = [AppDelegate createPredictionViewController];
-	controller.station = selectedStation;
+	controller.station = selectedStop;
 	controller.prediction = nil;
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];

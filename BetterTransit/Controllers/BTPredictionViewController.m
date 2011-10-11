@@ -220,16 +220,16 @@
 	if (station.favorite) {
 		[self.favButton setImage:[UIImage imageNamed:@"favorite_icon.png"] forState:UIControlStateNormal];
 		[self.favButton setImage:[UIImage imageNamed:@"favorite_icon.png"] forState:UIControlStateHighlighted];
-		[transit.favoriteStations addObject:self.station];
+		[transit.favoriteStops addObject:self.station];
 	} else {
 		[self.favButton setImage:[UIImage imageNamed:@"favorite_icon_gray.png"] forState:UIControlStateNormal];
 		[self.favButton setImage:[UIImage imageNamed:@"favorite_icon_gray.png"] forState:UIControlStateHighlighted];
-		[transit.favoriteStations removeObject:self.station];
+		[transit.favoriteStops removeObject:self.station];
 	}
 	
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	NSMutableArray *favs = [NSMutableArray array];
-	for (BTStop *s in transit.favoriteStations) {
+	for (BTStop *s in transit.favoriteStops) {
 		[favs addObject:s.stationId];
 	}
 	[prefs setObject:favs forKey:@"favorites"];
@@ -242,7 +242,7 @@
     _reloading = YES;
     
 	[[AppDelegate feedLoader] setDelegate:self];
-	[[AppDelegate feedLoader] getPredictionForStation:self.station];
+	[[AppDelegate feedLoader] getPredictionForStop:self.station];
 }
 
 - (void)moveFavsToTop
@@ -319,16 +319,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *StationInfoCellIdentifier = @"StationInfoCellIdentifier";
+    static NSString *StopInfoCellIdentifier = @"StopInfoCellIdentifier";
     static NSString *PredictionCellIdentifier = @"PredictionCellIdentifier";
     static NSString *LoadingCellIdentifier = @"LoadingCellIdentifier";
     static NSString *DefaultCellIdentifier = @"DefaultCellIdentifier";
     
     if (indexPath.row == 0)
     {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:StationInfoCellIdentifier];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:StopInfoCellIdentifier];
         if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:StationInfoCellIdentifier] autorelease];
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:StopInfoCellIdentifier] autorelease];
             [cell.contentView addSubview:stationInfoView];
             cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"fiber_paper.png"]];
         }

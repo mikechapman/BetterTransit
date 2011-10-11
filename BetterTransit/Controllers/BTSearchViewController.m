@@ -154,11 +154,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	BTStop *selectedStation = [self.stations objectAtIndex:indexPath.row];
+	BTStop *selectedStop = [self.stations objectAtIndex:indexPath.row];
 	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 	
 	BTPredictionViewController *controller = [AppDelegate createPredictionViewController];
-	controller.station = selectedStation;
+	controller.station = selectedStop;
 	controller.prediction = nil;
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];
@@ -221,15 +221,15 @@
 - (void)handleSearchForTerm:(NSString *)term
 {
 	if ([term length] > 0) {
-		NSMutableArray *foundStations = [NSMutableArray array];
+		NSMutableArray *foundStops = [NSMutableArray array];
 		for (BTStop *station in transit.stations) {
 			NSRange range1 = [station.desc rangeOfString:term options:NSCaseInsensitiveSearch];
 			NSRange range2 = [station.stationId rangeOfString:term options:NSCaseInsensitiveSearch];
 			if (range1.location != NSNotFound || range2.location != NSNotFound) {
-				[foundStations addObject:station];
+				[foundStops addObject:station];
 			}
 		}
-		self.stations = foundStations;
+		self.stations = foundStops;
 	} else {
 		self.stations = nil;
 	}

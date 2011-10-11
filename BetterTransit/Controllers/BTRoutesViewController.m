@@ -146,7 +146,7 @@
 	NSString *selectedRouteId = [routesInSection objectAtIndex:indexPath.row];
 	BTRoute *selectedRoute = [transit routeWithId:selectedRouteId];
 	if (selectedRoute.stationLists == nil) {
-		[transit loadStationListsForRoute:selectedRoute];
+		[transit loadStopListsForRoute:selectedRoute];
 	}
 	
 	[tableView deselectRowAtIndexPath:indexPath animated:NO];

@@ -22,17 +22,17 @@
 {
 	NSMutableArray *prediction; // includes prediction for all available routes
 	NSObject<BTFeedLoaderDelegate> *delegate;
-	BTStop *currentStation;
+	BTStop *currentStop;
 	
 	ASINetworkQueue *networkQueue;
 }
 
 @property (nonatomic, retain) NSMutableArray *prediction;
 @property (assign) id<BTFeedLoaderDelegate> delegate;
-@property (nonatomic, retain) BTStop *currentStation;
+@property (nonatomic, retain) BTStop *currentStop;
 
-- (NSString *)dataSourceForStation:(BTStop *)station;
-- (void)getPredictionForStation:(BTStop *)station;
+- (NSString *)dataSourceForStop:(BTStop *)station;
+- (void)getPredictionForStop:(BTStop *)station;
 - (void)getFeedForEntry:(BTPredictionEntry *)entry;
 
 @end
