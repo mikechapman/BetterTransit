@@ -39,7 +39,6 @@
 		89776114141C4FCC00390D27 /* TitleViewLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 897760DB141C4FCC00390D27 /* TitleViewLabel.m */; };
 		89776115141C4FCC00390D27 /* NSString+Trim.m in Sources */ = {isa = PBXBuildFile; fileRef = 897760DE141C4FCC00390D27 /* NSString+Trim.m */; };
 		89776116141C4FCC00390D27 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 897760E0141C4FCC00390D27 /* Utility.m */; };
-		8977620C141C533E00390D27 /* HoosBus.db in Resources */ = {isa = PBXBuildFile; fileRef = 897761BB141C533E00390D27 /* HoosBus.db */; };
 		8977620E141C533E00390D27 /* routesToDisplay.plist in Resources */ = {isa = PBXBuildFile; fileRef = 897761BD141C533E00390D27 /* routesToDisplay.plist */; };
 		8977620F141C533E00390D27 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 897761C0141C533E00390D27 /* 1.png */; };
 		89776210141C533E00390D27 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 897761C1141C533E00390D27 /* 10.png */; };
@@ -170,6 +169,7 @@
 		899EA39712F70A3E00831DBA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 899EA39612F70A3E00831DBA /* libsqlite3.dylib */; };
 		899EA3A312F70A8800831DBA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 899EA3A212F70A8800831DBA /* libxml2.dylib */; };
 		899EA3A512F70A8800831DBA /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 899EA3A412F70A8800831DBA /* libz.1.2.3.dylib */; };
+		89A9F7E51443D4EF00951A61 /* HoosBus-GTFS.db in Resources */ = {isa = PBXBuildFile; fileRef = 89A9F7E41443D4EF00951A61 /* HoosBus-GTFS.db */; };
 		89AAD870142555AA00416D38 /* BTAppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD7FB142555AA00416D38 /* BTAppSettings.m */; };
 		89AAD871142555AA00416D38 /* BTTransit.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD7FD142555AA00416D38 /* BTTransit.m */; };
 		89AAD872142555AA00416D38 /* BTTransitDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD7FF142555AA00416D38 /* BTTransitDelegate.m */; };
@@ -189,14 +189,14 @@
 		89AAD880142555AA00416D38 /* BTSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89AAD817142555AA00416D38 /* BTSearchViewController.xib */; };
 		89AAD881142555AA00416D38 /* BTSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD819142555AA00416D38 /* BTSettingsViewController.m */; };
 		89AAD882142555AA00416D38 /* BTSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89AAD81A142555AA00416D38 /* BTSettingsViewController.xib */; };
-		89AAD883142555AA00416D38 /* BTStationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD81C142555AA00416D38 /* BTStationsViewController.m */; };
+		89AAD883142555AA00416D38 /* BTStopsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD81C142555AA00416D38 /* BTStopsViewController.m */; };
 		89AAD884142555AA00416D38 /* BTStationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89AAD81D142555AA00416D38 /* BTStationsViewController.xib */; };
 		89AAD885142555AA00416D38 /* BTUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD81F142555AA00416D38 /* BTUIViewController.m */; };
 		89AAD887142555AA00416D38 /* BTAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD824142555AA00416D38 /* BTAnnotation.m */; };
 		89AAD888142555AA00416D38 /* BTPredictionEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD826142555AA00416D38 /* BTPredictionEntry.m */; };
 		89AAD889142555AA00416D38 /* BTRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD828142555AA00416D38 /* BTRoute.m */; };
-		89AAD88A142555AA00416D38 /* BTStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD82A142555AA00416D38 /* BTStation.m */; };
-		89AAD88B142555AA00416D38 /* BTStationList.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD82C142555AA00416D38 /* BTStationList.m */; };
+		89AAD88A142555AA00416D38 /* BTStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD82A142555AA00416D38 /* BTStop.m */; };
+		89AAD88B142555AA00416D38 /* BTStopList.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD82C142555AA00416D38 /* BTStopList.m */; };
 		89AAD88C142555AA00416D38 /* addToFavs.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AAD82E142555AA00416D38 /* addToFavs.png */; };
 		89AAD88D142555AA00416D38 /* app_icon_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AAD82F142555AA00416D38 /* app_icon_placeholder.png */; };
 		89AAD88E142555AA00416D38 /* backdrop.png in Resources */ = {isa = PBXBuildFile; fileRef = 89AAD830142555AA00416D38 /* backdrop.png */; };
@@ -258,7 +258,7 @@
 		89AAD8C6142555AA00416D38 /* BTPredictionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD86A142555AA00416D38 /* BTPredictionCell.m */; };
 		89AAD8C7142555AA00416D38 /* BTPredictionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89AAD86B142555AA00416D38 /* BTPredictionCell.xib */; };
 		89AAD8C8142555AA00416D38 /* BTRouteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD86D142555AA00416D38 /* BTRouteCell.m */; };
-		89AAD8C9142555AA00416D38 /* BTStationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD86F142555AA00416D38 /* BTStationCell.m */; };
+		89AAD8C9142555AA00416D38 /* BTStopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD86F142555AA00416D38 /* BTStopCell.m */; };
 		89B2C4B6141A372300BDE926 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B2C4B5141A372300BDE926 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
@@ -313,8 +313,6 @@
 		897760DE141C4FCC00390D27 /* NSString+Trim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Trim.m"; sourceTree = "<group>"; };
 		897760DF141C4FCC00390D27 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		897760E0141C4FCC00390D27 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
-		897761BB141C533E00390D27 /* HoosBus.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = HoosBus.db; sourceTree = "<group>"; };
-		897761BC141C533E00390D27 /* HoosBus.xls */ = {isa = PBXFileReference; lastKnownFileType = file; path = HoosBus.xls; sourceTree = "<group>"; };
 		897761BD141C533E00390D27 /* routesToDisplay.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = routesToDisplay.plist; sourceTree = "<group>"; };
 		897761C0141C533E00390D27 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		897761C1141C533E00390D27 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
@@ -495,6 +493,7 @@
 		899EA39612F70A3E00831DBA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		899EA3A212F70A8800831DBA /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		899EA3A412F70A8800831DBA /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
+		89A9F7E41443D4EF00951A61 /* HoosBus-GTFS.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HoosBus-GTFS.db"; sourceTree = "<group>"; };
 		89AAD7FA142555AA00416D38 /* BTAppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAppSettings.h; sourceTree = "<group>"; };
 		89AAD7FB142555AA00416D38 /* BTAppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAppSettings.m; sourceTree = "<group>"; };
 		89AAD7FC142555AA00416D38 /* BTTransit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTransit.h; sourceTree = "<group>"; };
@@ -527,8 +526,8 @@
 		89AAD818142555AA00416D38 /* BTSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSettingsViewController.h; sourceTree = "<group>"; };
 		89AAD819142555AA00416D38 /* BTSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSettingsViewController.m; sourceTree = "<group>"; };
 		89AAD81A142555AA00416D38 /* BTSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTSettingsViewController.xib; sourceTree = "<group>"; };
-		89AAD81B142555AA00416D38 /* BTStationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTStationsViewController.h; sourceTree = "<group>"; };
-		89AAD81C142555AA00416D38 /* BTStationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTStationsViewController.m; sourceTree = "<group>"; };
+		89AAD81B142555AA00416D38 /* BTStopsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTStopsViewController.h; sourceTree = "<group>"; };
+		89AAD81C142555AA00416D38 /* BTStopsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTStopsViewController.m; sourceTree = "<group>"; };
 		89AAD81D142555AA00416D38 /* BTStationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTStationsViewController.xib; sourceTree = "<group>"; };
 		89AAD81E142555AA00416D38 /* BTUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTUIViewController.h; sourceTree = "<group>"; };
 		89AAD81F142555AA00416D38 /* BTUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTUIViewController.m; sourceTree = "<group>"; };
@@ -538,10 +537,10 @@
 		89AAD826142555AA00416D38 /* BTPredictionEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPredictionEntry.m; sourceTree = "<group>"; };
 		89AAD827142555AA00416D38 /* BTRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRoute.h; sourceTree = "<group>"; };
 		89AAD828142555AA00416D38 /* BTRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRoute.m; sourceTree = "<group>"; };
-		89AAD829142555AA00416D38 /* BTStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTStation.h; sourceTree = "<group>"; };
-		89AAD82A142555AA00416D38 /* BTStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTStation.m; sourceTree = "<group>"; };
-		89AAD82B142555AA00416D38 /* BTStationList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTStationList.h; sourceTree = "<group>"; };
-		89AAD82C142555AA00416D38 /* BTStationList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTStationList.m; sourceTree = "<group>"; };
+		89AAD829142555AA00416D38 /* BTStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTStop.h; sourceTree = "<group>"; };
+		89AAD82A142555AA00416D38 /* BTStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTStop.m; sourceTree = "<group>"; };
+		89AAD82B142555AA00416D38 /* BTStopList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTStopList.h; sourceTree = "<group>"; };
+		89AAD82C142555AA00416D38 /* BTStopList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTStopList.m; sourceTree = "<group>"; };
 		89AAD82E142555AA00416D38 /* addToFavs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addToFavs.png; sourceTree = "<group>"; };
 		89AAD82F142555AA00416D38 /* app_icon_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_placeholder.png; sourceTree = "<group>"; };
 		89AAD830142555AA00416D38 /* backdrop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backdrop.png; sourceTree = "<group>"; };
@@ -605,8 +604,8 @@
 		89AAD86B142555AA00416D38 /* BTPredictionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTPredictionCell.xib; sourceTree = "<group>"; };
 		89AAD86C142555AA00416D38 /* BTRouteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRouteCell.h; sourceTree = "<group>"; };
 		89AAD86D142555AA00416D38 /* BTRouteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRouteCell.m; sourceTree = "<group>"; };
-		89AAD86E142555AA00416D38 /* BTStationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTStationCell.h; sourceTree = "<group>"; };
-		89AAD86F142555AA00416D38 /* BTStationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTStationCell.m; sourceTree = "<group>"; };
+		89AAD86E142555AA00416D38 /* BTStopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTStopCell.h; sourceTree = "<group>"; };
+		89AAD86F142555AA00416D38 /* BTStopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTStopCell.m; sourceTree = "<group>"; };
 		89B2C4B5141A372300BDE926 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* BetterTransit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BetterTransit-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -823,8 +822,7 @@
 		897761BA141C533E00390D27 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				897761BB141C533E00390D27 /* HoosBus.db */,
-				897761BC141C533E00390D27 /* HoosBus.xls */,
+				89A9F7E41443D4EF00951A61 /* HoosBus-GTFS.db */,
 				897761BD141C533E00390D27 /* routesToDisplay.plist */,
 			);
 			path = Data;
@@ -1198,8 +1196,8 @@
 				89AAD818142555AA00416D38 /* BTSettingsViewController.h */,
 				89AAD819142555AA00416D38 /* BTSettingsViewController.m */,
 				89AAD81A142555AA00416D38 /* BTSettingsViewController.xib */,
-				89AAD81B142555AA00416D38 /* BTStationsViewController.h */,
-				89AAD81C142555AA00416D38 /* BTStationsViewController.m */,
+				89AAD81B142555AA00416D38 /* BTStopsViewController.h */,
+				89AAD81C142555AA00416D38 /* BTStopsViewController.m */,
 				89AAD81D142555AA00416D38 /* BTStationsViewController.xib */,
 				89AAD81E142555AA00416D38 /* BTUIViewController.h */,
 				89AAD81F142555AA00416D38 /* BTUIViewController.m */,
@@ -1216,10 +1214,10 @@
 				89AAD826142555AA00416D38 /* BTPredictionEntry.m */,
 				89AAD827142555AA00416D38 /* BTRoute.h */,
 				89AAD828142555AA00416D38 /* BTRoute.m */,
-				89AAD829142555AA00416D38 /* BTStation.h */,
-				89AAD82A142555AA00416D38 /* BTStation.m */,
-				89AAD82B142555AA00416D38 /* BTStationList.h */,
-				89AAD82C142555AA00416D38 /* BTStationList.m */,
+				89AAD829142555AA00416D38 /* BTStop.h */,
+				89AAD82A142555AA00416D38 /* BTStop.m */,
+				89AAD82B142555AA00416D38 /* BTStopList.h */,
+				89AAD82C142555AA00416D38 /* BTStopList.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1297,8 +1295,8 @@
 				89AAD86B142555AA00416D38 /* BTPredictionCell.xib */,
 				89AAD86C142555AA00416D38 /* BTRouteCell.h */,
 				89AAD86D142555AA00416D38 /* BTRouteCell.m */,
-				89AAD86E142555AA00416D38 /* BTStationCell.h */,
-				89AAD86F142555AA00416D38 /* BTStationCell.m */,
+				89AAD86E142555AA00416D38 /* BTStopCell.h */,
+				89AAD86F142555AA00416D38 /* BTStopCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1366,7 +1364,6 @@
 				898A206D14136BED00D97479 /* whiteArrow.png in Resources */,
 				898A206E14136BED00D97479 /* whiteArrow@2x.png in Resources */,
 				897760F1141C4FCC00390D27 /* HAListViewController.xib in Resources */,
-				8977620C141C533E00390D27 /* HoosBus.db in Resources */,
 				8977620E141C533E00390D27 /* routesToDisplay.plist in Resources */,
 				8977620F141C533E00390D27 /* 1.png in Resources */,
 				89776210141C533E00390D27 /* 10.png in Resources */,
@@ -1519,6 +1516,7 @@
 				893BAF2E142590DF0002BA86 /* back-arrow@2x.png in Resources */,
 				893BAF2F142590DF0002BA86 /* forward-arrow.png in Resources */,
 				893BAF30142590DF0002BA86 /* forward-arrow@2x.png in Resources */,
+				89A9F7E51443D4EF00951A61 /* HoosBus-GTFS.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1588,16 +1586,16 @@
 				89AAD87D142555AA00416D38 /* BTScheduleViewController.m in Sources */,
 				89AAD87F142555AA00416D38 /* BTSearchViewController.m in Sources */,
 				89AAD881142555AA00416D38 /* BTSettingsViewController.m in Sources */,
-				89AAD883142555AA00416D38 /* BTStationsViewController.m in Sources */,
+				89AAD883142555AA00416D38 /* BTStopsViewController.m in Sources */,
 				89AAD885142555AA00416D38 /* BTUIViewController.m in Sources */,
 				89AAD887142555AA00416D38 /* BTAnnotation.m in Sources */,
 				89AAD888142555AA00416D38 /* BTPredictionEntry.m in Sources */,
 				89AAD889142555AA00416D38 /* BTRoute.m in Sources */,
-				89AAD88A142555AA00416D38 /* BTStation.m in Sources */,
-				89AAD88B142555AA00416D38 /* BTStationList.m in Sources */,
+				89AAD88A142555AA00416D38 /* BTStop.m in Sources */,
+				89AAD88B142555AA00416D38 /* BTStopList.m in Sources */,
 				89AAD8C6142555AA00416D38 /* BTPredictionCell.m in Sources */,
 				89AAD8C8142555AA00416D38 /* BTRouteCell.m in Sources */,
-				89AAD8C9142555AA00416D38 /* BTStationCell.m in Sources */,
+				89AAD8C9142555AA00416D38 /* BTStopCell.m in Sources */,
 				893BAF18142590610002BA86 /* AppViewController.m in Sources */,
 				893BAF1A142590610002BA86 /* ClipView.m in Sources */,
 				893BAF1B142590610002BA86 /* HAAboutViewController.m in Sources */,
