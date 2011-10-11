@@ -69,7 +69,8 @@
 	[self loadRoutesToDisplayFromPlist:@"routesToDisplay"];
 	[self loadScheduleForRoutes];
 	[self loadStopsFromDB];
-	[self loadFavoriteStops];
+	
+    //TODO: [self loadFavoriteStops];
 }
 
 - (void)loadRoutesFromDB

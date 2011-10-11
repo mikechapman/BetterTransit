@@ -379,7 +379,7 @@
 	BTPredictionEntry *entry = [self.filteredPrediction objectAtIndex:indexPath.row-1];
 	BTRoute *route = [transit routeWithId:entry.routeId];
 	cell.routeLabel.text = route.longName;
-	cell.destinationLabel.text = [self modifyDestination:entry.destination withStyle:route.style];
+	cell.destinationLabel.text = entry.destination; // TODO fix style [self modifyDestination:entry.destination withStyle:route.style];
 	cell.estimateLabel.text = entry.eta;
 	
 	NSString *imageName = [NSString stringWithFormat:@"%@.png", route.shortName];

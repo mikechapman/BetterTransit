@@ -139,7 +139,7 @@
 	BTStop *stop = [self.stops objectAtIndex:indexPath.row];
 	cell.stop = stop;
 	
-	NSString *imageName = [NSString stringWithFormat:@"stop_%d.png", stop.owner];
+	NSString *imageName = [NSString stringWithFormat:@"stop_%@.png", stop.agencyId];
 	UIImage *stopImage = [[UIImage imageNamed:imageName] retain];
 	if (stopImage != nil) {
 		cell.iconImage = stopImage;
@@ -223,7 +223,7 @@
 	if ([term length] > 0) {
 		NSMutableArray *foundStops = [NSMutableArray array];
 		for (BTStop *stop in transit.stops) {
-			NSRange range1 = [stop.stopname rangeOfString:term options:NSCaseInsensitiveSearch];
+			NSRange range1 = [stop.stopName rangeOfString:term options:NSCaseInsensitiveSearch];
 			NSRange range2 = [stop.stopCode rangeOfString:term options:NSCaseInsensitiveSearch];
 			if (range1.location != NSNotFound || range2.location != NSNotFound) {
 				[foundStops addObject:stop];

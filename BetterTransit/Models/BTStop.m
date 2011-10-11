@@ -12,7 +12,7 @@
 @implementation BTStop
 
 @synthesize stopId, stopCode, stopName, latitude, longitude;
-@synthesize owner, tileNumber, distance, favorite;
+@synthesize agencyId, tileNumber, distance, favorite;
 @synthesize selectedRoute;
 
 - (id)init
@@ -31,6 +31,7 @@
 	[stopId release], stopId = nil;
     [stopCode release], stopCode = nil;
     [stopName release], stopName = nil;
+    [agencyId release], agencyId = nil;
 	[selectedRoute release], selectedRoute = nil;
 	[super dealloc];
 }
