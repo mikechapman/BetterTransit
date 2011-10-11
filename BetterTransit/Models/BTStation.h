@@ -1,5 +1,5 @@
 //
-//  BTStation.h
+//  BTStop.h
 //  BetterTransit
 //
 //  Created by Yaogang Lian on 10/16/09.
@@ -10,7 +10,7 @@
 
 @class BTRoute;
 
-@interface BTStation : NSObject
+@interface BTStop : NSObject
 {
 	NSString *stationId;
 	int owner;

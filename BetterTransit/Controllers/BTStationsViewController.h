@@ -1,5 +1,5 @@
 //
-//  BTStationsViewController.h
+//  BTStopsViewController.h
 //  BetterTransit
 //
 //  Created by Yaogang Lian on 10/16/09.
@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "BTTransit.h"
-#import "BTStationCell.h"
+#import "BTStopCell.h"
 #import "BTPredictionViewController.h"
 #import "BTUIViewController.h"
 
-@interface BTStationsViewController : BTUIViewController
+@interface BTStopsViewController : BTUIViewController
 <UITableViewDelegate, UITableViewDataSource>
 {
 	BTTransit *transit;

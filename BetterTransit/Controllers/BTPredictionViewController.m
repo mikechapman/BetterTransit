@@ -229,7 +229,7 @@
 	
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	NSMutableArray *favs = [NSMutableArray array];
-	for (BTStation *s in transit.favoriteStations) {
+	for (BTStop *s in transit.favoriteStations) {
 		[favs addObject:s.stationId];
 	}
 	[prefs setObject:favs forKey:@"favorites"];
@@ -378,11 +378,11 @@
     
 	BTPredictionEntry *entry = [self.filteredPrediction objectAtIndex:indexPath.row-1];
 	BTRoute *route = [transit routeWithId:entry.routeId];
-	cell.routeLabel.text = route.desc;
+	cell.routeLabel.text = route.longName;
 	cell.destinationLabel.text = [self modifyDestination:entry.destination withStyle:route.style];
 	cell.estimateLabel.text = entry.eta;
 	
-	NSString *imageName = [NSString stringWithFormat:@"%@.png", route.routeId];
+	NSString *imageName = [NSString stringWithFormat:@"%@.png", route.shortName];
 	UIImage *routeImage = [[UIImage imageNamed:imageName] retain];
 	if (routeImage) {
 		[cell.imageView setImage:routeImage];

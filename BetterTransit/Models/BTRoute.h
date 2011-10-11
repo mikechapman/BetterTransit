@@ -9,22 +9,16 @@
 #import <Foundation/Foundation.h>
 
 
-@interface BTRoute : NSObject
-{
-	NSString *routeId;
-	NSString *style;
-	int owner;
-	NSString *subroutes;
-	NSString *desc;
-	NSMutableArray *stationLists;
-	NSString *schedule;
+@interface BTRoute : NSObject {
 }
 
-@property (nonatomic, copy) NSString *routeId;
-@property (nonatomic, copy) NSString *style;
-@property (nonatomic, assign) int owner;
+@property (nonatomic, retain) NSString * routeId;
+@property (nonatomic, retain) NSString * agencyId;
+@property (nonatomic, retain) NSString * shortName;
+@property (nonatomic, retain) NSString * longName;
+
+
 @property (nonatomic, copy) NSString *subroutes;
-@property (nonatomic, copy) NSString *desc;
 @property (nonatomic, retain) NSMutableArray *stationLists;
 @property (nonatomic, copy) NSString *schedule;
 

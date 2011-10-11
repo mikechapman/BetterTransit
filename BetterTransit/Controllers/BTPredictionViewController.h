@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "BTTransit.h"
-#import "BTStation.h"
+#import "BTStop.h"
 #import "BTPredictionCell.h"
 #import "BTFeedLoader.h"
 #import "EGORefreshTableHeaderView.h"
@@ -30,7 +30,7 @@ BTUIViewController
 BTFeedLoaderDelegate, EGORefreshTableHeaderDelegate>
 {
 	BTTransit *transit;
-	BTStation *station;
+	BTStop *station;
 	NSMutableArray *prediction;
 	NSMutableArray *filteredPrediction;
 	
@@ -50,7 +50,7 @@ BTFeedLoaderDelegate, EGORefreshTableHeaderDelegate>
     NSString *errorMessage;
 }
 
-@property (nonatomic, retain) BTStation *station;
+@property (nonatomic, retain) BTStop *station;
 @property (nonatomic, retain) NSMutableArray *prediction;
 @property (nonatomic, retain) NSMutableArray *filteredPrediction;
 @property (nonatomic, retain) IBOutlet UITableView *mainTableView;

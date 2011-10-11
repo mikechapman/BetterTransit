@@ -172,7 +172,7 @@
 - (NSArray *)annotationsInTile:(NSArray *)tile
 {
 	NSMutableArray *anns = [NSMutableArray arrayWithCapacity:20];
-	for (BTStation *station in tile) {
+	for (BTStop *station in tile) {
 		BTAnnotation *annotation = [[BTAnnotation alloc] init];
 		annotation.title = station.desc;
 		annotation.subtitle = [NSString stringWithFormat:@"Bus stop #%@", station.stationId];
@@ -236,7 +236,7 @@
 {
 	if (self.annotations == nil) {
 		self.annotations = [NSMutableArray arrayWithCapacity:NUM_STOPS];
-		for (BTStation *station in self.stations) {
+		for (BTStop *station in self.stations) {
 			BTAnnotation *annotation = [[BTAnnotation alloc] init];
 			annotation.title = station.desc;
 			annotation.subtitle = [NSString stringWithFormat:@"Bus stop #%@", station.stationId];

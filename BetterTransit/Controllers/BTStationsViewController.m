@@ -1,12 +1,12 @@
 //
-//  BTStationsViewController.m
+//  BTStopsViewController.m
 //  BetterTransit
 //
 //  Created by Yaogang Lian on 10/16/09.
 //  Copyright 2009 Happen Next. All rights reserved.
 //
 
-#import "BTStationsViewController.h"
+#import "BTStopsViewController.h"
 #import "BTTransitDelegate.h"
 #import "BTLocationManager.h"
 #import "Utility.h"
@@ -16,7 +16,7 @@
 #import "FlurryAPI.h"
 #endif
 
-@implementation BTStationsViewController
+@implementation BTStopsViewController
  
 @synthesize stations;
 @synthesize mainTableView, addToFavsView, noNearbyStopsView, segmentedControl;
@@ -281,7 +281,7 @@
 	// Save the favorites
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	NSMutableArray *favs = [NSMutableArray array];
-	for (BTStation *s in transit.favoriteStations) {
+	for (BTStop *s in transit.favoriteStations) {
 		[favs addObject:s.stationId];
 	}
 	[prefs setObject:favs forKey:@"favorites"];
@@ -319,14 +319,14 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"BTStationCellID";
+    static NSString *CellIdentifier = @"BTStopCellID";
 	
-	BTStationCell *cell = (BTStationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	BTStopCell *cell = (BTStopCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[[BTStationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[[BTStopCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 	}
 	
-	BTStation *station = [self.stations objectAtIndex:indexPath.row];
+	BTStop *station = [self.stations objectAtIndex:indexPath.row];
 	cell.station = station;
 	
 	NSString *imageName = [NSString stringWithFormat:@"station_%d.png", station.owner];
@@ -344,7 +344,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	BTStation *selectedStation = [self.stations objectAtIndex:indexPath.row];
+	BTStop *selectedStation = [self.stations objectAtIndex:indexPath.row];
 	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 	
 	BTPredictionViewController *controller = [AppDelegate createPredictionViewController];
@@ -368,7 +368,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-		BTStation *station = [stations objectAtIndex:indexPath.row];
+		BTStop *station = [stations objectAtIndex:indexPath.row];
 		station.favorite = NO;
 		[transit.favoriteStations removeObject:station];
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
@@ -390,7 +390,7 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
-	BTStation *station = [[stations objectAtIndex:fromIndexPath.row] retain];
+	BTStop *station = [[stations objectAtIndex:fromIndexPath.row] retain];
 	[transit.favoriteStations removeObject:station];
 	[transit.favoriteStations insertObject:station atIndex:toIndexPath.row];
 	[station release];

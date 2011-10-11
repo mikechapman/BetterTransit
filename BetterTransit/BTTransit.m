@@ -7,7 +7,7 @@
 //
 
 #import "BTTransit.h"
-#import "BTStationList.h"
+#import "BTStopList.h"
 #import "BTAppSettings.h"
 
 
@@ -78,10 +78,9 @@
 	while ([rs next]) {
 		BTRoute *route = [[BTRoute alloc] init];
 		route.routeId = [rs stringForColumn:@"route_id"];
-		route.style = [rs stringForColumn:@"style"];
-		route.owner = [rs intForColumn:@"owner"];
-		route.subroutes = [rs stringForColumn:@"subroutes"];
-		route.desc = [rs stringForColumn:@"desc"];
+		route.agencyId = [rs stringForColumn:@"agency_id"];
+        route.shortName = [rs stringForColumn:@"route_short_name"];
+		route.longName = [rs stringForColumn:@"route_long_name"];
 		[self.routes addObject:route];
 		[self.routesDict setObject:route forKey:route.routeId];
 		[route release];
@@ -93,7 +92,7 @@
 {
 	FMResultSet *rs = [db executeQuery:@"select * from stations"];
 	while ([rs next]) {
-		BTStation *station = [[BTStation alloc] init];
+		BTStop *station = [[BTStop alloc] init];
 		station.stationId = [rs stringForColumn:@"station_id"];
 		station.owner = [rs intForColumn:@"owner"];
 		station.latitude = [rs doubleForColumn:@"latitude"];
@@ -126,14 +125,14 @@
 	
 	NSArray *items = [route.subroutes componentsSeparatedByString:@","];
 	for (int i=0; i<[items count]; i++) {
-		BTStationList *stationList = [[BTStationList alloc] init];
+		BTStopList *stationList = [[BTStopList alloc] init];
 		stationList.route = route;
 		stationList.listId = [items objectAtIndex:i]; // "-", "1", "2", ...
 		[route.stationLists addObject:stationList];
 		[stationList release];
 	}
 	
-	for (BTStationList *stationList in route.stationLists) {
+	for (BTStopList *stationList in route.stationLists) {
 		FMResultSet *rs = [db executeQuery:@"select * from stages where route_id = ? and subroute = ? order by order_id ASC",
 						   route.routeId, stationList.listId];
 		NSUInteger counter = 0;
@@ -143,7 +142,7 @@
 				stationList.detail = [rs stringForColumn:@"dest"];
 			}
 			NSString *stationId = [rs stringForColumn:@"station_id"];
-			BTStation *station = [self stationWithId:stationId];
+			BTStop *station = [self stationWithId:stationId];
 			[stationList.stations addObject:station];
 			counter++;
 		}
@@ -151,7 +150,7 @@
 	}
 }
 
-- (NSArray *)routeIdsAtStation:(BTStation *)s
+- (NSArray *)routeIdsAtStation:(BTStop *)s
 {
 	NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:10];
 	
@@ -179,7 +178,7 @@
 	return [self.routesDict objectForKey:routeId];
 }
 
-- (BTStation *)stationWithId:(NSString *)stationId
+- (BTStop *)stationWithId:(NSString *)stationId
 {
 	return [self.stationsDict objectForKey:stationId];
 }
@@ -191,7 +190,7 @@
     
 	if (p != nil) {
 		for (NSString *stationId in p) {
-			BTStation *station = [self stationWithId:stationId];
+			BTStop *station = [self stationWithId:stationId];
 			station.favorite = YES;
 			[self.favoriteStations addObject:station];
 		}
@@ -226,7 +225,7 @@
 	
 	int count = 0;
 	for (int i=0; i<[self.stations count]; i++) {
-		BTStation *station = [self.stations objectAtIndex:i];
+		BTStop *station = [self.stations objectAtIndex:i];
 		if (station.distance > -1 && station.distance < radius && [self checkStation:station]) {
 			[self.nearbyStations addObject:station];
 			count++;
@@ -237,7 +236,7 @@
 
 - (void)sortStations:(NSMutableArray *)ss ByDistanceFrom:(CLLocation *)location
 {
-	BTStation *station;
+	BTStop *station;
 	CLLocation *stationLocation;
 	for (station in ss) {
 		stationLocation = [[CLLocation alloc] initWithLatitude:station.latitude longitude:station.longitude];
@@ -255,7 +254,7 @@
 	return [[ss retain] autorelease];
 }
 
-- (BOOL)checkStation:(BTStation *)s
+- (BOOL)checkStation:(BTStop *)s
 {
 	return YES;
 }

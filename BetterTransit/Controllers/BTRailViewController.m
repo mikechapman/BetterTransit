@@ -7,7 +7,7 @@
 //
 
 #import "BTRailViewController.h"
-#import "BTStationList.h"
+#import "BTStopList.h"
 #import "Utility.h"
 #import "BTScheduleViewController.h"
 #import "BTTransitDelegate.h"
@@ -73,12 +73,12 @@
 	segmentedControl.selectedSegmentIndex = 0;
 	[segmentedControl addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
 	
-	BTStationList *list = [self.stationLists objectAtIndex:0];
+	BTStopList *list = [self.stationLists objectAtIndex:0];
 	self.stations = list.stations;
 	
 	if ([self.stationLists count] > 1) {
 		for (int i=0; i<2; i++) {
-			BTStationList *list = [self.stationLists objectAtIndex:i];
+			BTStopList *list = [self.stationLists objectAtIndex:i];
 			[segmentedControl setTitle:list.name forSegmentAtIndex:i];
 		}
 		self.navigationItem.titleView = segmentedControl;
@@ -156,7 +156,7 @@
 - (void)segmentAction:(id)sender
 {
 	int i = [sender selectedSegmentIndex];
-	BTStationList *list = [self.stationLists objectAtIndex:i];
+	BTStopList *list = [self.stationLists objectAtIndex:i];
 	self.stations = list.stations;
 	destLabel.text = [[stationLists objectAtIndex:i] detail];
 	[self.mainTableView reloadData];
@@ -191,14 +191,14 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"BTStationCellID";
+    static NSString *CellIdentifier = @"BTStopCellID";
     
-    BTStationCell *cell = (BTStationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    BTStopCell *cell = (BTStopCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[[BTStationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[[BTStopCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 	}
 	
-	BTStation *station = [self.stations objectAtIndex:indexPath.row];
+	BTStop *station = [self.stations objectAtIndex:indexPath.row];
 	cell.station = station;
 	
 	NSString *imageName = [NSString stringWithFormat:@"%@_rail.png", route.routeId];
@@ -216,7 +216,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	BTStation *selectedStation = [self.stations objectAtIndex:indexPath.row];
+	BTStop *selectedStation = [self.stations objectAtIndex:indexPath.row];
 	selectedStation.selectedRoute = self.route;
 	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 	

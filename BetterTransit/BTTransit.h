@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "BTRoute.h"
-#import "BTStation.h"
+#import "BTStop.h"
 #import "FMDatabase.h"
 
 @interface BTTransit : NSObject
@@ -42,15 +42,15 @@
 - (void)loadStationsFromDB;
 - (void)loadRoutesToDisplayFromPlist:(NSString *)fileName;
 - (void)loadStationListsForRoute:(BTRoute *)route;
-- (NSArray *)routeIdsAtStation:(BTStation *)s;
+- (NSArray *)routeIdsAtStation:(BTStop *)s;
 - (void)loadFavoriteStations;
 - (void)updateNearbyStations;
 - (void)loadScheduleForRoutes;
-- (BTStation *)stationWithId:(NSString *)stationId;
+- (BTStop *)stationWithId:(NSString *)stationId;
 - (BTRoute *)routeWithId:(NSString *)routeId;
 - (void)sortStations:(NSMutableArray *)ss ByDistanceFrom:(CLLocation *)location;
 - (NSArray *)filterStations:(NSArray *)ss;
-- (BOOL)checkStation:(BTStation *)s;
+- (BOOL)checkStation:(BTStop *)s;
 - (NSDictionary *)filterRoutes:(NSDictionary *)rs;
 - (NSMutableArray *)filterPrediction:(NSMutableArray *)p;
 

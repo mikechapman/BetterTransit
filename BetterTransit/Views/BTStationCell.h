@@ -1,5 +1,5 @@
 //
-//  BTStationCell.h
+//  BTStopCell.h
 //  BetterTransit
 //
 //  Created by Yaogang Lian on 10/16/09.
@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "FastScrollingCell.h"
-#import "BTStation.h"
+#import "BTStop.h"
 
-@interface BTStationCell : FastScrollingCell
+@interface BTStopCell : FastScrollingCell
 {
-	BTStation *station;
+	BTStop *station;
 	UIImage *iconImage;
 }
 
-@property (nonatomic, retain) BTStation *station;
+@property (nonatomic, retain) BTStop *station;
 @property (nonatomic, retain) UIImage *iconImage;
 
 - (void)drawCellView:(CGRect)rect;

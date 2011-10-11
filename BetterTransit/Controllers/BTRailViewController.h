@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BTTransit.h"
-#import "BTStationCell.h"
+#import "BTStopCell.h"
 #import "BTPredictionViewController.h"
 #import "BTUIViewController.h"
 

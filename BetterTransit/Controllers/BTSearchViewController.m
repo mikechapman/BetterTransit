@@ -129,14 +129,14 @@
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"BTStationSearchCellID";
+    static NSString *CellIdentifier = @"BTStopSearchCellID";
     
-	BTStationCell *cell = (BTStationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	BTStopCell *cell = (BTStopCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[[BTStationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[[BTStopCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 	}
 	
-	BTStation *station = [self.stations objectAtIndex:indexPath.row];
+	BTStop *station = [self.stations objectAtIndex:indexPath.row];
 	cell.station = station;
 	
 	NSString *imageName = [NSString stringWithFormat:@"station_%d.png", station.owner];
@@ -154,7 +154,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	BTStation *selectedStation = [self.stations objectAtIndex:indexPath.row];
+	BTStop *selectedStation = [self.stations objectAtIndex:indexPath.row];
 	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 	
 	BTPredictionViewController *controller = [AppDelegate createPredictionViewController];
@@ -222,7 +222,7 @@
 {
 	if ([term length] > 0) {
 		NSMutableArray *foundStations = [NSMutableArray array];
-		for (BTStation *station in transit.stations) {
+		for (BTStop *station in transit.stations) {
 			NSRange range1 = [station.desc rangeOfString:term options:NSCaseInsensitiveSearch];
 			NSRange range2 = [station.stationId rangeOfString:term options:NSCaseInsensitiveSearch];
 			if (range1.location != NSNotFound || range2.location != NSNotFound) {

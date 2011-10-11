@@ -31,13 +31,13 @@
 }
 
 // Subclasses should overwrite this
-- (NSString *)dataSourceForStation:(BTStation *)station
+- (NSString *)dataSourceForStation:(BTStop *)station
 {
 	return @"";
 }
 
 // Subclasses should overwrite this
-- (void)getPredictionForStation:(BTStation *)station
+- (void)getPredictionForStation:(BTStop *)station
 {
 	// Check Internet connection
 	if (![[Reachability reachabilityForInternetConnection] isReachable]) {

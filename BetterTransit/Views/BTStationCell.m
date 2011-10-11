@@ -1,18 +1,18 @@
 //
-//  BTStationCell.m
+//  BTStopCell.m
 //  BetterTransit
 //
 //  Created by Yaogang Lian on 10/16/09.
 //  Copyright 2009 Happen Next. All rights reserved.
 //
 
-#import "BTStationCell.h"
+#import "BTStopCell.h"
 #import "Utility.h"
 
 #define MAIN_FONT_SIZE 14
 #define SECONDARY_FONT_SIZE 14
 
-@implementation BTStationCell
+@implementation BTStopCell
 
 @synthesize station, iconImage;
 

@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "BTRoute.h"
-#import "BTStation.h"
+#import "BTStop.h"
 
 @interface BTPredictionEntry : NSObject
 {
 	BTRoute *route;
-	BTStation *station;
+	BTStop *station;
 	
 	NSString *routeId;
 	NSString *subrouteId;
@@ -26,7 +26,7 @@
 }
 
 @property (nonatomic, retain) BTRoute *route;
-@property (nonatomic, retain) BTStation *station;
+@property (nonatomic, retain) BTStop *station;
 @property (nonatomic, copy) NSString *routeId;
 @property (nonatomic, copy) NSString *subrouteId;
 @property (nonatomic, copy) NSString *destination;

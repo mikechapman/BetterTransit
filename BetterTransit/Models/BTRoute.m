@@ -11,10 +11,8 @@
 
 @implementation BTRoute
 
-@synthesize routeId;
-@synthesize style, owner, subroutes, desc;
-@synthesize stationLists;
-@synthesize schedule;
+@synthesize routeId, agencyId, shortName, longName;
+@synthesize subroutes, stationLists, schedule;
 
 - (id)init
 {
@@ -26,12 +24,14 @@
 
 - (void)dealloc
 {
-	[routeId release];
-	[style release];
-	[subroutes release];
-	[desc release];
-	[stationLists release];
-	[schedule release];
+	[routeId release], routeId = nil;
+    [agencyId release], agencyId = nil;
+    [shortName release], shortName = nil;
+    [longName release], longName = nil;
+    
+    [subroutes release], subroutes = nil;
+    [stationLists release], stationLists = nil;
+    [schedule release], schedule = nil;
 	[super dealloc];
 }
 

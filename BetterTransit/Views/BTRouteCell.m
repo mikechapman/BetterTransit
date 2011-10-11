@@ -44,7 +44,7 @@
 	// Set the color for the main text items.
 	[mainTextColor set];
 	
-	[route.desc drawInRect:CGRectMake(38, 12, 240, 20)
+	[route.longName drawInRect:CGRectMake(38, 12, 240, 20)
 					withFont:mainFont
 			   lineBreakMode:UILineBreakModeTailTruncation
 				   alignment:UITextAlignmentLeft];
@@ -80,7 +80,7 @@
 
 - (NSString *)accessibilityLabel
 {
-	return [NSString stringWithFormat:@"%@", route.desc];
+	return [NSString stringWithFormat:@"%@", route.longName];
 }
 
 @end

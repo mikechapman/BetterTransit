@@ -1,15 +1,15 @@
 //
-//  BTStation.m
+//  BTStop.m
 //  BetterTransit
 //
 //  Created by Yaogang Lian on 10/16/09.
 //  Copyright 2009 Happen Next. All rights reserved.
 //
 
-#import "BTStation.h"
+#import "BTStop.h"
 
 
-@implementation BTStation
+@implementation BTStop
 
 @synthesize stationId, owner, desc;
 @synthesize latitude, longitude, tileNumber, distance, favorite;
