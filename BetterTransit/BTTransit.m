@@ -7,7 +7,7 @@
 //
 
 #import "BTTransit.h"
-#import "BTStopList.h"
+#import "BTTrip.h"
 #import "BTAppSettings.h"
 
 
@@ -100,7 +100,7 @@
         stop.latitude = [rs doubleForColumn:@"stop_lat"];
         stop.longitude = [rs doubleForColumn:@"stop_lon"];
 		[self.stops addObject:stop];
-		[self.stopsDict setObject:stop forKey:stop.stopCode];
+		[self.stopsDict setObject:stop forKey:stop.stopId];
 		
 #if NUM_TILES > 1
 		stop.tileNumber = [rs intForColumn:@"tile"];
@@ -116,39 +116,6 @@
 {
 	NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
 	self.routesToDisplay = [[[NSDictionary alloc] initWithContentsOfFile:path] autorelease];
-}
-
-- (void)loadStopListsForRoute:(BTRoute *)route
-{
-	if (route.stopLists == nil) {
-		route.stopLists = [NSMutableArray arrayWithCapacity:2];
-	}
-	
-	NSArray *items = [route.subroutes componentsSeparatedByString:@","];
-	for (int i=0; i<[items count]; i++) {
-		BTStopList *stopList = [[BTStopList alloc] init];
-		stopList.route = route;
-		stopList.listId = [items objectAtIndex:i]; // "-", "1", "2", ...
-		[route.stopLists addObject:stopList];
-		[stopList release];
-	}
-	
-	for (BTStopList *stopList in route.stopLists) {
-		FMResultSet *rs = [db executeQuery:@"select * from stages where route_id = ? and subroute = ? order by order_id ASC",
-						   route.routeId, stopList.listId];
-		NSUInteger counter = 0;
-		while ([rs next]) {
-			if (counter == 0) {
-				stopList.name = [rs stringForColumn:@"bound"];
-				stopList.detail = [rs stringForColumn:@"dest"];
-			}
-			NSString *stopId = [rs stringForColumn:@"stop_id"];
-			BTStop *stop = [self stopWithCode:stopId]; // TODO
-			[stopList.stops addObject:stop];
-			counter++;
-		}
-		[rs close];
-	}
 }
 
 - (void)loadScheduleForRoutes
@@ -175,9 +142,61 @@
     return [self.routesDict objectForKey:routeId];
 }
 
+- (BTStop *)stopWithId:(NSString *)stopId
+{
+    return [self.stopsDict objectForKey:stopId];
+}
+
 - (BTStop *)stopWithCode:(NSString *)stopCode
 {
-    return [self.stopsDict objectForKey:stopCode];
+    FMResultSet * rs = [db executeQuery:@"select stop_id from stops where stop_code = ? limit 1", stopCode];
+    NSString * stopId = [rs stringForColumn:@"stop_id"];
+    return [self stopWithId:stopId];
+}
+
+- (NSArray *)tripsForRoute:(BTRoute *)route
+{
+    NSMutableArray * trips = [NSMutableArray array];
+    
+    FMResultSet * rs = [db executeQuery:@"select * from distinct_trips where route_id = ? order by direction_id ASC, stop_sequence ASC", route.routeId];
+    
+    BTTrip * trip = nil;
+    while ([rs next]) {
+        int directionId = [rs intForColumn:@"direction_id"];
+        NSString * headsign = [rs stringForColumn:@"trip_headsign"];
+        
+        if (trip == nil) {
+            // Create a new trip
+            trip = [[BTTrip alloc] init];
+            trip.route = route;
+            trip.directionId = directionId;
+            trip.headsign = headsign;
+        }
+        else if (directionId != trip.directionId) {
+            // Save the old trip first
+            [trips addObject:trip];
+            [trip release];
+            
+            // Create a new trip
+            trip = [[BTTrip alloc] init];
+            trip.route = route;
+            trip.directionId = directionId;
+            trip.headsign = headsign;
+        }
+        
+        NSString * stopId = [rs stringForColumn:@"stop_id"];
+        BTStop * stop = [self stopWithId:stopId];
+        [trip.stops addObject:stop];
+    }
+    
+    // Save the trip
+    [trips addObject:trip];
+    [trip release];
+    
+    // Close the fetch cursor
+    [rs close];
+    
+    return trips;
 }
 
 - (NSArray *)routeShortNamesAtStop:(BTStop *)s

@@ -1,5 +1,5 @@
 //
-//  BTStopList.h
+//  BTTrip.h
 //  BetterTransit
 //
 //  Created by Yaogang Lian on 10/18/09.
@@ -10,14 +10,12 @@
 
 @class BTRoute;
 
-@interface BTStopList : NSObject {
+@interface BTTrip : NSObject {
 }
 
 @property (nonatomic, retain) BTRoute * route;
+@property (nonatomic, assign) NSInteger directionId;
+@property (nonatomic, retain) NSString * headsign;
 @property (nonatomic, retain) NSMutableArray * stops;
-
-@property (nonatomic, retain) NSString * listId;
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * detail;
 
 @end

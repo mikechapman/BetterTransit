@@ -17,9 +17,6 @@
 @property (nonatomic, retain) NSString * shortName;
 @property (nonatomic, retain) NSString * longName;
 
-
-@property (nonatomic, copy) NSString *subroutes;
-@property (nonatomic, retain) NSMutableArray *stopLists;
 @property (nonatomic, copy) NSString *schedule;
 
 @end

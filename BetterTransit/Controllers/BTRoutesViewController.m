@@ -142,19 +142,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
 	NSString *key = [self.sectionNames objectAtIndex:indexPath.section];
 	NSArray *routesInSection = [self.routesToDisplay objectForKey:key];
 	NSString *routeId = [routesInSection objectAtIndex:indexPath.row];
 	BTRoute *selectedRoute = [transit routeWithId:routeId];
-	if (selectedRoute.stopLists == nil) {
-		[transit loadStopListsForRoute:selectedRoute];
-	}
-	
-	[tableView deselectRowAtIndexPath:indexPath animated:NO];
 	
 	BTRailViewController *controller = [AppDelegate createRailViewController];
 	controller.route = selectedRoute;
-	controller.stopLists = selectedRoute.stopLists;
 	[self.navigationController pushViewController:controller animated:YES];
 	[controller release];
 }

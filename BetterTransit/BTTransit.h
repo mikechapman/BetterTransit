@@ -41,12 +41,14 @@
 - (void)loadRoutesFromDB;
 - (void)loadStopsFromDB;
 - (void)loadRoutesToDisplayFromPlist:(NSString *)fileName;
-- (void)loadStopListsForRoute:(BTRoute *)route;
 - (void)loadFavoriteStops;
 - (void)loadScheduleForRoutes;
 
 - (BTRoute *)routeWithId:(NSString *)routeId;
+- (BTStop *)stopWithId:(NSString *)stopId;
 - (BTStop *)stopWithCode:(NSString *)stopCode;
+
+- (NSArray *)tripsForRoute:(BTRoute *)route;
 - (NSArray *)routeShortNamesAtStop:(BTStop *)s;
 
 - (void)updateNearbyStops;

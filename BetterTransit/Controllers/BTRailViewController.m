@@ -7,7 +7,7 @@
 //
 
 #import "BTRailViewController.h"
-#import "BTStopList.h"
+#import "BTTrip.h"
 #import "Utility.h"
 #import "BTScheduleViewController.h"
 #import "BTTransitDelegate.h"
@@ -15,7 +15,7 @@
 @implementation BTRailViewController
 
 @synthesize route;
-@synthesize stopLists, stops, mainTableView, segmentedControl;
+@synthesize trips, stops, mainTableView, segmentedControl;
 @synthesize titleImageView;
 @synthesize routeDestView, destLabel, destImageView, destIdLabel;
 
@@ -41,6 +41,11 @@
     [super viewDidLoad];
 	
 	transit = [AppDelegate transit];
+    
+    // Load trips if necessary
+    if (trips == nil) {
+        self.trips = [transit tripsForRoute:route];
+    }
 	
 	mainTableView.backgroundColor = [UIColor clearColor];
 	mainTableView.separatorColor = COLOR_TABLE_VIEW_SEPARATOR;
@@ -73,13 +78,13 @@
 	segmentedControl.selectedSegmentIndex = 0;
 	[segmentedControl addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
 	
-	BTStopList *list = [self.stopLists objectAtIndex:0];
-	self.stops = list.stops;
+	BTTrip * trip = [self.trips objectAtIndex:0];
+	self.stops = trip.stops;
 	
-	if ([self.stopLists count] > 1) {
+	if ([self.trips count] > 1) {
 		for (int i=0; i<2; i++) {
-			BTStopList *list = [self.stopLists objectAtIndex:i];
-			[segmentedControl setTitle:list.name forSegmentAtIndex:i];
+            NSString * segmentTitle = (i==0 ? @"Inbound" : @"Outbound");
+			[segmentedControl setTitle:segmentTitle forSegmentAtIndex:i];
 		}
 		self.navigationItem.titleView = segmentedControl;
 		
@@ -94,7 +99,7 @@
 		}
 		[routeImage release];
 		
-		destLabel.text = [[stopLists objectAtIndex:0] detail];
+		destLabel.text = [[trips objectAtIndex:0] headsign];
 		[self.view addSubview:routeDestView];
 		
 		CGFloat destViewHeight = routeDestView.frame.size.height;
@@ -137,7 +142,7 @@
 {
 	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[route release];
-	[stopLists release];
+	[trips release];
 	[stops release];
 	[mainTableView release];
 	[segmentedControl release];
@@ -156,9 +161,9 @@
 - (void)segmentAction:(id)sender
 {
 	int i = [sender selectedSegmentIndex];
-	BTStopList *list = [self.stopLists objectAtIndex:i];
-	self.stops = list.stops;
-	destLabel.text = [[stopLists objectAtIndex:i] detail];
+	BTTrip * trip = [self.trips objectAtIndex:i];
+	self.stops = trip.stops;
+	destLabel.text = [[trips objectAtIndex:i] headsign];
 	[self.mainTableView reloadData];
 }
 
