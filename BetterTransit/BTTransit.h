@@ -20,16 +20,19 @@
 
 @property (nonatomic, retain) NSMutableArray *routes;
 
-// a dictionary for fast lookup of routes using short names
-@property (nonatomic, retain) NSMutableDictionary *routesDict;
+// a dictionary for fast lookup of routes using routeId
+@property (nonatomic, retain) NSMutableDictionary * routeIds;
+
+// a dictionary for fast lookup of routes using short name (may not be unique)
+@property (nonatomic, retain) NSMutableDictionary * routeNames;
 
 // for RoutesView tab, organized in sections
-@property (nonatomic, retain) NSDictionary *routesToDisplay;
+@property (nonatomic, retain) NSDictionary * routesToDisplay;
 
 @property (nonatomic, retain) NSMutableArray *stops;
 
-// a dictionary for fast lookup of stops using stopCodes
-@property (nonatomic, retain) NSMutableDictionary *stopsDict;
+// a dictionary for fast lookup of stops using stopId
+@property (nonatomic, retain) NSMutableDictionary * stopIds;
 
 // use tiles to quickly load annotations onto the map
 @property (nonatomic, retain) NSMutableArray *tiles;
@@ -45,6 +48,7 @@
 - (void)loadScheduleForRoutes;
 
 - (BTRoute *)routeWithId:(NSString *)routeId;
+- (BTRoute *)routeWithShortName:(NSString *)shortName;
 - (BTStop *)stopWithId:(NSString *)stopId;
 - (BTStop *)stopWithCode:(NSString *)stopCode;
 

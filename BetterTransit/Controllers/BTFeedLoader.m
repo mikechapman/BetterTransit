@@ -8,10 +8,11 @@
 
 #import "BTFeedLoader.h"
 #import "Reachability.h"
+#import "BTTransitDelegate.h"
 
 @implementation BTFeedLoader
 
-@synthesize prediction, delegate, currentStop;
+@synthesize transit, prediction, delegate, currentStop;
 
 
 #pragma mark -
@@ -72,6 +73,7 @@
 
 - (void)dealloc
 {
+    [transit release], transit = nil;
 	[prediction release], prediction = nil;
 	[currentStop release], currentStop = nil;
 	

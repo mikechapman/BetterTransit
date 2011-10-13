@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ASIHTTPRequest.h"
 #import "ASINetworkQueue.h"
+#import "BTTransit.h"
 #import "BTStop.h"
 #import	"BTPredictionEntry.h"
 
@@ -27,6 +28,7 @@
 	ASINetworkQueue *networkQueue;
 }
 
+@property (nonatomic, retain) IBOutlet BTTransit * transit;
 @property (nonatomic, retain) NSMutableArray *prediction;
 @property (assign) id<BTFeedLoaderDelegate> delegate;
 @property (nonatomic, retain) BTStop *currentStop;

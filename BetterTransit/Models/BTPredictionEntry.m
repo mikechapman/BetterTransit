@@ -11,8 +11,7 @@
 
 @implementation BTPredictionEntry
 
-@synthesize route, stop;
-@synthesize routeShortName, subrouteId, destination, eta;
+@synthesize route, stop, destination, eta;
 @synthesize shouldDownloadData, isUpdating;
 @synthesize info;
 
@@ -29,8 +28,6 @@
 {
 	[route release], route = nil;
 	[stop release], stop = nil;
-	[routeShortName release], routeShortName = nil;
-	[subrouteId release], subrouteId = nil;
 	[destination release], destination = nil;
 	[eta release], eta = nil;
 	[info release], info = nil;

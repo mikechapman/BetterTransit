@@ -13,9 +13,8 @@
 
 @implementation BTTransit
 
-@synthesize routes, routesDict, routesToDisplay;
-@synthesize stops, stopsDict, tiles, nearbyStops, favoriteStops;
-@synthesize db;
+@synthesize db, routes, routeIds, routeNames, routesToDisplay;
+@synthesize stops, stopIds, tiles, nearbyStops, favoriteStops;
 
 
 #pragma mark -
@@ -26,10 +25,11 @@
     self = [super init];
 	if (self) {
 		routes = [[NSMutableArray alloc] initWithCapacity:NUM_ROUTES];
-		routesDict = [[NSMutableDictionary alloc] initWithCapacity:NUM_ROUTES];
+		routeIds = [[NSMutableDictionary alloc] initWithCapacity:NUM_ROUTES];
+        routeNames = [[NSMutableDictionary alloc] initWithCapacity:NUM_ROUTES];
 		routesToDisplay = nil;
 		stops = [[NSMutableArray alloc] initWithCapacity:NUM_STOPS];
-		stopsDict = [[NSMutableDictionary alloc] initWithCapacity:NUM_STOPS];
+		stopIds = [[NSMutableDictionary alloc] initWithCapacity:NUM_STOPS];
 		
 #if NUM_TILES > 1
 		tiles = [[NSMutableArray alloc] initWithCapacity:NUM_TILES];
@@ -83,7 +83,8 @@
         route.shortName = [rs stringForColumn:@"route_short_name"];
 		route.longName = [rs stringForColumn:@"route_long_name"];
 		[self.routes addObject:route];
-		[self.routesDict setObject:route forKey:route.routeId];
+		[self.routeIds setObject:route forKey:route.routeId];
+        [self.routeNames setObject:route forKey:route.shortName];
 		[route release];
 	}
 	[rs close];
@@ -100,7 +101,7 @@
         stop.latitude = [rs doubleForColumn:@"stop_lat"];
         stop.longitude = [rs doubleForColumn:@"stop_lon"];
 		[self.stops addObject:stop];
-		[self.stopsDict setObject:stop forKey:stop.stopId];
+		[self.stopIds setObject:stop forKey:stop.stopId];
 		
 #if NUM_TILES > 1
 		stop.tileNumber = [rs intForColumn:@"tile"];
@@ -139,18 +140,26 @@
 
 - (BTRoute *)routeWithId:(NSString *)routeId
 {
-    return [self.routesDict objectForKey:routeId];
+    return [self.routeIds objectForKey:routeId];
+}
+
+- (BTRoute *)routeWithShortName:(NSString *)shortName
+{
+    return [self.routeNames objectForKey:shortName];
 }
 
 - (BTStop *)stopWithId:(NSString *)stopId
 {
-    return [self.stopsDict objectForKey:stopId];
+    return [self.stopIds objectForKey:stopId];
 }
 
 - (BTStop *)stopWithCode:(NSString *)stopCode
 {
     FMResultSet * rs = [db executeQuery:@"select stop_id from stops where stop_code = ? limit 1", stopCode];
-    NSString * stopId = [rs stringForColumn:@"stop_id"];
+    NSString * stopId;
+    while ([rs next]) {
+        stopId = [rs stringForColumn:@"stop_id"];
+    }
     return [self stopWithId:stopId];
 }
 
@@ -204,7 +213,7 @@
 	NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:10];
 	
 	NSString *stopId = s.stopId;
-	FMResultSet *rs = [self.db executeQuery:@"select * from stages where stop_id = ? order by route_id ASC",
+	FMResultSet *rs = [db executeQuery:@"select * from stages where stop_id = ? order by route_id ASC",
 					   stopId];
 	
 	NSUInteger counter = 0;
@@ -272,10 +281,11 @@
 - (void)dealloc
 {
 	[routes release], routes = nil;
-	[routesDict release], routesDict = nil;
+	[routeIds release], routeIds = nil;
+    [routeNames release], routeNames = nil;
 	[routesToDisplay release], routesToDisplay = nil;
 	[stops release], stops = nil;
-	[stopsDict release], stopsDict = nil;
+	[stopIds release], stopIds = nil;
 	[tiles release], tiles = nil;
 	[nearbyStops release], nearbyStops = nil;
 	[favoriteStops release], favoriteStops = nil;
@@ -292,7 +302,7 @@
 - (void)didUpdateToLocation:(NSNotification *)notification
 {
 	CLLocation *newLocation = [[notification userInfo] objectForKey:@"location"];
-	[self sortStops:self.stops ByDistanceFrom:newLocation];
+	[self sortStops:stops ByDistanceFrom:newLocation];
 	[self updateNearbyStops];
 }
 
