@@ -376,7 +376,7 @@
     
 	BTPredictionEntry *entry = [self.prediction objectAtIndex:indexPath.row-1];
 	cell.routeLabel.text = entry.route.longName;
-	cell.destinationLabel.text = entry.destination; // TODO fix style [self modifyDestination:entry.destination withStyle:route.style];
+	cell.destinationLabel.text = entry.destination;
 	cell.estimateLabel.text = entry.eta;
 	
 	NSString *imageName = [NSString stringWithFormat:@"%@.png", entry.route.shortName];
@@ -390,23 +390,6 @@
 	[routeImage release];
 	
     return cell;
-}
-
-- (NSString *)modifyDestination:(NSString *)dest withStyle:(NSString *)style
-{
-	NSString *result = [[dest retain] autorelease];
-	
-	if ([style isEqualToString:@"to"]) {
-		result = [NSString stringWithFormat:@"To %@", dest];
-	} else if ([style isEqualToString:@"remove"]) {
-		NSRange range = [dest rangeOfString:@"via"];
-		if (range.location == NSNotFound) {
-			result = @"";
-		} else {
-			result = [NSString stringWithFormat:@"v%@", [dest substringFromIndex:range.location+1]];
-		}
-	}
-	return result;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -63,8 +63,6 @@ BTFeedLoaderDelegate, EGORefreshTableHeaderDelegate>
 @property (nonatomic, retain) NSString *errorMessage;
 
 - (IBAction)setFav:(id)sender;
-
-- (NSString *)modifyDestination:(NSString *)dest withStyle:(NSString *)style;
 - (void)checkBusArrival;
 - (void)moveFavsToTop;
 - (void)startTimer;
