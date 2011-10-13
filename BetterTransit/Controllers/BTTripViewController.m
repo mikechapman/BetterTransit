@@ -88,7 +88,7 @@
 		}
 		self.navigationItem.titleView = segmentedControl;
 		
-		NSString *imageName = [NSString stringWithFormat:@"%@.png", route.shortName];
+		NSString *imageName = [NSString stringWithFormat:@"%@_white.png", route.shortName];
 		UIImage *routeImage = [[UIImage imageNamed:imageName] retain];
 		if (routeImage) {
 			[destImageView setImage:routeImage];

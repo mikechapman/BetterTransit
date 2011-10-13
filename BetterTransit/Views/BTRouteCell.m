@@ -49,15 +49,14 @@
 					withFont:mainFont
 			   lineBreakMode:UILineBreakModeTailTruncation
 				   alignment:UITextAlignmentLeft];
-	
-	
-	// Show route number if the route icon doesn't exist
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    UIColor * bgColor = [UIColor colorWithHexString:@"#333333"];
-    [bgColor set];
-    CGContextFillRect(context, CGRectMake(0, 0, 32, 44));
     
 	if (self.iconImage == nil) {
+        // Show route number if the route icon doesn't exist
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        UIColor * bgColor = [UIColor colorWithHexString:@"#333333"];
+        [bgColor set];
+        CGContextFillRect(context, CGRectMake(0, 0, 32, 44));
+        
 		[[UIColor whiteColor] set];
 		[route.shortName drawInRect:CGRectMake(0, 12, 32, 20)
                            withFont:[UIFont boldSystemFontOfSize:SECONDARY_FONT_SIZE]
