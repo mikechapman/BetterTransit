@@ -11,14 +11,13 @@
 
 @implementation HBFeedLoader
 
-@synthesize entry, contentOfCurrentElement;
+@synthesize contentOfCurrentElement;
 @synthesize currentRouteShortName, currentDestination, currentETA;
 
 
 - (id)init
 {
 	if (self = [super init]) {
-		entry = [[BTPredictionEntry alloc] init];
 	}
 	return self;
 }
@@ -141,26 +140,22 @@
 			BOOL routeAlreadyExists = NO;
             
 			for (BTPredictionEntry *pe in self.prediction) {
-				NSString * routeShortName = pe.route.shortName;
-				NSString * destination = pe.destination;
-				
-				if ([currentRouteShortName isEqualToString:routeShortName] && 
-					[currentDestination isEqualToString:destination]) {
+				if ([currentRouteShortName isEqualToString:pe.route.shortName] && 
+					[currentDestination isEqualToString:pe.destination]) {
 					routeAlreadyExists = YES;
-					NSString * eta = pe.eta;
-					NSString *newETA = [NSString stringWithFormat:@"%@, %@", eta, currentETA];
+					NSString *newETA = [NSString stringWithFormat:@"%@, %@", pe.eta, currentETA];
 					pe.eta = newETA;
 					break;
 				}
 			}
 			
 			if (!routeAlreadyExists) {
-				BTPredictionEntry *entryCopy = [[BTPredictionEntry alloc] init];
-				entryCopy.route = entry.route;
-				entryCopy.destination = entry.destination;
-				entryCopy.eta = entry.eta;
-				[self.prediction addObject:entryCopy];
-				[entryCopy release];
+                BTPredictionEntry * entry = [[BTPredictionEntry alloc] init];
+                entry.route = [self.transit routeWithShortName:currentRouteShortName];
+                entry.destination = currentDestination;
+                entry.eta = currentETA;
+                [self.prediction addObject:entry];
+                [entry release];
 			}
 		}
 		tdCount++;
@@ -169,7 +164,6 @@
 
 - (void)dealloc
 {
-	[entry release], entry = nil;
 	[contentOfCurrentElement release], contentOfCurrentElement = nil;
     [currentRouteShortName release], currentRouteShortName = nil;
     [currentDestination release], currentDestination = nil;
