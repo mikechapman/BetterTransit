@@ -43,6 +43,13 @@
 #endif
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.mainTableView reloadData];
+}
+
 
 #pragma mark -
 #pragma mark Memory management
