@@ -37,7 +37,7 @@
 	mainTableView.separatorColor = COLOR_TABLE_VIEW_SEPARATOR;
 	mainTableView.rowHeight = 60;
 	
-	self.stops = [NSMutableArray array];
+	self.stops = nil;
 	
 	CGRect rect = CGRectMake(0, 44, 320, 199);
 	bigCancelButton = [[UIButton alloc] initWithFrame:rect];
@@ -221,15 +221,16 @@
 - (void)handleSearchForTerm:(NSString *)term
 {
 	if ([term length] > 0) {
-		NSMutableArray *foundStops = [NSMutableArray array];
+        // Use a dictionary here to deduplicate stops with the same stop code. This can happen when we combine two GTFS datasets.
+        NSMutableDictionary * foundStopsDict = [NSMutableDictionary dictionary];
 		for (BTStop *stop in transit.stops) {
 			NSRange range1 = [stop.stopName rangeOfString:term options:NSCaseInsensitiveSearch];
 			NSRange range2 = [stop.stopCode rangeOfString:term options:NSCaseInsensitiveSearch];
 			if (range1.location != NSNotFound || range2.location != NSNotFound) {
-				[foundStops addObject:stop];
+                [foundStopsDict setObject:stop forKey:stop.stopCode];
 			}
 		}
-		self.stops = foundStops;
+		self.stops = [foundStopsDict allValues];
 	} else {
 		self.stops = nil;
 	}

@@ -17,7 +17,7 @@
 <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 {
 	BTTransit *transit;
-	NSMutableArray *stops;
+	NSArray *stops;
 	
 	UISearchBar *searchBar;
 	UITableView *mainTableView;
@@ -31,7 +31,7 @@
 
 @property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, retain) IBOutlet UITableView *mainTableView;
-@property (nonatomic, retain) NSMutableArray *stops;
+@property (nonatomic, retain) NSArray *stops;
 
 - (void)handleSearchForTerm:(NSString *)term;
 - (void)registerForKeyboardNotifications;
