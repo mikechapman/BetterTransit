@@ -13,7 +13,7 @@
 #import "Utility.h"
 #import "TitleViewLabel.h"
 #import "LoadingCell.h"
-#import "EnhancedDefaultCell.h"
+#import "ErrorCell.h"
 
 #ifdef FLURRY_KEY
 #import "FlurryAPI.h"
@@ -322,7 +322,7 @@
     static NSString *StopInfoCellIdentifier = @"StopInfoCellIdentifier";
     static NSString *PredictionCellIdentifier = @"PredictionCellIdentifier";
     static NSString *LoadingCellIdentifier = @"LoadingCellIdentifier";
-    static NSString *DefaultCellIdentifier = @"DefaultCellIdentifier";
+    static NSString *ErrorCellIdentifier = @"ErrorCellIdentifier";
     
     if (indexPath.row == 0)
     {
@@ -353,9 +353,9 @@
     
     if (downloadStatus == DOWNLOAD_STATUS_FAILED && indexPath.row == 1)
     {
-        EnhancedDefaultCell *cell = (EnhancedDefaultCell *)[tableView dequeueReusableCellWithIdentifier:DefaultCellIdentifier];
+        ErrorCell *cell = (ErrorCell *)[tableView dequeueReusableCellWithIdentifier:ErrorCellIdentifier];
 		if (cell == nil) {
-			cell = [[[EnhancedDefaultCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:DefaultCellIdentifier] autorelease];
+			cell = [[[ErrorCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ErrorCellIdentifier] autorelease];
 		}
         cell.label = self.errorMessage;
 		cell.image = [UIImage imageNamed:@"icn_warning.png"];
