@@ -236,25 +236,10 @@
 		maxNumberOfNearbyStops = [[BTAppSettings maxNumNearbyStops] intValue];
 	}
 	
-	double radius;
-	if ([[BTAppSettings nearbyRadius] isEqualToString:@"No Limit"]) {
-		radius = 50000000;
-	} else {
-#ifdef METRIC_UNIT
-		NSRange rangeOfKm = [[BTAppSettings nearbyRadius] rangeOfString:@" km"];
-		radius = [[[BTAppSettings nearbyRadius] substringToIndex:rangeOfKm.location] doubleValue]*1000;
-#endif
-
-#ifdef ENGLISH_UNIT
-		NSRange rangeOfMi = [[BTAppSettings nearbyRadius] rangeOfString:@" mi"];
-		radius = [[[BTAppSettings nearbyRadius] substringToIndex:rangeOfMi.location] doubleValue]*1609.344;
-#endif
-	}
-	
 	int count = 0;
 	for (int i=0; i<[self.stops count]; i++) {
 		BTStop *stop = [self.stops objectAtIndex:i];
-		if (stop.distance > -1 && stop.distance < radius) {
+		if (stop.distance > -1) {
 			[self.nearbyStops addObject:stop];
 			count++;
 			if (count >= maxNumberOfNearbyStops) break;

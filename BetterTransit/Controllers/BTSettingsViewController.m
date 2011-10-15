@@ -18,7 +18,7 @@
 
 @implementation BTSettingsViewController
 
-@synthesize startupScreenOptions, nearbyRadiusOptions, maxNumNearbyStopsOptions;
+@synthesize startupScreenOptions, maxNumNearbyStopsOptions;
 
 
 #pragma mark -
@@ -36,11 +36,6 @@
 	
 	self.startupScreenOptions = [NSArray arrayWithObjects:@"Nearby", @"Favorites", @"Map", @"Routes", @"Search", nil];
 	self.maxNumNearbyStopsOptions = [NSArray arrayWithObjects:@"10", @"20", @"30", @"50", @"100", @"No Limit", nil];
-#ifdef METRIC_UNIT
-	self.nearbyRadiusOptions = [NSArray arrayWithObjects:@"0.2 km", @"0.5 km", @"1 km", @"2 km", @"5 km", @"No Limit", nil];
-#else
-	self.nearbyRadiusOptions = [NSArray arrayWithObjects:@"0.2 mi", @"0.5 mi", @"1 mi", @"2 mi", @"5 mi", @"No Limit", nil];
-#endif
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -58,7 +53,6 @@
 {
 	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[startupScreenOptions release], startupScreenOptions = nil;
-	[nearbyRadiusOptions release], nearbyRadiusOptions = nil;
 	[maxNumNearbyStopsOptions release], maxNumNearbyStopsOptions = nil;
     [super dealloc];
 }
@@ -71,7 +65,7 @@
 {
 	int numberOfRows;
     if (section == 0) {
-		numberOfRows = 3;
+		numberOfRows = 2;
 	} else {
 		numberOfRows = [super tableView:tv numberOfRowsInSection:section];
 	}
@@ -107,11 +101,6 @@
 				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 				break;
 			case 1:
-				cell.textLabel.text = @"Nearby Radius";
-				cell.detailTextLabel.text = [BTAppSettings nearbyRadius];
-				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-				break;
-			case 2:
 				cell.textLabel.text = @"Max No. of Nearby Stops";
 				cell.detailTextLabel.text = [BTAppSettings maxNumNearbyStops];
 				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
@@ -143,12 +132,6 @@
 				controller.tag = TAG_LIST_STARTUP_SCREEN;
 				break;
 			case 1:
-				controller.list = self.nearbyRadiusOptions;
-				controller.selectedIndex = [self.nearbyRadiusOptions indexOfObject:[BTAppSettings nearbyRadius]];
-				controller.title = @"Nearby Radius";
-				controller.tag = TAG_LIST_NEARBY_RADIUS;
-				break;
-			case 2:
 				controller.list = self.maxNumNearbyStopsOptions;
 				controller.selectedIndex = [self.maxNumNearbyStopsOptions indexOfObject:[BTAppSettings maxNumNearbyStops]];
 				controller.title = @"Max Number of Stops";
@@ -178,13 +161,6 @@
         {
             NSString *s = [self.startupScreenOptions objectAtIndex:index];
             [prefs setObject:s forKey:KEY_STARTUP_SCREEN];
-        }
-            break;
-            
-        case TAG_LIST_NEARBY_RADIUS:
-        {
-            NSString *s = [self.nearbyRadiusOptions objectAtIndex:index];
-            [prefs setObject:s forKey:KEY_NEARBY_RADIUS];
         }
             break;
             

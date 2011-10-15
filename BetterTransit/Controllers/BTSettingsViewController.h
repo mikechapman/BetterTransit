@@ -18,7 +18,6 @@
 }
 
 @property (nonatomic, retain) NSArray *startupScreenOptions;
-@property (nonatomic, retain) NSArray *nearbyRadiusOptions;
 @property (nonatomic, retain) NSArray *maxNumNearbyStopsOptions;
 
 @end

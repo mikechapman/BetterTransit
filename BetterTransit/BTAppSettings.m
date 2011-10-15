@@ -21,19 +21,6 @@
 	return s;
 }
 	
-+ (NSString *)nearbyRadius
-{
-	NSString *s = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_NEARBY_RADIUS];
-	if (s == nil) {
-#ifdef METRIC_UNIT
-		s = @"5 km";
-#else
-		s = @"5 mi";
-#endif
-	}
-	return s;
-}
-	
 + (NSString *)maxNumNearbyStops
 {
 	NSString *s = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_MAX_NUM_NEARBY_STOPS];

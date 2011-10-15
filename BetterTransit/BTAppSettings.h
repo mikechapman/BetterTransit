@@ -14,7 +14,6 @@
 }
 
 + (NSString *)startupScreen;
-+ (NSString *)nearbyRadius;
 + (NSString *)maxNumNearbyStops;
 
 @end
