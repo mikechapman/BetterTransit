@@ -61,12 +61,12 @@
 		self.navigationItem.rightBarButtonItem = scheduleBarButton;
 	}
     
+    self.navigationItem.title = [NSString stringWithFormat:@"Route %@", route.shortName];
 	NSString *imageName = [NSString stringWithFormat:@"%@_white.png", route.shortName];
 	UIImage *titleImage = [[UIImage imageNamed:imageName] retain];
 	if (titleImage) {
 		titleImageView = [[UIImageView alloc] initWithImage:titleImage];
 	} else {
-		self.navigationItem.title = [NSString stringWithFormat:@"Route %@", route.shortName];
 		titleImageView = nil;
 	}
 	[titleImage release];
