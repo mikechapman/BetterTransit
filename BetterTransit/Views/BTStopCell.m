@@ -34,13 +34,13 @@
 {
 	[super setEditing:editing animated:animated];
 	
-	CGRect b = [self bounds];
+	CGRect b = [self.contentView bounds];
 	b.size.height -= 1; // leave room for the separator line
 	
 	if (self.showingDeleteConfirmation) {
 		b.origin.x -= 24.0f;
 	} else {
-		b.origin.x += (editing) ? 4.0f : 0.0f;
+		b.origin.x += (editing) ? -20.0f : 0.0f;
 	}
 	
 	[cellView setNeedsDisplay];
