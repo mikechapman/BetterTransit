@@ -37,9 +37,7 @@
 	if (self) {
         downloadStatus = DOWNLOAD_STATUS_INIT;
         self.errorMessage = nil;
-#ifdef HIDE_BOTTOM_BAR
 		self.hidesBottomBarWhenPushed = YES;
-#endif
 	}
 	return self;
 }

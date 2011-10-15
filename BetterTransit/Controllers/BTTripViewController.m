@@ -27,9 +27,7 @@
 {
 	self = [super initWithNibName:@"BTTripViewController" bundle:[NSBundle mainBundle]];
 	if (self) {
-#ifdef HIDE_BOTTOM_BAR
 		self.hidesBottomBarWhenPushed = YES;
-#endif
 	}
 	return self;
 }
