@@ -53,6 +53,14 @@ static BTLocationManager *sharedInstance = nil;
 	[super dealloc];
 }
 
+- (CLLocation *)currentLocation
+{
+	if (currentLocation == nil) {
+		currentLocation = [[CLLocation alloc] initWithLatitude:CENTER_LATITUDE longitude:CENTER_LONGITUDE];
+	}
+	return currentLocation;
+}
+
 
 #pragma mark -
 #pragma mark Location management
@@ -76,30 +84,25 @@ static BTLocationManager *sharedInstance = nil;
 	[locationManager stopUpdatingLocation];
 	isUpdatingLocation = NO;
 	locationFound = YES;
-
-#ifdef PRODUCTION_READY
-	CLLocation *loc = newLocation;
-#else
-	CLLocation *loc = [[[CLLocation alloc] initWithLatitude:FAKE_LOCATION_LATITUDE longitude:FAKE_LOCATION_LONGITUDE] autorelease];
-#endif
-	
-	NSDictionary *userInfo = [NSDictionary dictionaryWithObject:loc forKey:@"location"];
 	
 	// If the user's location didn't change much, don't bother sending out notifications
-	if (self.currentLocation != nil && fabs([loc getDistanceFrom:self.currentLocation]) < 100) {
+	if (fabs([newLocation getDistanceFrom:self.currentLocation]) < 100) {
 		[[NSNotificationCenter defaultCenter] postNotificationName:kLocationDidNotChangeNotification
 															object:self
-														  userInfo:userInfo];
+														  userInfo:nil];
 	} else {
-		self.currentLocation = loc;
+#ifdef PRODUCTION_READY
+		self.currentLocation = newLocation;
+#endif
         
 #ifdef FLURRY_KEY
-		[FlurryAPI setLatitude:loc.coordinate.latitude
-					 longitude:loc.coordinate.longitude
-			horizontalAccuracy:loc.horizontalAccuracy
-			  verticalAccuracy:loc.verticalAccuracy];
+        [FlurryAPI setLatitude:newLocation.coordinate.latitude
+                     longitude:newLocation.coordinate.longitude
+            horizontalAccuracy:newLocation.horizontalAccuracy
+              verticalAccuracy:newLocation.verticalAccuracy];
 #endif
 		
+        NSDictionary *userInfo = [NSDictionary dictionaryWithObject:self.currentLocation forKey:@"location"];
 		[[NSNotificationCenter defaultCenter] postNotificationName:kDidUpdateToLocationNotification
 															object:self
 														  userInfo:userInfo];

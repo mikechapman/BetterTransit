@@ -190,8 +190,6 @@
 
 - (void)updateAnnotations
 {
-	if (![[BTLocationManager sharedInstance] locationFound]) return;
-	
 	// filter stops to the current visible region
 	MKCoordinateRegion region = mapView.region;
 	if (region.span.longitudeDelta > 0.015) {
