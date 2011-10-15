@@ -19,7 +19,7 @@
 @implementation BTStopsViewController
  
 @synthesize stops;
-@synthesize mainTableView, addToFavsView, noNearbyStopsView, segmentedControl;
+@synthesize mainTableView, loadingSpinner, addToFavsView, noNearbyStopsView, segmentedControl;
 @synthesize locationUpdateButton, spinnerBarItem, spinner;
 @synthesize isEditing, editButton, doneButton;
 @synthesize viewIsShown;
@@ -43,6 +43,12 @@
 	self.viewIsShown = NO;
 	self.stops = [NSArray array];
 	self.isEditing = NO;
+    
+    // Setup the loading spinner in the middle of page
+    self.loadingSpinner = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] autorelease];
+    loadingSpinner.center = CGPointMake(160, 180);
+    loadingSpinner.hidesWhenStopped = YES;
+    [self.view addSubview:loadingSpinner];
 	
 	// Setup segmented control
 	NSArray *items = [NSArray arrayWithObjects:NSLocalizedString(@"Nearby", @""),
@@ -93,7 +99,7 @@
 	// an illustration showing that no nearby stops are found.
 	self.noNearbyStopsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"noNearbyStops.png"]];
 	[noNearbyStopsView release];
-	noNearbyStopsView.hidden = YES;
+    noNearbyStopsView.hidden = YES;
 	[self.view addSubview:self.noNearbyStopsView];
 }
 
@@ -170,6 +176,7 @@
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	
 	self.mainTableView = nil;
+    self.loadingSpinner = nil;
 	self.addToFavsView = nil;
 	self.noNearbyStopsView = nil;
 	self.segmentedControl = nil;
@@ -180,6 +187,7 @@
 	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[stops release];
 	[mainTableView release];
+    [loadingSpinner release];
 	[addToFavsView release];
 	[noNearbyStopsView release];
 	[segmentedControl release];
@@ -213,26 +221,43 @@
 {
 	switch ([segmentedControl selectedSegmentIndex]) {
 		case 0:
-			if ([[BTLocationManager sharedInstance] locationFound]) {
+            noNearbyStopsView.hidden = NO;
+            loadingSpinner.hidden = NO;
+            addToFavsView.hidden = YES;
+			[self.navigationItem setRightBarButtonItem:locationUpdateButton animated:NO];
+            
+            if ([[BTLocationManager sharedInstance] isUpdatingLocation])
+            {
+                // Show the loading spinner
+                [loadingSpinner startAnimating];
+                [self.view bringSubviewToFront:loadingSpinner];
+                
+                // Hide the illustration for no nearby stops
+                noNearbyStopsView.hidden = YES;
+            }
+            else if ([[BTLocationManager sharedInstance] locationFound])
+            {
 				[transit updateNearbyStops];
 				self.stops = transit.nearbyStops;
-				if ([self.stops count] == 0) {
-					noNearbyStopsView.hidden = NO;
-					[self.view bringSubviewToFront:noNearbyStopsView];
-				} else {
-					noNearbyStopsView.hidden = YES;
-				}
-			} else {
-				noNearbyStopsView.hidden = YES;
+                noNearbyStopsView.hidden = YES;
+                [loadingSpinner stopAnimating];
 			}
-			addToFavsView.hidden = YES;
-			[self.navigationItem setRightBarButtonItem:locationUpdateButton animated:NO];
+            else
+            {
+				noNearbyStopsView.hidden = NO;
+                [self.view bringSubviewToFront:noNearbyStopsView];
+                [loadingSpinner stopAnimating];
+			}
 
 #ifdef FLURRY_KEY
 			[FlurryAPI logEvent:@"CLICKED_NEARBY"];
 #endif
 			break;
 		case 1:
+            noNearbyStopsView.hidden = YES;
+            loadingSpinner.hidden = YES;
+            addToFavsView.hidden = NO;
+            
 			self.stops = transit.favoriteStops;
 			if ([self.stops count] == 0) {
 				addToFavsView.hidden = NO;
@@ -249,7 +274,6 @@
 				addToFavsView.hidden = YES;
 				[self.navigationItem setRightBarButtonItem:editButton animated:NO];
 			}
-			noNearbyStopsView.hidden = YES;
 
 #ifdef FLURRY_KEY
 			[FlurryAPI logEvent:@"CLICKED_FAVS"];
@@ -422,6 +446,7 @@
 - (void)didFailToUpdateLocation:(NSNotification *)notification
 {
 	[self.spinner stopAnimating];
+    [self refreshView];
 	if (segmentedControl.selectedSegmentIndex == 0) {
 		self.navigationItem.rightBarButtonItem = locationUpdateButton;
 	}

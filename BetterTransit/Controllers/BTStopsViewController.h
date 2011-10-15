@@ -19,6 +19,7 @@
 	NSArray *stops;
 	
 	UITableView *mainTableView;
+    UIActivityIndicatorView * loadingSpinner;
 	UIImageView *addToFavsView;
 	UIImageView *noNearbyStopsView;
 	UISegmentedControl *segmentedControl;
@@ -35,6 +36,7 @@
 
 @property (nonatomic, retain) NSArray *stops;
 @property (nonatomic, retain) IBOutlet UITableView *mainTableView;
+@property (nonatomic, retain) UIActivityIndicatorView * loadingSpinner;
 @property (nonatomic, retain) UIImageView *addToFavsView;
 @property (nonatomic, retain) UIImageView *noNearbyStopsView;
 @property (nonatomic, retain) UISegmentedControl *segmentedControl;
