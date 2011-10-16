@@ -123,6 +123,8 @@
 		890893E6144A567F00276327 /* stop_sign_UVA@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8908937A144A567F00276327 /* stop_sign_UVA@2x.png */; };
 		890893E7144A567F00276327 /* stop_UVA.png in Resources */ = {isa = PBXBuildFile; fileRef = 8908937B144A567F00276327 /* stop_UVA.png */; };
 		890893E8144A567F00276327 /* stop_UVA@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8908937C144A567F00276327 /* stop_UVA@2x.png */; };
+		890893EB144A579000276327 /* ErrorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 890893EA144A579000276327 /* ErrorCell.m */; };
+		890893ED144A57B400276327 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 890893EC144A57B400276327 /* libz.dylib */; };
 		890CCE971444832400797298 /* UIColor+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 890CCE961444832400797298 /* UIColor+Utilities.m */; };
 		893BAF18142590610002BA86 /* AppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 893BAF0A142590610002BA86 /* AppViewController.m */; };
 		893BAF19142590610002BA86 /* AppViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 893BAF0B142590610002BA86 /* AppViewController.xib */; };
@@ -202,7 +204,6 @@
 		899EA38F12F70A1B00831DBA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 899EA38E12F70A1B00831DBA /* QuartzCore.framework */; };
 		899EA39712F70A3E00831DBA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 899EA39612F70A3E00831DBA /* libsqlite3.dylib */; };
 		899EA3A312F70A8800831DBA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 899EA3A212F70A8800831DBA /* libxml2.dylib */; };
-		899EA3A512F70A8800831DBA /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 899EA3A412F70A8800831DBA /* libz.1.2.3.dylib */; };
 		89A9F7E51443D4EF00951A61 /* HoosBus-GTFS.db in Resources */ = {isa = PBXBuildFile; fileRef = 89A9F7E41443D4EF00951A61 /* HoosBus-GTFS.db */; };
 		89AAD870142555AA00416D38 /* BTAppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD7FB142555AA00416D38 /* BTAppSettings.m */; };
 		89AAD871142555AA00416D38 /* BTTransit.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AAD7FD142555AA00416D38 /* BTTransit.m */; };
@@ -418,6 +419,9 @@
 		8908937A144A567F00276327 /* stop_sign_UVA@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop_sign_UVA@2x.png"; sourceTree = "<group>"; };
 		8908937B144A567F00276327 /* stop_UVA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop_UVA.png; sourceTree = "<group>"; };
 		8908937C144A567F00276327 /* stop_UVA@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop_UVA@2x.png"; sourceTree = "<group>"; };
+		890893E9144A579000276327 /* ErrorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorCell.h; sourceTree = "<group>"; };
+		890893EA144A579000276327 /* ErrorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorCell.m; sourceTree = "<group>"; };
+		890893EC144A57B400276327 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		890CCE951444832400797298 /* UIColor+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utilities.h"; sourceTree = "<group>"; };
 		890CCE961444832400797298 /* UIColor+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utilities.m"; sourceTree = "<group>"; };
 		893BAF09142590610002BA86 /* AppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppViewController.h; sourceTree = "<group>"; };
@@ -561,7 +565,6 @@
 		899EA38E12F70A1B00831DBA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		899EA39612F70A3E00831DBA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		899EA3A212F70A8800831DBA /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		899EA3A412F70A8800831DBA /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		89A9F7E41443D4EF00951A61 /* HoosBus-GTFS.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HoosBus-GTFS.db"; sourceTree = "<group>"; };
 		89AAD7FA142555AA00416D38 /* BTAppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAppSettings.h; sourceTree = "<group>"; };
 		89AAD7FB142555AA00416D38 /* BTAppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAppSettings.m; sourceTree = "<group>"; };
@@ -684,6 +687,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				890893ED144A57B400276327 /* libz.dylib in Frameworks */,
 				893BAF35142591CD0002BA86 /* MessageUI.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
@@ -696,7 +700,6 @@
 				89B2C4B6141A372300BDE926 /* MobileCoreServices.framework in Frameworks */,
 				899EA39712F70A3E00831DBA /* libsqlite3.dylib in Frameworks */,
 				899EA3A312F70A8800831DBA /* libxml2.dylib in Frameworks */,
-				899EA3A512F70A8800831DBA /* libz.1.2.3.dylib in Frameworks */,
 				898A20A014136BED00D97479 /* libYAJLIPhone.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -775,7 +778,7 @@
 				893BAF34142591CD0002BA86 /* MessageUI.framework */,
 				899EA39612F70A3E00831DBA /* libsqlite3.dylib */,
 				899EA3A212F70A8800831DBA /* libxml2.dylib */,
-				899EA3A412F70A8800831DBA /* libz.1.2.3.dylib */,
+				890893EC144A57B400276327 /* libz.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -986,6 +989,8 @@
 				897760B8141C4FCC00390D27 /* FastScrollingCell.m */,
 				897760B9141C4FCC00390D27 /* LoadingCell.h */,
 				897760BA141C4FCC00390D27 /* LoadingCell.m */,
+				890893E9144A579000276327 /* ErrorCell.h */,
+				890893EA144A579000276327 /* ErrorCell.m */,
 			);
 			path = HATableViewCells;
 			sourceTree = "<group>";
@@ -1740,6 +1745,7 @@
 				893BAF1E142590610002BA86 /* HAFAQViewController.m in Sources */,
 				893BAF2B142590DF0002BA86 /* HAWebViewController.m in Sources */,
 				890CCE971444832400797298 /* UIColor+Utilities.m in Sources */,
+				890893EB144A579000276327 /* ErrorCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1785,9 +1791,13 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					armv6,
+					armv7,
+				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
@@ -1807,9 +1817,13 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					armv6,
+					armv7,
+				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
