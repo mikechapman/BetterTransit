@@ -34,7 +34,3 @@
 // FAQ, Blog
 #define URL_FAQ @"http://artisticfrog.com/cross_promote/hoosbus/faq.xml"
 #define URL_BLOG @"http://happenapps.tumblr.com"
-
-// Email
-#define STRING_EMAIL_SUBJECT @"Hey, check out HoosBus!"
-#define STRING_EMAIL_BODY @"Hey!\n\nCheck out HoosBus, the must-have iPhone app for C'ville bus riders!\n\nDownload here for free:\nhttp://goo.gl/qQ1EJ\n\nHave a nice ride!"
