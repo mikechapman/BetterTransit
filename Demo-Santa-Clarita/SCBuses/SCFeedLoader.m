@@ -37,7 +37,7 @@
 	if (requestType == REQUEST_TYPE_GET_FEED) {
 		NSString *stringReply = [request responseString];
 		//NSLog(@"%@", stringReply);
-		NSRange range = [stringReply rangeOfString:@"Platform Estimated Time"];
+		NSRange range = [stringReply rangeOfString:@"frmPlatformET"];
 		
 		// Return nil if the feed can not be downloaded
 		if (range.location == NSNotFound) {
