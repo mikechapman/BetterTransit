@@ -1,0 +1,196 @@
+//
+//  SettingsViewController.m
+//  BetterTransit
+//
+//  Created by Yaogang Lian on 10/17/11.
+//  Copyright (c) 2011 Happen Apps. All rights reserved.
+//
+
+#import "SettingsViewController.h"
+#import "BTAppSettings.h"
+#import "BTTransitDelegate.h"
+#import "UIColor+Utilities.h"
+
+@implementation SettingsViewController
+
+@synthesize mainTableView;
+@synthesize startupScreenOptions, maxNumNearbyStopsOptions;
+
+
+#pragma mark -
+#pragma mark init
+
+- (id)init
+{
+    self = [super initWithNibName:@"SettingsViewController" bundle:[NSBundle mainBundle]];
+    if (self) {
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.title = NSLocalizedString(@"Settings", @"");
+    
+    mainTableView.backgroundColor = [UIColor colorWithHexString:@"#E5E1E1"];
+	
+	transit = [AppDelegate transit];
+	
+	self.startupScreenOptions = [NSArray arrayWithObjects:@"Nearby", @"Favorites", @"Map", @"Routes", @"Search", nil];
+	self.maxNumNearbyStopsOptions = [NSArray arrayWithObjects:@"10", @"20", @"30", @"50", @"100", @"No Limit", nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.mainTableView reloadData];
+}
+
+
+
+#pragma mark -
+#pragma mark Memory management
+
+- (void)didReceiveMemoryWarning
+{
+	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
+	// Releases the view if it doesn't have a superview.
+    [super didReceiveMemoryWarning];
+	
+	// Release any cached data, images, etc that aren't in use.
+}
+
+- (void)viewDidUnload
+{
+	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
+	[super viewDidUnload];
+	
+	self.mainTableView = nil;
+}
+
+- (void)dealloc
+{
+	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
+    
+	[mainTableView release], mainTableView = nil;
+    [startupScreenOptions release], startupScreenOptions = nil;
+	[maxNumNearbyStopsOptions release], maxNumNearbyStopsOptions = nil;
+    [super dealloc];
+}
+
+
+#pragma mark -
+#pragma mark Table view methods
+
+- (NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section 
+{
+	int numberOfRows;
+    if (section == 0) {
+		numberOfRows = 2;
+	}
+	return numberOfRows;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section 
+{
+    if (section == 0) {
+        return @"Application Settings";
+    } else {
+        return nil;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+	static NSString *BTSettingsCellIdentifier = @"BTSettingsCell";
+	
+	UITableViewCell *cell;
+	if (indexPath.section == 0)
+	{
+		cell = [tableView dequeueReusableCellWithIdentifier:BTSettingsCellIdentifier];
+		if (cell == nil) {
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:BTSettingsCellIdentifier] autorelease];
+		}
+		
+		switch (indexPath.row) {
+			case 0:
+				cell.textLabel.text = @"Startup Screen";
+				cell.detailTextLabel.text = [BTAppSettings startupScreen];
+				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+				break;
+			case 1:
+				cell.textLabel.text = @"Max No. of Nearby Stops";
+				cell.detailTextLabel.text = [BTAppSettings maxNumNearbyStops];
+				cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+				break;
+			default:
+				break;
+		}
+		
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	}
+	
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath 
+{
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	if (indexPath.section == 0)
+	{
+		HAListViewController *controller = [[HAListViewController alloc] init];
+		switch (indexPath.row) {
+			case 0:
+				controller.list = self.startupScreenOptions;
+				controller.selectedIndex = [self.startupScreenOptions indexOfObject:[BTAppSettings startupScreen]];
+				controller.title = @"Startup Screen";
+				controller.tag = TAG_LIST_STARTUP_SCREEN;
+				break;
+			case 1:
+				controller.list = self.maxNumNearbyStopsOptions;
+				controller.selectedIndex = [self.maxNumNearbyStopsOptions indexOfObject:[BTAppSettings maxNumNearbyStops]];
+				controller.title = @"Max Number of Stops";
+				controller.tag = TAG_LIST_MAX_NUM_NEARBY_STOPS;
+				break;
+			default:
+				break;
+		}
+		controller.delegate = self;
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];
+	}
+}
+
+
+#pragma mark -
+#pragma mark ListViewControllerDelegate methods
+
+- (void)setSelectedIndex:(NSUInteger)index inList:(NSInteger)tag
+{
+	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    switch (tag) {
+        case TAG_LIST_STARTUP_SCREEN:
+        {
+            NSString *s = [self.startupScreenOptions objectAtIndex:index];
+            [prefs setObject:s forKey:KEY_STARTUP_SCREEN];
+        }
+            break;
+            
+        case TAG_LIST_MAX_NUM_NEARBY_STOPS:
+        {
+            NSString *s = [self.maxNumNearbyStopsOptions objectAtIndex:index];
+            [prefs setObject:s forKey:KEY_MAX_NUM_NEARBY_STOPS];
+        }
+            break;
+            
+        default:
+            break;
+    }
+	[prefs synchronize];
+}
+
+@end
