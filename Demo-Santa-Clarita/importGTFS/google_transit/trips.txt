@@ -1,0 +1,940 @@
+﻿route_id,service_id,trip_id,trip_headsign,direction_id,block_id,shape_id
+1,1,187,Whites Cyn,0,132,9
+1,1,188,Castaic,1,121,19
+1,1,533,Whites Cyn,0,121,9
+1,1,536,Whites Cyn,0,132,12
+1,1,538,Whites Cyn,0,117,9
+1,1,594,Whites Cyn,0,121,9
+1,1,596,Whites Cyn,0,117,9
+1,1,598,Whites Cyn,0,132,9
+1,1,600,Whites Cyn,0,121,9
+1,1,602,Whites Cyn,0,117,9
+1,1,604,Whites Cyn,0,132,9
+1,1,606,Whites Cyn,0,121,9
+1,1,608,Whites Cyn,0,117,9
+1,1,610,Whites Cyn,0,132,9
+1,1,612,Whites Cyn,0,121,9
+1,1,614,Whites Cyn,0,117,9
+1,1,615,Whites Cyn,0,132,9
+1,1,616,Castaic,1,117,19
+1,1,619,Castaic,1,132,19
+1,1,621,Castaic,1,121,19
+1,1,623,Castaic,1,117,19
+1,1,625,Castaic,1,132,19
+1,1,627,Castaic,1,121,19
+1,1,629,Castaic,1,117,19
+1,1,631,Castaic,1,132,19
+1,1,633,Castaic,1,121,19
+1,1,635,Castaic,1,117,19
+1,1,637,Castaic,1,132,19
+1,1,640,Castaic,1,117,19
+1,1,642,Castaic,1,132,19
+1,1,643,Castaic,1,121,19
+1,2,189,Castaic,1,143,19
+1,2,645,Whites Cyn,0,139,9
+1,2,646,Whites Cyn,0,143,12
+1,2,649,Whites Cyn,0,137,9
+1,2,651,Whites Cyn,0,143,9
+1,2,653,Whites Cyn,0,139,9
+1,2,655,Whites Cyn,0,137,9
+1,2,657,Whites Cyn,0,143,9
+1,2,659,Whites Cyn,0,139,9
+1,2,661,Whites Cyn,0,137,9
+1,2,663,Whites Cyn,0,143,9
+1,2,665,Whites Cyn,0,139,9
+1,2,667,Whites Cyn,0,137,9
+1,2,669,Whites Cyn,0,143,9
+1,2,671,Whites Cyn,0,139,9
+1,2,672,Castaic,1,137,69
+1,2,674,Castaic,1,143,19
+1,2,676,Castaic,1,139,19
+1,2,678,Castaic,1,137,19
+1,2,680,Castaic,1,143,19
+1,2,682,Castaic,1,139,19
+1,2,684,Castaic,1,137,19
+1,2,701,Castaic,1,139,19
+1,2,703,Castaic,1,137,19
+1,2,705,Castaic,1,143,19
+1,2,707,Castaic,1,139,19
+1,2,709,Castaic,1,137,19
+1,3,27,Castaic,1,5,19
+1,3,28,Whites Cyn,0,5,9
+1,3,51,Castaic,1,11,19
+1,3,52,Whites Cyn,0,11,9
+1,3,53,Castaic,1,11,19
+1,3,64,Castaic,1,13,19
+1,3,65,Whites Cyn,0,13,9
+1,3,66,Ave Stanford & Rye Cyn,1,13,70
+1,3,67,Castaic,1,14,69
+1,3,68,Whites Cyn,0,14,9
+1,3,69,Castaic,1,14,20
+1,3,70,Whites Cyn,0,14,9
+1,3,71,Castaic,1,14,19
+1,3,72,Whites Cyn,0,14,9
+1,3,73,Castaic,1,14,19
+1,3,74,Whites Cyn,0,14,9
+1,3,75,Transit Center,1,14,18
+1,3,76,Whites Cyn,0,15,13
+1,3,77,Castaic,1,15,20
+1,3,78,Castaic,1,15,19
+1,3,79,Whites Cyn,0,15,9
+1,3,80,Castaic,1,15,19
+1,3,81,Whites Cyn,0,15,9
+1,3,82,Castaic,1,15,19
+1,3,83,Whites Cyn,0,15,9
+1,3,104,Whites Cyn,0,17,12
+1,3,105,Castaic,1,17,19
+1,3,125,Whites Cyn,0,22,13
+1,3,126,Ave Stanford & Rye Cyn,1,22,70
+1,3,152,Castaic,1,27,19
+1,3,153,Whites Cyn,0,27,9
+1,3,154,Castaic,1,27,19
+1,3,155,Whites Cyn,0,27,9
+1,3,156,Whites Cyn,0,28,13
+1,3,157,Castaic,1,28,19
+1,3,158,Whites Cyn,0,28,16
+1,3,159,Transit Center,1,28,18
+1,3,183,Whites Cyn,0,34,15
+1,3,186,Transit Center,0,22,179
+1,3,524,Castaic,1,3,20
+1,3,525,Castaic,1,3,19
+1,3,527,Castaic,1,10,19
+1,3,530,Castaic,1,3,19
+1,3,531,Castaic,1,10,19
+1,3,687,Whites Cyn,0,3,9
+1,3,688,Whites Cyn,0,3,9
+1,3,690,Transit Center,0,20,179
+1,3,692,Whites Cyn,0,3,9
+1,3,693,Whites Cyn,0,10,9
+1,3,696,Whites Cyn,0,3,9
+1,3,697,Transit Center,0,10,17
+1,3,699,Castaic,1,3,20
+1,3,938,Whites Cyn,0,17,9
+1,3,939,Whites Cyn,0,15,9
+2,1,534,Whites Cyn,0,119,11
+2,1,535,Whites Cyn,0,130,14
+2,1,537,Whites Cyn,0,124,7
+2,1,539,Whites Cyn,0,119,7
+2,1,593,Whites Cyn,0,130,7
+2,1,595,Whites Cyn,0,124,7
+2,1,597,Whites Cyn,0,119,7
+2,1,599,Whites Cyn,0,130,7
+2,1,601,Whites Cyn,0,124,7
+2,1,603,Whites Cyn,0,119,7
+2,1,605,Whites Cyn,0,130,7
+2,1,607,Whites Cyn,0,124,7
+2,1,609,Whites Cyn,0,119,7
+2,1,611,Whites Cyn,0,130,7
+2,1,613,Whites Cyn,0,124,7
+2,1,617,Val Verde,1,124,74
+2,1,618,Val Verde,1,119,71
+2,1,620,Val Verde,1,130,71
+2,1,622,Val Verde,1,124,71
+2,1,624,Val Verde,1,119,71
+2,1,626,Val Verde,1,130,71
+2,1,628,Val Verde,1,124,71
+2,1,630,Val Verde,1,119,71
+2,1,632,Val Verde,1,130,71
+2,1,634,Val Verde,1,124,71
+2,1,636,Val Verde,1,119,71
+2,1,638,Val Verde,1,130,71
+2,1,639,Val Verde,1,124,71
+2,1,641,Val Verde,1,119,71
+2,2,644,Whites Cyn,0,136,11
+2,2,647,Whites Cyn,0,150,11
+2,2,648,Whites Cyn,0,144,7
+2,2,650,Whites Cyn,0,136,7
+2,2,652,Whites Cyn,0,150,7
+2,2,654,Whites Cyn,0,144,7
+2,2,656,Whites Cyn,0,136,7
+2,2,658,Whites Cyn,0,150,7
+2,2,660,Whites Cyn,0,144,7
+2,2,662,Whites Cyn,0,136,7
+2,2,664,Whites Cyn,0,150,7
+2,2,666,Whites Cyn,0,144,7
+2,2,668,Whites Cyn,0,136,7
+2,2,670,Whites Cyn,0,150,7
+2,2,673,Val Verde,1,136,71
+2,2,675,Val Verde,1,150,71
+2,2,677,Val Verde,1,144,71
+2,2,679,Val Verde,1,136,71
+2,2,681,Val Verde,1,150,71
+2,2,683,Val Verde,1,144,71
+2,2,685,Val Verde,1,136,71
+2,2,700,Val Verde,1,150,71
+2,2,702,Val Verde,1,144,71
+2,2,704,Val Verde,1,136,71
+2,2,706,Val Verde,1,150,71
+2,2,708,Val Verde,1,144,71
+2,2,710,Transit Center,1,136,75
+2,3,21,Val Verde,1,5,23
+2,3,22,Whites Cyn,0,5,7
+2,3,23,Val Verde,1,5,71
+2,3,24,Whites Cyn,0,5,7
+2,3,25,Val Verde,1,5,71
+2,3,26,Whites Cyn,0,5,7
+2,3,29,Val Verde,1,5,71
+2,3,30,Whites Cyn,0,5,8
+2,3,42,Whites Cyn,0,11,11
+2,3,43,Val Verde,1,11,24
+2,3,44,Whites Cyn,0,11,7
+2,3,45,Val Verde,1,11,71
+2,3,46,Whites Cyn,0,11,7
+2,3,47,Val Verde,1,11,71
+2,3,48,Whites Cyn,0,11,7
+2,3,49,Val Verde,1,11,71
+2,3,50,Whites Cyn,0,11,7
+2,3,84,Val Verde,1,15,71
+2,3,85,Whites Cyn,0,15,7
+2,3,86,Transit Center,1,15,75
+2,3,150,Val Verde,1,27,71
+2,3,151,Whites Cyn,0,27,8
+2,3,184,Val Verde,1,34,71
+2,3,185,Whites Cyn,0,34,8
+2,3,523,Val Verde,1,10,24
+2,3,526,Val Verde,1,10,71
+2,3,528,Val Verde,1,3,71
+2,3,529,Val Verde,1,10,71
+2,3,532,Val Verde,1,3,71
+2,3,686,Whites Cyn,0,10,7
+2,3,689,Whites Cyn,0,10,7
+2,3,691,Whites Cyn,0,10,7
+2,3,694,Whites Cyn,0,3,7
+2,3,695,Whites Cyn,0,10,8
+2,3,698,Whites Cyn,0,3,7
+3,1,723,Seco Canyon,0,133,25
+3,1,724,Seco Canyon,0,133,1
+3,1,725,Seco Canyon,0,133,1
+3,1,726,Seco Canyon,0,133,1
+3,1,727,Seco Canyon,0,133,1
+3,1,728,Seco Canyon,0,133,1
+3,1,729,Seco Canyon,0,133,1
+3,1,730,Seco Canyon,0,133,1
+3,1,731,Seco Canyon,0,133,1
+3,1,732,Seco Canyon,0,133,1
+3,1,733,Magic Mtn,1,129,26
+3,1,734,Magic Mtn,1,129,26
+3,1,735,Magic Mtn,1,129,26
+3,1,736,Magic Mtn,1,129,26
+3,1,737,Magic Mtn,1,129,26
+3,1,738,Magic Mtn,1,129,26
+3,1,739,Magic Mtn,1,129,26
+3,1,740,Magic Mtn,1,129,26
+3,1,741,Magic Mtn,1,129,26
+3,1,742,Magic Mtn,1,129,26
+3,2,190,Seco Canyon,0,145,25
+3,2,743,Seco Canyon,0,145,1
+3,2,744,Seco Canyon,0,145,1
+3,2,745,Seco Canyon,0,145,1
+3,2,746,Seco Canyon,0,145,1
+3,2,747,Seco Canyon,0,145,1
+3,2,748,Seco Canyon,0,145,1
+3,2,749,Seco Canyon,0,145,1
+3,2,750,Seco Canyon,0,145,1
+3,2,751,Seco Canyon,0,145,1
+3,2,752,Magic Mtn,1,141,26
+3,2,753,Magic Mtn,1,141,26
+3,2,754,Magic Mtn,1,141,26
+3,2,755,Magic Mtn,1,141,26
+3,2,756,Magic Mtn,1,141,26
+3,2,757,Magic Mtn,1,141,26
+3,2,758,Magic Mtn,1,141,26
+3,2,759,Magic Mtn,1,141,26
+3,2,760,Magic Mtn,1,141,26
+3,2,761,Magic Mtn,1,141,26
+3,3,127,Seco Canyon,0,25,25
+3,3,129,Seco Canyon,0,25,1
+3,3,131,Seco Canyon,0,25,1
+3,3,133,Seco Canyon,0,25,1
+3,3,135,Seco Canyon,0,25,1
+3,3,137,Seco Canyon,0,25,1
+3,3,139,Seco Canyon,0,25,1
+3,3,141,Seco Canyon,0,25,1
+3,3,143,Seco Canyon,0,25,1
+3,3,145,Seco Canyon,0,25,1
+3,3,147,Seco Canyon,0,25,1
+3,3,711,Transit Center,1,9,178
+3,3,712,Magic Mtn,1,9,26
+3,3,713,Magic Mtn,1,9,26
+3,3,714,Magic Mtn,1,9,26
+3,3,715,Magic Mtn,1,9,26
+3,3,716,Magic Mtn,1,9,26
+3,3,717,Magic Mtn,1,9,26
+3,3,718,Magic Mtn,1,9,26
+3,3,719,Magic Mtn,1,9,26
+3,3,720,Magic Mtn,1,9,26
+3,3,721,Magic Mtn,1,9,26
+3,3,722,Magic Mtn,1,9,26
+4,1,792,Newhall Metrolink,0,123,2
+4,1,795,Newhall Metrolink,0,122,2
+4,1,797,Newhall Metrolink,0,123,2
+4,1,799,Newhall Metrolink,0,122,2
+4,1,801,Newhall Metrolink,0,123,2
+4,1,803,Newhall Metrolink,0,122,2
+4,1,805,Newhall Metrolink,0,123,2
+4,1,807,Newhall Metrolink,0,122,2
+4,1,808,Newhall Metrolink,0,123,2
+4,1,810,Newhall Metrolink,0,122,2
+4,1,812,Newhall Metrolink,0,123,2
+4,1,814,Newhall Metrolink,0,122,2
+4,1,816,Newhall Metrolink,0,123,2
+4,1,818,LARC,1,122,3
+4,1,820,LARC,1,123,3
+4,1,822,LARC,1,122,3
+4,1,824,LARC,1,123,3
+4,1,826,LARC,1,122,3
+4,1,828,LARC,1,123,3
+4,1,830,LARC,1,122,3
+4,1,832,LARC,1,123,3
+4,1,834,LARC,1,122,3
+4,1,836,LARC,1,123,3
+4,1,838,LARC,1,122,3
+4,1,840,LARC,1,123,3
+4,1,842,LARC,1,126,33
+4,2,192,Transit Center,0,148,38
+4,2,844,Transit Center,0,148,38
+4,2,846,Transit Center,0,148,38
+4,2,848,Transit Center,0,148,38
+4,2,850,Transit Center,0,148,38
+4,2,852,Transit Center,0,148,38
+4,2,854,Transit Center,0,148,38
+4,2,856,Transit Center,0,148,38
+4,2,858,Transit Center,0,148,38
+4,2,861,Transit Center,0,148,38
+4,2,863,Transit Center,0,148,38
+4,2,865,Transit Center,0,148,38
+4,2,866,LARC,1,148,33
+4,2,868,LARC,1,148,33
+4,2,870,LARC,1,148,33
+4,2,872,LARC,1,148,33
+4,2,874,LARC,1,148,33
+4,2,876,LARC,1,148,33
+4,2,878,LARC,1,148,33
+4,2,880,LARC,1,148,33
+4,2,882,LARC,1,148,33
+4,2,884,LARC,1,148,33
+4,2,886,LARC,1,148,33
+4,2,888,LARC,1,148,33
+4,2,890,LARC,1,148,33
+4,3,102,LARC,1,16,3
+4,3,103,College of Canyons,0,16,80
+4,3,109,Newhall Metrolink,0,21,2
+4,3,110,LARC,1,21,3
+4,3,111,Newhall Metrolink,0,21,79
+4,3,112,LARC,1,21,3
+4,3,113,Newhall Metrolink,0,21,79
+4,3,114,LARC,1,21,3
+4,3,115,Newhall Metrolink,0,21,79
+4,3,116,LARC,1,21,3
+4,3,117,Newhall Metrolink,0,21,2
+4,3,118,LARC,1,21,3
+4,3,119,Newhall Metrolink,0,21,2
+4,3,120,LARC,1,21,3
+4,3,121,Newhall Metrolink,0,21,2
+4,3,122,LARC,1,21,3
+4,3,123,Newhall Metrolink,0,21,2
+4,3,176,LARC,1,31,32
+4,3,762,Newhall Metrolink,0,7,2
+4,3,764,Newhall Metrolink,0,7,2
+4,3,766,Newhall Metrolink,0,7,79
+4,3,768,Newhall Metrolink,0,7,79
+4,3,770,Newhall Metrolink,0,7,79
+4,3,772,Newhall Metrolink,0,7,2
+4,3,774,Newhall Metrolink,0,7,2
+4,3,778,LARC,1,7,3
+4,3,780,LARC,1,7,3
+4,3,782,LARC,1,7,3
+4,3,784,LARC,1,7,3
+4,3,786,LARC,1,7,3
+4,3,788,LARC,1,7,3
+4,3,790,LARC,1,7,3
+5,1,198,Stevenson Ranch,1,125,127
+5,1,199,Stevenson Ranch,1,118,127
+5,1,201,Stevenson Ranch,1,116,127
+5,1,203,Stevenson Ranch,1,125,127
+5,1,206,Stevenson Ranch,1,116,127
+5,1,209,Stevenson Ranch,1,125,127
+5,1,216,Stevenson Ranch,1,116,41
+5,1,218,Stevenson Ranch,1,128,41
+5,1,221,Stevenson Ranch,1,116,41
+5,1,225,Vasquez Cyn,0,116,103
+5,1,227,Vasquez Cyn,0,125,36
+5,1,229,Vasquez Cyn,0,118,36
+5,1,231,Vasquez Cyn,0,116,36
+5,1,233,Vasquez Cyn,0,125,36
+5,1,237,Vasquez Cyn,0,116,36
+5,1,239,Vasquez Cyn,0,125,36
+5,1,243,Vasquez Cyn,0,116,104
+5,1,246,Vasquez Cyn,0,128,104
+5,1,249,Vasquez Cyn,0,116,104
+5,1,258,Stevenson Ranch,1,116,127
+5,2,259,Vasquez Cyn,0,140,104
+5,2,378,Vasquez Cyn,0,135,104
+5,2,380,Vasquez Cyn,0,149,104
+5,2,382,Vasquez Cyn,0,140,104
+5,2,386,Vasquez Cyn,0,149,104
+5,2,388,Vasquez Cyn,0,140,104
+5,2,392,Vasquez Cyn,0,149,104
+5,2,395,Vasquez Cyn,0,147,104
+5,2,398,Vasquez Cyn,0,149,104
+5,2,402,Stevenson Ranch,1,149,180
+5,2,406,Stevenson Ranch,1,140,180
+5,2,408,Stevenson Ranch,1,135,180
+5,2,410,Stevenson Ranch,1,149,180
+5,2,412,Stevenson Ranch,1,140,180
+5,2,416,Stevenson Ranch,1,149,180
+5,2,418,Stevenson Ranch,1,140,180
+5,2,422,Stevenson Ranch,1,149,180
+5,2,425,Stevenson Ranch,1,147,180
+5,3,6,Vasquez Cyn,0,2,36
+5,3,7,Newhall Metrolink,1,2,130
+5,3,17,Vasquez Cyn,0,4,99
+5,3,18,Stevenson Ranch,1,4,129
+5,3,19,Vasquez Cyn,0,4,36
+5,3,20,Stevenson Ranch,1,4,129
+5,3,34,Vasquez Cyn,0,6,97
+5,3,35,Stevenson Ranch,1,6,129
+5,3,54,Stevenson Ranch,1,12,41
+5,3,58,Vasquez Cyn,0,12,36
+5,3,59,Stevenson Ranch,1,12,129
+5,3,60,Vasquez Cyn,0,12,100
+5,3,61,Stevenson Ranch,1,12,129
+5,3,62,Vasquez Cyn,0,12,36
+5,3,63,Stevenson Ranch,1,12,133
+5,3,106,Stevenson Ranch,1,18,41
+5,3,164,Vasquez Cyn,0,29,101
+5,3,165,Stevenson Ranch,1,29,129
+5,3,168,Vasquez Cyn,0,30,100
+5,3,169,Stevenson Ranch,1,30,131
+5,3,173,Vasquez Cyn,0,31,100
+5,3,174,Stevenson Ranch,1,31,131
+5,3,193,Vasquez Cyn,0,1,36
+5,3,194,Stevenson Ranch,1,20,183
+5,3,195,Stevenson Ranch,1,8,129
+5,3,893,Vasquez Cyn,0,19,95
+5,3,894,Vasquez Cyn,0,20,95
+5,3,895,Vasquez Cyn,0,1,96
+5,3,896,Vasquez Cyn,0,8,97
+5,3,898,Vasquez Cyn,0,1,98
+5,3,900,Vasquez Cyn,0,8,36
+5,3,903,Vasquez Cyn,0,1,36
+5,3,905,Vasquez Cyn,0,8,100
+5,3,914,Stevenson Ranch,1,24,41
+5,3,915,Stevenson Ranch,1,19,127
+5,3,916,Transit Center,1,1,128
+5,3,917,Stevenson Ranch,1,8,129
+5,3,919,Stevenson Ranch,1,1,129
+5,3,922,Transit Center,1,24,128
+5,3,923,Stevenson Ranch,1,8,129
+5,3,924,Stevenson Ranch,1,1,129
+5,3,927,Stevenson Ranch,1,1,129
+5,3,929,Vasquez Cyn,0,24,98
+6,1,196,Stevenson Ranch,0,118,107
+6,1,197,Stevenson Ranch,0,131,107
+6,1,200,Stevenson Ranch,0,120,112
+6,1,202,Stevenson Ranch,0,128,112
+6,1,204,Stevenson Ranch,0,131,112
+6,1,205,Stevenson Ranch,0,120,112
+6,1,207,Stevenson Ranch,0,128,112
+6,1,208,Stevenson Ranch,0,118,112
+6,1,210,Stevenson Ranch,0,131,112
+6,1,211,Stevenson Ranch,0,120,112
+6,1,212,Stevenson Ranch,0,128,112
+6,1,213,Stevenson Ranch,0,118,112
+6,1,214,Stevenson Ranch,0,125,112
+6,1,215,Stevenson Ranch,0,131,112
+6,1,217,Stevenson Ranch,0,120,112
+6,1,219,Stevenson Ranch,0,118,112
+6,1,220,Stevenson Ranch,0,131,112
+6,1,222,Stevenson Ranch,0,125,112
+6,1,226,Shadow Pines,1,120,94
+6,1,228,Shadow Pines,1,128,86
+6,1,230,Shadow Pines,1,131,86
+6,1,232,Shadow Pines,1,120,86
+6,1,234,Shadow Pines,1,128,86
+6,1,235,Shadow Pines,1,118,86
+6,1,236,Shadow Pines,1,131,86
+6,1,238,Shadow Pines,1,120,86
+6,1,240,Shadow Pines,1,128,86
+6,1,241,Shadow Pines,1,118,86
+6,1,242,Shadow Pines,1,131,86
+6,1,244,Shadow Pines,1,120,86
+6,1,245,Shadow Pines,1,125,86
+6,1,247,Shadow Pines,1,118,86
+6,1,248,Shadow Pines,1,131,86
+6,1,250,Shadow Pines,1,120,86
+6,1,251,Shadow Pines,1,125,86
+6,1,252,Shadow Pines,1,128,86
+6,1,253,Stevenson Ranch,1,118,91
+6,1,254,Shadow Pines,1,131,86
+6,1,255,Stevenson Ranch,1,116,91
+6,1,256,Stevenson Ranch,0,125,105
+6,1,257,Stevenson Ranch,0,128,125
+6,2,223,Shadow Pines,1,138,93
+6,2,377,Shadow Pines,1,147,86
+6,2,379,Shadow Pines,1,142,86
+6,2,381,Shadow Pines,1,138,86
+6,2,383,Shadow Pines,1,147,86
+6,2,384,Shadow Pines,1,135,86
+6,2,385,Shadow Pines,1,142,86
+6,2,387,Shadow Pines,1,138,86
+6,2,389,Shadow Pines,1,147,86
+6,2,390,Shadow Pines,1,135,86
+6,2,391,Shadow Pines,1,142,86
+6,2,393,Shadow Pines,1,138,86
+6,2,394,Shadow Pines,1,140,86
+6,2,396,Shadow Pines,1,135,86
+6,2,397,Shadow Pines,1,142,86
+6,2,399,Shadow Pines,1,138,86
+6,2,400,Stevenson Ranch,0,140,105
+6,2,401,Stevenson Ranch,0,147,105
+6,2,403,Stevenson Ranch,0,135,107
+6,2,404,Stevenson Ranch,0,138,112
+6,2,405,Stevenson Ranch,0,142,107
+6,2,407,Stevenson Ranch,0,147,112
+6,2,409,Stevenson Ranch,0,142,112
+6,2,411,Stevenson Ranch,0,138,112
+6,2,413,Stevenson Ranch,0,147,112
+6,2,414,Stevenson Ranch,0,135,112
+6,2,415,Stevenson Ranch,0,142,112
+6,2,417,Stevenson Ranch,0,138,112
+6,2,419,Stevenson Ranch,0,147,112
+6,2,420,Stevenson Ranch,0,135,112
+6,2,421,Stevenson Ranch,0,142,112
+6,2,423,Stevenson Ranch,0,138,112
+6,2,424,Stevenson Ranch,0,140,112
+6,2,426,Stevenson Ranch,0,135,112
+6,3,1,Stevenson Ranch,0,2,106
+6,3,2,Shadow Pines,1,2,85
+6,3,3,Stevenson Ranch,0,2,106
+6,3,4,Shadow Pines,1,2,86
+6,3,5,Stevenson Ranch,0,2,114
+6,3,8,Shadow Pines,1,2,90
+6,3,9,Newhall Metrolink,0,2,120
+6,3,10,Stevenson Ranch,0,4,107
+6,3,11,Shadow Pines,1,4,85
+6,3,12,Stevenson Ranch,0,4,47
+6,3,13,Shadow Pines,1,4,86
+6,3,14,Stevenson Ranch,0,4,112
+6,3,15,Shadow Pines,1,4,86
+6,3,16,Newhall Metrolink,0,4,118
+6,3,31,Stevenson Ranch,0,6,105
+6,3,32,Shadow Pines,1,6,85
+6,3,33,Newhall Metrolink,0,6,109
+6,3,36,Shadow Pines,1,6,86
+6,3,37,Stevenson Ranch,0,6,112
+6,3,38,Shadow Pines,1,6,86
+6,3,39,Newhall Metrolink,0,6,116
+6,3,40,Shadow Pines,1,6,89
+6,3,41,Transit Center,0,6,110
+6,3,55,Stevenson Ranch,0,12,112
+6,3,56,Shadow Pines,1,12,115
+6,3,57,Stevenson Ranch,0,12,112
+6,3,107,Shadow Pines,1,18,86
+6,3,108,Transit Center,0,18,110
+6,3,149,Newhall Metrolink,0,,126
+6,3,160,Shadow Pines,1,29,22
+6,3,161,Newhall Metrolink,0,29,116
+6,3,162,Shadow Pines,1,29,90
+6,3,163,Transit Center,0,29,110
+6,3,166,Shadow Pines,1,29,42
+6,3,167,Stevenson Ranch,0,30,125
+6,3,170,Shadow Pines,1,30,88
+6,3,171,Stevenson Ranch,0,30,112
+6,3,172,Stevenson Ranch,0,31,125
+6,3,175,Shadow Pines,1,31,86
+6,3,177,Shadow Pines,1,32,89
+6,3,178,Stevenson Ranch,0,32,112
+6,3,179,Stevenson Ranch,1,32,91
+6,3,180,Newhall Metrolink,0,33,108
+6,3,181,Shadow Pines,1,33,89
+6,3,182,Transit Center,0,33,121
+6,3,224,Stevenson Ranch,0,19,112
+6,3,891,Shadow Pines,1,1,42
+6,3,892,Shadow Pines,1,8,84
+6,3,897,Shadow Pines,1,24,86
+6,3,899,Shadow Pines,1,19,86
+6,3,901,Shadow Pines,1,19,86
+6,3,902,Shadow Pines,1,8,115
+6,3,904,Shadow Pines,1,19,88
+6,3,906,Shadow Pines,1,1,88
+6,3,907,Shadow Pines,1,19,86
+6,3,908,Shadow Pines,1,8,88
+6,3,909,Newhall Metrolink,1,19,92
+6,3,910,Stevenson Ranch,0,1,105
+6,3,911,Newhall Metrolink,0,20,108
+6,3,912,Newhall Metrolink,0,1,109
+6,3,913,Newhall Metrolink,0,8,109
+6,3,918,Transit Center,0,24,110
+6,3,920,Stevenson Ranch,0,19,112
+6,3,921,Stevenson Ranch,0,1,123
+6,3,925,Stevenson Ranch,0,19,112
+6,3,926,Stevenson Ranch,0,8,119
+6,3,928,Stevenson Ranch,0,19,119
+6,3,934,Shadow Pines,1,12,86
+7,1,439,Copper Hill,0,129,28
+7,1,440,Copper Hill,0,129,28
+7,1,441,Copper Hill,0,129,28
+7,1,442,Copper Hill,0,129,28
+7,1,443,Copper Hill,0,129,28
+7,1,444,Copper Hill,0,129,28
+7,1,445,Copper Hill,0,129,28
+7,1,446,Copper Hill,0,129,28
+7,1,447,Copper Hill,0,129,28
+7,1,448,Magic Mtn,1,133,29
+7,1,449,Magic Mtn,1,133,29
+7,1,474,Magic Mtn,1,133,29
+7,1,475,Magic Mtn,1,133,29
+7,1,476,Magic Mtn,1,133,29
+7,1,477,Magic Mtn,1,133,29
+7,1,478,Magic Mtn,1,133,29
+7,1,479,Magic Mtn,1,133,29
+7,1,480,Magic Mtn,1,133,29
+7,2,481,Copper Hill,0,141,28
+7,2,482,Copper Hill,0,141,28
+7,2,483,Copper Hill,0,141,28
+7,2,484,Copper Hill,0,141,28
+7,2,485,Copper Hill,0,141,28
+7,2,486,Copper Hill,0,141,28
+7,2,487,Copper Hill,0,141,28
+7,2,488,Copper Hill,0,141,28
+7,2,489,Copper Hill,0,141,28
+7,2,490,Magic Mtn,1,145,29
+7,2,491,Magic Mtn,1,145,29
+7,2,492,Magic Mtn,1,145,29
+7,2,493,Magic Mtn,1,145,29
+7,2,494,Magic Mtn,1,145,29
+7,2,495,Magic Mtn,1,145,29
+7,2,496,Magic Mtn,1,145,29
+7,2,497,Magic Mtn,1,145,29
+7,2,498,Magic Mtn,1,145,29
+7,3,128,Magic Mtn,1,25,29
+7,3,130,Magic Mtn,1,25,29
+7,3,132,Magic Mtn,1,25,29
+7,3,134,Magic Mtn,1,25,29
+7,3,136,Magic Mtn,1,25,29
+7,3,138,Magic Mtn,1,25,29
+7,3,140,Magic Mtn,1,25,29
+7,3,142,Magic Mtn,1,25,29
+7,3,144,Magic Mtn,1,25,29
+7,3,146,Magic Mtn,1,25,29
+7,3,148,Old Rd Silver Aspen,1,25,30
+7,3,427,Copper Hill,0,9,27
+7,3,428,Copper Hill,0,9,28
+7,3,429,Copper Hill,0,9,28
+7,3,430,Copper Hill,0,9,28
+7,3,431,Copper Hill,0,9,28
+7,3,432,Copper Hill,0,9,28
+7,3,433,Copper Hill,0,9,28
+7,3,434,Copper Hill,0,9,28
+7,3,435,Copper Hill,0,9,28
+7,3,436,Copper Hill,0,9,28
+7,3,437,Copper Hill,0,9,28
+7,3,438,Copper Hill,0,9,28
+8,1,191,Newhall Metrolink,1,127,4
+8,1,793,Newhall Metrolink,1,127,82
+8,1,794,Newhall Metrolink,1,126,4
+8,1,796,Newhall Metrolink,1,127,4
+8,1,798,Newhall Metrolink,1,126,4
+8,1,800,Newhall Metrolink,1,127,4
+8,1,802,Newhall Metrolink,1,126,4
+8,1,804,Newhall Metrolink,1,127,4
+8,1,806,Newhall Metrolink,1,126,4
+8,1,809,Newhall Metrolink,1,126,4
+8,1,811,Newhall Metrolink,1,127,4
+8,1,813,Newhall Metrolink,1,126,4
+8,1,815,Newhall Metrolink,1,127,4
+8,1,817,Plum Cyn,0,126,31
+8,1,819,Plum Cyn,0,127,5
+8,1,821,Plum Cyn,0,126,5
+8,1,823,Plum Cyn,0,127,5
+8,1,825,Plum Cyn,0,126,5
+8,1,827,Plum Cyn,0,127,5
+8,1,829,Plum Cyn,0,126,5
+8,1,831,Plum Cyn,0,127,5
+8,1,833,Plum Cyn,0,126,5
+8,1,835,Plum Cyn,0,127,5
+8,1,837,Plum Cyn,0,126,5
+8,1,839,Plum Cyn,0,127,5
+8,1,841,Plum Cyn,0,126,5
+8,2,843,Transit Center,1,146,83
+8,2,845,Transit Center,1,146,83
+8,2,847,Transit Center,1,146,83
+8,2,849,Transit Center,1,146,83
+8,2,851,Transit Center,1,146,83
+8,2,853,Transit Center,1,146,83
+8,2,855,Transit Center,1,146,83
+8,2,857,Transit Center,1,146,83
+8,2,859,Transit Center,1,146,83
+8,2,860,Transit Center,1,146,83
+8,2,862,Transit Center,1,146,83
+8,2,864,Transit Center,1,146,83
+8,2,867,Plum Cyn,0,146,31
+8,2,869,Plum Cyn,0,146,31
+8,2,871,Plum Cyn,0,146,31
+8,2,873,Plum Cyn,0,146,31
+8,2,875,Plum Cyn,0,146,31
+8,2,877,Plum Cyn,0,146,31
+8,2,879,Plum Cyn,0,146,31
+8,2,881,Plum Cyn,0,146,31
+8,2,883,Plum Cyn,0,146,31
+8,2,885,Plum Cyn,0,146,31
+8,2,887,Plum Cyn,0,146,31
+8,2,889,Plum Cyn,0,146,31
+8,3,87,Newhall Metrolink,1,16,4
+8,3,88,Plum Cyn,0,16,5
+8,3,89,Newhall Metrolink,1,16,81
+8,3,90,Plum Cyn,0,16,5
+8,3,91,Newhall Metrolink,1,16,81
+8,3,92,Plum Cyn,0,16,5
+8,3,93,Newhall Metrolink,1,16,81
+8,3,94,Plum Cyn,0,16,5
+8,3,95,Newhall Metrolink,1,16,81
+8,3,96,Plum Cyn,0,16,5
+8,3,97,Newhall Metrolink,1,16,4
+8,3,98,Plum Cyn,0,16,5
+8,3,99,Newhall Metrolink,1,16,4
+8,3,100,Plum Cyn,0,16,5
+8,3,101,Newhall Metrolink,1,16,4
+8,3,124,Plum Cyn,0,21,5
+8,3,763,Newhall Metrolink,1,23,4
+8,3,765,Newhall Metrolink,1,23,81
+8,3,767,Newhall Metrolink,1,23,81
+8,3,769,Newhall Metrolink,1,23,81
+8,3,771,Newhall Metrolink,1,23,4
+8,3,773,Newhall Metrolink,1,23,4
+8,3,775,Newhall Metrolink,1,23,4
+8,3,776,Newhall Metrolink,1,23,4
+8,3,777,Plum Cyn,0,23,31
+8,3,779,Plum Cyn,0,23,5
+8,3,781,Plum Cyn,0,23,5
+8,3,783,Plum Cyn,0,23,5
+8,3,785,Plum Cyn,0,23,5
+8,3,787,Plum Cyn,0,23,5
+8,3,789,Plum Cyn,0,23,5
+8,3,791,Plum Cyn,0,23,5
+9,3,499,SC Metrolink,0,35,137
+9,3,500,SC Metrolink,0,35,137
+9,3,501,Magic Mtn,0,36,50
+9,3,502,Magic Mtn,0,38,49
+9,3,503,Tourney Rd,0,38,139
+9,3,504,SC Metrolink,0,38,140
+10,3,505,Commerce Center,1,36,52
+10,3,506,Commerce Center,1,36,52
+10,3,507,Commerce Center,1,35,52
+10,3,508,Commerce Center,1,37,143
+10,3,509,Ave Stanford & Rye Cyn,1,37,145
+10,3,510,Ave Stanford & Rye Cyn,1,38,145
+10,3,930,SC Metrolink,0,37,53
+10,3,931,SC Metrolink,0,,53
+10,3,932,SC Metrolink,0,37,53
+10,3,933,SC Metrolink,0,37,146
+10,3,936,SC Metrolink,0,36,141
+10,3,937,SC Metrolink,0,36,141
+11,3,511,Bouquet & Centurion,1,46,64
+11,3,512,Seco Canyon,0,56,147
+12,3,513,Arroyo Seco Jr High,0,42,65
+12,3,514,Plum Cyn,1,55,148
+13,3,515,Rio Norte Jr High,0,,149
+13,3,516,Decoro Dr & Copper Hill,1,55,150
+13,3,517,Decoro Dr & Copper Hill,1,53,150
+14,3,518,Rio Norte Jr High,1,,151
+14,3,519,Copper/Hidden Hills,0,54,152
+15,3,520,Valencia High,0,,66
+15,3,521,Copper/Hidden Hills,1,54,153
+16,3,522,Valencia High,0,47,67
+16,3,540,Copper Hill,1,59,154
+17,3,541,La Mesa Jr High,0,43,155
+17,3,542,La Mesa Jr High,0,40,177
+17,3,543,Canyon Park,1,58,156
+18,3,544,La Mesa Jr High,1,42,157
+18,3,545,Valle Del Oro,0,60,158
+19,3,546,Golden Valley,0,,61
+19,3,547,Canyon Park,1,57,60
+19,3,548,Canyon Park,1,,60
+20,3,549,Golden Valley,1,43,62
+20,3,550,Jason/Oakmont,0,,63
+21,3,551,Val Verde,0,56,164
+22,3,552,Whites Cyn,0,40,58
+23,3,553,Seco Canyon,0,53,165
+24,3,554,West Ranch High School,1,,159
+24,3,555,Rancho Pico Jr High School,0,47,160
+24,3,556,Wiley Cyn/Calgrove,1,,166
+24,3,557,Wiley Cyn/Calgrove,1,,166
+24,3,558,Wiley Cyn/Calgrove,1,,167
+24,3,559,Wiley Cyn/Calgrove,1,,167
+25,3,560,Rancho Pico Jr High School,0,46,161
+26,3,561,West Ranch High School,0,,68
+26,3,562,Old Rd & Sloan Cyn,1,,168
+27,3,563,Plum Cyn,0,58,170
+27,3,564,Plum Cyn,1,59,169
+28,3,565,Plum Cyn,0,57,171
+29,3,566,West Ranch/Rancho Pico,0,,162
+30,3,567,Bouquet & Centurion,1,,45
+30,3,935,Copper Hill,0,60,44
+31,1,282,Santa Clarita,0,134,185
+31,1,283,Santa Clarita,0,134,185
+31,1,284,Santa Clarita,0,134,185
+31,1,285,Santa Clarita,0,134,185
+31,1,286,Santa Clarita,0,134,185
+31,1,287,Santa Clarita,0,134,185
+31,1,288,Santa Clarita,0,134,185
+31,1,289,Santa Clarita,0,134,185
+31,1,290,Santa Clarita,0,134,185
+31,1,291,Santa Clarita,0,134,185
+31,1,292,Santa Clarita,0,134,185
+31,1,293,Santa Clarita,0,134,185
+31,1,294,Santa Clarita,0,134,185
+31,1,295,North Hollywood,1,134,176
+31,1,296,North Hollywood,1,134,176
+31,1,297,North Hollywood,1,134,176
+31,1,298,North Hollywood,1,134,176
+31,1,299,North Hollywood,1,134,176
+31,1,300,North Hollywood,1,134,176
+31,1,301,North Hollywood,1,134,176
+31,1,302,North Hollywood,1,134,176
+31,1,303,North Hollywood,1,134,176
+31,1,304,North Hollywood,1,134,176
+31,1,305,North Hollywood,1,134,176
+31,1,306,North Hollywood,1,134,176
+31,1,307,North Hollywood,1,134,176
+31,2,308,Santa Clarita,0,151,185
+31,2,309,Santa Clarita,0,151,185
+31,2,310,Santa Clarita,0,151,185
+31,2,311,Santa Clarita,0,151,185
+31,2,312,Santa Clarita,0,151,185
+31,2,313,Santa Clarita,0,151,185
+31,2,314,Santa Clarita,0,151,185
+31,2,315,Santa Clarita,0,151,185
+31,2,316,Santa Clarita,0,151,185
+31,2,317,Santa Clarita,0,151,185
+31,2,318,North Hollywood,1,151,176
+31,2,319,North Hollywood,1,151,176
+31,2,320,North Hollywood,1,151,176
+31,2,321,North Hollywood,1,151,176
+31,2,322,North Hollywood,1,151,176
+31,2,323,North Hollywood,1,151,176
+31,2,324,North Hollywood,1,151,176
+31,2,325,North Hollywood,1,151,176
+31,2,326,North Hollywood,1,151,176
+31,2,327,North Hollywood,1,151,176
+31,3,260,Santa Clarita,0,71,6
+31,3,261,Santa Clarita,1,70,202
+31,3,262,Santa Clarita,1,71,202
+31,3,263,Santa Clarita,1,81,202
+31,3,264,Santa Clarita,1,70,204
+31,3,265,Santa Clarita,1,71,204
+31,3,266,Santa Clarita,1,81,204
+31,3,267,Santa Clarita,1,70,202
+31,3,268,Santa Clarita,1,81,202
+31,3,269,Santa Clarita,1,81,202
+31,3,270,Santa Clarita,1,81,204
+31,3,271,Santa Clarita,1,81,204
+31,3,272,Santa Clarita,1,81,204
+31,3,273,Santa Clarita,1,99,204
+31,3,274,Santa Clarita,1,81,204
+31,3,275,Santa Clarita,1,108,204
+31,3,276,Santa Clarita,1,99,204
+31,3,277,Santa Clarita,1,81,204
+31,3,278,Santa Clarita,1,108,204
+31,3,279,Santa Clarita,1,99,204
+31,3,280,Santa Clarita,1,81,204
+31,3,281,Santa Clarita,1,99,204
+31,3,568,Transit Center,0,70,10
+31,3,569,Transit Center,0,71,10
+31,3,570,Transit Center,0,81,10
+31,3,571,Transit Center,0,70,10
+31,3,572,Transit Center,0,71,10
+31,3,573,Transit Center,0,81,10
+31,3,574,Transit Center,0,70,10
+31,3,575,Transit Center,0,71,10
+31,3,576,Transit Center,0,81,10
+31,3,577,Transit Center,0,81,10
+31,3,578,Transit Center,0,81,10
+31,3,579,Transit Center,0,81,10
+31,3,580,Transit Center,0,81,10
+31,3,581,Transit Center,0,99,10
+31,3,582,Transit Center,0,81,10
+31,3,583,Transit Center,0,108,10
+31,3,584,Transit Center,0,99,10
+31,3,585,Transit Center,0,81,10
+31,3,586,Transit Center,0,108,10
+31,3,587,Transit Center,0,99,10
+31,3,588,Transit Center,0,81,10
+31,3,589,Transit Center,0,108,10
+31,3,590,Transit Center,0,99,10
+31,3,591,Transit Center,0,81,10
+31,3,592,Transit Center,0,99,10
+32,3,328,Santa Clarita,1,73,209
+32,3,329,Santa Clarita,1,68,209
+32,3,330,Santa Clarita,1,79,210
+32,3,331,Santa Clarita,1,84,209
+32,3,332,Santa Clarita,1,88,209
+32,3,333,Warner Center,0,91,188
+32,3,334,Warner Center,0,98,187
+32,3,335,Warner Center,0,104,187
+32,3,336,Warner Center,0,111,187
+33,3,337,Santa Clarita,0,76,189
+33,3,338,Santa Clarita,0,80,189
+33,3,339,Santa Clarita,0,85,189
+33,3,340,Santa Clarita,0,89,190
+33,3,341,Century City,1,93,206
+33,3,342,Century City,1,95,191
+33,3,343,Century City,1,101,191
+33,3,344,Century City,1,106,191
+33,3,345,Century City,1,113,206
+33,3,346,Century City,1,115,206
+34,3,347,Santa Clarita,1,72,200
+34,3,348,Santa Clarita,1,75,200
+34,3,349,Santa Clarita,1,82,200
+34,3,350,Santa Clarita,1,87,200
+34,3,351,Los Angeles,0,90,198
+34,3,352,Los Angeles,0,102,198
+34,3,353,Los Angeles,0,107,198
+34,3,354,Los Angeles,0,112,198
+35,3,355,Lancaster Metrolink,1,,39
+35,3,356,Lancaster Metrolink,1,,40
+35,3,357,Lancaster Metrolink,1,110,40
+35,3,358,SC Metrolink,0,68,21
+35,3,359,SC Metrolink,0,69,21
+35,3,360,SC Metrolink,0,110,21
+36,3,361,Warner Center,0,73,186
+36,3,362,Warner Center,0,68,186
+36,3,363,Warner Center,0,79,186
+36,3,364,Warner Center,0,84,211
+36,3,365,Warner Center,0,88,186
+36,3,366,Santa Clarita,1,91,207
+36,3,367,Santa Clarita,1,,207
+36,3,368,Santa Clarita,1,98,207
+36,3,369,Santa Clarita,1,104,207
+36,3,370,Santa Clarita,1,111,207
+37,3,371,Century City,1,76,192
+37,3,372,Century City,1,80,192
+37,3,373,Century City,1,85,192
+37,3,374,Century City,1,,192
+37,3,375,Century City,1,89,192
+37,3,376,Santa Clarita,0,93,193
+37,3,450,Santa Clarita,0,95,193
+37,3,451,Santa Clarita,0,101,193
+37,3,452,Santa Clarita,0,106,193
+37,3,453,Santa Clarita,0,113,193
+37,3,454,Santa Clarita,0,115,193
+38,3,455,Los Angeles,1,72,197
+38,3,456,Los Angeles,1,,197
+38,3,457,Los Angeles,1,75,197
+38,3,458,Los Angeles,1,,197
+38,3,459,Los Angeles,1,,197
+38,3,460,Los Angeles,1,82,197
+38,3,461,Los Angeles,1,,197
+38,3,462,Los Angeles,1,69,197
+38,3,463,Los Angeles,1,87,197
+38,3,464,Santa Clarita,0,90,199
+38,3,465,Santa Clarita,0,,199
+38,3,466,Santa Clarita,0,,199
+38,3,467,Santa Clarita,0,,199
+38,3,468,Santa Clarita,0,,199
+38,3,469,Santa Clarita,0,,199
+38,3,470,Santa Clarita,0,102,199
+38,3,471,Santa Clarita,0,,199
+38,3,472,Santa Clarita,0,107,199
+38,3,473,Santa Clarita,0,112,199

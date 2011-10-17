@@ -1,0 +1,2 @@
+﻿agency_id,agency_name,agency_url,agency_phone,agency_timezone,agency_lang
+SCT,"Santa Clarita Transit",http://santaclaritatransit.com,(661) 294-1287,America/Los_Angeles,en
