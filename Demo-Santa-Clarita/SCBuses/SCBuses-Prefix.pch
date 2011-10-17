@@ -12,3 +12,13 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#import "Constants.h"
+#import "Settings.h"
+
+// http://www.cimgf.com/2009/01/24/dropping-nslog-in-release-builds/
+#ifdef PRODUCTION_READY
+#    define DLog(...) /* */
+#else
+#    define DLog(...) NSLog(__VA_ARGS__)
+#endif

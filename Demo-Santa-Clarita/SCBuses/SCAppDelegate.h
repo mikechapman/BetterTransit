@@ -10,4 +10,5 @@
 #import "BTTransitDelegate.h"
 
 @interface SCAppDelegate : BTTransitDelegate
+
 @end

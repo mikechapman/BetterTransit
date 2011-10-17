@@ -9,11 +9,11 @@
 
 #define PRODUCTION_READY
 
-#define CENTER_LATITUDE 38.034039
-#define CENTER_LONGITUDE -78.499479
+#define CENTER_LATITUDE 34.393879
+#define CENTER_LONGITUDE -118.54248
 
 // Custom settings
-#define MAIN_DB @"SCBuses-GTFS"
+#define MAIN_DB @"Santa-Clarita-GTFS"
 #define ADD_TO_FAVS_PNG @"addToFavs.png"
 #define NUM_STOPS 480
 #define NUM_ROUTES 30
