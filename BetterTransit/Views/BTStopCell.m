@@ -21,6 +21,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
 		cellView.backgroundColor = [UIColor clearColor];
+        cellView.contentMode = UIViewContentModeLeft; // for smooth animation into edit mode
+        
 		self.stop = nil;
 		self.iconImage = nil;
 		
@@ -35,19 +37,9 @@
 	[super setEditing:editing animated:animated];
 	
 	CGRect b = [self.contentView bounds];
-	b.size.height -= 1; // leave room for the separator line
-	
-	if (self.showingDeleteConfirmation) {
-		b.origin.x -= 24.0f;
-	} else {
-		b.origin.x += (editing) ? -20.0f : 0.0f;
-	}
-	
+    if (editing) b.origin.x -= 24.0f; // move left to hide the bus icon
+    cellView.frame = b;
 	[cellView setNeedsDisplay];
-	
-	[UIView beginAnimations:nil context:nil];
-	cellView.frame = b;
-	[UIView commitAnimations];
 }
 
 - (void)drawCellView:(CGRect)rect
