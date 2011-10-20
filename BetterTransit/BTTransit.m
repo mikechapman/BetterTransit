@@ -131,6 +131,7 @@
 	if (p != nil) {
 		for (NSString *stopCode in p) {
 			BTStop *stop = [self stopWithCode:stopCode];
+            if (stop == nil) continue;
 			stop.favorite = YES;
 			[self.favoriteStops addObject:stop];
 		}
@@ -155,11 +156,16 @@
 - (BTStop *)stopWithCode:(NSString *)stopCode
 {
     FMResultSet * rs = [db executeQuery:@"select stop_id from stops where stop_code = ? limit 1", stopCode];
-    NSString * stopId;
+    NSString * stopId = nil;
     while ([rs next]) {
         stopId = [rs stringForColumn:@"stop_id"];
     }
-    return [self stopWithId:stopId];
+    
+    if (stopId != nil) {
+        return [self stopWithId:stopId];
+    } else {
+        return nil;
+    }
 }
 
 - (NSArray *)tripsForRoute:(BTRoute *)route
