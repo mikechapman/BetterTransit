@@ -1,4 +1,4 @@
-    //
+//
 //  BTScheduleViewController.m
 //  BetterTransit
 //
@@ -15,7 +15,7 @@
 
 @implementation BTScheduleViewController
 
-@synthesize route, subrouteId;
+@synthesize route;
 
 
 #pragma mark -
@@ -69,7 +69,6 @@
 {
 	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[route release], route = nil;
-	[subrouteId release], subrouteId = nil;
     [super dealloc];
 }
 

@@ -53,7 +53,7 @@
 - (BTStop *)stopWithCode:(NSString *)stopCode;
 
 - (NSArray *)tripsForRoute:(BTRoute *)route;
-- (NSArray *)routeShortNamesAtStop:(BTStop *)s;
+- (NSArray *)routesAtStop:(BTStop *)stop;
 
 - (void)updateNearbyStops;
 - (void)sortStops:(NSMutableArray *)ss ByDistanceFrom:(CLLocation *)location;

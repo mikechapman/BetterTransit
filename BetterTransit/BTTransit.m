@@ -140,16 +140,19 @@
 
 - (BTRoute *)routeWithId:(NSString *)routeId
 {
+    if (routeId == nil) return nil;
     return [self.routeIds objectForKey:routeId];
 }
 
 - (BTRoute *)routeWithShortName:(NSString *)shortName
 {
+    if (shortName == nil) return nil;
     return [self.routeNames objectForKey:shortName];
 }
 
 - (BTStop *)stopWithId:(NSString *)stopId
 {
+    if (stopId == nil) return nil;
     return [self.stopIds objectForKey:stopId];
 }
 
@@ -213,22 +216,24 @@
     return trips;
 }
 
-- (NSArray *)routeShortNamesAtStop:(BTStop *)s
+- (NSArray *)routesAtStop:(BTStop *)stop
 {
-	NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:10];
+    NSMutableSet * finalSet = [NSMutableSet setWithCapacity:10];
 	
-	NSString *stopId = s.stopId;
-	FMResultSet *rs = [db executeQuery:@"select * from stages where stop_id = ? order by route_id ASC",
-					   stopId];
-	
-	NSUInteger counter = 0;
+	FMResultSet *rs = [db executeQuery:@"select * from distinct_trips where stop_id = ?", stop.stopId];
+    
 	while ([rs next]) {
-		NSString *routeId = [rs stringForColumn:@"route_id"];
-		[dict setObject:[NSNumber numberWithInt:counter] forKey:routeId];
-		counter++;
+		NSString * routeId = [rs stringForColumn:@"route_id"];
+        BTRoute * route = [routeIds objectForKey:routeId];
+        [finalSet addObject:route];
 	}
-	
-	return [[dict allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    
+    // Close the fetch cursor
+    [rs close];
+    
+    NSMutableArray * finalArray = [NSMutableArray arrayWithArray:[finalSet allObjects]];
+    [finalArray sortUsingSelector:@selector(sortByShortName:)];
+    return [NSArray arrayWithArray:finalArray];
 }
 
 - (void)updateNearbyStops

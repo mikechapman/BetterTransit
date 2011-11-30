@@ -13,11 +13,9 @@
 
 @interface BTScheduleViewController : BTUIViewController 
 {
-	BTRoute *route;
-	NSString *subrouteId;
+	BTRoute * route;
 }
 
-@property (nonatomic, retain) BTRoute *route;
-@property (nonatomic, copy) NSString *subrouteId;
+@property (nonatomic, retain) BTRoute * route;
 
 @end

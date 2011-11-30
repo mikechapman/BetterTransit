@@ -53,6 +53,6 @@
 		if (value == otherValue) return NSOrderedSame;
 		return ((value < otherValue) ? NSOrderedAscending : NSOrderedDescending);
 	}
-}	
+}
 
 @end

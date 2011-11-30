@@ -32,4 +32,9 @@
 	[super dealloc];
 }
 
+- (NSComparisonResult)sortByShortName:(BTRoute *)other
+{
+    return [self.shortName compare:other.shortName options:NSCaseInsensitiveSearch];
+}
+
 @end
