@@ -20,6 +20,7 @@
 @property (nonatomic, assign) double longitude;
 
 @property (nonatomic, retain) NSString * agencyId;
+@property int source; // data source
 @property (nonatomic, assign) NSUInteger tileNumber;
 @property double distance;
 @property BOOL favorite;
