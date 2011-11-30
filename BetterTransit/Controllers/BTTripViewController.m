@@ -51,7 +51,7 @@
 	mainTableView.separatorColor = COLOR_TABLE_VIEW_SEPARATOR;
 	mainTableView.rowHeight = 60;
 	
-	if (route.schedule != nil && [route.schedule length] > 0) {
+    if (route.hasSchedule) {
 		UIButton *scheduleButton = [UIButton buttonWithType:UIButtonTypeCustom];
 		scheduleButton.frame = CGRectMake(0, 0, 44, 44);
 		scheduleButton.showsTouchWhenHighlighted = YES;

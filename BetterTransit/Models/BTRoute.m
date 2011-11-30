@@ -12,11 +12,12 @@
 @implementation BTRoute
 
 @synthesize routeId, agencyId, shortName, longName;
-@synthesize schedule;
+@synthesize hasSchedule;
 
 - (id)init
 {
 	if (self = [super init]) {
+        hasSchedule = NO;
 	}
 	return self;
 }
@@ -27,8 +28,6 @@
     [agencyId release], agencyId = nil;
     [shortName release], shortName = nil;
     [longName release], longName = nil;
-    
-    [schedule release], schedule = nil;
 	[super dealloc];
 }
 

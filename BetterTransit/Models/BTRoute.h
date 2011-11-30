@@ -16,8 +16,7 @@
 @property (nonatomic, retain) NSString * agencyId;
 @property (nonatomic, retain) NSString * shortName;
 @property (nonatomic, retain) NSString * longName;
-
-@property (nonatomic, copy) NSString *schedule;
+@property (nonatomic, assign) BOOL hasSchedule;
 
 - (NSComparisonResult)sortByShortName:(BTRoute *)other;
 
