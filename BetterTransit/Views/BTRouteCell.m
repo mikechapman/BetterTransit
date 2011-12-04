@@ -80,7 +80,7 @@
 
 - (NSString *)accessibilityLabel
 {
-	return [NSString stringWithFormat:@"%@", route.longName];
+	return [NSString stringWithFormat:@"Route %@, %@", route.shortName, route.longName];
 }
 
 @end
