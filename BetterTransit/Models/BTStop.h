@@ -18,14 +18,14 @@
 @property (nonatomic, retain) NSString * stopName;
 @property (nonatomic, assign) double latitude;
 @property (nonatomic, assign) double longitude;
+@property (nonatomic, assign) int dataSource; // Data source for retrieving ALL bus routes arrival times
 
 @property (nonatomic, retain) NSString * agencyId;
-@property int source; // data source
 @property (nonatomic, assign) NSUInteger tileNumber;
 @property double distance;
 @property BOOL favorite;
 
 // stop has a selected route when invoked from the Trip View
-@property (nonatomic, retain) BTRoute *selectedRoute;
+@property (nonatomic, retain) BTRoute * selectedRoute;
 
 @end

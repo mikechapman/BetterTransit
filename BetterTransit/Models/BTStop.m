@@ -12,7 +12,7 @@
 @implementation BTStop
 
 @synthesize stopId, stopCode, stopName, latitude, longitude;
-@synthesize agencyId, source, tileNumber, distance, favorite;
+@synthesize agencyId, dataSource, tileNumber, distance, favorite;
 @synthesize selectedRoute;
 
 - (id)init
