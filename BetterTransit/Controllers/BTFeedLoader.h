@@ -36,5 +36,6 @@
 - (NSString *)dataSourceForStop:(BTStop *)stop;
 - (void)getPredictionForStop:(BTStop *)stop;
 - (void)getFeedForEntry:(BTPredictionEntry *)entry;
+- (void)cancelAllDownloads;
 
 @end

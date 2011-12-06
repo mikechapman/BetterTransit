@@ -140,6 +140,7 @@
 {
 	[super viewWillDisappear:animated];
 	[self.timer invalidate];
+    [[AppDelegate feedLoader] cancelAllDownloads];
 	[[AppDelegate feedLoader] setDelegate:nil];
 }
 

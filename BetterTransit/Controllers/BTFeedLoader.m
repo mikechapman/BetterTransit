@@ -71,6 +71,12 @@
 	// subclass should overwrite this method
 }
 
+- (void)cancelAllDownloads
+{
+    // Cancel previous requests
+	[networkQueue cancelAllOperations];
+}
+
 - (void)dealloc
 {
     [transit release], transit = nil;
