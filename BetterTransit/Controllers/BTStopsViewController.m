@@ -396,12 +396,12 @@
 		BTStop *stop = [stops objectAtIndex:indexPath.row];
 		stop.favorite = NO;
 		[transit.favoriteStops removeObject:stop];
+        [self saveFavs];
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-		
+        
 		if ([transit.favoriteStops count] == 0) {
 			[mainTableView setEditing:NO animated:YES];
 			isEditing = NO;
-			[self saveFavs];
 			[self refreshView];
 		}
 	}
