@@ -139,7 +139,7 @@
 	BTStop *stop = [self.stops objectAtIndex:indexPath.row];
 	cell.stop = stop;
 	
-	NSString *imageName = [NSString stringWithFormat:@"stop_%@.png", stop.agencyId];
+	NSString *imageName = [NSString stringWithFormat:@"stop_%d.png", stop.stopColor];
 	UIImage *stopImage = [[UIImage imageNamed:imageName] retain];
 	if (stopImage != nil) {
 		cell.iconImage = stopImage;
