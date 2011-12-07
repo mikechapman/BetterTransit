@@ -99,7 +99,7 @@
 		}
 		[routeImage release];
 		
-		destLabel.text = [[trips objectAtIndex:0] headsign];
+		destLabel.text = [NSString stringWithFormat:@"To %@", [[trips objectAtIndex:0] headsign]];
 		[self.view addSubview:routeDestView];
 		
 		CGFloat destViewHeight = routeDestView.frame.size.height;
@@ -163,7 +163,7 @@
 	int i = [sender selectedSegmentIndex];
 	BTTrip * trip = [self.trips objectAtIndex:i];
 	self.stops = trip.stops;
-	destLabel.text = [[trips objectAtIndex:i] headsign];
+	destLabel.text = [NSString stringWithFormat:@"To %@", [[trips objectAtIndex:i] headsign]];
 	[self.mainTableView reloadData];
 }
 
