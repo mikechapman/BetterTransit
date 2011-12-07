@@ -299,7 +299,7 @@
 		
 		annotationView.canShowCallout = YES;
 		BTAnnotation *ann = (BTAnnotation *)annotation;
-		NSString *imageName = [NSString stringWithFormat:@"stop_sign_%@.png", ann.stop.agencyId];
+		NSString *imageName = [NSString stringWithFormat:@"stop_sign_%d.png", ann.stop.stopColor];
 		UIImage *img = [UIImage imageNamed:imageName];
 		if (img == nil) {
 			img = [UIImage imageNamed:@"default_stop_sign.png"];

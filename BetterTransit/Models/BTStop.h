@@ -18,9 +18,8 @@
 @property (nonatomic, retain) NSString * stopName;
 @property (nonatomic, assign) double latitude;
 @property (nonatomic, assign) double longitude;
-@property (nonatomic, assign) int dataSource; // Data source for retrieving ALL bus routes arrival times
-
-@property (nonatomic, retain) NSString * agencyId;
+@property (nonatomic, assign) int stopSource; // Data source for retrieving ALL bus routes arrival times
+@property (nonatomic, assign) int stopColor;  // Color of stop icon
 @property (nonatomic, assign) NSUInteger tileNumber;
 @property double distance;
 @property BOOL favorite;
