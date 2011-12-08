@@ -16,7 +16,7 @@
 #import "ErrorCell.h"
 
 #ifdef FLURRY_KEY
-#import "FlurryAPI.h"
+#import "FlurryAnalytics.h"
 #endif
 
 @implementation BTPredictionViewController
@@ -132,7 +132,7 @@
 	
 #ifdef FLURRY_KEY
 	NSDictionary *flurryDict = [NSDictionary dictionaryWithObjectsAndKeys:stop.stopCode, @"stopID", nil];
-	[FlurryAPI logEvent:@"DID_SHOW_PREDICTION_VIEW" withParameters:flurryDict];
+	[FlurryAnalytics logEvent:@"DID_SHOW_PREDICTION_VIEW" withParameters:flurryDict];
 #endif
 }
 

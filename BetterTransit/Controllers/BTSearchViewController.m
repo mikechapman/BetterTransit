@@ -11,7 +11,7 @@
 #import "BTTransitDelegate.h"
 
 #ifdef FLURRY_KEY
-#import "FlurryAPI.h"
+#import "FlurryAnalytics.h"
 #endif
 
 @implementation BTSearchViewController
@@ -75,7 +75,7 @@
     [super viewWillAppear:animated];
     
 #ifdef FLURRY_KEY
-	[FlurryAPI logEvent:@"DID_SHOW_SEARCH_VIEW"];
+	[FlurryAnalytics logEvent:@"DID_SHOW_SEARCH_VIEW"];
 #endif
 }
 

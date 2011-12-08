@@ -13,7 +13,7 @@
 #import "BTAppSettings.h"
 
 #ifdef FLURRY_KEY
-#import "FlurryAPI.h"
+#import "FlurryAnalytics.h"
 #endif
 
 @implementation BTStopsViewController
@@ -110,7 +110,7 @@
 	self.viewIsShown = YES;
 
 #ifdef FLURRY_KEY
-	[FlurryAPI logEvent:@"DID_SHOW_STATION_VIEW"];
+	[FlurryAnalytics logEvent:@"DID_SHOW_STATION_VIEW"];
 #endif
 	
 	// Observe notifications
@@ -250,7 +250,7 @@
 			}
 
 #ifdef FLURRY_KEY
-			[FlurryAPI logEvent:@"CLICKED_NEARBY"];
+			[FlurryAnalytics logEvent:@"CLICKED_NEARBY"];
 #endif
 			break;
 		case 1:
@@ -276,7 +276,7 @@
 			}
 
 #ifdef FLURRY_KEY
-			[FlurryAPI logEvent:@"CLICKED_FAVS"];
+			[FlurryAnalytics logEvent:@"CLICKED_FAVS"];
 #endif
 			break;
 		default:

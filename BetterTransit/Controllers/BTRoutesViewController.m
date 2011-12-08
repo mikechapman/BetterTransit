@@ -12,7 +12,7 @@
 #import "BTRouteCell.h"
 
 #ifdef FLURRY_KEY
-#import "FlurryAPI.h"
+#import "FlurryAnalytics.h"
 #endif
 
 @implementation BTRoutesViewController
@@ -45,7 +45,7 @@
 	[mainTableView reloadData];
 
 #ifdef FLURRY_KEY
-	[FlurryAPI logEvent:@"DID_SHOW_ROUTES_VIEW"];
+	[FlurryAnalytics logEvent:@"DID_SHOW_ROUTES_VIEW"];
 #endif
 }
 

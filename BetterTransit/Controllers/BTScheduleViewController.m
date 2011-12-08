@@ -9,7 +9,7 @@
 #import "BTScheduleViewController.h"
 
 #ifdef FLURRY_KEY
-#import "FlurryAPI.h"
+#import "FlurryAnalytics.h"
 #endif
 
 
@@ -40,7 +40,7 @@
 	
 #ifdef FLURRY_KEY
 	NSDictionary *flurryDict = [NSDictionary dictionaryWithObjectsAndKeys:route.shortName, @"routeID", nil];
-	[FlurryAPI logEvent:@"DID_SHOW_SCHEDULE" withParameters:flurryDict];
+	[FlurryAnalytics logEvent:@"DID_SHOW_SCHEDULE" withParameters:flurryDict];
 #endif
 }
 

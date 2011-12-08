@@ -12,7 +12,7 @@
 #import "BTLocationManager.h"
 
 #ifdef FLURRY_KEY
-#import "FlurryAPI.h"
+#import "FlurryAnalytics.h"
 #endif
 
 @implementation BTMapViewController
@@ -65,7 +65,7 @@
 	[super viewWillAppear:animated];
 
 #ifdef FLURRY_KEY
-	[FlurryAPI logEvent:@"DID_SHOW_MAP_VIEW"];
+	[FlurryAnalytics logEvent:@"DID_SHOW_MAP_VIEW"];
 #endif
 	
 	// Observe notifications

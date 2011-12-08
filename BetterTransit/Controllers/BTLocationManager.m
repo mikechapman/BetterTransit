@@ -9,7 +9,7 @@
 #import "BTLocationManager.h"
 
 #ifdef FLURRY_KEY
-#import "FlurryAPI.h"
+#import "FlurryAnalytics.h"
 #endif
 
 
@@ -96,7 +96,7 @@ static BTLocationManager *sharedInstance = nil;
 #endif
         
 #ifdef FLURRY_KEY
-        [FlurryAPI setLatitude:newLocation.coordinate.latitude
+        [FlurryAnalytics setLatitude:newLocation.coordinate.latitude
                      longitude:newLocation.coordinate.longitude
             horizontalAccuracy:newLocation.horizontalAccuracy
               verticalAccuracy:newLocation.verticalAccuracy];
