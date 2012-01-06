@@ -34,6 +34,15 @@
 #pragma mark -
 #pragma mark View life cycle
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
+    self.navigationItem.leftBarButtonItem = doneButton;
+    [doneButton release];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
@@ -70,6 +79,15 @@
 	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[route release], route = nil;
     [super dealloc];
+}
+
+
+#pragma mark -
+#pragma mark UI actions
+
+- (void)done:(id)sender
+{
+    [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 
