@@ -18,4 +18,6 @@
 
 @property (nonatomic, retain) BTRoute * route;
 
+- (void)done:(id)sender;
+
 @end
