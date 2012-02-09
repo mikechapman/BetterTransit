@@ -102,14 +102,14 @@
 
 - (void)didReceiveMemoryWarning
 {
-	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
+	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
     // Release anything that's not essential, such as cached data
 }
 
 - (void)viewDidUnload
 {
-	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
+	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[super viewDidUnload];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	
@@ -120,7 +120,7 @@
 
 - (void)dealloc
 {
-	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
+	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[stops release];
 	[mapView release];
 	[annotations release];

@@ -55,7 +55,7 @@
 
 - (void)didReceiveMemoryWarning
 {
-	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
+	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
 	
@@ -64,14 +64,14 @@
 
 - (void)viewDidUnload
 {
-	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
+	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[super viewDidUnload];
 	self.mainTableView = nil;
 }
 
 - (void)dealloc
 {
-	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
+	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[routesToDisplay release];
 	[sectionNames release];
 	[mainTableView release];

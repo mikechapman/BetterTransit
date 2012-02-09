@@ -51,7 +51,7 @@
 
 - (void)dealloc
 {
-	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
+	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[startupScreenOptions release], startupScreenOptions = nil;
 	[maxNumNearbyStopsOptions release], maxNumNearbyStopsOptions = nil;
     [super dealloc];
