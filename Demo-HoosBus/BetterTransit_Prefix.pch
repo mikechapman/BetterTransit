@@ -7,12 +7,15 @@
     #import <UIKit/UIKit.h>
 #endif
 
+// Logging
+#import "DDLog.h"
+#ifdef DEBUG
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+#else
+static const int ddLogLevel = LOG_LEVEL_ERROR;
+#endif
+
+// Misc.
 #import "Constants.h"
 #import "Settings.h"
-
-// http://www.cimgf.com/2009/01/24/dropping-nslog-in-release-builds/
-#ifdef PRODUCTION_READY
-#    define DLog(...) /* */
-#else
-#    define DLog(...) NSLog(__VA_ARGS__)
-#endif
+#define NOTNULL(__x__) ((__x__) != [NSNull null] ? (__x__) : nil)
