@@ -13,9 +13,9 @@
 @interface BTTrip : NSObject {
 }
 
-@property (nonatomic, retain) BTRoute * route;
+@property (nonatomic, strong) BTRoute * route;
 @property (nonatomic, assign) NSInteger directionId;
-@property (nonatomic, retain) NSString * headsign;
-@property (nonatomic, retain) NSMutableArray * stops;
+@property (nonatomic, strong) NSString * headsign;
+@property (nonatomic, strong) NSMutableArray * stops;
 
 @end

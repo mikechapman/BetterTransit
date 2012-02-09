@@ -20,8 +20,8 @@
 	UITableView *mainTableView;
 }
 
-@property (nonatomic, retain) NSDictionary *routesToDisplay;
-@property (nonatomic, retain) NSArray *sectionNames;
-@property (nonatomic, retain) IBOutlet UITableView *mainTableView;
+@property (nonatomic, strong) NSDictionary *routesToDisplay;
+@property (nonatomic, strong) NSArray *sectionNames;
+@property (nonatomic, strong) IBOutlet UITableView *mainTableView;
 
 @end

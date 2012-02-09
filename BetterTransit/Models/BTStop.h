@@ -13,9 +13,9 @@
 @interface BTStop : NSObject {
 }
 
-@property (nonatomic, retain) NSString * stopId;
-@property (nonatomic, retain) NSString * stopCode;
-@property (nonatomic, retain) NSString * stopName;
+@property (nonatomic, strong) NSString * stopId;
+@property (nonatomic, strong) NSString * stopCode;
+@property (nonatomic, strong) NSString * stopName;
 @property (nonatomic, assign) double latitude;
 @property (nonatomic, assign) double longitude;
 @property (nonatomic, assign) int stopSource; // Data source for retrieving ALL bus routes arrival times
@@ -25,6 +25,6 @@
 @property BOOL favorite;
 
 // stop has a selected route when invoked from the Trip View
-@property (nonatomic, retain) BTRoute * selectedRoute;
+@property (nonatomic, strong) BTRoute * selectedRoute;
 
 @end

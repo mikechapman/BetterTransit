@@ -23,8 +23,8 @@
 	NSString *info; // extra information
 }
 
-@property (nonatomic, retain) BTRoute *route;
-@property (nonatomic, retain) BTStop *stop;
+@property (nonatomic, strong) BTRoute *route;
+@property (nonatomic, strong) BTStop *stop;
 @property (nonatomic, copy) NSString *destination;
 @property (nonatomic, copy) NSString *eta;
 @property (assign) BOOL shouldDownloadData;

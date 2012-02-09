@@ -48,9 +48,8 @@ static BTLocationManager *sharedInstance = nil;
 - (void)dealloc
 {
 	locationManager.delegate = nil;
-	[locationManager release], locationManager = nil;
-	[currentLocation release], currentLocation = nil;
-	[super dealloc];
+	locationManager = nil;
+	currentLocation = nil;
 }
 
 - (CLLocation *)currentLocation

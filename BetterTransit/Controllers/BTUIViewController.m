@@ -18,7 +18,6 @@
 	[super viewDidLoad];
 	
 	self.backdrop = [[UIImageView alloc] initWithFrame:self.view.bounds];
-	[backdrop release];
 	backdrop.image = [UIImage imageNamed:@"backdrop.png"];
 	[self.view insertSubview:backdrop atIndex:0];
 	backdrop.alpha = 1.0;
@@ -41,8 +40,7 @@
 
 - (void)dealloc
 {
-	[backdrop release], backdrop = nil;
-	[super dealloc];
+	backdrop = nil;
 }
 
 @end

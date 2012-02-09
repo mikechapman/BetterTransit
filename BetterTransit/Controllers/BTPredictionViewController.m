@@ -59,7 +59,6 @@
     // Setup title view
     TitleViewLabel *label = [[TitleViewLabel alloc] initWithText:stop.stopName];
     self.navigationItem.titleView = label;
-    [label release];
     
 	// mapView settings
 	[mapView setMapType:MKMapTypeStandard];
@@ -72,7 +71,6 @@
 		[v refreshLastUpdatedDate];
 		[self.mainTableView addSubview:v];
 		self._refreshHeaderView = v;
-		[v release];
 	}
 }
 
@@ -113,7 +111,6 @@
 	annotation.coordinate = coordinate;
 	annotation.stop = stop;
 	[mapView addAnnotation:annotation];
-	[annotation release];
 	
 	// set map view region
 	MKCoordinateRegion region = {{0.0, 0.0}, {0.0, 0.0}};
@@ -194,19 +191,18 @@
 - (void)dealloc
 {
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	[stop release], stop = nil;
-	[prediction release], prediction = nil;
-	[mainTableView release], mainTableView = nil;
+	stop = nil;
+	prediction = nil;
+	mainTableView = nil;
     [_refreshHeaderView setDelegate:nil];
-    [_refreshHeaderView release], _refreshHeaderView = nil;
-	[mapView release], mapView = nil;
-	[stopDescLabel release], stopDescLabel = nil;
-	[stopIdLabel release], stopIdLabel = nil;
-	[stopDistanceLabel release], stopDistanceLabel = nil;
-	[favButton release], favButton = nil;
-	[timer release], timer = nil;
-    [errorMessage release], errorMessage = nil;
-    [super dealloc];
+    _refreshHeaderView = nil;
+	mapView = nil;
+	stopDescLabel = nil;
+	stopIdLabel = nil;
+	stopDistanceLabel = nil;
+	favButton = nil;
+	timer = nil;
+    errorMessage = nil;
 }
 
 
@@ -327,7 +323,7 @@
     {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:StopInfoCellIdentifier];
         if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:StopInfoCellIdentifier] autorelease];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:StopInfoCellIdentifier];
             [cell.contentView addSubview:stopInfoView];
             cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"fiber_paper.png"]];
         }
@@ -340,7 +336,7 @@
     {
         LoadingCell *cell = (LoadingCell *)[tableView dequeueReusableCellWithIdentifier:LoadingCellIdentifier];
         if (cell == nil) {
-            cell = [[[LoadingCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:LoadingCellIdentifier] autorelease];
+            cell = [[LoadingCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:LoadingCellIdentifier];
         }
         
         [cell setText:@"Loading bus arrival times..."];
@@ -354,7 +350,7 @@
     {
         ErrorCell *cell = (ErrorCell *)[tableView dequeueReusableCellWithIdentifier:ErrorCellIdentifier];
 		if (cell == nil) {
-			cell = [[[ErrorCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ErrorCellIdentifier] autorelease];
+			cell = [[ErrorCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ErrorCellIdentifier];
 		}
         cell.label = self.errorMessage;
 		cell.image = [UIImage imageNamed:@"icn_warning.png"];
@@ -381,14 +377,13 @@
 	cell.estimateLabel.text = entry.eta;
 	
 	NSString *imageName = [NSString stringWithFormat:@"%@.png", entry.route.shortName];
-	UIImage *routeImage = [[UIImage imageNamed:imageName] retain];
+	UIImage *routeImage = [UIImage imageNamed:imageName];
 	if (routeImage) {
 		[cell.imageView setImage:routeImage];
 	} else {
 		cell.idLabel.hidden = NO;
 		cell.idLabel.text = entry.route.shortName;
 	}
-	[routeImage release];
 	
     return cell;
 }

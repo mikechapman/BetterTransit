@@ -7,7 +7,7 @@
 //
 
 #import "BTStop.h"
-
+#import "BTRoute.h"
 
 @implementation BTStop
 
@@ -29,11 +29,10 @@
 
 - (void)dealloc
 {
-	[stopId release], stopId = nil;
-    [stopCode release], stopCode = nil;
-    [stopName release], stopName = nil;
-	[selectedRoute release], selectedRoute = nil;
-	[super dealloc];
+	stopId = nil;
+    stopCode = nil;
+    stopName = nil;
+	selectedRoute = nil;
 }
 
 @end

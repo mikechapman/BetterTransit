@@ -17,10 +17,10 @@
 	CLLocation *currentLocation;
 }
 
-@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, assign) BOOL isUpdatingLocation;
 @property (nonatomic, assign) BOOL locationFound;
-@property (nonatomic, retain) CLLocation *currentLocation;
+@property (nonatomic, strong) CLLocation *currentLocation;
 
 + (BTLocationManager *)sharedInstance;
 

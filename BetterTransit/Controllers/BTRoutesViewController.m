@@ -72,10 +72,6 @@
 - (void)dealloc
 {
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	[routesToDisplay release];
-	[sectionNames release];
-	[mainTableView release];
-    [super dealloc];
 }
 
 
@@ -100,7 +96,7 @@
 	
 	BTRouteCell *cell = (BTRouteCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[AppDelegate createRouteCellWithIdentifier:CellIdentifier] autorelease];
+		cell = [AppDelegate createRouteCellWithIdentifier:CellIdentifier];
 	}
 	
 	NSString *key = [self.sectionNames objectAtIndex:indexPath.section];
@@ -152,7 +148,6 @@
 	BTTripViewController *controller = [AppDelegate createTripViewController];
 	controller.route = selectedRoute;
 	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];
 }
 
 @end

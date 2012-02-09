@@ -79,16 +79,15 @@
 
 - (void)dealloc
 {
-    [transit release], transit = nil;
-	[prediction release], prediction = nil;
-	[currentStop release], currentStop = nil;
+    transit = nil;
+	prediction = nil;
+	currentStop = nil;
 	
 	[networkQueue cancelAllOperations];
 	[networkQueue setDelegate:nil];
-	[networkQueue release], networkQueue = nil;
+	networkQueue = nil;
 	
 	delegate = nil;
-	[super dealloc];
 }
 
 

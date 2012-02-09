@@ -26,12 +26,11 @@
 
 - (void)dealloc
 {
-	[route release], route = nil;
-	[stop release], stop = nil;
-	[destination release], destination = nil;
-	[eta release], eta = nil;
-	[info release], info = nil;
-	[super dealloc];
+	route = nil;
+	stop = nil;
+	destination = nil;
+	eta = nil;
+	info = nil;
 }
 
 - (NSComparisonResult)sortByRouteIdNumerically:(BTPredictionEntry *)other

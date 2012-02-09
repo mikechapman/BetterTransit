@@ -25,13 +25,13 @@
 	UIActivityIndicatorView *activityIndicatorView;
 }
 
-@property (nonatomic, retain) NSArray *stops;
-@property (nonatomic, retain) IBOutlet MKMapView *mapView;
-@property (nonatomic, retain) NSMutableArray *annotations;
-@property (nonatomic, retain) NSMutableArray *lastVisibleTiles;
-@property (nonatomic, retain) UIBarButtonItem *locationUpdateButton;
-@property (nonatomic, retain) UIBarButtonItem *activityIndicator;
-@property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic, strong) NSArray *stops;
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) NSMutableArray *annotations;
+@property (nonatomic, strong) NSMutableArray *lastVisibleTiles;
+@property (nonatomic, strong) UIBarButtonItem *locationUpdateButton;
+@property (nonatomic, strong) UIBarButtonItem *activityIndicator;
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
 
 - (void)setCenterLocation:(CLLocation *)location;
 - (void)updateAnnotations;

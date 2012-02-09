@@ -104,12 +104,11 @@
 - (void)dealloc
 {
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	[searchBar release], searchBar = nil;
-	[mainTableView release], mainTableView = nil;
-	[stops release], stops = nil;
-	[bigCancelButton release], bigCancelButton = nil;
-	[noResultsLabel release], noResultsLabel = nil;
-    [super dealloc];
+	searchBar = nil;
+	mainTableView = nil;
+	stops = nil;
+	bigCancelButton = nil;
+	noResultsLabel = nil;
 }
 
 
@@ -133,17 +132,16 @@
     
 	BTStopCell *cell = (BTStopCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[[BTStopCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[BTStopCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
 	
 	BTStop *stop = [self.stops objectAtIndex:indexPath.row];
 	cell.stop = stop;
 	
 	NSString *imageName = [NSString stringWithFormat:@"stop_%d.png", stop.stopColor];
-	UIImage *stopImage = [[UIImage imageNamed:imageName] retain];
+	UIImage *stopImage = [UIImage imageNamed:imageName];
 	if (stopImage != nil) {
 		cell.iconImage = stopImage;
-		[stopImage release];
 	} else {
 		cell.iconImage = [UIImage imageNamed:@"default_stop.png"];
 	}
@@ -161,7 +159,6 @@
 	controller.stop = selectedStop;
 	controller.prediction = nil;
 	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath

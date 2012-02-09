@@ -49,18 +49,18 @@ BTFeedLoaderDelegate, EGORefreshTableHeaderDelegate>
     NSString *errorMessage;
 }
 
-@property (nonatomic, retain) BTStop *stop;
-@property (nonatomic, retain) NSMutableArray *prediction;
-@property (nonatomic, retain) IBOutlet UITableView *mainTableView;
-@property (nonatomic, retain) IBOutlet UIView *stopInfoView;
-@property (nonatomic, retain) EGORefreshTableHeaderView *_refreshHeaderView;
-@property (nonatomic, retain) IBOutlet MKMapView *mapView;
-@property (nonatomic, retain) IBOutlet UILabel *stopDescLabel;
-@property (nonatomic, retain) IBOutlet UILabel *stopIdLabel;
-@property (nonatomic, retain) IBOutlet UILabel *stopDistanceLabel;
-@property (nonatomic, retain) IBOutlet UIButton *favButton;
-@property (nonatomic, retain) NSTimer *timer;
-@property (nonatomic, retain) NSString *errorMessage;
+@property (nonatomic, strong) BTStop *stop;
+@property (nonatomic, strong) NSMutableArray *prediction;
+@property (nonatomic, strong) IBOutlet UITableView *mainTableView;
+@property (nonatomic, strong) IBOutlet UIView *stopInfoView;
+@property (nonatomic, strong) EGORefreshTableHeaderView *_refreshHeaderView;
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) IBOutlet UILabel *stopDescLabel;
+@property (nonatomic, strong) IBOutlet UILabel *stopIdLabel;
+@property (nonatomic, strong) IBOutlet UILabel *stopDistanceLabel;
+@property (nonatomic, strong) IBOutlet UIButton *favButton;
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) NSString *errorMessage;
 
 - (IBAction)setFav:(id)sender;
 - (void)checkBusArrival;

@@ -16,29 +16,29 @@
 }
 
 // Database
-@property (nonatomic, retain) FMDatabase *db;
+@property (nonatomic, strong) FMDatabase *db;
 
-@property (nonatomic, retain) NSMutableArray *routes;
+@property (nonatomic, strong) NSMutableArray *routes;
 
 // a dictionary for fast lookup of routes using routeId
-@property (nonatomic, retain) NSMutableDictionary * routeIds;
+@property (nonatomic, strong) NSMutableDictionary * routeIds;
 
 // a dictionary for fast lookup of routes using short name (may not be unique)
-@property (nonatomic, retain) NSMutableDictionary * routeNames;
+@property (nonatomic, strong) NSMutableDictionary * routeNames;
 
 // for RoutesView tab, organized in sections
-@property (nonatomic, retain) NSDictionary * routesToDisplay;
+@property (nonatomic, strong) NSDictionary * routesToDisplay;
 
-@property (nonatomic, retain) NSMutableArray *stops;
+@property (nonatomic, strong) NSMutableArray *stops;
 
 // a dictionary for fast lookup of stops using stopId
-@property (nonatomic, retain) NSMutableDictionary * stopIds;
+@property (nonatomic, strong) NSMutableDictionary * stopIds;
 
 // use tiles to quickly load annotations onto the map
-@property (nonatomic, retain) NSMutableArray *tiles;
+@property (nonatomic, strong) NSMutableArray *tiles;
 
-@property (nonatomic, retain) NSMutableArray *nearbyStops;
-@property (nonatomic, retain) NSMutableArray *favoriteStops;
+@property (nonatomic, strong) NSMutableArray *nearbyStops;
+@property (nonatomic, strong) NSMutableArray *favoriteStops;
 
 - (void)loadData;
 - (void)loadRoutesFromDB;

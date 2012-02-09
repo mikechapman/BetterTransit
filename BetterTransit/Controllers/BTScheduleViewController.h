@@ -16,7 +16,7 @@
 	BTRoute * route;
 }
 
-@property (nonatomic, retain) BTRoute * route;
+@property (nonatomic, strong) BTRoute * route;
 
 - (void)done:(id)sender;
 

@@ -22,16 +22,16 @@
 @interface BTFeedLoader : NSObject
 {
 	NSMutableArray *prediction; // includes prediction for all available routes
-	NSObject<BTFeedLoaderDelegate> *delegate;
+	NSObject<BTFeedLoaderDelegate> *__unsafe_unretained delegate;
 	BTStop *currentStop;
 	
 	ASINetworkQueue *networkQueue;
 }
 
-@property (nonatomic, retain) IBOutlet BTTransit * transit;
-@property (nonatomic, retain) NSMutableArray *prediction;
-@property (assign) id<BTFeedLoaderDelegate> delegate;
-@property (nonatomic, retain) BTStop *currentStop;
+@property (nonatomic, strong) IBOutlet BTTransit * transit;
+@property (nonatomic, strong) NSMutableArray *prediction;
+@property (unsafe_unretained) id<BTFeedLoaderDelegate> delegate;
+@property (nonatomic, strong) BTStop *currentStop;
 
 - (NSString *)dataSourceForStop:(BTStop *)stop;
 - (void)getPredictionForStop:(BTStop *)stop;

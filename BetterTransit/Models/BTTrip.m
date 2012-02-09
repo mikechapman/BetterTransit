@@ -7,6 +7,7 @@
 //
 
 #import "BTTrip.h"
+#import "BTRoute.h"
 
 @implementation BTTrip
 
@@ -22,10 +23,9 @@
 
 - (void)dealloc
 {
-	[route release], route = nil;
-    [headsign release], headsign = nil;
-    [stops release], stops = nil;
-	[super dealloc];
+	route = nil;
+    headsign = nil;
+    stops = nil;
 }
 
 @end

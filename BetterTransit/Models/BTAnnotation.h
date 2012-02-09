@@ -21,6 +21,6 @@
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *subtitle;
-@property (nonatomic, retain) BTStop *stop;
+@property (nonatomic, strong) BTStop *stop;
 
 @end

@@ -16,8 +16,8 @@
 	UIImage *iconImage;
 }
 
-@property (nonatomic, retain) BTRoute *route;
-@property (nonatomic, retain) UIImage *iconImage;
+@property (nonatomic, strong) BTRoute *route;
+@property (nonatomic, strong) UIImage *iconImage;
 
 - (void)drawCellView:(CGRect)rect;
 

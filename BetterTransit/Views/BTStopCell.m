@@ -93,9 +93,8 @@
 
 - (void)dealloc
 {
-	[stop release], stop = nil;
-	[iconImage release], iconImage = nil;
-    [super dealloc];
+	stop = nil;
+	iconImage = nil;
 }
 
 

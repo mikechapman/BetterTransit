@@ -40,7 +40,6 @@
     
     UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
     self.navigationItem.leftBarButtonItem = doneButton;
-    [doneButton release];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -77,8 +76,7 @@
 - (void)dealloc
 {
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	[route release], route = nil;
-    [super dealloc];
+	route = nil;
 }
 
 

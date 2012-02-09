@@ -122,12 +122,11 @@ void uncaughtExceptionHandler(NSException *exception) {
 
 - (void)dealloc
 {
-	[window release], window = nil;
-    [tabBarController release], tabBarController = nil;
+	window = nil;
+    tabBarController = nil;
 	
-	[transit release], transit = nil;
-	[feedLoader release], feedLoader = nil;
-    [super dealloc];
+	transit = nil;
+	feedLoader = nil;
 }
 	
 @end

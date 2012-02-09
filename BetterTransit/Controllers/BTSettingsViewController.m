@@ -52,9 +52,8 @@
 - (void)dealloc
 {
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	[startupScreenOptions release], startupScreenOptions = nil;
-	[maxNumNearbyStopsOptions release], maxNumNearbyStopsOptions = nil;
-    [super dealloc];
+	startupScreenOptions = nil;
+	maxNumNearbyStopsOptions = nil;
 }
 
 
@@ -91,7 +90,7 @@
 	{
 		cell = [tableView dequeueReusableCellWithIdentifier:BTSettingsCellIdentifier];
 		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:BTSettingsCellIdentifier] autorelease];
+			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:BTSettingsCellIdentifier];
 		}
 		
 		switch (indexPath.row) {
@@ -142,7 +141,6 @@
 		}
 		controller.delegate = self;
 		[self.navigationController pushViewController:controller animated:YES];
-		[controller release];
 	}
     else {
         [super tableView:tableView didSelectRowAtIndexPath:indexPath];

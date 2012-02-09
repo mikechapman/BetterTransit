@@ -24,10 +24,10 @@
 	BTFeedLoader *feedLoader;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
-@property (retain) IBOutlet BTTransit *transit;
-@property (retain) IBOutlet BTFeedLoader *feedLoader;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet UITabBarController *tabBarController;
+@property (strong) IBOutlet BTTransit *transit;
+@property (strong) IBOutlet BTFeedLoader *feedLoader;
 
 // Create view controllers
 - (BTPredictionViewController *)createPredictionViewController;

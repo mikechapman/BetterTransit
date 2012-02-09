@@ -34,18 +34,18 @@
 	BOOL viewIsShown;
 }
 
-@property (nonatomic, retain) NSArray *stops;
-@property (nonatomic, retain) IBOutlet UITableView *mainTableView;
-@property (nonatomic, retain) UIActivityIndicatorView * loadingSpinner;
-@property (nonatomic, retain) UIImageView *addToFavsView;
-@property (nonatomic, retain) UIImageView *noNearbyStopsView;
-@property (nonatomic, retain) UISegmentedControl *segmentedControl;
-@property (nonatomic, retain) UIBarButtonItem *locationUpdateButton;
-@property (nonatomic, retain) UIBarButtonItem *spinnerBarItem;
-@property (nonatomic, retain) UIActivityIndicatorView *spinner;
+@property (nonatomic, strong) NSArray *stops;
+@property (nonatomic, strong) IBOutlet UITableView *mainTableView;
+@property (nonatomic, strong) UIActivityIndicatorView * loadingSpinner;
+@property (nonatomic, strong) UIImageView *addToFavsView;
+@property (nonatomic, strong) UIImageView *noNearbyStopsView;
+@property (nonatomic, strong) UISegmentedControl *segmentedControl;
+@property (nonatomic, strong) UIBarButtonItem *locationUpdateButton;
+@property (nonatomic, strong) UIBarButtonItem *spinnerBarItem;
+@property (nonatomic, strong) UIActivityIndicatorView *spinner;
 @property (nonatomic, assign) BOOL isEditing;
-@property (nonatomic, retain) UIBarButtonItem *editButton;
-@property (nonatomic, retain) UIBarButtonItem *doneButton;
+@property (nonatomic, strong) UIBarButtonItem *editButton;
+@property (nonatomic, strong) UIBarButtonItem *doneButton;
 @property (nonatomic, assign) BOOL viewIsShown;
 
 - (IBAction)updateLocation:(id)sender;

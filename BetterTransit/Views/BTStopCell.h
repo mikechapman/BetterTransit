@@ -16,8 +16,8 @@
 	UIImage *iconImage;
 }
 
-@property (nonatomic, retain) BTStop *stop;
-@property (nonatomic, retain) UIImage *iconImage;
+@property (nonatomic, strong) BTStop *stop;
+@property (nonatomic, strong) UIImage *iconImage;
 
 - (void)drawCellView:(CGRect)rect;
 

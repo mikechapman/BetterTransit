@@ -12,10 +12,10 @@
 @interface BTRoute : NSObject {
 }
 
-@property (nonatomic, retain) NSString * routeId;
-@property (nonatomic, retain) NSString * agencyId;
-@property (nonatomic, retain) NSString * shortName;
-@property (nonatomic, retain) NSString * longName;
+@property (nonatomic, strong) NSString * routeId;
+@property (nonatomic, strong) NSString * agencyId;
+@property (nonatomic, strong) NSString * shortName;
+@property (nonatomic, strong) NSString * longName;
 @property (nonatomic, assign) BOOL hasSchedule;
 
 - (NSComparisonResult)sortByShortName:(BTRoute *)other;

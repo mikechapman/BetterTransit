@@ -84,7 +84,6 @@
 		[self.routes addObject:route];
 		[self.routeIds setObject:route forKey:route.routeId];
         [self.routeNames setObject:route forKey:route.shortName];
-		[route release];
 	}
 	[rs close];
 }
@@ -107,7 +106,6 @@
 		NSMutableArray *tile = [tiles objectAtIndex:stop.tileNumber];
 		[tile addObject:stop];
 #endif
-		[stop release];
 	}
 	[rs close];
 }
@@ -115,7 +113,7 @@
 - (void)loadRoutesToDisplayFromPlist:(NSString *)fileName
 {
 	NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
-	self.routesToDisplay = [[[NSDictionary alloc] initWithContentsOfFile:path] autorelease];
+	self.routesToDisplay = [[NSDictionary alloc] initWithContentsOfFile:path];
 }
 
 - (void)loadScheduleForRoutes
@@ -192,7 +190,6 @@
         else if (directionId != trip.directionId) {
             // Save the old trip first
             [trips addObject:trip];
-            [trip release];
             
             // Create a new trip
             trip = [[BTTrip alloc] init];
@@ -208,7 +205,6 @@
     
     // Save the trip
     [trips addObject:trip];
-    [trip release];
     
     // Close the fetch cursor
     [rs close];
@@ -265,29 +261,26 @@
 	for (stop in ss) {
 		stopLocation = [[CLLocation alloc] initWithLatitude:stop.latitude longitude:stop.longitude];
 		stop.distance = [stopLocation getDistanceFrom:location]; // in meters
-		[stopLocation release];
 	}
 	
 	NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
 	[ss sortUsingDescriptors:[NSArray arrayWithObject:sort]];
-	[sort release];
 }
 
 - (void)dealloc
 {
-	[routes release], routes = nil;
-	[routeIds release], routeIds = nil;
-    [routeNames release], routeNames = nil;
-	[routesToDisplay release], routesToDisplay = nil;
-	[stops release], stops = nil;
-	[stopIds release], stopIds = nil;
-	[tiles release], tiles = nil;
-	[nearbyStops release], nearbyStops = nil;
-	[favoriteStops release], favoriteStops = nil;
-	[db close], [db release], db = nil;
+	routes = nil;
+	routeIds = nil;
+    routeNames = nil;
+	routesToDisplay = nil;
+	stops = nil;
+	stopIds = nil;
+	tiles = nil;
+	nearbyStops = nil;
+	favoriteStops = nil;
+	[db close], db, db = nil;
 	
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[super dealloc];
 }
 
 

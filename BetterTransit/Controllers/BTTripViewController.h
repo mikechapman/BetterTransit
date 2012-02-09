@@ -30,16 +30,16 @@
 	UILabel *destIdLabel; // show route ID when route icon is not available
 }
 
-@property (nonatomic, retain) BTRoute *route;
-@property (nonatomic, retain) NSArray *trips;
-@property (nonatomic, retain) NSArray *stops;
-@property (nonatomic, retain) IBOutlet UITableView *mainTableView;
-@property (nonatomic, retain) UISegmentedControl *segmentedControl;
-@property (nonatomic, retain) UIImageView *titleImageView;
-@property (nonatomic, retain) IBOutlet UIView *routeDestView;
-@property (nonatomic, retain) IBOutlet UILabel *destLabel;
-@property (nonatomic, retain) IBOutlet UIImageView *destImageView;
-@property (nonatomic, retain) IBOutlet UILabel *destIdLabel;
+@property (nonatomic, strong) BTRoute *route;
+@property (nonatomic, strong) NSArray *trips;
+@property (nonatomic, strong) NSArray *stops;
+@property (nonatomic, strong) IBOutlet UITableView *mainTableView;
+@property (nonatomic, strong) UISegmentedControl *segmentedControl;
+@property (nonatomic, strong) UIImageView *titleImageView;
+@property (nonatomic, strong) IBOutlet UIView *routeDestView;
+@property (nonatomic, strong) IBOutlet UILabel *destLabel;
+@property (nonatomic, strong) IBOutlet UIImageView *destImageView;
+@property (nonatomic, strong) IBOutlet UILabel *destIdLabel;
 
 - (void)segmentAction:(id)sender;
 

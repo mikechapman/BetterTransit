@@ -45,7 +45,7 @@
 	self.isEditing = NO;
     
     // Setup the loading spinner in the middle of page
-    self.loadingSpinner = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray] autorelease];
+    self.loadingSpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     loadingSpinner.center = CGPointMake(160, 180);
     loadingSpinner.hidesWhenStopped = YES;
     [self.view addSubview:loadingSpinner];
@@ -53,7 +53,7 @@
 	// Setup segmented control
 	NSArray *items = [NSArray arrayWithObjects:NSLocalizedString(@"Nearby", @""),
 					  NSLocalizedString(@"Favorites", @""), nil];
-	self.segmentedControl = [[[UISegmentedControl alloc] initWithItems:items] autorelease];
+	self.segmentedControl = [[UISegmentedControl alloc] initWithItems:items];
 	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
 	segmentedControl.frame = CGRectMake(0, 0, 166, 30);
 	
@@ -83,22 +83,18 @@
 	self.editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit 
 																	target:self 
 																	action:@selector(editFavs:)];
-	[editButton release];
 	
 	self.doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
 																	target:self
 																	action:@selector(editFavs:)];
-	[doneButton release];
 	
 	// an illustration showing how to add a bus stop to favorites
 	self.addToFavsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:ADD_TO_FAVS_PNG]];
-	[addToFavsView release];
 	addToFavsView.hidden = YES;
 	[self.view addSubview:self.addToFavsView];
 	
 	// an illustration showing that no nearby stops are found.
 	self.noNearbyStopsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"noNearbyStops.png"]];
-	[noNearbyStopsView release];
     noNearbyStopsView.hidden = YES;
 	[self.view addSubview:self.noNearbyStopsView];
 }
@@ -185,20 +181,10 @@
 - (void)dealloc
 {
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	[stops release];
-	[mainTableView release];
-    [loadingSpinner release];
-	[addToFavsView release];
-	[noNearbyStopsView release];
-	[segmentedControl release];
-	[locationUpdateButton release];
-	[spinnerBarItem release];
-	[spinner release];
-	[editButton release], editButton = nil;
-	[doneButton release], doneButton = nil;
+	editButton = nil;
+	doneButton = nil;
 	
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-    [super dealloc];
 }
 
 
@@ -348,17 +334,16 @@
 	
 	BTStopCell *cell = (BTStopCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[[BTStopCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[BTStopCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
 	
 	BTStop *stop = [self.stops objectAtIndex:indexPath.row];
 	cell.stop = stop;
 	
 	NSString *imageName = [NSString stringWithFormat:@"stop_%d.png", stop.stopColor];
-	UIImage *stopImage = [[UIImage imageNamed:imageName] retain];
+	UIImage *stopImage = [UIImage imageNamed:imageName];
 	if (stopImage != nil) {
 		cell.iconImage = stopImage;
-		[stopImage release];
 	} else {
 		cell.iconImage = [UIImage imageNamed:@"default_stop.png"];
 	}
@@ -376,7 +361,6 @@
 	controller.stop = selectedStop;
 	controller.prediction = nil;
 	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -415,10 +399,9 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
-	BTStop *stop = [[stops objectAtIndex:fromIndexPath.row] retain];
+	BTStop *stop = [stops objectAtIndex:fromIndexPath.row];
 	[transit.favoriteStops removeObject:stop];
 	[transit.favoriteStops insertObject:stop atIndex:toIndexPath.row];
-	[stop release];
 }
 
 

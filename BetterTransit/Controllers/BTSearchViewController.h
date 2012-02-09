@@ -29,9 +29,9 @@
 	BOOL noResultsLabelIsShown;
 }
 
-@property (nonatomic, retain) IBOutlet UISearchBar *searchBar;
-@property (nonatomic, retain) IBOutlet UITableView *mainTableView;
-@property (nonatomic, retain) NSArray *stops;
+@property (nonatomic, strong) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) IBOutlet UITableView *mainTableView;
+@property (nonatomic, strong) NSArray *stops;
 
 - (void)handleSearchForTerm:(NSString *)term;
 - (void)registerForKeyboardNotifications;

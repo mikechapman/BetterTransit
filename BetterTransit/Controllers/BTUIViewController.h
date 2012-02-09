@@ -12,6 +12,6 @@
 @interface BTUIViewController : UIViewController {
 }
 
-@property (nonatomic, retain) UIImageView *backdrop;
+@property (nonatomic, strong) UIImageView *backdrop;
 
 @end

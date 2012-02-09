@@ -57,19 +57,18 @@
 		scheduleButton.showsTouchWhenHighlighted = YES;
 		[scheduleButton setImage:[UIImage imageNamed:@"schedule.png"] forState:UIControlStateNormal];
 		[scheduleButton addTarget:self action:@selector(showSchedule:) forControlEvents:UIControlEventTouchUpInside];
-		UIBarButtonItem *scheduleBarButton = [[[UIBarButtonItem alloc] initWithCustomView:scheduleButton] autorelease];
+		UIBarButtonItem *scheduleBarButton = [[UIBarButtonItem alloc] initWithCustomView:scheduleButton];
 		self.navigationItem.rightBarButtonItem = scheduleBarButton;
 	}
     
     self.navigationItem.title = [NSString stringWithFormat:@"Route %@", route.shortName];
 	NSString *imageName = [NSString stringWithFormat:@"%@_white.png", route.shortName];
-	UIImage *titleImage = [[UIImage imageNamed:imageName] retain];
+	UIImage *titleImage = [UIImage imageNamed:imageName];
 	if (titleImage) {
 		titleImageView = [[UIImageView alloc] initWithImage:titleImage];
 	} else {
 		titleImageView = nil;
 	}
-	[titleImage release];
 	
 	NSArray *items = [NSArray arrayWithObjects:@"", @"", nil];
 	segmentedControl = [[UISegmentedControl alloc] initWithItems:items];
@@ -89,7 +88,7 @@
 		self.navigationItem.titleView = segmentedControl;
 		
 		NSString *imageName = [NSString stringWithFormat:@"%@_white.png", route.shortName];
-		UIImage *routeImage = [[UIImage imageNamed:imageName] retain];
+		UIImage *routeImage = [UIImage imageNamed:imageName];
 		if (routeImage) {
 			[destImageView setImage:routeImage];
 		} else {
@@ -97,7 +96,6 @@
 			destIdLabel.hidden = NO;
 			destIdLabel.text = route.shortName;
 		}
-		[routeImage release];
 		
 		destLabel.text = [NSString stringWithFormat:@"To %@", [[trips objectAtIndex:0] headsign]];
 		[self.view addSubview:routeDestView];
@@ -141,17 +139,7 @@
 - (void)dealloc
 {
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	[route release];
-	[trips release];
-	[stops release];
-	[mainTableView release];
-	[segmentedControl release];
-	[titleImageView release];
 
-	[destLabel release];
-	[destImageView release];
-	[destIdLabel release];
-    [super dealloc];
 }
 
 
@@ -175,8 +163,6 @@
         UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:controller];
         nav.navigationBar.tintColor = COLOR_NAV_BAR_BG;
 		[self.navigationController presentModalViewController:nav animated:YES];
-		[controller release];
-        [nav release];
 	}
 }
 
@@ -200,17 +186,16 @@
     
     BTStopCell *cell = (BTStopCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[[BTStopCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[BTStopCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
 	
 	BTStop *stop = [self.stops objectAtIndex:indexPath.row];
 	cell.stop = stop;
 	
 	NSString *imageName = [NSString stringWithFormat:@"%@_rail.png", route.shortName];
-	UIImage *railImage = [[UIImage imageNamed:imageName] retain];
+	UIImage *railImage = [UIImage imageNamed:imageName];
 	if (railImage != nil) {
 		cell.iconImage = railImage;
-		[railImage release];
 	} else {
 		cell.iconImage = [UIImage imageNamed:@"default_rail.png"];
 	}
@@ -229,7 +214,6 @@
 	controller.stop = selectedStop;
 	controller.prediction = nil;
 	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];
 }
 
 @end

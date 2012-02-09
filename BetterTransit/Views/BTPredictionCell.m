@@ -31,14 +31,5 @@
 }
 
 
-- (void)dealloc
-{
-	[imageView release];
-	[routeLabel release];
-	[destinationLabel release];
-	[estimateLabel release];
-	[idLabel release];
-    [super dealloc];
-}
 
 @end

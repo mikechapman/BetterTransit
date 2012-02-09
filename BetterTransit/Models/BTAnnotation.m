@@ -13,12 +13,5 @@
 
 @synthesize coordinate, title, subtitle, stop;
 
-- (void)dealloc
-{
-	[title release];
-	[subtitle release];
-	[stop release];
-	[super dealloc];
-}
 
 @end

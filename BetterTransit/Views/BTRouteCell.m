@@ -69,9 +69,8 @@
 
 - (void)dealloc
 {
-	[route release], route = nil;
-	[iconImage release], iconImage = nil;
-    [super dealloc];
+	route = nil;
+	iconImage = nil;
 }
 
 

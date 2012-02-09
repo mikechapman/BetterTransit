@@ -121,16 +121,8 @@
 - (void)dealloc
 {
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	[stops release];
-	[mapView release];
-	[annotations release];
-	[lastVisibleTiles release];
-	[locationUpdateButton release];
-	[activityIndicator release];
-	[activityIndicatorView release];
 	
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-    [super dealloc];
 }
 
 
@@ -244,7 +236,6 @@
 			annotation.coordinate = coordinate;
 			annotation.stop = stop;
 			[self.annotations addObject:annotation];
-			[annotation release];
 		}
 	}
 	[mapView addAnnotations:self.annotations];
@@ -294,7 +285,7 @@
         static NSString *defaultID = @"AnnotationViewID";
 		annotationView = (MKAnnotationView *)[mv dequeueReusableAnnotationViewWithIdentifier:defaultID];
 		if (annotationView == nil) {
-			annotationView = [[[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:defaultID] autorelease];
+			annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:defaultID];
 		}
 		
 		annotationView.canShowCallout = YES;
@@ -326,7 +317,6 @@
 	controller.stop = annotation.stop;
 	controller.prediction = nil;
 	[self.navigationController pushViewController:controller animated:YES];
-	[controller release];
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated

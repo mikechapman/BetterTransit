@@ -17,7 +17,7 @@
 	BTTransit *transit;
 }
 
-@property (nonatomic, retain) NSArray *startupScreenOptions;
-@property (nonatomic, retain) NSArray *maxNumNearbyStopsOptions;
+@property (nonatomic, strong) NSArray *startupScreenOptions;
+@property (nonatomic, strong) NSArray *maxNumNearbyStopsOptions;
 
 @end

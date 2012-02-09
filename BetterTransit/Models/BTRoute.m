@@ -24,11 +24,10 @@
 
 - (void)dealloc
 {
-	[routeId release], routeId = nil;
-    [agencyId release], agencyId = nil;
-    [shortName release], shortName = nil;
-    [longName release], longName = nil;
-	[super dealloc];
+	routeId = nil;
+    agencyId = nil;
+    shortName = nil;
+    longName = nil;
 }
 
 - (NSComparisonResult)sortByShortName:(BTRoute *)other
