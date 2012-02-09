@@ -27,12 +27,4 @@
 	return self;
 }
 
-- (void)dealloc
-{
-	stopId = nil;
-    stopCode = nil;
-    stopName = nil;
-	selectedRoute = nil;
-}
-
 @end

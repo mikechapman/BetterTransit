@@ -62,11 +62,10 @@
 - (void)dealloc
 {
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	[mainTableView release], mainTableView = nil;
-	[list release], list = nil;
+	mainTableView = nil;
+	list = nil;
 	delegate = nil;
 	
-    [super dealloc];
 }
 
 
@@ -89,7 +88,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 	
 	cell.textLabel.text = [self.list objectAtIndex:indexPath.row];

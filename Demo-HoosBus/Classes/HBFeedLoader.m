@@ -80,8 +80,6 @@
     if (parseError && error) {
         *error = parseError;
     }
-	
-	[parser release];
 }
 
 
@@ -155,20 +153,10 @@
                 entry.destination = currentDestination;
                 entry.eta = currentETA;
                 [self.prediction addObject:entry];
-                [entry release];
 			}
 		}
 		tdCount++;
 	}
-}
-
-- (void)dealloc
-{
-	[contentOfCurrentElement release], contentOfCurrentElement = nil;
-    [currentRouteShortName release], currentRouteShortName = nil;
-    [currentDestination release], currentDestination = nil;
-    [currentETA release], currentETA = nil;
-	[super dealloc];
 }
 
 @end

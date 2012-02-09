@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic, copy) NSString *label;
-@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, strong) UIImage *image;
 
 - (void)drawCellView:(CGRect)rect;
 + (CGFloat)rowHeightForText:(NSString *)s;

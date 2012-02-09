@@ -60,13 +60,6 @@
 	[image drawInRect:CGRectMake(10, (rowHeight-24)/2.0, 24, 24)];
 }	
 
-- (void)dealloc
-{
-	[label release], label = nil;
-	[image release], image = nil;
-    [super dealloc];
-}
-
 
 #pragma mark -
 #pragma mark Misc.

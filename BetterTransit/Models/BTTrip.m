@@ -21,11 +21,4 @@
 	return self;
 }
 
-- (void)dealloc
-{
-	route = nil;
-    headsign = nil;
-    stops = nil;
-}
-
 @end

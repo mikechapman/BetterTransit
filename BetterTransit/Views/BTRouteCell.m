@@ -67,12 +67,6 @@
 	}
 }
 
-- (void)dealloc
-{
-	route = nil;
-	iconImage = nil;
-}
-
 
 #pragma mark -
 #pragma mark Accessibility

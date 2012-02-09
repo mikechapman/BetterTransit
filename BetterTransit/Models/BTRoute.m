@@ -22,14 +22,6 @@
 	return self;
 }
 
-- (void)dealloc
-{
-	routeId = nil;
-    agencyId = nil;
-    shortName = nil;
-    longName = nil;
-}
-
 - (NSComparisonResult)sortByShortName:(BTRoute *)other
 {
     return [self.shortName compare:other.shortName options:NSCaseInsensitiveSearch];

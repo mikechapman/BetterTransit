@@ -20,13 +20,13 @@
 	NSArray *list;
 	NSInteger tag; // identifier for a list view
 	NSUInteger selectedIndex;
-	id<HAListViewControllerDelegate> delegate;
+	id<HAListViewControllerDelegate> __unsafe_unretained delegate;
 }
 
-@property (nonatomic, retain) IBOutlet UITableView *mainTableView;
-@property (nonatomic, retain) NSArray *list;
+@property (nonatomic, strong) IBOutlet UITableView *mainTableView;
+@property (nonatomic, strong) NSArray *list;
 @property (nonatomic, assign) NSInteger tag;
 @property (nonatomic, assign) NSUInteger selectedIndex;
-@property (nonatomic, assign) id<HAListViewControllerDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id<HAListViewControllerDelegate> delegate;
 
 @end

@@ -91,12 +91,6 @@
 	[iconImage drawInRect:CGRectMake(6, (60-imageSize.height)/2.0, imageSize.width, imageSize.height)];
 }
 
-- (void)dealloc
-{
-	stop = nil;
-	iconImage = nil;
-}
-
 
 #pragma mark -
 #pragma mark Accessibility

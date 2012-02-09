@@ -15,10 +15,10 @@
 	NSUInteger tdCount;
 }
 
-@property (nonatomic, retain) NSMutableString *contentOfCurrentElement;
-@property (nonatomic, retain) NSString * currentRouteShortName;
-@property (nonatomic, retain) NSString * currentDestination;
-@property (nonatomic, retain) NSString * currentETA;
+@property (nonatomic, strong) NSMutableString *contentOfCurrentElement;
+@property (nonatomic, strong) NSString * currentRouteShortName;
+@property (nonatomic, strong) NSString * currentDestination;
+@property (nonatomic, strong) NSString * currentETA;
 
 - (void)parseXMLData:(NSData *)xmlData parseError:(NSError **)error;
 

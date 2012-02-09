@@ -14,7 +14,7 @@
     NSString *text;
 }
 
-@property (nonatomic, retain) NSString *text;
+@property (nonatomic, strong) NSString *text;
 
 - (id)initWithText:(NSString *)s;
 

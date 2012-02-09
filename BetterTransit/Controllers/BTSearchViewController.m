@@ -103,10 +103,6 @@
 
 - (void)dealloc
 {
-	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	searchBar = nil;
-	mainTableView = nil;
-	stops = nil;
 	bigCancelButton = nil;
 	noResultsLabel = nil;
 }

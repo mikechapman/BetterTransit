@@ -36,11 +36,6 @@
 {
 	[super viewDidUnload];	
 	self.backdrop = nil;
-}	
-
-- (void)dealloc
-{
-	backdrop = nil;
 }
 
 @end

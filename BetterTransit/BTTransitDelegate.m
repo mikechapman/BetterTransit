@@ -119,14 +119,5 @@ void uncaughtExceptionHandler(NSException *exception) {
 		[c startTimer];
 	}
 }
-
-- (void)dealloc
-{
-	window = nil;
-    tabBarController = nil;
-	
-	transit = nil;
-	feedLoader = nil;
-}
 	
 @end

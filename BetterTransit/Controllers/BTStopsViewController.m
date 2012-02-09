@@ -180,10 +180,6 @@
 
 - (void)dealloc
 {
-	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	editButton = nil;
-	doneButton = nil;
-	
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 

@@ -190,19 +190,7 @@
 
 - (void)dealloc
 {
-	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	stop = nil;
-	prediction = nil;
-	mainTableView = nil;
     [_refreshHeaderView setDelegate:nil];
-    _refreshHeaderView = nil;
-	mapView = nil;
-	stopDescLabel = nil;
-	stopIdLabel = nil;
-	stopDistanceLabel = nil;
-	favButton = nil;
-	timer = nil;
-    errorMessage = nil;
 }
 
 

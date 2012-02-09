@@ -71,16 +71,6 @@
 	self.mainTableView = nil;
 }
 
-- (void)dealloc
-{
-	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-    
-	[mainTableView release], mainTableView = nil;
-    [startupScreenOptions release], startupScreenOptions = nil;
-	[maxNumNearbyStopsOptions release], maxNumNearbyStopsOptions = nil;
-    [super dealloc];
-}
-
 
 #pragma mark -
 #pragma mark Table view methods
@@ -112,7 +102,7 @@
 	{
 		cell = [tableView dequeueReusableCellWithIdentifier:BTSettingsCellIdentifier];
 		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:BTSettingsCellIdentifier] autorelease];
+			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:BTSettingsCellIdentifier];
 		}
 		
 		switch (indexPath.row) {
@@ -161,7 +151,6 @@
 		}
 		controller.delegate = self;
 		[self.navigationController pushViewController:controller animated:YES];
-		[controller release];
 	}
 }
 

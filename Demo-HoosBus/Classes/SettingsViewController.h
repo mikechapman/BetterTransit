@@ -17,8 +17,8 @@
     UITableView * mainTableView;
 }
 
-@property (nonatomic, retain) IBOutlet UITableView * mainTableView;
-@property (nonatomic, retain) NSArray *startupScreenOptions;
-@property (nonatomic, retain) NSArray *maxNumNearbyStopsOptions;
+@property (nonatomic, strong) IBOutlet UITableView * mainTableView;
+@property (nonatomic, strong) NSArray *startupScreenOptions;
+@property (nonatomic, strong) NSArray *maxNumNearbyStopsOptions;
 
 @end

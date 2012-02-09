@@ -73,7 +73,6 @@
 										  cancelButtonTitle:@"Ok"
 										  otherButtonTitles: nil];
 	[alert show];
-	[alert release];
 }
 
 + (void)showErrorDialog:(NSString *)s
@@ -89,7 +88,6 @@
 										  cancelButtonTitle:@"Ok"
 										  otherButtonTitles: nil];
 	[alert show];
-	[alert release];
 }
 
 + (NSString *)formattedStringForDistance:(double)distance

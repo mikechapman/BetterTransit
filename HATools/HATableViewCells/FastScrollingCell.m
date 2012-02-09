@@ -57,8 +57,7 @@
 
 - (void)dealloc
 {
-	[cellView release], cellView = nil;
-    [super dealloc];
+	cellView = nil;
 }
 
 - (void)drawCellView:(CGRect)rect

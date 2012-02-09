@@ -58,13 +58,6 @@
 	
 	// Draw image
 	[image drawInRect:CGRectMake(8, (rowHeight-29)/2.0, 29, 29)];
-}	
-
-- (void)dealloc
-{
-	[label release], label = nil;
-	[image release], image = nil;
-    [super dealloc];
 }
 
 

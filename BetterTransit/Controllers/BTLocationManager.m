@@ -48,8 +48,6 @@ static BTLocationManager *sharedInstance = nil;
 - (void)dealloc
 {
 	locationManager.delegate = nil;
-	locationManager = nil;
-	currentLocation = nil;
 }
 
 - (CLLocation *)currentLocation
@@ -85,7 +83,7 @@ static BTLocationManager *sharedInstance = nil;
 	locationFound = YES;
 	
 	// If the user's location didn't change much, don't bother sending out notifications
-	if (fabs([newLocation getDistanceFrom:self.currentLocation]) < 100) {
+	if (fabs([newLocation distanceFromLocation:self.currentLocation]) < 100) {
 		[[NSNotificationCenter defaultCenter] postNotificationName:kLocationDidNotChangeNotification
 															object:self
 														  userInfo:nil];

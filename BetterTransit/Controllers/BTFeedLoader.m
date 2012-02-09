@@ -79,14 +79,9 @@
 
 - (void)dealloc
 {
-    transit = nil;
-	prediction = nil;
-	currentStop = nil;
-	
 	[networkQueue cancelAllOperations];
 	[networkQueue setDelegate:nil];
 	networkQueue = nil;
-	
 	delegate = nil;
 }
 

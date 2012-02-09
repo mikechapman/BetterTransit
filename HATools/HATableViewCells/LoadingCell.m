@@ -35,12 +35,4 @@
 	[spinner startAnimating];
 }
 
-- (void)dealloc
-{
-	[spinner release], spinner = nil;
-	[label release], label = nil;
-    [super dealloc];
-}
-
-
 @end

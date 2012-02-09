@@ -73,12 +73,6 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)dealloc
-{
-	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	route = nil;
-}
-
 
 #pragma mark -
 #pragma mark UI actions

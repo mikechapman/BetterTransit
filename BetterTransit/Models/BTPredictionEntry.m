@@ -24,15 +24,6 @@
 	return self;
 }
 
-- (void)dealloc
-{
-	route = nil;
-	stop = nil;
-	destination = nil;
-	eta = nil;
-	info = nil;
-}
-
 - (NSComparisonResult)sortByRouteIdNumerically:(BTPredictionEntry *)other
 {
 	NSCharacterSet *nonNumeric = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];

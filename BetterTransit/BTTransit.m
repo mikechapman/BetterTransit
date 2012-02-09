@@ -260,7 +260,7 @@
 	CLLocation *stopLocation;
 	for (stop in ss) {
 		stopLocation = [[CLLocation alloc] initWithLatitude:stop.latitude longitude:stop.longitude];
-		stop.distance = [stopLocation getDistanceFrom:location]; // in meters
+		stop.distance = [stopLocation distanceFromLocation:location]; // in meters
 	}
 	
 	NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
@@ -269,17 +269,7 @@
 
 - (void)dealloc
 {
-	routes = nil;
-	routeIds = nil;
-    routeNames = nil;
-	routesToDisplay = nil;
-	stops = nil;
-	stopIds = nil;
-	tiles = nil;
-	nearbyStops = nil;
-	favoriteStops = nil;
-	[db close], db, db = nil;
-	
+	[db close], db = nil;
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
