@@ -48,20 +48,20 @@
 
 - (void)didReceiveMemoryWarning
 {
-	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
+	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
     [super didReceiveMemoryWarning];
 }
 
 - (void)viewDidUnload
 {
-	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
+	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
     [super viewDidUnload];
 	self.mainTableView = nil;
 }
 
 - (void)dealloc
 {
-	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
+	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[mainTableView release], mainTableView = nil;
 	[list release], list = nil;
 	delegate = nil;
