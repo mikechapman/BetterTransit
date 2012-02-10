@@ -56,7 +56,7 @@
 
 - (void)didReceiveMemoryWarning
 {
-	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
+	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
 	
@@ -65,20 +65,10 @@
 
 - (void)viewDidUnload
 {
-	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
+	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[super viewDidUnload];
 	
 	self.mainTableView = nil;
-}
-
-- (void)dealloc
-{
-	DLog(@">>> %s <<<", __PRETTY_FUNCTION__);
-    
-	[mainTableView release], mainTableView = nil;
-    [startupScreenOptions release], startupScreenOptions = nil;
-	[maxNumNearbyStopsOptions release], maxNumNearbyStopsOptions = nil;
-    [super dealloc];
 }
 
 
@@ -112,7 +102,7 @@
 	{
 		cell = [tableView dequeueReusableCellWithIdentifier:BTSettingsCellIdentifier];
 		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:BTSettingsCellIdentifier] autorelease];
+			cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:BTSettingsCellIdentifier];
 		}
 		
 		switch (indexPath.row) {
@@ -161,7 +151,6 @@
 		}
 		controller.delegate = self;
 		[self.navigationController pushViewController:controller animated:YES];
-		[controller release];
 	}
 }
 

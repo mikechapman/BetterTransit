@@ -62,10 +62,7 @@
 - (void)dealloc
 {
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	mainTableView = nil;
-	list = nil;
 	delegate = nil;
-	
 }
 
 
