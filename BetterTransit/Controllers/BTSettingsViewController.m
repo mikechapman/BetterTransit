@@ -47,17 +47,6 @@
 
 
 #pragma mark -
-#pragma mark Memory management
-
-- (void)dealloc
-{
-	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	startupScreenOptions = nil;
-	maxNumNearbyStopsOptions = nil;
-}
-
-
-#pragma mark -
 #pragma mark Table view methods
 
 - (NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section 

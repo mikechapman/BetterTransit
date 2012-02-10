@@ -11,6 +11,6 @@
 @interface BTUIViewControllerWithAd : UIViewControllerWithAd {
 }
 
-@property (nonatomic, retain) UIImageView *backdrop;
+@property (nonatomic, strong) UIImageView *backdrop;
 
 @end

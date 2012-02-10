@@ -36,7 +36,6 @@
 		for (int i=0; i<NUM_TILES; i++) {
 			NSMutableArray *tile = [[NSMutableArray alloc] initWithCapacity:20];
 			[tiles addObject:tile];
-			[tile release];
 		}
 #else
 		tiles = nil;

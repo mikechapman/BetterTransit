@@ -174,7 +174,6 @@
 		annotation.coordinate = coordinate;
 		annotation.stop = stop;
 		[anns addObject:annotation];
-		[annotation release];
 	}
 	return anns;
 }
@@ -205,7 +204,6 @@
 	}
 	
 	self.lastVisibleTiles = [visibleTiles mutableCopy];
-	[lastVisibleTiles release];
 	
 #else
 	BOOL shouldAddAnnotations = TRUE;
@@ -250,7 +248,6 @@
 			[mapView removeAnnotation:annotation];
 		}
 	}
-	[annotationsCopy release];
 #else
 	[mapView removeAnnotations:self.annotations];
 #endif
