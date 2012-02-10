@@ -14,7 +14,7 @@
 #import "BTTripViewController.h"
 #import "BTRouteCell.h"
 
-@interface BTTransitDelegate : NSObject
+@interface BTTransitDelegate : UIResponder
 <UIApplicationDelegate, UIAlertViewDelegate>
 {
 	UIWindow *window;
