@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ASIHTTPRequest.h"
-#import "ASINetworkQueue.h"
 #import "BTTransit.h"
 #import "BTStop.h"
 #import	"BTPredictionEntry.h"
@@ -21,17 +19,16 @@
 
 @interface BTFeedLoader : NSObject
 {
-	NSMutableArray *prediction; // includes prediction for all available routes
+	NSMutableArray * prediction; // includes prediction for all available routes
 	NSObject<BTFeedLoaderDelegate> *__unsafe_unretained delegate;
-	BTStop *currentStop;
-	
-	ASINetworkQueue *networkQueue;
+	BTStop * currentStop;
+    NSOperationQueue * networkQueue;
 }
 
 @property (nonatomic, strong) IBOutlet BTTransit * transit;
-@property (nonatomic, strong) NSMutableArray *prediction;
+@property (nonatomic, strong) NSMutableArray * prediction;
 @property (unsafe_unretained) id<BTFeedLoaderDelegate> delegate;
-@property (nonatomic, strong) BTStop *currentStop;
+@property (nonatomic, strong) BTStop * currentStop;
 
 - (NSString *)dataSourceForStop:(BTStop *)stop;
 - (void)getPredictionForStop:(BTStop *)stop;

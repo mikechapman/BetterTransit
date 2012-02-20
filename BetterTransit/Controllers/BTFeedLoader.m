@@ -9,6 +9,7 @@
 #import "BTFeedLoader.h"
 #import "Reachability.h"
 #import "BTTransitDelegate.h"
+#import "AFNetworking.h"
 
 @implementation BTFeedLoader
 
@@ -22,11 +23,7 @@
 {
 	if (self = [super init]) {
 		prediction = [[NSMutableArray alloc] init];
-		
-		networkQueue = [[ASINetworkQueue alloc] init];
-		[networkQueue setDelegate:self];
-		[networkQueue setRequestDidFinishSelector:@selector(requestDidFinish:)];
-		[networkQueue setRequestDidFailSelector:@selector(requestDidFail:)];
+        networkQueue = [[NSOperationQueue alloc] init];
 	}
 	return self;
 }
@@ -40,30 +37,33 @@
 // Subclasses should overwrite this
 - (void)getPredictionForStop:(BTStop *)stop
 {
+    /*
 	// Check Internet connection
 	if (![[Reachability reachabilityForInternetConnection] isReachable]) {
-		[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 		[delegate updatePrediction:@"No Internet connection"];
 		return;
 	}
-	
-	// Cancel previous requests
+     */
+    
+    // Cancel previous requests
 	[networkQueue cancelAllOperations];
 	
 	self.currentStop = stop;
 	
-	NSURL *url = [NSURL URLWithString:[self dataSourceForStop:stop]];
-	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
-	[request addRequestHeader:@"User-Agent" value:@"Mozilla/5.0"];
-	[request setAllowCompressedResponse:YES];
-	[request setTimeOutSeconds:TIMEOUT_INTERVAL];
-	NSDictionary *userInfo = [NSDictionary dictionaryWithObject:
-							  [NSNumber numberWithInt:REQUEST_TYPE_GET_FEED] forKey:@"request_type"];
-	[request setUserInfo:userInfo];
-	[networkQueue addOperation:request];
-	[networkQueue go];
-	
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+	NSURL * url = [NSURL URLWithString:[self dataSourceForStop:stop]];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
+    [request setValue:@"Mozilla/5.0" forHTTPHeaderField:@"User-Agent"];
+    [request setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
+    [request setTimeoutInterval:TIMEOUT_INTERVAL];
+    
+    AFHTTPRequestOperation * operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [delegate updatePrediction:self.prediction];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DDLogError(@"request did fail with error: %@", error);
+        [delegate updatePrediction:nil];
+    }];
+    [networkQueue addOperation:operation];
 }
 
 - (void)getFeedForEntry:(BTPredictionEntry *)entry
@@ -79,27 +79,8 @@
 
 - (void)dealloc
 {
-	[networkQueue cancelAllOperations];
-	[networkQueue setDelegate:nil];
-	networkQueue = nil;
+    [networkQueue cancelAllOperations];
 	delegate = nil;
-}
-
-
-#pragma mark -
-#pragma mark ASIHTTPRequest delegate methods
-
-- (void)requestDidFinish:(ASIHTTPRequest *)request
-{
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-	[delegate updatePrediction:self.prediction];
-}
-
-- (void)requestDidFail:(ASIHTTPRequest *)request
-{
-	//NSLog(@"request did fail with error: %@", [request error]);
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-	[delegate updatePrediction:nil];
 }
 
 @end

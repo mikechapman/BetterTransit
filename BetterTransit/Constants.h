@@ -8,13 +8,6 @@
 
 #define AppDelegate (BTTransitDelegate *)[[UIApplication sharedApplication] delegate]
 
-// ASIHTTPRequest types
-#define REQUEST_TYPE_GET_XML 601
-#define REQUEST_TYPE_GET_JSON 602
-#define REQUEST_TYPE_GET_ICON 603
-#define REQUEST_TYPE_GET_FEED 604
-#define REQUEST_TYPE_VALIDATE_CAPTCHA 605
-
 // Alert View Tags
 #define TAG_BUY_ADS_FREE_VERSION 1
 

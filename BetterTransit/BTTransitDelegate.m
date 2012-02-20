@@ -10,6 +10,7 @@
 #import "BTLocationManager.h"
 #import "BTAppSettings.h"
 #import "Utility.h"
+#import "AFNetworkActivityIndicatorManager.h"
 
 #ifdef FLURRY_KEY
 #import "FlurryAnalytics.h"
@@ -70,6 +71,9 @@ void uncaughtExceptionHandler(NSException *exception) {
 			[tabBarController setSelectedViewController:nc];
 		}
 	}
+    
+    // Enable the AFNetworkActivityIndicatorManager
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
 #ifdef FLURRY_KEY
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
