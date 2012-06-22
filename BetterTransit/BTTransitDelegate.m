@@ -11,6 +11,9 @@
 #import "BTAppSettings.h"
 #import "Utility.h"
 #import "AFNetworkActivityIndicatorManager.h"
+#import "DDLog.h"
+#import "DDASLLogger.h"
+#import "DDTTYLogger.h"
 
 #ifdef FLURRY_KEY
 #import "FlurryAnalytics.h"
@@ -57,6 +60,10 @@ void uncaughtExceptionHandler(NSException *exception) {
 	// Add the tab bar controller's current view as a subview of the window
     [self.window addSubview:tabBarController.view];
 	[self.window makeKeyAndVisible];
+    
+    // Set up logging
+    [DDLog addLogger:[DDASLLogger sharedInstance]]; // log to Apple System Logger
+    [DDLog addLogger:[DDTTYLogger sharedInstance]]; // log to Xcode console
 	
 	// Show startup tab
 	NSString *tabTitle = [BTAppSettings startupScreen];
