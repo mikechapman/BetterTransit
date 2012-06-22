@@ -10,6 +10,7 @@
 #import "BTTransit.h"
 #import "BTStop.h"
 #import	"BTPredictionEntry.h"
+#import "AFNetworking.h"
 
 @protocol BTFeedLoaderDelegate <NSObject>
 
@@ -22,7 +23,7 @@
 	NSMutableArray * prediction; // includes prediction for all available routes
 	NSObject<BTFeedLoaderDelegate> *__unsafe_unretained delegate;
 	BTStop * currentStop;
-    NSOperationQueue * networkQueue;
+    AFHTTPClient * httpClient;
 }
 
 @property (nonatomic, strong) IBOutlet BTTransit * transit;

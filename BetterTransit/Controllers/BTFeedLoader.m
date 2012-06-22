@@ -23,7 +23,7 @@
 {
 	if (self = [super init]) {
 		prediction = [[NSMutableArray alloc] init];
-        networkQueue = [[NSOperationQueue alloc] init];
+        httpClient = [[AFHTTPClient alloc] initWithBaseURL:nil];
 	}
 	return self;
 }
@@ -46,24 +46,16 @@
      */
     
     // Cancel previous requests
-	[networkQueue cancelAllOperations];
+    [httpClient.operationQueue cancelAllOperations];
 	
 	self.currentStop = stop;
 	
-	NSURL * url = [NSURL URLWithString:[self dataSourceForStop:stop]];
-    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
-    [request setValue:@"Mozilla/5.0" forHTTPHeaderField:@"User-Agent"];
-    [request setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
-    [request setTimeoutInterval:TIMEOUT_INTERVAL];
-    
-    AFHTTPRequestOperation * operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [httpClient getPath:[self dataSourceForStop:stop] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [delegate updatePrediction:self.prediction];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         DDLogError(@"request did fail with error: %@", error);
         [delegate updatePrediction:nil];
     }];
-    [networkQueue addOperation:operation];
 }
 
 - (void)getFeedForEntry:(BTPredictionEntry *)entry
@@ -74,12 +66,11 @@
 - (void)cancelAllDownloads
 {
     // Cancel previous requests
-	[networkQueue cancelAllOperations];
+	[httpClient.operationQueue cancelAllOperations];
 }
 
 - (void)dealloc
 {
-    [networkQueue cancelAllOperations];
 	delegate = nil;
 }
 
