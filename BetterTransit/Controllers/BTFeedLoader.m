@@ -9,7 +9,6 @@
 #import "BTFeedLoader.h"
 #import "Reachability.h"
 #import "BTTransitDelegate.h"
-#import "AFNetworking.h"
 
 @implementation BTFeedLoader
 
