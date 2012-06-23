@@ -24,6 +24,7 @@
 	if (self = [super init]) {
 		prediction = [[NSMutableArray alloc] init];
         httpClient = [[AFHTTPClient alloc] initWithBaseURL:nil];
+        [httpClient setDefaultHeader:@"User-Agent" value:@"Mozilla/5.0"];
 	}
 	return self;
 }
