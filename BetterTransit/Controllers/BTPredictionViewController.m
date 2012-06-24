@@ -28,8 +28,7 @@
 @synthesize errorMessage;
 
 
-#pragma mark -
-#pragma mark Initialization
+#pragma mark - Initialization
 
 - (id)init
 {
@@ -43,8 +42,7 @@
 }
 
 
-#pragma mark -
-#pragma mark View life cycle
+#pragma mark - View life cycle
 
 - (void)viewDidLoad
 {
@@ -102,6 +100,7 @@
 	if (annotations) {
 		[mapView removeAnnotations:annotations];
 	}
+    
 	BTAnnotation *annotation = [[BTAnnotation alloc] init];
 	annotation.title = stop.stopName;
 	annotation.subtitle = [NSString stringWithFormat:@"Bus stop #%@", stop.stopCode];
@@ -142,26 +141,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Ad support
-
-#ifdef SHOW_ADS
-- (NSUInteger)adZone
-{
-	return AD_ZONE_1;
-}
-
-- (void)updateUI
-{
-	CGRect contentFrame = self.view.bounds;
-	contentFrame.size.height -= self.adOffset;
-	mainTableView.frame = contentFrame;
-}
-#endif
-
-
-#pragma mark -
-#pragma mark Memory management
+#pragma mark - Memory management
 
 - (void)didReceiveMemoryWarning
 {
@@ -194,8 +174,7 @@
 }
 
 
-#pragma mark -
-#pragma mark UI methods
+#pragma mark - UI methods
 
 - (IBAction)setFav:(id)sender
 {
@@ -241,8 +220,7 @@
 }
 
 
-#pragma mark -
-#pragma mark BTFeedLoaderDelegate methods
+#pragma mark - BTFeedLoaderDelegate methods
 
 - (void)updatePrediction:(id)info
 {
@@ -270,7 +248,7 @@
 }
 
 
-#pragma mark Table view methods
+#pragma mark - Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -391,8 +369,7 @@
 }
 
 
-#pragma mark -
-#pragma mark UIScrollViewDelegate Methods
+#pragma mark - UIScrollViewDelegate Methods
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {	
@@ -406,8 +383,7 @@
 }
 
 
-#pragma mark -
-#pragma mark EGORefreshTableHeaderDelegate Methods
+#pragma mark - EGORefreshTableHeaderDelegate Methods
 
 - (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)v
 {
