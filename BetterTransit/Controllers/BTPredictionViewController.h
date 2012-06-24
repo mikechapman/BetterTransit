@@ -13,19 +13,9 @@
 #import "BTPredictionCell.h"
 #import "BTFeedLoader.h"
 #import "EGORefreshTableHeaderView.h"
-
-#ifdef SHOW_ADS
-#import "BTUIViewControllerWithAd.h"
-#else
 #import "BTUIViewController.h"
-#endif
 
-@interface BTPredictionViewController :
-#ifdef SHOW_ADS
-BTUIViewControllerWithAd
-#else
-BTUIViewController
-#endif
+@interface BTPredictionViewController : BTUIViewController
 <UITableViewDelegate, UITableViewDataSource, 
 BTFeedLoaderDelegate, EGORefreshTableHeaderDelegate>
 {
