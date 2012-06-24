@@ -38,8 +38,8 @@
 {
     [super viewDidLoad];
     
-    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
-    self.navigationItem.leftBarButtonItem = doneButton;
+//    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
+//    self.navigationItem.leftBarButtonItem = doneButton;
 }
 
 - (void)viewWillAppear:(BOOL)animated
