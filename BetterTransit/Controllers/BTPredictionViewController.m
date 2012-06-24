@@ -165,7 +165,6 @@
 	self.stopIdLabel = nil;
 	self.stopDistanceLabel = nil;
 	self.favButton = nil;
-
 }
 
 - (void)dealloc
