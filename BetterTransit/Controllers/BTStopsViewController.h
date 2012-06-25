@@ -10,14 +10,14 @@
 #import "BTTransit.h"
 #import "BTStopCell.h"
 #import "BTPredictionViewController.h"
-#import "BTUIViewController.h"
 
-@interface BTStopsViewController : BTUIViewController
+@interface BTStopsViewController : UIViewController
 <UITableViewDelegate, UITableViewDataSource>
 {
 	BTTransit *transit;
 	NSArray *stops;
 	
+    UIImageView * backdrop;
 	UITableView *mainTableView;
     UIActivityIndicatorView * loadingSpinner;
 	UIImageView *addToFavsView;

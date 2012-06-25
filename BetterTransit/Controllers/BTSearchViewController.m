@@ -31,8 +31,13 @@
 	
 	transit = [AppDelegate transit];
 	
-	self.backdrop.frame = CGRectMake(0, 44, 320, 367);
+    // Set up backdrop
+    backdrop = [[UIImageView alloc] initWithFrame:CGRectMake(0, 44, 320, 367)];
+	backdrop.image = [UIImage imageNamed:@"backdrop.png"];
+	[self.view insertSubview:backdrop atIndex:0];
+	backdrop.alpha = 1.0;
 	
+    // Set up mainTableView
 	mainTableView.backgroundColor = [UIColor clearColor];
 	mainTableView.separatorColor = COLOR_TABLE_VIEW_SEPARATOR;
 	mainTableView.rowHeight = 60;
@@ -99,6 +104,7 @@
 	
 	self.mainTableView = nil;
 	self.searchBar = nil;
+    backdrop = nil;
 }
 
 - (void)dealloc

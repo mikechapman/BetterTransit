@@ -10,10 +10,8 @@
 #import "BTTransit.h"
 #import "BTStopCell.h"
 #import "BTPredictionViewController.h"
-#import "BTUIViewController.h"
 
-
-@interface BTSearchViewController : BTUIViewController 
+@interface BTSearchViewController : UIViewController 
 <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 {
 	BTTransit *transit;
@@ -21,6 +19,7 @@
 	
 	UISearchBar *searchBar;
 	UITableView *mainTableView;
+    UIImageView * backdrop;
 	
 	UIButton *bigCancelButton;
 	BOOL bigCancelButtonIsShown;

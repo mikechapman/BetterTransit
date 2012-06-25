@@ -38,6 +38,12 @@
 {
     [super viewDidLoad];
     
+    // Set up backdrop
+    backdrop = [[UIImageView alloc] initWithFrame:self.view.bounds];
+	backdrop.image = [UIImage imageNamed:@"backdrop.png"];
+	[self.view insertSubview:backdrop atIndex:0];
+	backdrop.alpha = 1.0;
+    
 //    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
 //    self.navigationItem.leftBarButtonItem = doneButton;
 }
@@ -69,8 +75,7 @@
 {
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    backdrop = nil;
 }
 
 

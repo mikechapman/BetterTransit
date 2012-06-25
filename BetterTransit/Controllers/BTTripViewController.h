@@ -10,9 +10,8 @@
 #import "BTTransit.h"
 #import "BTStopCell.h"
 #import "BTPredictionViewController.h"
-#import "BTUIViewController.h"
 
-@interface BTTripViewController : BTUIViewController
+@interface BTTripViewController : UIViewController
 <UITableViewDelegate, UITableViewDataSource> 
 {
 	BTTransit *transit;
@@ -20,6 +19,7 @@
 	NSArray *trips;
 	
 	NSArray *stops;
+    UIImageView * backdrop;
 	UITableView *mainTableView;
 	UISegmentedControl *segmentedControl;
 	UIImageView *titleImageView;

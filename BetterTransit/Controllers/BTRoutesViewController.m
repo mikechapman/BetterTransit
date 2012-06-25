@@ -31,7 +31,14 @@
 	self.title = NSLocalizedString(@"Routes", @"");
 	
 	transit = [AppDelegate transit];
+    
+    // Set up backdrop
+    backdrop = [[UIImageView alloc] initWithFrame:self.view.bounds];
+	backdrop.image = [UIImage imageNamed:@"backdrop.png"];
+	[self.view insertSubview:backdrop atIndex:0];
+	backdrop.alpha = 1.0;
 	
+    // Set up mainTableView
 	mainTableView.backgroundColor = [UIColor clearColor];
 	mainTableView.separatorColor = COLOR_TABLE_VIEW_SEPARATOR;
 }
@@ -67,6 +74,7 @@
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[super viewDidUnload];
 	self.mainTableView = nil;
+    backdrop = nil;
 }
 
 - (void)dealloc

@@ -8,16 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "BTTransit.h"
-#import "BTUIViewController.h"
 
-
-@interface BTRoutesViewController : BTUIViewController
+@interface BTRoutesViewController : UIViewController
 <UITableViewDelegate, UITableViewDataSource>
 {
 	BTTransit *transit;
 	NSDictionary *routesToDisplay;
 	NSArray *sectionNames;
 	UITableView *mainTableView;
+    UIImageView * backdrop;
 }
 
 @property (nonatomic, strong) NSDictionary *routesToDisplay;

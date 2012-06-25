@@ -49,7 +49,14 @@
     [super viewDidLoad];
 	
 	transit = [AppDelegate transit];
+    
+    // Set up backdrop
+    backdrop = [[UIImageView alloc] initWithFrame:self.view.bounds];
+	backdrop.image = [UIImage imageNamed:@"backdrop.png"];
+	[self.view insertSubview:backdrop atIndex:0];
+	backdrop.alpha = 1.0;
 	
+    // Set up mainTableView
 	mainTableView.backgroundColor = [UIColor clearColor];
 	mainTableView.separatorColor = COLOR_TABLE_VIEW_SEPARATOR;
 	mainTableView.rowHeight = 72;
@@ -168,6 +175,7 @@
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[super viewDidUnload];
 	
+    backdrop = nil;
 	self.mainTableView = nil;
     [_refreshHeaderView setDelegate:nil];
     self._refreshHeaderView = nil;

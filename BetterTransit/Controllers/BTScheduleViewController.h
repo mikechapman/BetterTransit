@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BTUIViewController.h"
 #import "BTRoute.h"
 
-
-@interface BTScheduleViewController : BTUIViewController 
+@interface BTScheduleViewController : UIViewController 
 {
 	BTRoute * route;
+    UIImageView * backdrop;
 }
 
 @property (nonatomic, strong) BTRoute * route;
