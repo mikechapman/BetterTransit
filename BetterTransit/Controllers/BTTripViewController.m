@@ -168,9 +168,7 @@
 	BTScheduleViewController *controller = [AppDelegate createScheduleViewController];
 	if (controller != nil) {
 		controller.route = route;
-        UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:controller];
-        nav.navigationBar.tintColor = COLOR_NAV_BAR_BG;
-		[self.navigationController presentModalViewController:nav animated:YES];
+		[self.navigationController pushViewController:controller animated:YES];
 	}
 }
 
