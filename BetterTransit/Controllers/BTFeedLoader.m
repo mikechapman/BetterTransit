@@ -7,7 +7,6 @@
 //
 
 #import "BTFeedLoader.h"
-#import "Reachability.h"
 #import "BTTransitDelegate.h"
 
 @implementation BTFeedLoader
