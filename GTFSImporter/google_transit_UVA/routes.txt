@@ -1,9 +1,0 @@
-﻿route_id,agency_id,route_short_name,route_long_name,route_type,route_url
-1,UVA,CGS,"Central Grounds Shuttle",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?ProjectID=UVA&RouteNo=CGS
-2,UVA,CS,"Colonnade Shuttle",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?ProjectID=UVA&RouteNo=CS
-3,UVA,G,"Green Route",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?ProjectID=UVA&RouteNo=G
-4,UVA,HIRC,"Hereford/IRC Shuttle",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?ProjectID=UVA&RouteNo=HIRC
-5,UVA,NL,"Northline",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?ProjectID=UVA&RouteNo=NL
-6,UVA,SHS,"Stadium/Hospital Shuttle",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?ProjectID=UVA&RouteNo=SHS
-7,UVA,ULA,"Inner Loop",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?ProjectID=UVA&RouteNo=ULA
-8,UVA,ULB,"Outer Loop",3,http://avlweb.charlottesville.org/RTT/Public/Schedule.aspx?ProjectID=UVA&RouteNo=ULB

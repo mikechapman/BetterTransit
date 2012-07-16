@@ -1,2 +1,0 @@
-﻿agency_id,agency_name,agency_url,agency_phone,agency_timezone,agency_lang
-UVA,"University of Virginia",http://www.virginia.edu/parking/uts/index.html,434-924-7231,America/New_York,en
