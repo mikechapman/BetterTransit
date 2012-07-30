@@ -263,7 +263,7 @@
 	}
 	
 	NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
-	[ss sortUsingDescriptors:[NSArray arrayWithObject:sort]];
+	[ss sortUsingDescriptors:@[sort]];
 }
 
 - (void)dealloc

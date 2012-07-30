@@ -34,8 +34,8 @@
 	
 	transit = [AppDelegate transit];
 	
-	self.startupScreenOptions = [NSArray arrayWithObjects:@"Nearby", @"Favorites", @"Map", @"Routes", @"Search", nil];
-	self.maxNumNearbyStopsOptions = [NSArray arrayWithObjects:@"10", @"20", @"30", @"50", @"100", @"No Limit", nil];
+	self.startupScreenOptions = @[@"Nearby", @"Favorites", @"Map", @"Routes", @"Search"];
+	self.maxNumNearbyStopsOptions = @[@"10", @"20", @"30", @"50", @"100", @"No Limit"];
 }
 
 - (void)viewWillAppear:(BOOL)animated

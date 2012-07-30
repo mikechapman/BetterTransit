@@ -88,9 +88,8 @@ void uncaughtExceptionHandler(NSException *exception) {
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"TRACKING_NEW_USERS"]) {
         // Log Flurry event to track the number of new users
-        NSDictionary *flurryDict = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    [[UIDevice currentDevice] model], @"device_model",
-                                    [Utility deviceType], @"device_type", nil];
+        NSDictionary *flurryDict = @{@"device_model": [[UIDevice currentDevice] model],
+                                    @"device_type": [Utility deviceType]};
         [FlurryAnalytics logEvent:@"TRACKING_NEW_USERS" withParameters:flurryDict];
         
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"TRACKING_NEW_USERS"];

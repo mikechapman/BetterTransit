@@ -134,7 +134,7 @@
 	[self startTimer];
 	
 #ifdef FLURRY_KEY
-	NSDictionary *flurryDict = [NSDictionary dictionaryWithObjectsAndKeys:stop.stopCode, @"stopID", nil];
+	NSDictionary *flurryDict = @{@"stopID": stop.stopCode};
 	[FlurryAnalytics logEvent:@"DID_SHOW_PREDICTION_VIEW" withParameters:flurryDict];
 #endif
 }

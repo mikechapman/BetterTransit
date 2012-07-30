@@ -99,7 +99,7 @@ static BTLocationManager *sharedInstance = nil;
               verticalAccuracy:newLocation.verticalAccuracy];
 #endif
 		
-        NSDictionary *userInfo = [NSDictionary dictionaryWithObject:self.currentLocation forKey:@"location"];
+        NSDictionary *userInfo = @{@"location": self.currentLocation};
 		[[NSNotificationCenter defaultCenter] postNotificationName:kDidUpdateToLocationNotification
 															object:self
 														  userInfo:userInfo];

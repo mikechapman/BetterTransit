@@ -48,7 +48,7 @@
 	mainTableView.rowHeight = 60;
 	
 	self.viewIsShown = NO;
-	self.stops = [NSArray array];
+	self.stops = @[];
 	self.isEditing = NO;
     
     // Setup the loading spinner in the middle of page
@@ -58,8 +58,8 @@
     [self.view addSubview:loadingSpinner];
 	
 	// Setup segmented control
-	NSArray *items = [NSArray arrayWithObjects:NSLocalizedString(@"Nearby", @""),
-					  NSLocalizedString(@"Favorites", @""), nil];
+	NSArray *items = @[NSLocalizedString(@"Nearby", @""),
+					  NSLocalizedString(@"Favorites", @"")];
 	self.segmentedControl = [[UISegmentedControl alloc] initWithItems:items];
 	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
 	segmentedControl.frame = CGRectMake(0, 0, 166, 30);
@@ -385,7 +385,7 @@
 		stop.favorite = NO;
 		[transit.favoriteStops removeObject:stop];
         [self saveFavs];
-		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+		[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
         
 		if ([transit.favoriteStops count] == 0) {
 			[mainTableView setEditing:NO animated:YES];

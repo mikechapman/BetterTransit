@@ -77,7 +77,7 @@
 		titleImageView = nil;
 	}
 	
-	NSArray *items = [NSArray arrayWithObjects:@"", @"", nil];
+	NSArray *items = @[@"", @""];
 	segmentedControl = [[UISegmentedControl alloc] initWithItems:items];
 	segmentedControl.frame = CGRectMake(0, 0, 160, 30);
 	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
