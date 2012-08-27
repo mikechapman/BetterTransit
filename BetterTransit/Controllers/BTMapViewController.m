@@ -9,7 +9,7 @@
 #import "BTMapViewController.h"
 #import "BTAnnotation.h"
 #import "BTTransitDelegate.h"
-#import "BTLocationManager.h"
+#import "HALocationManager.h"
 
 #ifdef FLURRY_KEY
 #import "FlurryAnalytics.h"
@@ -57,7 +57,7 @@
 	[mapView setDelegate:self]; // set delegate for annotations
 	
 	// When the region is changed, mapView:regionDidChangeAnimated: will be called, in which we update annotations
-	[self setCenterLocation:[[BTLocationManager sharedInstance] currentLocation]];
+	[self setCenterLocation:[[HALocationManager defaultManager] currentLocation]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -259,7 +259,7 @@
 
 - (IBAction)updateLocation:(id)sender
 {
-	[[BTLocationManager sharedInstance] startUpdatingLocation];
+	[[HALocationManager defaultManager] startUpdatingLocation];
 }
 
 - (void)setCenterLocation:(CLLocation *)location
@@ -349,7 +349,7 @@
 {
 	[self.activityIndicatorView stopAnimating];
 	self.navigationItem.rightBarButtonItem = locationUpdateButton;
-	[self setCenterLocation:[[BTLocationManager sharedInstance] currentLocation]];
+	[self setCenterLocation:[[HALocationManager defaultManager] currentLocation]];
 }	
 
 @end

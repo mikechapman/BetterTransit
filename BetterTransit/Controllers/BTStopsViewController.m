@@ -8,7 +8,7 @@
 
 #import "BTStopsViewController.h"
 #import "BTTransitDelegate.h"
-#import "BTLocationManager.h"
+#import "HALocationManager.h"
 #import "Utility.h"
 #import "BTAppSettings.h"
 
@@ -216,7 +216,7 @@
             addToFavsView.hidden = YES;
 			[self.navigationItem setRightBarButtonItem:locationUpdateButton animated:NO];
             
-            if ([[BTLocationManager sharedInstance] isUpdatingLocation])
+            if ([[HALocationManager defaultManager] isUpdatingLocation])
             {
                 // Show the loading spinner
                 [loadingSpinner startAnimating];
@@ -225,7 +225,7 @@
                 // Hide the illustration for no nearby stops
                 noNearbyStopsView.hidden = YES;
             }
-            else if ([[BTLocationManager sharedInstance] locationFound])
+            else if ([[HALocationManager defaultManager] locationFound])
             {
 				[transit updateNearbyStops];
 				self.stops = transit.nearbyStops;
@@ -315,7 +315,7 @@
 
 - (IBAction)updateLocation:(id)sender
 {
-	[[BTLocationManager sharedInstance] startUpdatingLocation];
+	[[HALocationManager defaultManager] startUpdatingLocation];
 }
 
 

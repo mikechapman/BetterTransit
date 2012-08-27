@@ -7,7 +7,7 @@
 //
 
 #import "BTTransitDelegate.h"
-#import "BTLocationManager.h"
+#import "HALocationManager.h"
 #import "BTAppSettings.h"
 #import "Utility.h"
 #import "AFNetworkActivityIndicatorManager.h"
@@ -118,7 +118,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
 	// Update current location
-	[[BTLocationManager sharedInstance] startUpdatingLocation];
+	[[HALocationManager defaultManager] startUpdatingLocation];
 	
 	UINavigationController *nc = (UINavigationController *)[tabBarController selectedViewController];
 	UIViewController *vc = [nc visibleViewController];
