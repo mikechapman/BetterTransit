@@ -7,7 +7,7 @@
 //
 
 #import "BTStopCell.h"
-#import "Utility.h"
+#import "HAUtils.h"
 
 #define MAIN_FONT_SIZE 14
 #define SECONDARY_FONT_SIZE 14
@@ -79,7 +79,7 @@
 	if (self.editing) return;
 	
 	if (stop.distance > -1.0) {
-		s = [Utility formattedStringForDistance:stop.distance];
+		s = [HAUtils formattedStringForDistance:stop.distance];
 		[s drawInRect:CGRectMake(192, 38, 100, 18) 
 			 withFont:secondaryFont
 		lineBreakMode:UILineBreakModeTailTruncation
@@ -97,7 +97,7 @@
 
 - (NSString *)accessibilityLabel
 {
-	NSString *distance = [Utility formattedStringForDistance:stop.distance];
+	NSString *distance = [HAUtils formattedStringForDistance:stop.distance];
 	return [NSString stringWithFormat:@"%@, Bus stop #%@, %@", stop.stopName, stop.stopCode, distance];
 }
 

@@ -23,20 +23,9 @@
 #define kLocationDidNotChangeNotification @"kLocationDidNotChangeNotification"
 #define kRemoveAdsNotification @"kRemoveAdsNotification"
 
-// Table view cell content offsets
-#define kCellLeftOffset			12.0
-#define kCellTopOffset			8.0
-#define kCellHeight				22.0
-#define kLabelFontSize			17
-
 // List tags
 #define TAG_LIST_STARTUP_SCREEN 0
 #define TAG_LIST_MAX_NUM_NEARBY_STOPS   1
-
-// Colors
-#define COLOR_AD_REMOVAL [UIColor colorWithRed:0.639 green:0.851 blue:1.0 alpha:1.0]
-//#define COLOR_AD_REMOVAL [UIColor colorWithRed:0.729 green:0.876 blue:1.0 alpha:1.0]
-#define COLOR_DARK_RED [UIColor colorWithRed:0.8 green:0.0 blue:0.0 alpha:1.0]
 
 // NSUserDefault keys
 #define KEY_STARTUP_SCREEN @"firstPage"

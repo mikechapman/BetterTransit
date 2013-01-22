@@ -9,7 +9,7 @@
 #import "BTSettingsViewController.h"
 #import "BTTransitDelegate.h"
 #import "HAListViewController.h"
-#import "Utility.h"
+#import "HAUtils.h"
 #import "BTAppSettings.h"
 
 #ifdef FLURRY_KEY

@@ -7,7 +7,7 @@
 //
 
 #import "BTSearchViewController.h"
-#import "Utility.h"
+#import "HAUtils.h"
 #import "BTTransitDelegate.h"
 
 #ifdef FLURRY_KEY

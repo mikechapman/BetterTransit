@@ -10,7 +10,7 @@
 #import "BTAnnotation.h"
 #import "BTPredictionEntry.h"
 #import "BTTransitDelegate.h"
-#import "Utility.h"
+#import "HAUtils.h"
 #import "TitleViewLabel.h"
 #import "LoadingCell.h"
 #import "ErrorCell.h"
@@ -89,7 +89,7 @@
 	stopDescLabel.text = stop.stopName;
 	stopIdLabel.text = [NSString stringWithFormat:@"Bus stop #%@", stop.stopCode];
 	if (stop.distance > -1.0) {
-		stopDistanceLabel.text = [Utility formattedStringForDistance:stop.distance];
+		stopDistanceLabel.text = [HAUtils formattedStringForDistance:stop.distance];
 	} else { // don't display distance if user location is not found
 		stopDistanceLabel.text = @"";
 	}

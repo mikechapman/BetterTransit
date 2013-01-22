@@ -8,7 +8,7 @@
 
 #import "BTTripViewController.h"
 #import "BTTrip.h"
-#import "Utility.h"
+#import "HAUtils.h"
 #import "BTScheduleViewController.h"
 #import "BTTransitDelegate.h"
 

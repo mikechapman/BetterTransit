@@ -9,7 +9,7 @@
 #import "BTTransitDelegate.h"
 #import "HALocationManager.h"
 #import "BTAppSettings.h"
-#import "Utility.h"
+#import "HAUtils.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "DDLog.h"
 #import "DDASLLogger.h"
@@ -89,7 +89,7 @@ void uncaughtExceptionHandler(NSException *exception) {
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"TRACKING_NEW_USERS"]) {
         // Log Flurry event to track the number of new users
         NSDictionary *flurryDict = @{@"device_model": [[UIDevice currentDevice] model],
-                                    @"device_type": [Utility deviceType]};
+                                    @"device_type": [HAUtils deviceType]};
         [FlurryAnalytics logEvent:@"TRACKING_NEW_USERS" withParameters:flurryDict];
         
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"TRACKING_NEW_USERS"];
