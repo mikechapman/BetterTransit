@@ -21,7 +21,7 @@
 {
 	if (self = [super init]) {
 		prediction = [[NSMutableArray alloc] init];
-        httpClient = [[AFHTTPClient alloc] initWithBaseURL:nil];
+        httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://www.google.com"]];
         [httpClient setDefaultHeader:@"User-Agent" value:@"Mozilla/5.0"];
 	}
 	return self;

@@ -8,9 +8,6 @@
 
 #define AppDelegate (BTTransitDelegate *)[[UIApplication sharedApplication] delegate]
 
-// Alert View Tags
-#define TAG_BUY_ADS_FREE_VERSION 1
-
 // Cell states
 #define CELL_STATE_INITIALIZED 0
 #define CELL_STATE_UPDATING 1
