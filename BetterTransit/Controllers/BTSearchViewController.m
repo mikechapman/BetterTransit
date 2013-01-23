@@ -248,7 +248,7 @@
 		[self.view addSubview:bigCancelButton];
 		bigCancelButtonIsShown = YES;
 	}
-	mainTableView.frame = CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height-20-44-KEYBOARD_HEIGHT);
+	mainTableView.frame = CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height+TAB_BAR_HEIGHT-44-KEYBOARD_HEIGHT);
 }
 
 - (void)keyboardWillHide:(NSNotification *)aNotification
@@ -258,7 +258,7 @@
 		[bigCancelButton removeFromSuperview];
 		bigCancelButtonIsShown = NO;
 	}
-	mainTableView.frame = CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height-20-44-TAB_BAR_HEIGHT);
+	mainTableView.frame = CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height-44);
 }
 
 - (void)cancel:(id)sender
