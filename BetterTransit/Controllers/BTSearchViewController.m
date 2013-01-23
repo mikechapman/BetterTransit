@@ -19,6 +19,8 @@
 @synthesize stops;
 @synthesize searchBar, mainTableView;
 
+#define KEYBOARD_HEIGHT 216
+#define TAB_BAR_HEIGHT 49
 
 #pragma mark - View life cycle
 
@@ -37,7 +39,7 @@
 	
 	self.stops = nil;
 	
-	CGRect rect = CGRectMake(0, 44, 320, 199);
+	CGRect rect = CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height-20-44-KEYBOARD_HEIGHT);
 	bigCancelButton = [[UIButton alloc] initWithFrame:rect];
 	[bigCancelButton addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchDown];
 	bigCancelButton.alpha = 1.0;
@@ -247,7 +249,7 @@
 		[self.view addSubview:bigCancelButton];
 		bigCancelButtonIsShown = YES;
 	}
-	mainTableView.frame = CGRectMake(0, 44, 320, 199);
+	mainTableView.frame = CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height-20-44-KEYBOARD_HEIGHT);
 }
 
 - (void)keyboardWillHide:(NSNotification *)aNotification
@@ -257,7 +259,7 @@
 		[bigCancelButton removeFromSuperview];
 		bigCancelButtonIsShown = NO;
 	}
-	mainTableView.frame = CGRectMake(0, 44, 320, 367);
+	mainTableView.frame = CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height-20-44-TAB_BAR_HEIGHT);
 }
 
 - (void)cancel:(id)sender
