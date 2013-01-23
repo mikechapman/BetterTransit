@@ -12,7 +12,6 @@
 @interface BTScheduleViewController : UIViewController 
 {
 	BTRoute * route;
-    UIImageView * backdrop;
 }
 
 @property (nonatomic, strong) BTRoute * route;

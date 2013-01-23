@@ -17,9 +17,8 @@
 	BTTransit *transit;
 	BTRoute *route;
 	NSArray *trips;
-	
 	NSArray *stops;
-    UIImageView * backdrop;
+    
 	UITableView *mainTableView;
 	UISegmentedControl *segmentedControl;
 	UIImageView *titleImageView;

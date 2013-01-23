@@ -132,7 +132,6 @@
 	self.destLabel = nil;
 	self.destImageView = nil;
 	self.destIdLabel = nil;
-    backdrop = nil;
 }
 
 - (void)dealloc

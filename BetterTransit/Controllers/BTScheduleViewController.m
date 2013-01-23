@@ -32,21 +32,6 @@
 
 #pragma mark - View life cycle
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    // Set up backdrop
-    backdrop = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    backdrop.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-	backdrop.image = [UIImage imageNamed:@"backdrop.png"];
-	[self.view insertSubview:backdrop atIndex:0];
-	backdrop.alpha = 1.0;
-    
-//    UIBarButtonItem * doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
-//    self.navigationItem.leftBarButtonItem = doneButton;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
@@ -73,15 +58,6 @@
 {
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
     [super viewDidUnload];
-    backdrop = nil;
-}
-
-
-#pragma mark - UI actions
-
-- (void)done:(id)sender
-{
-    [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 @end

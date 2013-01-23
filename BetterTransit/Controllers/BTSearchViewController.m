@@ -98,7 +98,6 @@
 	
 	self.mainTableView = nil;
 	self.searchBar = nil;
-    backdrop = nil;
 }
 
 - (void)dealloc

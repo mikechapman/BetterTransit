@@ -16,7 +16,6 @@
 	NSDictionary *routesToDisplay;
 	NSArray *sectionNames;
 	UITableView *mainTableView;
-    UIImageView * backdrop;
 }
 
 @property (nonatomic, strong) NSDictionary *routesToDisplay;

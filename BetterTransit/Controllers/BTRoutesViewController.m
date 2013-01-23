@@ -66,7 +66,6 @@
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[super viewDidUnload];
 	self.mainTableView = nil;
-    backdrop = nil;
 }
 
 - (void)dealloc

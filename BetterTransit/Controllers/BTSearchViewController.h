@@ -19,7 +19,6 @@
 	
 	UISearchBar *searchBar;
 	UITableView *mainTableView;
-    UIImageView * backdrop;
 	
 	UIButton *bigCancelButton;
 	BOOL bigCancelButtonIsShown;

@@ -175,7 +175,6 @@
 	self.addToFavsView = nil;
 	self.noNearbyStopsView = nil;
 	self.segmentedControl = nil;
-    backdrop = nil;
 }
 
 - (void)dealloc

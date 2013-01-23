@@ -169,7 +169,6 @@
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
 	[super viewDidUnload];
 	
-    backdrop = nil;
 	self.mainTableView = nil;
     [_refreshHeaderView setDelegate:nil];
     self._refreshHeaderView = nil;

@@ -32,7 +32,6 @@ BTFeedLoaderDelegate, EGORefreshTableHeaderDelegate>
 	NSMutableArray *prediction;
 	
 	UITableView *mainTableView;
-    UIImageView * backdrop;
     UIView *stopInfoView;
 	MKMapView *mapView;
 	UILabel *stopDescLabel;

@@ -16,8 +16,7 @@
 {
 	BTTransit *transit;
 	NSArray *stops;
-	
-    UIImageView * backdrop;
+    
 	UITableView *mainTableView;
     UIActivityIndicatorView * loadingSpinner;
 	UIImageView *addToFavsView;
