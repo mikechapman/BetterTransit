@@ -77,7 +77,6 @@
 {
 	// Make sure navigation bar will be shown
 	[self.navigationController setNavigationBarHidden:NO animated:YES];
-    self.view.frame = CGRectMake(0, 0, 320, 416);
     [super viewWillAppear:animated];
 	
 	stopDescLabel.text = stop.stopName;
