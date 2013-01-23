@@ -33,6 +33,7 @@
     
     // Set up backdrop
     backdrop = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    backdrop.autoresizingMask = UIViewAutoresizingFlexibleHeight;
 	backdrop.image = [UIImage imageNamed:@"backdrop.png"];
 	[self.view insertSubview:backdrop atIndex:0];
 	backdrop.alpha = 1.0;
