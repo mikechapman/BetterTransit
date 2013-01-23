@@ -20,8 +20,7 @@
 @synthesize routeDestView, destLabel, destImageView, destIdLabel;
 
 
-#pragma mark -
-#pragma mark Initialization
+#pragma mark - Initialization
 
 - (id)init
 {
@@ -33,8 +32,7 @@
 }
 
 
-#pragma mark -
-#pragma mark View life cycle
+#pragma mark - View life cycle
 
 - (void)viewDidLoad
 {
@@ -119,8 +117,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Memmory management
+#pragma mark - Memmory management
 
 - (void)didReceiveMemoryWarning
 {
@@ -150,8 +147,7 @@
 }
 
 
-#pragma mark -
-#pragma mark UI methods
+#pragma mark - UI methods
 
 - (void)segmentAction:(id)sender
 {
@@ -172,8 +168,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Table view methods
+#pragma mark - Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

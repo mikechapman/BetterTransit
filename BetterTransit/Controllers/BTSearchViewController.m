@@ -20,8 +20,7 @@
 @synthesize searchBar, mainTableView;
 
 
-#pragma mark -
-#pragma mark View life cycle
+#pragma mark - View life cycle
 
 - (void)viewDidLoad
 {
@@ -85,8 +84,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Memory management
+#pragma mark - Memory management
 
 - (void)didReceiveMemoryWarning
 {
@@ -114,8 +112,8 @@
 }
 
 
-#pragma mark -
-#pragma mark TableView Delegate Methods
+#pragma mark - TableView Delegate Methods
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -170,8 +168,7 @@
 }
 
 
-#pragma mark -
-#pragma mark UISearchBarDelegate Methods 
+#pragma mark - UISearchBarDelegate Methods 
 
 - (void)searchBar:(UISearchBar *)sb textDidChange:(NSString *)searchText
 {
@@ -235,8 +232,7 @@
 	}
 }
 
-#pragma mark -
-#pragma mark Hide/Show keyboard
+#pragma mark - Hide/Show keyboard
 
 - (void)registerForKeyboardNotifications
 {

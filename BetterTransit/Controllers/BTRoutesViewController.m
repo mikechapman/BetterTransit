@@ -21,8 +21,7 @@
 @synthesize routesToDisplay, sectionNames;
 
 
-#pragma mark -
-#pragma mark View life cycle
+#pragma mark - View life cycle
 
 - (void)viewDidLoad
 {
@@ -57,8 +56,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Memory management
+#pragma mark - Memory management
 
 - (void)didReceiveMemoryWarning
 {
@@ -83,7 +81,7 @@
 }
 
 
-#pragma mark Table view methods
+#pragma mark - Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

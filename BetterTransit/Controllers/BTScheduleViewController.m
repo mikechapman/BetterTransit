@@ -18,8 +18,7 @@
 @synthesize route;
 
 
-#pragma mark -
-#pragma mark Initialization
+#pragma mark - Initialization
 
 - (id)init
 {
@@ -31,8 +30,7 @@
 }
 
 
-#pragma mark -
-#pragma mark View life cycle
+#pragma mark - View life cycle
 
 - (void)viewDidLoad
 {
@@ -59,8 +57,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Memory management
+#pragma mark - Memory management
 
 - (void)didReceiveMemoryWarning
 {
@@ -79,8 +76,7 @@
 }
 
 
-#pragma mark -
-#pragma mark UI actions
+#pragma mark - UI actions
 
 - (void)done:(id)sender
 {

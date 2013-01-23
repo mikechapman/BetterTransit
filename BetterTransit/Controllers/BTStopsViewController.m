@@ -25,8 +25,7 @@
 @synthesize viewIsShown;
 
 
-#pragma mark -
-#pragma mark View life cycle
+#pragma mark - View life cycle
 
 - (void)viewDidLoad
 {
@@ -160,8 +159,7 @@
  */
 
 
-#pragma mark -
-#pragma mark Memory management
+#pragma mark - Memory management
 
 - (void)didReceiveMemoryWarning
 {
@@ -192,8 +190,7 @@
 }
 
 
-#pragma mark -
-#pragma mark UI methods
+#pragma mark - UI methods
 
 - (void)segmentAction:(id)sender
 {
@@ -319,7 +316,7 @@
 }
 
 
-#pragma mark Table view methods
+#pragma mark - Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -409,8 +406,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Location updates
+#pragma mark - Location updates
 
 - (void)startUpdatingLocation:(NSNotification *)notification
 {

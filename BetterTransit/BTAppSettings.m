@@ -20,7 +20,7 @@
 	}
 	return s;
 }
-	
+
 + (NSString *)maxNumNearbyStops
 {
 	NSString *s = [[NSUserDefaults standardUserDefaults] objectForKey:KEY_MAX_NUM_NEARBY_STOPS];

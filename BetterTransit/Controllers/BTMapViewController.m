@@ -22,8 +22,7 @@
 @synthesize locationUpdateButton, activityIndicator, activityIndicatorView;
 
 
-#pragma mark -
-#pragma mark View life cycle
+#pragma mark - View life cycle
 
 - (void)viewDidLoad
 {
@@ -97,8 +96,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Memory management
+#pragma mark - Memory management
 
 - (void)didReceiveMemoryWarning
 {
@@ -121,13 +119,11 @@
 - (void)dealloc
 {
 	DDLogVerbose(@">>> %s <<<", __PRETTY_FUNCTION__);
-	
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
-#pragma mark -
-#pragma mark Manage annotations
+#pragma mark - Manage annotations
 
 #if NUM_TILES > 1
 - (NSArray *)visibleTiles
@@ -254,8 +250,7 @@
 }
 
 
-#pragma mark -
-#pragma mark UIButton actions
+#pragma mark - UIButton actions
 
 - (IBAction)updateLocation:(id)sender
 {
@@ -272,8 +267,7 @@
 }
 
 
-#pragma mark -
-#pragma mark MapView delegate methods
+#pragma mark - MapView delegate methods
 
 - (MKAnnotationView *)mapView:(MKMapView *)mv viewForAnnotation:(id)annotation
 {
@@ -322,8 +316,7 @@
 }
 
 
-#pragma mark -
-#pragma mark Location updates
+#pragma mark - Location updates
 
 - (void)startUpdatingLocation:(NSNotification *)notification
 {
