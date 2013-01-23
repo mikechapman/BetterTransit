@@ -58,7 +58,7 @@ void uncaughtExceptionHandler(NSException *exception) {
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	// Add the tab bar controller's current view as a subview of the window
-    [self.window addSubview:tabBarController.view];
+    self.window.rootViewController = tabBarController;
 	[self.window makeKeyAndVisible];
     
     // Set up logging
