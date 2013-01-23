@@ -44,16 +44,9 @@
     if (trips == nil) {
         self.trips = [transit tripsForRoute:route];
     }
-	
-    // Set up backdrop
-    backdrop = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    backdrop.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-	backdrop.image = [UIImage imageNamed:@"backdrop.png"];
-	[self.view insertSubview:backdrop atIndex:0];
-	backdrop.alpha = 1.0;
     
     // Set up mainTableView
-	mainTableView.backgroundColor = [UIColor clearColor];
+	mainTableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"backdrop.png"]];
 	mainTableView.separatorColor = COLOR_TABLE_VIEW_SEPARATOR;
 	mainTableView.rowHeight = 60;
 	
