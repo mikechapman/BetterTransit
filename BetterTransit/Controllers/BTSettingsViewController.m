@@ -13,7 +13,7 @@
 #import "BTAppSettings.h"
 
 #ifdef FLURRY_KEY
-#import "FlurryAnalytics.h"
+#import "Flurry.h"
 #endif
 
 @implementation BTSettingsViewController

@@ -16,9 +16,9 @@
 #import "DDTTYLogger.h"
 
 #ifdef FLURRY_KEY
-#import "FlurryAnalytics.h"
+#import "Flurry.h"
 void uncaughtExceptionHandler(NSException *exception) {
-    [FlurryAnalytics logError:@"Uncaught" message:@"Crash!" exception:exception];
+    [Flurry logError:@"Uncaught" message:@"Crash!" exception:exception];
 }
 #endif
 
@@ -84,13 +84,13 @@ void uncaughtExceptionHandler(NSException *exception) {
     
 #ifdef FLURRY_KEY
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-	[FlurryAnalytics startSession:FLURRY_KEY];
+	[Flurry startSession:FLURRY_KEY];
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"TRACKING_NEW_USERS"]) {
         // Log Flurry event to track the number of new users
         NSDictionary *flurryDict = @{@"device_model": [[UIDevice currentDevice] model],
                                     @"device_type": [HAUtils deviceType]};
-        [FlurryAnalytics logEvent:@"TRACKING_NEW_USERS" withParameters:flurryDict];
+        [Flurry logEvent:@"TRACKING_NEW_USERS" withParameters:flurryDict];
         
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"TRACKING_NEW_USERS"];
         [[NSUserDefaults standardUserDefaults] synchronize];
