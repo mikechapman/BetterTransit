@@ -89,7 +89,7 @@
 																	action:@selector(editFavs:)];
 	
 	// An illustration showing how to add a bus stop to favorites
-    addToFavsImage = [UIImage imageNamed:ADD_TO_FAVS_PNG];
+    addToFavsImage.image = [UIImage imageNamed:ADD_TO_FAVS_PNG];
 	addToFavsView.hidden = YES;
 	
 	// An illustration showing that no nearby stops are found.
