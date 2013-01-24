@@ -15,12 +15,12 @@
 #import "EGORefreshTableHeaderView.h"
 
 #ifdef SHOW_ADS
-#import "UIViewControllerWithAd.h"
+#import "HAViewControllerWithAd.h"
 #endif
 
 @interface BTPredictionViewController :
 #ifdef SHOW_ADS
-UIViewControllerWithAd
+HAViewControllerWithAd
 #else
 UIViewController
 #endif

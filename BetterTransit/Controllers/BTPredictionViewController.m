@@ -140,17 +140,6 @@
 	[[AppDelegate feedLoader] setDelegate:nil];
 }
 
-#pragma mark - Ad support
-
-#ifdef SHOW_ADS
-- (void)updateUI
-{
-	CGRect contentFrame = self.view.bounds;
-	contentFrame.size.height -= self.actualAdHeight;
-	mainTableView.frame = contentFrame;
-}
-#endif
-
 
 #pragma mark - Memory management
 
