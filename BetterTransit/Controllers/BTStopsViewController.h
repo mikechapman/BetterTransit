@@ -17,10 +17,10 @@
 	BTTransit *transit;
 	NSArray *stops;
     
-	UITableView *mainTableView;
+	UITableView * mainTableView;
+    UIView * noNearbyStopsView;
     UIActivityIndicatorView * loadingSpinner;
 	UIImageView *addToFavsView;
-	UIImageView *noNearbyStopsView;
 	UISegmentedControl *segmentedControl;
 	UIBarButtonItem *locationUpdateButton;
 	UIBarButtonItem *spinnerBarItem;
@@ -35,9 +35,9 @@
 
 @property (nonatomic, strong) NSArray *stops;
 @property (nonatomic, strong) IBOutlet UITableView *mainTableView;
+@property (nonatomic, strong) IBOutlet UIView *noNearbyStopsView;
 @property (nonatomic, strong) UIActivityIndicatorView * loadingSpinner;
 @property (nonatomic, strong) UIImageView *addToFavsView;
-@property (nonatomic, strong) UIImageView *noNearbyStopsView;
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) UIBarButtonItem *locationUpdateButton;
 @property (nonatomic, strong) UIBarButtonItem *spinnerBarItem;

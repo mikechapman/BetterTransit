@@ -88,15 +88,13 @@
 																	target:self
 																	action:@selector(editFavs:)];
 	
-	// an illustration showing how to add a bus stop to favorites
+	// An illustration showing how to add a bus stop to favorites
 	self.addToFavsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:ADD_TO_FAVS_PNG]];
 	addToFavsView.hidden = YES;
 	[self.view addSubview:self.addToFavsView];
 	
-	// an illustration showing that no nearby stops are found.
-	self.noNearbyStopsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"noNearbyStops.png"]];
+	// An illustration showing that no nearby stops are found.
     noNearbyStopsView.hidden = YES;
-	[self.view addSubview:self.noNearbyStopsView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
