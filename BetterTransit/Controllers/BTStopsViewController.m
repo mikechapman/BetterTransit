@@ -19,7 +19,7 @@
 @implementation BTStopsViewController
  
 @synthesize stops;
-@synthesize mainTableView, loadingSpinner, addToFavsView, noNearbyStopsView, segmentedControl;
+@synthesize mainTableView, noNearbyStopsView, addToFavsView, addToFavsImage, loadingSpinner, segmentedControl;
 @synthesize locationUpdateButton, spinnerBarItem, spinner;
 @synthesize isEditing, editButton, doneButton;
 @synthesize viewIsShown;
@@ -89,9 +89,8 @@
 																	action:@selector(editFavs:)];
 	
 	// An illustration showing how to add a bus stop to favorites
-	self.addToFavsView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:ADD_TO_FAVS_PNG]];
+    addToFavsImage = [UIImage imageNamed:ADD_TO_FAVS_PNG];
 	addToFavsView.hidden = YES;
-	[self.view addSubview:self.addToFavsView];
 	
 	// An illustration showing that no nearby stops are found.
     noNearbyStopsView.hidden = YES;

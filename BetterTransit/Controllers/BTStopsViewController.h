@@ -19,8 +19,10 @@
     
 	UITableView * mainTableView;
     UIView * noNearbyStopsView;
+    UIView * addToFavsView;
+    UIImageView * addToFavsImage;
+    
     UIActivityIndicatorView * loadingSpinner;
-	UIImageView *addToFavsView;
 	UISegmentedControl *segmentedControl;
 	UIBarButtonItem *locationUpdateButton;
 	UIBarButtonItem *spinnerBarItem;
@@ -34,10 +36,11 @@
 }
 
 @property (nonatomic, strong) NSArray *stops;
-@property (nonatomic, strong) IBOutlet UITableView *mainTableView;
-@property (nonatomic, strong) IBOutlet UIView *noNearbyStopsView;
+@property (nonatomic, strong) IBOutlet UITableView * mainTableView;
+@property (nonatomic, strong) IBOutlet UIView * noNearbyStopsView;
+@property (nonatomic, strong) IBOutlet UIView * addToFavsView;
+@property (nonatomic, strong) IBOutlet UIImageView * addToFavsImage;
 @property (nonatomic, strong) UIActivityIndicatorView * loadingSpinner;
-@property (nonatomic, strong) UIImageView *addToFavsView;
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) UIBarButtonItem *locationUpdateButton;
 @property (nonatomic, strong) UIBarButtonItem *spinnerBarItem;
