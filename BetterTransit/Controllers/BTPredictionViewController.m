@@ -336,19 +336,21 @@
     
     cell.backgroundColor = [UIColor clearColor];
     
-	BTPredictionEntry *entry = [self.prediction objectAtIndex:indexPath.row-1];
-	cell.routeLabel.text = entry.route.longName;
-	cell.destinationLabel.text = entry.destination;
-	cell.estimateLabel.text = entry.eta;
-	
-	NSString *imageName = [NSString stringWithFormat:@"%@.png", entry.route.shortName];
-	UIImage *routeImage = [UIImage imageNamed:imageName];
-	if (routeImage) {
-		[cell.imageView setImage:routeImage];
-	} else {
-		cell.idLabel.hidden = NO;
-		cell.idLabel.text = entry.route.shortName;
-	}
+    if ([self.prediction count] + 1 > indexPath.row) {
+        BTPredictionEntry *entry = [self.prediction objectAtIndex:indexPath.row-1];
+        cell.routeLabel.text = entry.route.longName;
+        cell.destinationLabel.text = entry.destination;
+        cell.estimateLabel.text = entry.eta;
+        
+        NSString *imageName = [NSString stringWithFormat:@"%@.png", entry.route.shortName];
+        UIImage *routeImage = [UIImage imageNamed:imageName];
+        if (routeImage) {
+            [cell.imageView setImage:routeImage];
+        } else {
+            cell.idLabel.hidden = NO;
+            cell.idLabel.text = entry.route.shortName;
+        }
+    }
 	
     return cell;
 }
