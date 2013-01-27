@@ -199,8 +199,11 @@
         
         NSString * stopId = [rs stringForColumn:@"stop_id"];
         BTStop * stop = [self stopWithId:stopId];
-        DDLogError(@"Error: stop id %@ can't be found!", stopId);
-        if (stop != nil) [trip.stops addObject:stop];
+        if (stop != nil) {
+            [trip.stops addObject:stop];
+        } else {
+            DDLogError(@"Error: stop id %@ can't be found!", stopId);
+        }
     }
     
     // Save the trip
