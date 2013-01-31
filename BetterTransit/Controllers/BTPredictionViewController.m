@@ -141,6 +141,16 @@
 }
 
 
+#pragma mark - Ad Support
+
+- (void)updateUI
+{
+    CGRect contentFrame = self.view.bounds;
+    contentFrame.size.height -= adView.frame.size.height;
+    mainTableView.frame = contentFrame;
+}
+
+
 #pragma mark - Memory management
 
 - (void)didReceiveMemoryWarning
@@ -304,7 +314,7 @@
             cell = [[LoadingCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:LoadingCellIdentifier];
         }
         
-        [cell setText:@"Loading bus arrival times..."];
+        [cell setCellText:@"Loading bus arrival times..."];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		cell.accessoryType = UITableViewCellAccessoryNone;
         
