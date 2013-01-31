@@ -143,12 +143,14 @@
 
 #pragma mark - Ad Support
 
+#ifdef SHOW_ADS
 - (void)updateUI
 {
     CGRect contentFrame = self.view.bounds;
     contentFrame.size.height -= adView.frame.size.height;
     mainTableView.frame = contentFrame;
 }
+#endif
 
 
 #pragma mark - Memory management
