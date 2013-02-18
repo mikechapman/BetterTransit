@@ -21,14 +21,14 @@
 @interface BTFeedLoader : NSObject
 {
 	NSMutableArray * prediction; // includes prediction for all available routes
-	NSObject<BTFeedLoaderDelegate> *__unsafe_unretained delegate;
+	NSObject<BTFeedLoaderDelegate> * __weak delegate;
 	BTStop * currentStop;
     AFHTTPClient * httpClient;
 }
 
 @property (nonatomic, strong) IBOutlet BTTransit * transit;
 @property (nonatomic, strong) NSMutableArray * prediction;
-@property (unsafe_unretained) id<BTFeedLoaderDelegate> delegate;
+@property (weak) id<BTFeedLoaderDelegate> delegate;
 @property (nonatomic, strong) BTStop * currentStop;
 
 - (NSString *)dataSourceForStop:(BTStop *)stop;

@@ -14,8 +14,7 @@
 @synthesize transit, prediction, delegate, currentStop;
 
 
-#pragma mark -
-#pragma mark Initialization
+#pragma mark - Initialization
 
 - (id)init
 {
@@ -36,14 +35,6 @@
 // Subclasses should overwrite this
 - (void)getPredictionForStop:(BTStop *)stop
 {
-    /*
-	// Check Internet connection
-	if (![[Reachability reachabilityForInternetConnection] isReachable]) {
-		[delegate updatePrediction:@"No Internet connection"];
-		return;
-	}
-     */
-    
     // Cancel previous requests
     [httpClient.operationQueue cancelAllOperations];
 	
