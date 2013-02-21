@@ -27,20 +27,17 @@
 }
 
 // Subclasses should overwrite this
-- (NSString *)dataSourceForStop:(BTStop *)stop
-{
-	return @"";
-}
-
-// Subclasses should overwrite this
 - (void)getPredictionForStop:(BTStop *)stop
 {
     // Cancel previous requests
     [httpClient.operationQueue cancelAllOperations];
 	
 	self.currentStop = stop;
+    
+    NSString * path = @"http://www.happentransit.com/api/v1/prediction";
+    NSDictionary * params = @{@"stop": stop.stopCode};
 	
-    [httpClient getPath:[self dataSourceForStop:stop] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [httpClient getPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [delegate updatePrediction:self.prediction];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         DDLogError(@"request did fail with error: %@", error);
