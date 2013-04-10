@@ -13,13 +13,15 @@
 
 @synthesize route, stop, destination, eta;
 @synthesize shouldDownloadData, isUpdating;
-@synthesize info;
+@synthesize info, retryCount;
 
 - (id)init
 {
-	if (self = [super init]) {
+    self = [super init];
+	if (self) {
 		shouldDownloadData = NO;
 		isUpdating = NO;
+        retryCount = 0;
 	}
 	return self;
 }

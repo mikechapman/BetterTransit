@@ -21,6 +21,7 @@
 	BOOL shouldDownloadData; // download data for this route
 	BOOL isUpdating; // is downloading data
 	NSString *info; // extra information
+    NSUInteger retryCount;
 }
 
 @property (nonatomic, strong) BTRoute *route;
@@ -30,5 +31,6 @@
 @property (assign) BOOL shouldDownloadData;
 @property (assign) BOOL isUpdating;
 @property (nonatomic, copy) NSString *info;
+@property (assign) NSUInteger retryCount;
 
 @end
