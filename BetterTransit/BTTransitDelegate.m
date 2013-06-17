@@ -17,9 +17,6 @@
 
 #ifdef FLURRY_KEY
 #import "Flurry.h"
-void uncaughtExceptionHandler(NSException *exception) {
-    [Flurry logError:@"Uncaught" message:@"Crash!" exception:exception];
-}
 #endif
 
 @implementation BTTransitDelegate
@@ -83,7 +80,6 @@ void uncaughtExceptionHandler(NSException *exception) {
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
 #ifdef FLURRY_KEY
-    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
 	[Flurry startSession:FLURRY_KEY];
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"TRACKING_NEW_USERS"]) {
