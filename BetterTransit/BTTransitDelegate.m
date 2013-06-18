@@ -81,6 +81,7 @@
     
 #ifdef FLURRY_KEY
 	[Flurry startSession:FLURRY_KEY];
+    [Flurry setCrashReportingEnabled:YES];
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"TRACKING_NEW_USERS"]) {
         // Log Flurry event to track the number of new users
