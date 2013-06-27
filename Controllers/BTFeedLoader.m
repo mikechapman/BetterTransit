@@ -31,12 +31,12 @@
 {
     // Cancel previous requests
     [httpClient.operationQueue cancelAllOperations];
-	
+
 	self.currentStop = stop;
-    
-    NSString * path = @"http://www.happentransit.com/api/v1/prediction";
+
+    NSString * path = @"http://www.bettertransit.com/api/v1/prediction";
     NSDictionary * params = @{@"stop": stop.stopCode};
-	
+
     [httpClient getPath:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [delegate updatePrediction:self.prediction];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
