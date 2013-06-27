@@ -3,7 +3,7 @@
 //  BetterTransit
 //
 //  Created by Yaogang Lian on 10/16/09.
-//  Copyright 2009 Happen Next. All rights reserved.
+//  Copyright 2009 HappenApps, Inc. All rights reserved.
 //
 
 #import "BTStopsViewController.h"

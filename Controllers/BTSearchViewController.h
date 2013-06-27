@@ -3,7 +3,7 @@
 //  BetterTransit
 //
 //  Created by Yaogang Lian on 11/10/09.
-//  Copyright 2009 Happen Next. All rights reserved.
+//  Copyright 2009 HappenApps, Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -3,7 +3,7 @@
 //  BetterTransit
 //
 //  Created by Yaogang Lian on 10/19/10.
-//  Copyright 2010 Happen Next. All rights reserved.
+//  Copyright 2010 HappenApps, Inc. All rights reserved.
 //
 
 #import "BTScheduleViewController.h"
