@@ -11,6 +11,7 @@ Unfortuanately we are not living in such a world. For lots of commuters in citie
 That's why this iOS framework, BetterTransit, is designed solely around providing real-time transit information. Timetables are not included, since they are mostly useless anyway.
 
 The real-time predictions are only useful if they meet the following two requirements:
+
 1. The real-time arrival prediction needs to be accurate to within a minute.
 2. Presenting the arrival prediction should require as little work from the commuter as possible.
 
