@@ -27,6 +27,8 @@ The generality of this framework can be partly attributed to conforming to the [
 
 To see how this framework is integrated into a real app, you can check out the [HoosBus](https://github.com/HappenApps/HoosBus) app.
 
+Please note that the framework is using ARC, modern Objective-C syntax, and the views are updated for iOS 6 and iPhone 5's tall screen. In a nutshell, the code is using the latest iOS coding practices as of June 2013.
+
 ## App Features
 * Nearby bus stops
 * Search for a bus stop by stop name or stop code
